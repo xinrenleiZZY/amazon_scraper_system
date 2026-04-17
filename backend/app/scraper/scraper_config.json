@@ -1,0 +1,15 @@
+{
+    "keywords": [
+        "pool party decorations",
+        "summer decorations",
+        "beach towels"
+    ],
+    "pages": null,
+    "postal_code": "90060",
+    "delay_range": [
+        3,
+        6
+    ],
+    "output_dir": "./amazon_data",
+    "proxy": null
+}

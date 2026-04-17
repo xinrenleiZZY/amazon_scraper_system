@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Scraper</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .status { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Amazon Scraper System</h1>
+    <p>API Status: <span id="status" class="status">Checking...</span></p>
+    
+    <script>
+        fetch('/api/')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('status').textContent = data.status;
+            })
+            .catch(err => {
+                document.getElementById('status').textContent = 'Error: ' + err.message;
+            });
+    </script>
+</body>
+</html>
