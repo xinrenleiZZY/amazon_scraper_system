@@ -166,7 +166,7 @@ class ScrapingPipeline:
             data = json.load(f)
         
         # 导入模型
-        from models import RawSearchResult
+        from app.models import RawSearchResult
         
         saved_count = 0
         for item in data:
@@ -208,7 +208,7 @@ class ScrapingPipeline:
     
     def _create_task_record(self, keyword: str, pages: int = None) -> int:
         """创建任务记录"""
-        from models import ScrapingTask
+        from app.models import ScrapingTask
         
         task = ScrapingTask(
             keyword=keyword,
@@ -223,7 +223,7 @@ class ScrapingPipeline:
     
     def _update_task(self, task_id: int, status: str, total_items: int = 0, error: str = None):
         """更新任务状态"""
-        from models import ScrapingTask
+        from app.models import ScrapingTask
         
         task = self.db_session.query(ScrapingTask).filter(ScrapingTask.id == task_id).first()
         if task:
