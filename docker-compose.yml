@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 123456
     ports:
-      - "5432:5432"
+      - "5200:5432"
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -22,8 +22,10 @@ services:
 
   # FastAPI 后端
   backend:
-    build: ./backend
+    image: python:3.11-slim
     container_name: amazon_backend
+
+    working_dir: /app
     environment:
       DATABASE_URL: postgresql://admin:123456@postgres:5432/amazon_scraper
       INPUT_FOLDER: /app/app/scraper/amazon_data
@@ -36,7 +38,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
 
   # Nginx 前端
   frontend:
@@ -45,6 +47,6 @@ services:
     volumes:
       - ./frontend:/usr/share/nginx/html
     ports:
-      - "80:80"
+      - "8880:80"
     depends_on:
       - backend

@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS raw_search_results (
     -- 元数据
     postal_code VARCHAR(20),
     keyword VARCHAR(200) NOT NULL,
+    date DATE,
     scraped_at TIMESTAMP,
     
     -- 系统字段

@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     """项目全局配置"""
     
      # ========== 数据库配置 ==========
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/amazon_scraper"
+    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5200/amazon_scraper"
     
     # ========== 数据目录配置 ==========
     # 爬虫原始输出目录（相对于项目根目录）
