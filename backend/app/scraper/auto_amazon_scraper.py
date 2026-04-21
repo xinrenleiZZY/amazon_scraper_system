@@ -35,26 +35,59 @@ class SimpleRequestExecutor:
     def __init__(self, delay_range=(3, 6), postal_code="90060", proxy=None):
         self.delay_range = delay_range
         self.postal_code = postal_code
+
+        # 从 AntiScrapingConfig 读取代理配置（优先使用传入的 proxy 参数）
+        anti_config = AntiScrapingConfig()
+        if proxy is None and anti_config.USE_PROXY:
+            proxy = anti_config.PROXY_URL
         self.proxy = proxy
-        
-        # 创建带代理的session
+
+         # 构建 curl_cffi 兼容的代理字典
+        self.proxies = None
         if proxy:
-            logger.info(f"使用代理: {proxy}")
-            self.session = CurlSession(impersonate="chrome120", proxy=proxy)
-        else:
-            browsers = ["chrome110", "chrome116", "chrome120", "safari15_5"]
-            selected_browser = random.choice(browsers)
-            logger.info(f"使用浏览器指纹: {selected_browser}")
-            self.session = CurlSession(impersonate=selected_browser)
+            # curl_cffi 使用 proxies 参数，支持完整 URL（包含认证）
+            self.proxies = {
+                "http": proxy,
+                "https": proxy
+            }
+            # 隐藏密码打印
+            proxy_display = proxy.split('@')[-1] if '@' in proxy else proxy
+            logger.info(f"使用代理: {proxy_display}")
+        
+        # 选择浏览器指纹（支持的最新版本）
+        browsers = ["chrome110", "chrome107", "chrome104", "chrome101", "chrome100", "safari15_5"]
+        selected_browser = "chrome110" if proxy else random.choice(browsers)
+        logger.info(f"使用浏览器指纹: {selected_browser}")
+        
+        # 创建 session
+        session_created = False
+        try:
+            if self.proxies:
+                self.session = CurlSession(impersonate=selected_browser, proxies=self.proxies)
+            else:
+                self.session = CurlSession(impersonate=selected_browser)
+            session_created = True
+        except Exception as e:
+            logger.warning(f"带 proxies 参数创建失败: {e}")
+            # 降级方案：使用环境变量
+            if self.proxies:
+                os.environ['HTTP_PROXY'] = proxy
+                os.environ['HTTPS_PROXY'] = proxy
+            try:
+                self.session = CurlSession(impersonate=selected_browser)
+                session_created = True
+                logger.info("使用降级方案创建 Session 成功")
+            except Exception as e2:
+                logger.error(f"降级方案也失败: {e2}")
+                raise
 
         # 创建 HeadersManager 实例
-        config = AntiScrapingConfig()
-        config.RANDOM_USER_AGENT = True
-        self.headers_manager = HeadersManager(config)
-        
+        anti_config.RANDOM_USER_AGENT = True
+        self.headers_manager = HeadersManager(anti_config)
+
         # 初始化会话
         self._init_session()
-        
+
         logger.info(f"初始化请求器，默认邮编: {self.postal_code}")
 
     def _init_session(self):
@@ -83,11 +116,11 @@ class SimpleRequestExecutor:
                 })
                 
                 # 先访问robots.txt
-                self.session.get("https://www.amazon.com/gp/glow/get-location.html", headers=init_headers, timeout=30)
+                self.session.get("https://www.amazon.com/gp/glow/get-location.html", headers=init_headers, timeout=30, proxies={"http": self.proxy, "https": self.proxy} if self.proxy else None)
                 time.sleep(random.uniform(1, 3))
-                
+
                 # 访问首页
-                init_response = self.session.get('https://www.amazon.com/', headers=init_headers, timeout=30)
+                init_response = self.session.get('https://www.amazon.com/', headers=init_headers, timeout=30, proxies={"http": self.proxy, "https": self.proxy} if self.proxy else None)
                 self.session.headers.update({
                     "accept-language": "en-US,en;q=0.9"
                 })
@@ -153,7 +186,7 @@ class SimpleRequestExecutor:
                     'Connection': 'keep-alive',
                     'Upgrade-Insecure-Requests': '1',
                 })
-                response = self.session.get(url,headers=headers, timeout=30)
+                response = self.session.get(url, headers=headers, timeout=30, proxies={"http": self.proxy, "https": self.proxy} if self.proxy else None)
                 
                 if response.status_code == 200:
                     # 检查页面类型

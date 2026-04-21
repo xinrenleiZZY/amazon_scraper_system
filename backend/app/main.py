@@ -2,6 +2,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# 导入 API 路由
+# 直接导入 router
+from app.api.data import router as data_router
+from app.api.scraping import router as scraping_router
+from app.api.keywords import router as keywords_router
+
 app = FastAPI(title="Amazon Scraper API", version="1.0.0")
 
 # CORS 配置
@@ -12,6 +18,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# 注册路由
+app.include_router(data_router, prefix="/api", tags=["数据查询"])
+app.include_router(scraping_router, prefix="/api", tags=["爬取控制"])
+app.include_router(keywords_router, prefix="/api", tags=["关键词管理"])
 
 @app.get("/")
 def root():

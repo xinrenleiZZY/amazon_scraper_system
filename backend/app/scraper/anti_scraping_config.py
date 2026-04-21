@@ -22,6 +22,7 @@ class AntiScrapingConfig:
     # ========== 代理配置 ==========
     USE_PROXY = False           # 是否使用代理
     PROXY_TYPE = "http"         # 代理类型: http, https, socks5
+    PROXY_URL = "http://u1593702693865309:MaXLbHs36cxl@proxy.123proxy.cn:31920"  # 代理地址
     PROXY_FILE = "proxies.txt"  # 代理列表文件
     PROXY_ROTATION = "round_robin"  # 代理轮询方式: round_robin, random
     

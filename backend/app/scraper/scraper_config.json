@@ -1,8 +1,10 @@
 {
     "keywords": [
-        "pool party decorations",
-        "summer decorations",
-        "beach towels"
+        "pool+party+decorations",
+        "summer+decorations",
+        "beach+towels",
+        "poole",
+        "Christmas"
     ],
     "pages": null,
     "postal_code": "90060",
@@ -10,6 +12,5 @@
         3,
         6
     ],
-    "output_dir": "./amazon_data",
-    "proxy": null
+    "output_dir": "./amazon_data"
 }

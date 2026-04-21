@@ -3,3 +3,303 @@
 2026-04-17 11:28:06,946 - INFO - 已删除关键词: beach umbrella
 2026-04-17 11:28:06,947 - INFO - 已更新关键词列表，共 3 个
 2026-04-18 09:43:27,968 - ERROR - 流程失败 beach towels: cannot import name 'Decimal' from 'sqlalchemy' (C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\__init__.py)
+2026-04-18 10:56:57,160 - ERROR - 流程失败 beach towels: No module named 'app'
+2026-04-18 11:21:54,175 - ERROR - 流程失败 beach towels: cannot import name 'Decimal' from 'sqlalchemy' (C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\__init__.py)
+2026-04-18 11:30:12,561 - ERROR - 流程失败 beach towels: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "amazon_scraper" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-18 11:30:44,566 - ERROR - 流程失败 beach towels: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "amazon_scraper" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-18 11:31:42,048 - ERROR - 流程失败 beach towels: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "amazon_scraper" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-18 13:46:20,608 - ERROR - 流程失败 beach towels: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "amazon_scraper" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-18 13:46:47,640 - INFO - 开始爬取: beach towels
+2026-04-18 13:46:47,640 - INFO - 使用浏览器指纹: chrome104
+2026-04-18 13:46:47,642 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:46:50,840 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:46:53,065 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:46:54,954 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:46:55,129 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:46:55,129 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:46:55,129 - INFO - 使用指定页数: 1
+2026-04-18 13:46:55,129 - INFO - 开始爬取关键词: beach towels, 页数: 1
+2026-04-18 13:46:55,129 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=beach towels&page=1
+2026-04-18 13:46:59,166 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:47:05,069 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:47:14,076 - ERROR - 请求失败 (尝试 3/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:47:14,076 - ERROR - 第 1 页请求失败
+2026-04-18 13:47:14,076 - INFO - 爬取完成，共获取 0 个元素
+2026-04-18 13:47:14,076 - INFO -   - 自然商品: 0 个
+2026-04-18 13:47:14,076 - INFO -   - SP广告: 0 个
+2026-04-18 13:47:14,076 - INFO -   - SB广告: 0 个
+2026-04-18 13:47:14,078 - INFO -   - SB视频: 0 个
+2026-04-18 13:47:28,731 - INFO - 开始爬取: beach+towels
+2026-04-18 13:47:28,731 - INFO - 使用浏览器指纹: chrome107
+2026-04-18 13:47:28,733 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:47:31,871 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:47:34,749 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:47:37,266 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:47:37,437 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:47:37,438 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:47:37,438 - INFO - 使用指定页数: 1
+2026-04-18 13:47:37,438 - INFO - 开始爬取关键词: beach+towels, 页数: 1
+2026-04-18 13:47:37,438 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=beach+towels&page=1
+2026-04-18 13:47:43,976 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:47:44,391 - INFO - 第 1 页找到 64 个带data-index的元素
+2026-04-18 13:47:44,397 - INFO - [SB广告] data-index=0 SB排名:1 - Personalized Beach Towels Gift
+2026-04-18 13:47:44,416 - INFO - [自然] data-index=3 自然排名:1 - Utopia Towels Pack of 4 Cabana Beach Tow
+2026-04-18 13:47:44,430 - INFO - [自然] data-index=4 自然排名:2 - Utopia Towels Pack of 4 Cabana Beach Tow
+2026-04-18 13:47:44,434 - INFO - [自然] data-index=5 自然排名:3 - Flutesan 6 Pcs Last Toast on The Coast B
+2026-04-18 13:47:44,443 - INFO - [自然] data-index=10 自然排名:4 - LANE LINEN Beach Towel 2 Pack, Oversized
+2026-04-18 13:47:44,449 - INFO - [自然] data-index=11 自然排名:5 - Kaufman - Soft Oversized Beach Towels in
+2026-04-18 13:47:44,455 - INFO - [自然] data-index=12 自然排名:6 - LANE LINEN 6-Pack Oversized Pre-Washed B
+2026-04-18 13:47:44,461 - INFO - [自然] data-index=13 自然排名:7 - QUBA LINEN 100% Cotton Beach Towels, Cab
+2026-04-18 13:47:44,465 - INFO - [自然] data-index=14 自然排名:8 - BolBom*S Beach Towels 6 Pack Large 30x60
+2026-04-18 13:47:44,469 - INFO - [自然] data-index=15 自然排名:9 - Clotho Turkish Beach Towel Set of 4 – 10
+2026-04-18 13:47:44,474 - INFO - [自然] data-index=16 自然排名:10 - Exclusivo Mezcla 4 Pack Beach Towels, La
+2026-04-18 13:47:44,479 - INFO - [自然] data-index=17 自然排名:11 - Casa Copenhagen Cabana Towel 4Pcs Teal,B
+2026-04-18 13:47:44,488 - INFO - [自然] data-index=18 自然排名:12 - Kaufman - Large Beach Towel | 30" x 60" 
+2026-04-18 13:47:44,502 - INFO - [自然] data-index=19 自然排名:13 - Genovega 6 Packs Oversized Turkish Beach
+2026-04-18 13:47:44,511 - INFO - [自然] data-index=20 自然排名:14 - White Classic Beach Towels Oversized Cab
+2026-04-18 13:47:44,519 - INFO - [自然] data-index=22 自然排名:15 - LANE LINEN Beach Towel, 2 Pack Beach Tow
+2026-04-18 13:47:44,531 - INFO - [自然] data-index=23 自然排名:16 - Antfuny Turkish Beach Towels Vacation Es
+2026-04-18 13:47:44,543 - INFO - [自然] data-index=24 自然排名:17 - Amazon Basics Soft & Absorbent Beach Tow
+2026-04-18 13:47:44,552 - INFO - [自然] data-index=25 自然排名:18 - White Classic Stripe Cabana Beach Towels
+2026-04-18 13:47:44,561 - INFO - [自然] data-index=26 自然排名:19 - White Classic Cotton Pool Towels Oversiz
+2026-04-18 13:47:44,566 - INFO - [自然] data-index=27 自然排名:20 - Ben Kaufman Terry Cabana Striped Towels 
+2026-04-18 13:47:44,572 - INFO - [自然] data-index=28 自然排名:21 - Thin Lightweight Microfiber Beach Towel 
+2026-04-18 13:47:44,580 - INFO - [自然] data-index=29 自然排名:22 - COTTON CRAFT Oversized XL Beach Towel 39
+2026-04-18 13:47:44,592 - INFO - [自然] data-index=30 自然排名:23 - BAY LAUREL Turkish Beach Towel with Trav
+2026-04-18 13:47:44,603 - INFO - [自然] data-index=32 自然排名:24 - Exclusivo Mezcla 4 Pack Cotton Large 30x
+2026-04-18 13:47:44,610 - INFO - [自然] data-index=33 自然排名:25 - Kaufman - Colorful Racing Striped Beach 
+2026-04-18 13:47:44,614 - INFO - [自然] data-index=34 自然排名:26 - Utopia Towels Microfiber Beach Towels wi
+2026-04-18 13:47:44,618 - INFO - [自然] data-index=35 自然排名:27 - TwoYek Microfiber Sand Free Beach Towel 
+2026-04-18 13:47:44,628 - INFO - [自然] data-index=36 自然排名:28 - 6 Packs Oversized 72x40 Inch Stripe Beac
+2026-04-18 13:47:44,638 - INFO - [自然] data-index=37 自然排名:29 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-18 13:47:44,646 - INFO - [自然] data-index=38 自然排名:30 - HENBAY Cotton Oversized Beach Towel - La
+2026-04-18 13:47:44,657 - INFO - [自然] data-index=39 自然排名:31 - Amazon Basics 100% Cotton Soft & Absorbe
+2026-04-18 13:47:44,664 - INFO - [自然] data-index=40 自然排名:32 - Exclusivo Mezcla Quick Dry Beach Towel, 
+2026-04-18 13:47:44,671 - INFO - [自然] data-index=41 自然排名:33 - LULUHOME Large Oversized Beach Towel - B
+2026-04-18 13:47:44,677 - INFO - [自然] data-index=42 自然排名:34 - Ben Kaufman Joey Velour Colored Classic 
+2026-04-18 13:47:44,687 - INFO - [自然] data-index=43 自然排名:35 - Touchat 4 Pack Beach Towels Oversized 30
+2026-04-18 13:47:44,692 - INFO - [自然] data-index=44 自然排名:36 - cabanana Large Oversized Beach Towel - 3
+2026-04-18 13:47:44,705 - INFO - [自然] data-index=45 自然排名:37 - COTTON CRAFT Oversized Beach Towels - 2 
+2026-04-18 13:47:44,710 - INFO - [自然] data-index=46 自然排名:38 - Kaufman Colored Classic Multi-Color Stri
+2026-04-18 13:47:44,714 - INFO - [自然] data-index=47 自然排名:39 - 12 Pcs Oversized Microfiber Beach Towels
+2026-04-18 13:47:44,722 - INFO - [自然] data-index=48 自然排名:40 - JML Microfiber Beach Towels, Large Bath 
+2026-04-18 13:47:44,735 - INFO - [自然] data-index=49 自然排名:41 - Utopia Towels Jumbo Bath Sheet 2 Piece, 
+2026-04-18 13:47:44,745 - INFO - [自然] data-index=50 自然排名:42 - 4 Packs Oversized Thin Beach Towel Set X
+2026-04-18 13:47:44,760 - INFO - [自然] data-index=52 自然排名:43 - Utopia Towels 4 Pack Premium Bath Towels
+2026-04-18 13:47:44,765 - INFO - [自然] data-index=53 自然排名:44 - Set of 6 Turkish Beach Towel, Cotton Bea
+2026-04-18 13:47:44,772 - INFO - [自然] data-index=54 自然排名:45 - Widdonen Turkish Beach Towel Quick Dry A
+2026-04-18 13:47:44,776 - INFO - [自然] data-index=55 自然排名:46 - Cotton Turkish Beach Towel with Towels O
+2026-04-18 13:47:44,783 - INFO - [自然] data-index=56 自然排名:47 - Kaufman - Colorful Hibiscus Beach Towels
+2026-04-18 13:47:44,793 - INFO - [自然] data-index=57 自然排名:48 - Amazon Basics 100% Cotton Terry Beach To
+2026-04-18 13:47:44,800 - INFO - [SB广告] data-index=62 SB排名:2 - N/A
+2026-04-18 13:47:44,801 - INFO - 爬取完成，共获取 61 个元素
+2026-04-18 13:47:44,801 - INFO -   - 自然商品: 48 个
+2026-04-18 13:47:44,801 - INFO -   - SP广告: 0 个
+2026-04-18 13:47:44,802 - INFO -   - SB广告: 2 个
+2026-04-18 13:47:44,802 - INFO -   - SB视频: 0 个
+2026-04-18 13:47:44,814 - INFO - 数据已保存到: E:\ZY2026\运营-准生产级爬虫\amazon_scraper_system\backend\app\scraper\amazon_data/beach+towels_20260418_134744.json
+2026-04-18 13:47:44,834 - ERROR - 流程失败 beach+towels: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO raw_search_results (data_index, page, index_position, ad_type, ad_rank, organic_rank, asin, title, url, price_current, price_list, rating_stars, rating_count, is_prime, image_small, image_large, brand_name, inner_products, inner_products_ ... 23071 characters truncated ... lts.id, raw_search_results.created_at, raw_search_results.updated_at, raw_search_results.id AS id__1]
+[parameters: {'data_index__0': 0, 'price_list__0': None, 'inner_products_count__0': 3, 'inner_products__0': '"[{\\"position\\": 1, \\"asin\\": \\"B0B1PMDFFP\\", \\"title\\": \\"Personalized Beach Towel Graduated Gifts for Students Kids Custom Microfiber Beac ... (588 characters truncated) ...  Beach Towels with Name Sand Free Pool Towel Quick Dry Blanket Stripes Print Beach Towels for Adults 30x60 Inch-Pink\\", \\"price\\": \\"$19.99\\"}]"', 'ad_type__0': 'SB', 'organic_rank__0': None, 'rating_count__0': None, 'url__0': 'https://aax-us-east-retail-direct.amazon.com/x/c/JDgQq8MlQz4foGMRQ83zcisAAAGdnyFyzgEAAAH2AQBvbm9fdHhuX2JpZDcgICBvbm9fdHhuX2ltcDEgICAJdRSX/clv1c_ek-YB ... (2108 characters truncated) ... 8f-c04b69f36507&pf_rd_p=2fb72bc8-96ef-420d-b08f-c04b69f36507&pf_rd_r=VN6A278ZB38A31DR1B3D&pd_rd_wg=Wwg8X&pd_rd_r=27132b65-de8f-41a2-83d0-c60bfec1de38', 'rating_stars__0': None, 'page__0': 1, 'brand_name__0': 'Personalized Beach Towels Gift', 'asin__0': 'B0B1PMDFFP,B0B1NZ9GT5,B0B1P64YKQ', 'price_current__0': None, 'is_prime__0': False, 'postal_code__0': '90060', 'date__0': datetime.date(2026, 4, 18), 'image_small__0': 'https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b55da1e6-c0e2-4ead-90ec-36b2f5c9555b._CR0,0,400,400_AC_SX130_SY60_CB1169409_QL70_.png', 'keyword__0': 'beach+towels', 'title__0': 'Personalized Beach Towels Gift', 'ad_rank__0': '1', 'image_large__0': None, 'scraped_at__0': datetime.datetime(2026, 4, 18, 13, 47, 44, 397707), 'index_position__0': '1_0', 'data_index__1': 3, 'price_list__1': None, 'inner_products_count__1': 0, 'inner_products__1': '"[]"', 'ad_type__1': 'Organic', 'organic_rank__1': 1, 'rating_count__1': 12149, 'url__1': 'N/A', 'rating_stars__1': 4.3, 'page__1': 1, 'brand_name__1': None, 'asin__1': 'B00AA4H9BE', 'price_current__1': '$36.99', 'is_prime__1': False, 'postal_code__1': '90060', 'date__1': datetime.date(2026, 4, 18), 'image_small__1': 'https://m.media-amazon.com/images/I/91MXVlmrtOL._AC_UL320_.jpg', 'keyword__1': 'beach+towels', 'title__1': 'Utopia Towels Pack of 4 Cabana Beach Towels, Oversized 30 x 60 Inches Cotton Beach Towel Set, Smooth Ring Spun Texture for Pool and Swim Days, Modern Striped Design Bath Towels', 'ad_rank__1': None, 'image_large__1': 'https://m.media-amazon.com/images/I/91MXVlmrtOL._AC_SL1500_.jpg', 'scraped_at__1': datetime.datetime(2026, 4, 18, 13, 47, 44, 416008), 'index_position__1': '1_3', 'data_index__2': 4, 'price_list__2': None, 'inner_products_count__2': 0, 'inner_products__2': '"[]"' ... 1050 parameters truncated ... 'ad_rank__47': None, 'image_large__47': 'https://m.media-amazon.com/images/I/61kCSI0GjaL._AC_SL1500_.jpg', 'scraped_at__47': datetime.datetime(2026, 4, 18, 13, 47, 44, 783143), 'index_position__47': '1_56', 'data_index__48': 57, 'price_list__48': None, 'inner_products_count__48': 0, 'inner_products__48': '"[]"', 'ad_type__48': 'Organic', 'organic_rank__48': 48, 'rating_count__48': 5872, 'url__48': 'N/A', 'rating_stars__48': 4.6, 'page__48': 1, 'brand_name__48': None, 'asin__48': 'B01G2MFIDS', 'price_current__48': '$18.89', 'is_prime__48': False, 'postal_code__48': '90060', 'date__48': datetime.date(2026, 4, 18), 'image_small__48': 'https://m.media-amazon.com/images/I/91rTTq+cG6L._AC_UL320_.jpg', 'keyword__48': 'beach+towels', 'title__48': 'Amazon Basics 100% Cotton Terry Beach Towel, Soft & Absorbent, Quick Drying, Cabana Stripe, Large 30" x 60", Green, 2-Pack', 'ad_rank__48': None, 'image_large__48': 'https://m.media-amazon.com/images/I/91rTTq+cG6L._AC_SL1500_.jpg', 'scraped_at__48': datetime.datetime(2026, 4, 18, 13, 47, 44, 793880), 'index_position__48': '1_57', 'data_index__49': 62, 'price_list__49': None, 'inner_products_count__49': 0, 'inner_products__49': '"[]"', 'ad_type__49': 'SB', 'organic_rank__49': None, 'rating_count__49': None, 'url__49': 'https://aax-us-east-retail-direct.amazon.com/x/c/JHHc0wFxat4mPEqv488nzUcAAAGdnyFy0AEAAAH2AQBvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICAQghAR/clv1c_ek-YB ... (2095 characters truncated) ... fe-daa1aa803c87&pf_rd_p=cd7c548b-a599-426f-9ffe-daa1aa803c87&pf_rd_r=VN6A278ZB38A31DR1B3D&pd_rd_wg=hX0bG&pd_rd_r=45092bf2-09d4-41dd-bf21-b763de5a37cf', 'rating_stars__49': None, 'page__49': 1, 'brand_name__49': 'N/A', 'asin__49': 'B0B1PMDFFP,B0B1NZ9GT5,B0B1P64YKQ', 'price_current__49': None, 'is_prime__49': False, 'postal_code__49': '90060', 'date__49': datetime.date(2026, 4, 18), 'image_small__49': None, 'keyword__49': 'beach+towels', 'title__49': 'N/A', 'ad_rank__49': '2', 'image_large__49': None, 'scraped_at__49': datetime.datetime(2026, 4, 18, 13, 47, 44, 800099), 'index_position__49': '1_62'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-04-18 13:51:17,996 - INFO - 开始爬取: beach+towels
+2026-04-18 13:51:17,996 - INFO - 使用浏览器指纹: chrome104
+2026-04-18 13:51:17,999 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:51:21,635 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:51:23,699 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:51:26,818 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:51:26,993 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:51:26,994 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:51:26,994 - INFO - 使用指定页数: 1
+2026-04-18 13:51:26,994 - INFO - 开始爬取关键词: beach+towels, 页数: 1
+2026-04-18 13:51:26,994 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=beach+towels&page=1
+2026-04-18 13:51:33,036 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:51:33,412 - INFO - 第 1 页找到 64 个带data-index的元素
+2026-04-18 13:51:33,416 - INFO - [SB广告] data-index=0 SB排名:1 - Personalized Beach Towels Gift
+2026-04-18 13:51:33,434 - INFO - [自然] data-index=3 自然排名:1 - Utopia Towels Pack of 4 Cabana Beach Tow
+2026-04-18 13:51:33,448 - INFO - [自然] data-index=4 自然排名:2 - Utopia Towels Pack of 4 Cabana Beach Tow
+2026-04-18 13:51:33,454 - INFO - [自然] data-index=5 自然排名:3 - Newwiee 20 Pack Oversized Microfiber Bea
+2026-04-18 13:51:33,463 - INFO - [自然] data-index=10 自然排名:4 - LANE LINEN Beach Towel 2 Pack, Oversized
+2026-04-18 13:51:33,467 - INFO - [自然] data-index=11 自然排名:5 - Kaufman - Soft Oversized Beach Towels in
+2026-04-18 13:51:33,474 - INFO - [自然] data-index=12 自然排名:6 - LANE LINEN 6-Pack Oversized Pre-Washed B
+2026-04-18 13:51:33,484 - INFO - [自然] data-index=13 自然排名:7 - Genovega Oversized Cotton Turkish Beach 
+2026-04-18 13:51:33,489 - INFO - [自然] data-index=14 自然排名:8 - QUBA LINEN 100% Cotton Beach Towels, Cab
+2026-04-18 13:51:33,494 - INFO - [自然] data-index=15 自然排名:9 - BolBom*S Beach Towels 6 Pack Large 30x60
+2026-04-18 13:51:33,498 - INFO - [自然] data-index=16 自然排名:10 - Clotho Turkish Beach Towel Set of 4 – 10
+2026-04-18 13:51:33,502 - INFO - [自然] data-index=17 自然排名:11 - Exclusivo Mezcla 4 Pack Beach Towels, La
+2026-04-18 13:51:33,508 - INFO - [自然] data-index=18 自然排名:12 - Casa Copenhagen Cabana Towel 4Pcs Teal,B
+2026-04-18 13:51:33,514 - INFO - [自然] data-index=19 自然排名:13 - Kaufman - Large Beach Towel | 30" x 60" 
+2026-04-18 13:51:33,523 - INFO - [自然] data-index=20 自然排名:14 - Genovega 6 Packs Oversized Turkish Beach
+2026-04-18 13:51:33,531 - INFO - [自然] data-index=22 自然排名:15 - White Classic Beach Towels Oversized Cab
+2026-04-18 13:51:33,537 - INFO - [自然] data-index=23 自然排名:16 - LANE LINEN Beach Towel, 2 Pack Beach Tow
+2026-04-18 13:51:33,552 - INFO - [自然] data-index=24 自然排名:17 - Antfuny Turkish Beach Towels Vacation Es
+2026-04-18 13:51:33,565 - INFO - [自然] data-index=25 自然排名:18 - Amazon Basics Soft & Absorbent Beach Tow
+2026-04-18 13:51:33,573 - INFO - [自然] data-index=26 自然排名:19 - White Classic Stripe Cabana Beach Towels
+2026-04-18 13:51:33,584 - INFO - [自然] data-index=27 自然排名:20 - White Classic Cotton Pool Towels Oversiz
+2026-04-18 13:51:33,589 - INFO - [自然] data-index=28 自然排名:21 - Ben Kaufman Terry Cabana Striped Towels 
+2026-04-18 13:51:33,597 - INFO - [自然] data-index=29 自然排名:22 - Thin Lightweight Microfiber Beach Towel 
+2026-04-18 13:51:33,608 - INFO - [自然] data-index=30 自然排名:23 - COTTON CRAFT Oversized XL Beach Towel 39
+2026-04-18 13:51:33,620 - INFO - [自然] data-index=32 自然排名:24 - BAY LAUREL Turkish Beach Towel with Trav
+2026-04-18 13:51:33,629 - INFO - [自然] data-index=33 自然排名:25 - Exclusivo Mezcla 4 Pack Cotton Large 30x
+2026-04-18 13:51:33,634 - INFO - [自然] data-index=34 自然排名:26 - Kaufman - Colorful Racing Striped Beach 
+2026-04-18 13:51:33,638 - INFO - [自然] data-index=35 自然排名:27 - Utopia Towels Microfiber Beach Towels wi
+2026-04-18 13:51:33,642 - INFO - [自然] data-index=36 自然排名:28 - TwoYek Microfiber Sand Free Beach Towel 
+2026-04-18 13:51:33,652 - INFO - [自然] data-index=37 自然排名:29 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-18 13:51:33,662 - INFO - [自然] data-index=38 自然排名:30 - 6 Packs Oversized 72x40 Inch Stripe Beac
+2026-04-18 13:51:33,668 - INFO - [自然] data-index=39 自然排名:31 - HENBAY Cotton Oversized Beach Towel - La
+2026-04-18 13:51:33,677 - INFO - [自然] data-index=40 自然排名:32 - Amazon Basics 100% Cotton Soft & Absorbe
+2026-04-18 13:51:33,685 - INFO - [自然] data-index=41 自然排名:33 - Exclusivo Mezcla Quick Dry Beach Towel, 
+2026-04-18 13:51:33,691 - INFO - [自然] data-index=42 自然排名:34 - LULUHOME Large Oversized Beach Towel - B
+2026-04-18 13:51:33,699 - INFO - [自然] data-index=43 自然排名:35 - Ben Kaufman Joey Velour Colored Classic 
+2026-04-18 13:51:33,707 - INFO - [自然] data-index=44 自然排名:36 - Touchat 4 Pack Beach Towels Oversized 30
+2026-04-18 13:51:33,711 - INFO - [自然] data-index=45 自然排名:37 - cabanana Large Oversized Beach Towel - 3
+2026-04-18 13:51:33,717 - INFO - [自然] data-index=46 自然排名:38 - 12 Pcs Oversized Microfiber Beach Towels
+2026-04-18 13:51:33,726 - INFO - [自然] data-index=47 自然排名:39 - COTTON CRAFT Oversized Beach Towels - 2 
+2026-04-18 13:51:33,731 - INFO - [自然] data-index=48 自然排名:40 - Kaufman Colored Classic Multi-Color Stri
+2026-04-18 13:51:33,739 - INFO - [自然] data-index=49 自然排名:41 - JML Microfiber Beach Towels, Large Bath 
+2026-04-18 13:51:33,752 - INFO - [自然] data-index=50 自然排名:42 - Utopia Towels Jumbo Bath Sheet 2 Piece, 
+2026-04-18 13:51:33,762 - INFO - [自然] data-index=52 自然排名:43 - 4 Packs Oversized Thin Beach Towel Set X
+2026-04-18 13:51:33,775 - INFO - [自然] data-index=53 自然排名:44 - Utopia Towels 4 Pack Premium Bath Towels
+2026-04-18 13:51:33,781 - INFO - [自然] data-index=54 自然排名:45 - Set of 6 Turkish Beach Towel, Cotton Bea
+2026-04-18 13:51:33,790 - INFO - [自然] data-index=55 自然排名:46 - Widdonen Turkish Beach Towel Quick Dry A
+2026-04-18 13:51:33,795 - INFO - [自然] data-index=56 自然排名:47 - Cotton Turkish Beach Towel with Towels O
+2026-04-18 13:51:33,800 - INFO - [自然] data-index=57 自然排名:48 - Kaufman - Colorful Hibiscus Beach Towels
+2026-04-18 13:51:33,808 - INFO - [SB广告] data-index=62 SB排名:2 - N/A
+2026-04-18 13:51:33,808 - INFO - 爬取完成，共获取 61 个元素
+2026-04-18 13:51:33,808 - INFO -   - 自然商品: 48 个
+2026-04-18 13:51:33,809 - INFO -   - SP广告: 0 个
+2026-04-18 13:51:33,809 - INFO -   - SB广告: 2 个
+2026-04-18 13:51:33,809 - INFO -   - SB视频: 0 个
+2026-04-18 13:51:33,822 - INFO - 数据已保存到: E:\ZY2026\运营-准生产级爬虫\amazon_scraper_system\backend\app\scraper\amazon_data/beach+towels_20260418_135133.json
+2026-04-18 13:51:33,849 - INFO - 存入数据库 50 条记录
+2026-04-18 13:51:33,855 - INFO - ✅ 流程完成: beach+towels, 爬取 61 条, 入库 50 条
+2026-04-18 15:09:03,670 - INFO - 存入数据库 49 条记录
+2026-04-18 15:09:03,777 - INFO - 存入数据库 325 条记录
+2026-04-18 15:09:03,832 - INFO - 存入数据库 50 条记录
+2026-04-18 15:09:03,890 - INFO - 存入数据库 50 条记录
+2026-04-18 15:09:03,943 - INFO - 存入数据库 50 条记录
+2026-04-18 15:09:04,054 - INFO - 存入数据库 332 条记录
+2026-04-18 15:09:04,176 - INFO - 存入数据库 337 条记录
+2026-04-18 15:09:04,291 - INFO - 存入数据库 325 条记录
+2026-04-18 15:09:04,348 - INFO - 存入数据库 50 条记录
+2026-04-18 15:09:04,457 - INFO - 存入数据库 320 条记录
+2026-04-18 15:09:04,570 - INFO - 存入数据库 349 条记录
+2026-04-18 15:09:04,668 - INFO - 存入数据库 218 条记录
+2026-04-18 15:09:04,771 - INFO - 存入数据库 230 条记录
+2026-04-18 15:09:04,821 - INFO - 存入数据库 16 条记录
+2026-04-18 15:09:04,891 - INFO - 存入数据库 128 条记录
+2026-04-18 15:09:05,006 - INFO - 存入数据库 343 条记录
+2026-04-18 15:09:05,075 - INFO - 存入数据库 349 条记录
+2026-04-18 15:09:05,187 - INFO - 存入数据库 361 条记录
+2026-04-18 15:09:05,282 - INFO - 存入数据库 218 条记录
+2026-04-18 15:09:05,338 - INFO - 存入数据库 50 条记录
+2026-04-18 15:09:05,442 - INFO - 存入数据库 325 条记录
+2026-04-18 15:09:05,534 - INFO - 存入数据库 218 条记录
+2026-04-18 15:09:05,647 - INFO - 存入数据库 332 条记录
+2026-04-18 15:09:05,758 - INFO - 存入数据库 325 条记录
+2026-04-18 15:09:05,875 - INFO - 存入数据库 248 条记录
+2026-04-18 15:38:12,904 - INFO - 存入数据库 49 条记录
+2026-04-18 15:38:12,973 - INFO - 存入数据库 325 条记录
+2026-04-18 15:38:13,031 - INFO - 存入数据库 50 条记录
+2026-04-18 15:38:13,087 - INFO - 存入数据库 50 条记录
+2026-04-18 15:38:13,144 - INFO - 存入数据库 50 条记录
+2026-04-18 15:38:13,249 - INFO - 存入数据库 332 条记录
+2026-04-18 15:38:13,357 - INFO - 存入数据库 337 条记录
+2026-04-18 15:38:13,461 - INFO - 存入数据库 325 条记录
+2026-04-18 15:38:13,515 - INFO - 存入数据库 50 条记录
+2026-04-18 15:38:13,620 - INFO - 存入数据库 320 条记录
+2026-04-18 15:38:13,733 - INFO - 存入数据库 349 条记录
+2026-04-18 15:38:13,821 - INFO - 存入数据库 218 条记录
+2026-04-18 15:38:13,923 - INFO - 存入数据库 230 条记录
+2026-04-18 15:38:13,974 - INFO - 存入数据库 16 条记录
+2026-04-18 15:38:14,043 - INFO - 存入数据库 128 条记录
+2026-04-18 15:38:14,153 - INFO - 存入数据库 343 条记录
+2026-04-18 15:38:14,263 - INFO - 存入数据库 349 条记录
+2026-04-18 15:38:14,376 - INFO - 存入数据库 361 条记录
+2026-04-18 15:38:14,462 - INFO - 存入数据库 218 条记录
+2026-04-18 15:38:14,517 - INFO - 存入数据库 50 条记录
+2026-04-18 15:38:14,636 - INFO - 存入数据库 325 条记录
+2026-04-18 15:38:14,749 - INFO - 存入数据库 218 条记录
+2026-04-18 15:38:14,868 - INFO - 存入数据库 332 条记录
+2026-04-18 15:38:14,976 - INFO - 存入数据库 325 条记录
+2026-04-18 15:38:15,115 - INFO - 存入数据库 248 条记录
+2026-04-18 15:38:25,210 - INFO - 开始爬取: beach+towels
+2026-04-18 15:38:25,210 - INFO - 使用浏览器指纹: chrome107
+2026-04-18 15:38:25,214 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 15:38:28,632 - WARNING - 会话初始化状态码: 202
+2026-04-18 15:38:30,936 - WARNING - 会话初始化状态码: 202
+2026-04-18 15:38:34,146 - WARNING - 会话初始化状态码: 202
+2026-04-18 15:38:34,315 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 15:38:34,315 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 15:38:34,315 - INFO - 使用指定页数: 1
+2026-04-18 15:38:34,315 - INFO - 开始爬取关键词: beach+towels, 页数: 1
+2026-04-18 15:38:34,315 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=beach+towels&page=1
+2026-04-18 15:38:40,075 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 15:38:40,501 - INFO - 第 1 页找到 68 个带data-index的元素
+2026-04-18 15:38:40,510 - INFO - [SB视频] data-index=0 视频排名:1 - N/A
+2026-04-18 15:38:40,528 - INFO - [自然] data-index=3 自然排名:1 - Utopia Towels Pack of 4 Cabana Beach Tow
+2026-04-18 15:38:40,540 - INFO - [自然] data-index=4 自然排名:2 - Utopia Towels Pack of 4 Cabana Beach Tow
+2026-04-18 15:38:40,544 - INFO - [自然] data-index=5 自然排名:3 - Yopicks Personalized Beach Towels for Ki
+2026-04-18 15:38:40,556 - INFO - [自然] data-index=12 自然排名:4 - Kaufman - Soft Oversized Beach Towels in
+2026-04-18 15:38:40,563 - INFO - [自然] data-index=13 自然排名:5 - LANE LINEN Beach Towel 2 Pack, Oversized
+2026-04-18 15:38:40,567 - INFO - [自然] data-index=14 自然排名:6 - BolBom*S Beach Towels 6 Pack Large 30x60
+2026-04-18 15:38:40,571 - INFO - [自然] data-index=15 自然排名:7 - Newwiee 20 Pack Oversized Microfiber Bea
+2026-04-18 15:38:40,579 - INFO - [自然] data-index=16 自然排名:8 - LANE LINEN 6-Pack Oversized Pre-Washed B
+2026-04-18 15:38:40,585 - INFO - [自然] data-index=17 自然排名:9 - QUBA LINEN 100% Cotton Beach Towels, Cab
+2026-04-18 15:38:40,593 - INFO - [自然] data-index=18 自然排名:10 - White Classic Stripe Cabana Beach Towels
+2026-04-18 15:38:40,604 - INFO - [自然] data-index=19 自然排名:11 - Genovega 6 Packs Oversized Turkish Beach
+2026-04-18 15:38:40,620 - INFO - [自然] data-index=20 自然排名:12 - Utopia Towels Jumbo Bath Sheet 2 Piece, 
+2026-04-18 15:38:40,634 - INFO - [自然] data-index=21 自然排名:13 - Antfuny Turkish Beach Towels Vacation Es
+2026-04-18 15:38:40,644 - INFO - [自然] data-index=22 自然排名:14 - White Classic Cotton Pool Towels Oversiz
+2026-04-18 15:38:40,652 - INFO - [自然] data-index=24 自然排名:15 - White Classic Beach Towels Oversized Cab
+2026-04-18 15:38:40,658 - INFO - [自然] data-index=25 自然排名:16 - Casa Copenhagen Cabana Towel 4Pcs Teal,B
+2026-04-18 15:38:40,663 - INFO - [自然] data-index=26 自然排名:17 - Clotho Turkish Beach Towel Set of 4 – 10
+2026-04-18 15:38:40,675 - INFO - [自然] data-index=27 自然排名:18 - Utopia Towels 4 Pack Premium Bath Towels
+2026-04-18 15:38:40,680 - INFO - [自然] data-index=28 自然排名:19 - Exclusivo Mezcla 4 Pack Beach Towels, La
+2026-04-18 15:38:40,685 - INFO - [自然] data-index=29 自然排名:20 - Thin Lightweight Microfiber Beach Towel 
+2026-04-18 15:38:40,691 - INFO - [自然] data-index=30 自然排名:21 - Kaufman - Large Beach Towel | 30" x 60" 
+2026-04-18 15:38:40,705 - INFO - [自然] data-index=31 自然排名:22 - Utopia Towels 6 Pack Medium Bath Towel S
+2026-04-18 15:38:40,715 - INFO - [自然] data-index=32 自然排名:23 - COTTON CRAFT Oversized XL Beach Towel 39
+2026-04-18 15:38:40,723 - INFO - [自然] data-index=34 自然排名:24 - LULUHOME Large Oversized Beach Towel - B
+2026-04-18 15:38:40,727 - INFO - [自然] data-index=35 自然排名:25 - Ben Kaufman Terry Cabana Striped Towels 
+2026-04-18 15:38:40,737 - INFO - [自然] data-index=36 自然排名:26 - Amazon Basics Soft & Absorbent Beach Tow
+2026-04-18 15:38:40,745 - INFO - [自然] data-index=37 自然排名:27 - LANE LINEN Beach Towel, 2 Pack Beach Tow
+2026-04-18 15:38:40,761 - INFO - [自然] data-index=38 自然排名:28 - Utopia Towels 8 Piece Luxury Towel Set –
+2026-04-18 15:38:40,769 - INFO - [自然] data-index=39 自然排名:29 - GLAMBURG 100% Cotton 2 Pack Oversized Ba
+2026-04-18 15:38:40,781 - INFO - [自然] data-index=40 自然排名:30 - WEKAPO Beach Blanket Sandproof Waterproo
+2026-04-18 15:38:40,785 - INFO - [自然] data-index=41 自然排名:31 - Utopia Towels Microfiber Beach Towels wi
+2026-04-18 15:38:40,796 - INFO - [自然] data-index=42 自然排名:32 - 6 Packs Oversized 72x40 Inch Stripe Beac
+2026-04-18 15:38:40,808 - INFO - [自然] data-index=43 自然排名:33 - Exclusivo Mezcla 4 Pack Cotton Large 30x
+2026-04-18 15:38:40,814 - INFO - [自然] data-index=44 自然排名:34 - Ben Kaufman Joey Velour Colored Classic 
+2026-04-18 15:38:40,828 - INFO - [自然] data-index=45 自然排名:35 - BAY LAUREL Turkish Beach Towel with Trav
+2026-04-18 15:38:40,838 - INFO - [自然] data-index=46 自然排名:36 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-18 15:38:40,846 - INFO - [自然] data-index=47 自然排名:37 - COTTON CRAFT Oversized Beach Towels - 2 
+2026-04-18 15:38:40,853 - INFO - [自然] data-index=48 自然排名:38 - HENBAY Cotton Oversized Beach Towel - La
+2026-04-18 15:38:40,857 - INFO - [自然] data-index=49 自然排名:39 - 12 Pcs Oversized Microfiber Beach Towels
+2026-04-18 15:38:40,863 - INFO - [自然] data-index=50 自然排名:40 - Kaufman - Colorful Racing Striped Beach 
+2026-04-18 15:38:40,872 - INFO - [自然] data-index=51 自然排名:41 - Chakir Turkish Linens Premium Quality 10
+2026-04-18 15:38:40,878 - INFO - [自然] data-index=52 自然排名:42 - Arkwright California Cabana Stripe Beach
+2026-04-18 15:38:40,888 - INFO - [自然] data-index=54 自然排名:43 - Utopia Towels 4 Pack Cabana Stripe Beach
+2026-04-18 15:38:40,898 - INFO - [自然] data-index=55 自然排名:44 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-18 15:38:40,903 - INFO - [自然] data-index=56 自然排名:45 - Touchat 4 Pack Beach Towels Oversized 30
+2026-04-18 15:38:40,915 - INFO - [自然] data-index=57 自然排名:46 - Amazon Basics 100% Cotton Soft & Absorbe
+2026-04-18 15:38:40,924 - INFO - [自然] data-index=58 自然排名:47 - Lightweight Turkish Beach Towel - 100% B
+2026-04-18 15:38:40,930 - INFO - [自然] data-index=59 自然排名:48 - cabanana Large Oversized Beach Towel - 3
+2026-04-18 15:38:40,938 - INFO - [SB广告] data-index=64 SB排名:1 - N/A
+2026-04-18 15:38:40,938 - INFO - 爬取完成，共获取 62 个元素
+2026-04-18 15:38:40,938 - INFO -   - 自然商品: 48 个
+2026-04-18 15:38:40,938 - INFO -   - SP广告: 0 个
+2026-04-18 15:38:40,938 - INFO -   - SB广告: 1 个
+2026-04-18 15:38:40,940 - INFO -   - SB视频: 1 个
+2026-04-18 15:38:40,985 - INFO - 数据已保存到: e:\ZY2026\运营-准生产级爬虫\amazon_scraper_system\backend\app\scraper\amazon_data/beach+towels_20260418_153840.json
+2026-04-18 15:38:41,012 - INFO - 存入数据库 50 条记录
+2026-04-18 15:38:41,021 - INFO - ✅ 流程完成: beach+towels, 爬取 62 条, 入库 50 条

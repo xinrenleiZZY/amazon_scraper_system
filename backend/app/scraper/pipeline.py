@@ -13,7 +13,13 @@ from sqlalchemy.orm import Session
 
 # 导入项目模块
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent))
+_scraper_dir = str(Path(__file__).parent)
+_app_dir = str(Path(__file__).parent.parent)
+_backend_dir = str(Path(__file__).parent.parent.parent)
+for _p in [_scraper_dir, _app_dir, _backend_dir]:
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
 from config import settings
 from database import SessionLocal
 
@@ -311,8 +317,78 @@ def run_weekly():
         pipeline.close()
 
 
+def import_processed_data(folder: str = None) -> Dict:
+    """
+    只入库：读取 processed_data/ 里的文件直接写入数据库，不爬取
+    """
+    if folder is None:
+        folder = Path(__file__).parent / "processed_data"
+    else:
+        folder = Path(folder)
+
+    files = [f for f in folder.glob("*_processed.json")]
+    if not files:
+        return {"status": "no_files", "folder": str(folder)}
+
+    pipeline = ScrapingPipeline()
+    total = 0
+    try:
+        for f in files:
+            count = pipeline._save_to_database(f)
+            total += count
+            print(f"入库: {f.name} → {count} 条")
+    finally:
+        pipeline.close()
+
+    return {"status": "success", "files": len(files), "total_saved": total}
+# 在 pipeline.py 末尾添加
+
+async def run_now_with_logs(keyword: str = None, pages: int = None, manager=None):
+    """带日志输出的爬取"""
+    if manager:
+        await manager.send_log(f"🚀 开始爬取任务: {keyword or '所有关键词'}")
+    
+    pipeline = ScrapingPipeline()
+    try:
+        if keyword:
+            result = pipeline.run_full_pipeline(keyword, pages)
+        else:
+            result = pipeline.run_batch(pages)
+        
+        if manager:
+            if isinstance(result, dict):
+                await manager.send_log(f"✅ 爬取完成: {result.get('keyword', keyword)} - {result.get('saved_to_db', 0)} 条数据")
+            elif isinstance(result, list):
+                success_count = len([r for r in result if r['status'] == 'success'])
+                total_count = len(result)
+                await manager.send_log(f"✅ 批量爬取完成: 成功 {success_count}/{total_count}")
+    except Exception as e:
+        if manager:
+            await manager.send_log(f"❌ 爬取失败: {str(e)}")
+        raise
+    finally:
+        pipeline.close()
+
+async def run_daily_with_logs(manager=None):
+    """每日任务带日志"""
+    if manager:
+        await manager.send_log("📅 每日任务开始执行...")
+    result = run_daily()
+    if manager:
+        await manager.send_log("✅ 每日任务执行完成")
+    return result
+
+async def run_weekly_with_logs(manager=None):
+    """每周任务带日志"""
+    if manager:
+        await manager.send_log("📅 每周任务开始执行...")
+    result = run_weekly()
+    if manager:
+        await manager.send_log("✅ 每周任务执行完成")
+    return result
+
 # 测试入口
 if __name__ == "__main__":
-    # 测试单个关键词
-    result = run_now("beach towels", pages=1)
+    result = run_now("beach+towels", pages=1)
     print(json.dumps(result, ensure_ascii=False, indent=2))
+    # import_processed_data()

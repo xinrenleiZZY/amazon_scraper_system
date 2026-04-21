@@ -3,7 +3,8 @@
     "allow": [
       "Bash(mkdir -p \"E:/ZY2026/运营-准生产级爬虫/amazon_scraper_system/backend/app/scraper\")",
       "Bash(mkdir -p \"E:/ZY2026/运营-准生产级爬虫/amazon_scraper_system/backend/app/api\")",
-      "Bash(mkdir -p \"E:/ZY2026/运营-准生产级爬虫/amazon_scraper_system/frontend\")"
+      "Bash(mkdir -p \"E:/ZY2026/运营-准生产级爬虫/amazon_scraper_system/frontend\")",
+      "Bash(curl -s http://localhost:8000/health)"
     ]
   }
 }

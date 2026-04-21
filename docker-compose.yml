@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # PostgreSQL 数据库
   postgres:
     image: postgres:15
     container_name: amazon_postgres
@@ -20,11 +19,9 @@ services:
       timeout: 5s
       retries: 5
 
-  # FastAPI 后端
   backend:
     image: python:3.11-slim
     container_name: amazon_backend
-
     working_dir: /app
     environment:
       DATABASE_URL: postgresql://admin:123456@postgres:5432/amazon_scraper
@@ -32,21 +29,26 @@ services:
       PROCESSED_DATA_DIR: /app/app/scraper/processed_data
     volumes:
       - ./backend:/app
-      - ./backend/app/scraper/amazon_data:/app/app/scraper/amazon_data
     ports:
-      - "8000:8000"
+      - "8888:8000"
     depends_on:
       postgres:
         condition: service_healthy
-    command: sh -c "pip install --no-cache-dir -r requirements.txt && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    # 移除 healthcheck（因为没有 curl）
+    command: >
+      sh -c "
+      pip install --no-cache-dir -r requirements.txt &&
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      "
 
-  # Nginx 前端
   frontend:
     image: nginx:alpine
     container_name: amazon_frontend
     volumes:
       - ./frontend:/usr/share/nginx/html
+      - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "8880:80"
     depends_on:
       - backend
+    restart: on-failure

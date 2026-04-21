@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS raw_search_results (
     organic_rank INTEGER,
     
     -- 商品信息
-    asin VARCHAR(20),
+    asin VARCHAR(100),
     title TEXT,
     url TEXT,
     

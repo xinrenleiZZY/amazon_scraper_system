@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Boolean, Decimal, TIMESTAMP, JSON, Date
+from sqlalchemy import Column, Integer, String, Text, Boolean, Numeric, TIMESTAMP, JSON, Date
 from sqlalchemy.sql import func
 from app.database import Base
 
@@ -13,12 +13,12 @@ class RawSearchResult(Base):
     ad_type = Column(String(20))
     ad_rank = Column(String(10))
     organic_rank = Column(Integer)
-    asin = Column(String(20))
+    asin = Column(String(100))
     title = Column(Text)
     url = Column(Text)
     price_current = Column(String(50))
     price_list = Column(String(50))
-    rating_stars = Column(Decimal(3, 1))
+    rating_stars = Column(Numeric(3, 1))
     rating_count = Column(Integer)
     is_prime = Column(Boolean, default=False)
     image_small = Column(Text)
