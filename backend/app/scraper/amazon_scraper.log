@@ -1,0 +1,951 @@
+2026-04-18 11:35:47,490 - INFO - 使用浏览器指纹: chrome116
+2026-04-18 11:35:47,492 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 11:35:47,493 - ERROR - 会话初始化失败 (尝试 1/3): impersonate chrome116 is not supported
+2026-04-18 11:35:52,493 - ERROR - 会话初始化失败 (尝试 2/3): impersonate chrome116 is not supported
+2026-04-18 11:35:57,494 - ERROR - 会话初始化失败 (尝试 3/3): impersonate chrome116 is not supported
+2026-04-18 11:39:28,160 - INFO - 使用代理: http://u1593702693865309:MaXLbHs36cxl@proxy.123proxy.cn:31920
+2026-04-18 11:45:34,266 - INFO - 使用浏览器指纹: chrome120, 代理: http://u1593702693865309:MaXLbHs36cxl@proxy.123proxy.cn:31920
+2026-04-18 11:45:34,272 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 11:45:34,272 - ERROR - 会话初始化失败 (尝试 1/3): impersonate chrome120 is not supported
+2026-04-18 11:45:39,273 - ERROR - 会话初始化失败 (尝试 2/3): impersonate chrome120 is not supported
+2026-04-18 11:45:44,274 - ERROR - 会话初始化失败 (尝试 3/3): impersonate chrome120 is not supported
+2026-04-18 11:47:04,392 - INFO - 使用浏览器指纹: chrome110, 代理: http://u1593702693865309:MaXLbHs36cxl@proxy.123proxy.cn:31920
+2026-04-18 11:47:04,395 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 11:47:04,901 - ERROR - 会话初始化失败 (尝试 1/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:47:25,612 - ERROR - 会话初始化失败 (尝试 2/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:47:46,076 - ERROR - 会话初始化失败 (尝试 3/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:47:46,606 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 11:47:46,606 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 11:47:46,606 - INFO - 正在获取总页数: https://www.amazon.com/s?k=pool party decorations
+2026-04-18 11:47:52,239 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:47:57,332 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:48:05,111 - ERROR - 请求失败 (尝试 3/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:48:05,112 - ERROR - 无法获取搜索结果
+2026-04-18 11:48:05,112 - INFO - 自动检测到总页数: 1
+2026-04-18 11:48:05,112 - INFO - 开始爬取关键词: pool party decorations, 页数: 1
+2026-04-18 11:48:05,112 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=pool party decorations&page=1
+2026-04-18 11:48:10,325 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:48:18,609 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:48:28,300 - ERROR - 请求失败 (尝试 3/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:48:28,300 - ERROR - 第 1 页请求失败
+2026-04-18 11:48:28,301 - INFO - 爬取完成，共获取 0 个元素
+2026-04-18 11:48:28,301 - INFO -   - 自然商品: 0 个
+2026-04-18 11:48:28,301 - INFO -   - SP广告: 0 个
+2026-04-18 11:48:28,301 - INFO -   - SB广告: 0 个
+2026-04-18 11:48:28,301 - INFO -   - SB视频: 0 个
+2026-04-18 11:49:28,181 - INFO - 使用浏览器指纹: chrome110, 代理: http://u1593702693865309:MaXLbHs36cxl@proxy.123proxy.cn:31920
+2026-04-18 11:49:28,182 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 11:49:28,650 - ERROR - 会话初始化失败 (尝试 1/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:50:28,869 - INFO - 使用代理: proxy.123proxy.cn:31920
+2026-04-18 11:50:28,870 - INFO - 使用浏览器指纹: chrome110, 代理: http://u1593702693865309:MaXLbHs36cxl@proxy.123proxy.cn:31920
+2026-04-18 11:50:28,872 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 11:50:29,325 - ERROR - 会话初始化失败 (尝试 1/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:50:57,474 - ERROR - 会话初始化失败 (尝试 2/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:51:17,895 - ERROR - 会话初始化失败 (尝试 3/3): Failed to perform, ErrCode: 23, Reason: 'Failed writing header'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:54:44,991 - INFO - 使用代理: proxy.123proxy.cn:31920
+2026-04-18 11:54:44,994 - ERROR - 创建 Session 失败: cannot access local variable 'selected_browser' where it is not associated with a value
+2026-04-18 11:59:03,397 - INFO - 使用代理: proxy.123proxy.cn:31920
+2026-04-18 11:59:03,397 - INFO - 使用浏览器指纹: chrome110
+2026-04-18 11:59:03,399 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 11:59:04,080 - ERROR - 会话初始化失败 (尝试 1/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:59:09,698 - ERROR - 会话初始化失败 (尝试 2/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 11:59:30,158 - ERROR - 会话初始化失败 (尝试 3/3): Failed to perform, ErrCode: 56, Reason: 'Received HTTP code 407 from proxy after CONNECT'. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 12:00:19,092 - INFO - 使用浏览器指纹: chrome120
+2026-04-18 12:00:19,095 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 12:00:19,095 - ERROR - 会话初始化失败 (尝试 1/3): impersonate chrome120 is not supported
+2026-04-18 12:00:24,096 - ERROR - 会话初始化失败 (尝试 2/3): impersonate chrome120 is not supported
+2026-04-18 12:00:29,097 - ERROR - 会话初始化失败 (尝试 3/3): impersonate chrome120 is not supported
+2026-04-18 13:36:29,751 - INFO - 使用浏览器指纹: chrome101
+2026-04-18 13:36:29,753 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:36:31,983 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:36:33,425 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:36:35,656 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:36:35,825 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:36:35,825 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:36:35,826 - INFO - 正在获取总页数: https://www.amazon.com/s?k=pool party decorations
+2026-04-18 13:36:39,455 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:36:48,360 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:36:57,598 - ERROR - 请求失败 (尝试 3/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:36:57,599 - ERROR - 无法获取搜索结果
+2026-04-18 13:36:57,599 - INFO - 自动检测到总页数: 1
+2026-04-18 13:36:57,599 - INFO - 开始爬取关键词: pool party decorations, 页数: 1
+2026-04-18 13:36:57,599 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=pool party decorations&page=1
+2026-04-18 13:37:00,954 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:37:09,680 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:37:18,217 - ERROR - 请求失败 (尝试 3/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:37:18,217 - ERROR - 第 1 页请求失败
+2026-04-18 13:37:18,217 - INFO - 爬取完成，共获取 0 个元素
+2026-04-18 13:37:18,218 - INFO -   - 自然商品: 0 个
+2026-04-18 13:37:18,218 - INFO -   - SP广告: 0 个
+2026-04-18 13:37:18,218 - INFO -   - SB广告: 0 个
+2026-04-18 13:37:18,219 - INFO -   - SB视频: 0 个
+2026-04-18 13:38:25,533 - INFO - 使用浏览器指纹: chrome110
+2026-04-18 13:38:25,535 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:38:30,255 - WARNING - ⚠️ 首页未检测到美元
+2026-04-18 13:38:32,603 - WARNING - ⚠️ 首页未检测到美元
+2026-04-18 13:38:34,344 - WARNING - ⚠️ 首页未检测到美元
+2026-04-18 13:38:35,256 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:38:35,257 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:38:35,257 - INFO - 正在获取总页数: https://www.amazon.com/s?k=pool party decorations
+2026-04-18 13:38:40,464 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:38:49,202 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:38:54,912 - ERROR - 请求失败 (尝试 3/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:38:54,912 - ERROR - 无法获取搜索结果
+2026-04-18 13:38:54,912 - INFO - 自动检测到总页数: 1
+2026-04-18 13:38:54,912 - INFO - 开始爬取关键词: pool party decorations, 页数: 1
+2026-04-18 13:38:54,912 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=pool party decorations&page=1
+2026-04-18 13:38:58,174 - ERROR - 请求失败 (尝试 1/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:39:07,175 - ERROR - 请求失败 (尝试 2/3): Failed to perform, ErrCode: 3, Reason: ''. This may be a libcurl error, See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-04-18 13:40:11,477 - INFO - 使用浏览器指纹: chrome119
+2026-04-18 13:40:11,480 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:40:11,480 - ERROR - 会话初始化失败 (尝试 1/3): impersonate chrome119 is not supported
+2026-04-18 13:40:16,481 - ERROR - 会话初始化失败 (尝试 2/3): impersonate chrome119 is not supported
+2026-04-18 13:40:21,485 - ERROR - 会话初始化失败 (尝试 3/3): impersonate chrome119 is not supported
+2026-04-18 13:40:56,476 - INFO - 使用浏览器指纹: chrome110
+2026-04-18 13:40:56,478 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:40:58,610 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:41:00,361 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:41:02,363 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:41:02,529 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:41:02,529 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:41:02,529 - INFO - 正在获取总页数: https://www.amazon.com/s?k=pool+party+decorations
+2026-04-18 13:41:09,784 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:41:10,086 - INFO - 检测到总页数: 7
+2026-04-18 13:41:10,087 - INFO - 自动检测到总页数: 7
+2026-04-18 13:41:10,087 - INFO - 开始爬取关键词: pool+party+decorations, 页数: 7
+2026-04-18 13:41:10,087 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=pool+party+decorations&page=1
+2026-04-18 13:41:16,039 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:41:16,402 - INFO - 第 1 页找到 75 个带data-index的元素
+2026-04-18 13:41:16,411 - INFO - [SP广告] data-index=2 SP排名:1 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:41:16,416 - INFO - [SP广告] data-index=3 SP排名:2 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:41:16,420 - INFO - [SP广告] data-index=4 SP排名:3 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:41:16,425 - INFO - [SP广告] data-index=5 SP排名:4 - Summer Party Decorations, Beach Party De
+2026-04-18 13:41:16,429 - INFO - [自然] data-index=6 自然排名:1 - Pool Birthday Party Supplies,Summer Beac
+2026-04-18 13:41:16,435 - INFO - [自然] data-index=7 自然排名:2 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:41:16,438 - INFO - [自然] data-index=8 自然排名:3 - JOYIN 60" Inflatable Palm Tree Cooler, B
+2026-04-18 13:41:16,450 - INFO - [自然] data-index=15 自然排名:4 - 134Pcs Tropical Summer Beach Pool Party 
+2026-04-18 13:41:16,454 - INFO - [自然] data-index=16 自然排名:5 - SNLN 129Pcs Pool Party Decorations Birth
+2026-04-18 13:41:16,459 - INFO - [自然] data-index=17 自然排名:6 - Ziliny 36 Pcs Summer Pool Beach Party Su
+2026-04-18 13:41:16,462 - INFO - [SP广告] data-index=18 SP排名:5 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:41:16,465 - INFO - [SP广告] data-index=19 SP排名:6 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:41:16,469 - INFO - [SP广告] data-index=20 SP排名:7 - Pool Party Birthday Decorations Banner S
+2026-04-18 13:41:16,472 - INFO - [SP广告] data-index=21 SP排名:8 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:41:16,476 - INFO - [自然] data-index=22 自然排名:7 - Inflatable Palm Tree Beach Balls Flaming
+2026-04-18 13:41:16,479 - INFO - [自然] data-index=23 自然排名:8 - JOYIN 12-Pack 12“ Beach Balls - Bulk Cla
+2026-04-18 13:41:16,484 - INFO - [自然] data-index=24 自然排名:9 - Vinsot 32 Pack Beach Pool Party Eyeglass
+2026-04-18 13:41:16,488 - INFO - [自然] data-index=25 自然排名:10 - 2 Pack Blue Streamers Party Decorations 
+2026-04-18 13:41:16,491 - INFO - [SP广告] data-index=26 SP排名:9 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:41:16,496 - INFO - [SP广告] data-index=27 SP排名:10 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:41:16,498 - INFO - [SP广告] data-index=28 SP排名:11 - Fovths 2 Packs Luau Grass Table Skirt Fr
+2026-04-18 13:41:16,503 - INFO - [SP广告] data-index=29 SP排名:12 - 140PCS Summer Pool Beach Party Decoratio
+2026-04-18 13:41:16,510 - INFO - [自然] data-index=30 自然排名:11 - Pool Party Favors and Beach Party Favors
+2026-04-18 13:41:16,515 - INFO - [自然] data-index=31 自然排名:12 - 117Pcs Summer Pool Themed Happy Birthday
+2026-04-18 13:41:16,520 - INFO - [自然] data-index=33 自然排名:13 - JOYIN 2-Pack Flamingo Unicorn Pool Float
+2026-04-18 13:41:16,525 - INFO - [自然] data-index=34 自然排名:14 - JOYIN Inflatable Swim Tube Raft (3 pack)
+2026-04-18 13:41:16,529 - INFO - [自然] data-index=35 自然排名:15 - Joyin Toy 36 Counts Hawaiian Leis Bulk, 
+2026-04-18 13:41:16,533 - INFO - [自然] data-index=36 自然排名:16 - 3 Pcs Iridescent Waves Tablecloths - Dis
+2026-04-18 13:41:16,538 - INFO - [自然] data-index=37 自然排名:17 - Swimming Pool Party Banner for Summer Pa
+2026-04-18 13:41:16,541 - INFO - [自然] data-index=38 自然排名:18 - Beach Birthday Decorations Hello Summer 
+2026-04-18 13:41:16,545 - INFO - [自然] data-index=39 自然排名:19 - 142 Pieces Pool Birthday Party Supplies 
+2026-04-18 13:41:16,549 - INFO - [自然] data-index=40 自然排名:20 - Xynic 213pcs Pool Party Decorations, Pap
+2026-04-18 13:41:16,553 - INFO - [自然] data-index=41 自然排名:21 - Grneric 98PCS Pool Party Favors, Summer 
+2026-04-18 13:41:16,557 - INFO - [自然] data-index=43 自然排名:22 - JOYIN Set of 6 Small Pink Flamingo Yard 
+2026-04-18 13:41:16,560 - INFO - [自然] data-index=44 自然排名:23 - 12Pcs Reusable Water Balloons, Pool Beac
+2026-04-18 13:41:16,565 - INFO - [自然] data-index=45 自然排名:24 - JOYIN 28” Inflatable Palm Tree Cooler, L
+2026-04-18 13:41:16,569 - INFO - [自然] data-index=46 自然排名:25 - YUNXUAN Flamingo Party Supplies, Hawaiia
+2026-04-18 13:41:16,572 - INFO - [自然] data-index=47 自然排名:26 - ‎Renbuzhu 15PCS Pool Party Decorations B
+2026-04-18 13:41:16,576 - INFO - [自然] data-index=48 自然排名:27 - PartySticks Glow Sticks Party Supplies 1
+2026-04-18 13:41:16,581 - INFO - [自然] data-index=49 自然排名:28 - ALINK 50 Umbrella Parasol Drinking Straw
+2026-04-18 13:41:16,585 - INFO - [自然] data-index=50 自然排名:29 - MEHOFOND Splish Splash Birthday Party Su
+2026-04-18 13:41:16,589 - INFO - [自然] data-index=51 自然排名:30 - 9FT Summer Inflatable Beach Arch Ball, G
+2026-04-18 13:41:16,592 - INFO - [自然] data-index=52 自然排名:31 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:41:16,595 - INFO - [自然] data-index=53 自然排名:32 - xo, Fetti Pool Party Temporary Tattoos -
+2026-04-18 13:41:16,600 - INFO - [自然] data-index=54 自然排名:33 - Yexiya 12 Pieces Beach Honeycomb Centerp
+2026-04-18 13:41:16,603 - INFO - [自然] data-index=55 自然排名:34 - Tingjoo 3 Pcs Pool Party Arch Backdrop S
+2026-04-18 13:41:16,607 - INFO - [自然] data-index=56 自然排名:35 - 59Pcs Splish Splash Birthday Decorations
+2026-04-18 13:41:16,611 - INFO - [自然] data-index=57 自然排名:36 - Aliceset 20 Pcs Pool Party Clear Favor B
+2026-04-18 13:41:16,617 - INFO - [自然] data-index=58 自然排名:37 - JellyArch 4 Pcs Inflatable Surf Board In
+2026-04-18 13:41:16,620 - INFO - [自然] data-index=59 自然排名:38 - 120PCS Summer Pool Party Supplies Swimmi
+2026-04-18 13:41:16,625 - INFO - [自然] data-index=60 自然排名:39 - Summer Banner Pool Party Decorations, Po
+2026-04-18 13:41:16,629 - INFO - [自然] data-index=61 自然排名:40 - Decor365 Under the Sea Party Decorations
+2026-04-18 13:41:16,632 - INFO - [自然] data-index=63 自然排名:41 - Freyalife Hawaiian Leis Decorations(24pc
+2026-04-18 13:41:16,636 - INFO - [自然] data-index=64 自然排名:42 - Fovths Luau Grass Table Skirt Natural 9 
+2026-04-18 13:41:16,640 - INFO - [自然] data-index=65 自然排名:43 - OBXT 10" Blue Hanging Jellyfish Paper La
+2026-04-18 13:41:16,644 - INFO - [自然] data-index=66 自然排名:44 - Ring Pop Lollipops - Bulk Candy Individu
+2026-04-18 13:41:16,647 - INFO - [自然] data-index=67 自然排名:45 - Pool Party Decorations,142pcs Pool Party
+2026-04-18 13:41:16,651 - INFO - [自然] data-index=68 自然排名:46 - xo, Fetti Pool Party Birthday Banner | K
+2026-04-18 13:41:16,655 - INFO - [自然] data-index=69 自然排名:47 - Pool Toys Games Set,Pool Basketball Hoop
+2026-04-18 13:41:16,664 - INFO - [自然] data-index=70 自然排名:48 - Zcaukya Inflatable Seashell Pool Float, 
+2026-04-18 13:41:16,673 - INFO - [SB广告] data-index=75 SB排名:1 - N/A
+2026-04-18 13:41:27,775 - INFO - 正在访问第 2 页: https://www.amazon.com/s?k=pool+party+decorations&page=2
+2026-04-18 13:41:32,980 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:41:33,280 - INFO - 第 2 页找到 74 个带data-index的元素
+2026-04-18 13:41:33,285 - INFO - [SP广告] data-index=2 SP排名:13 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:41:33,289 - INFO - [SP广告] data-index=3 SP排名:14 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:41:33,293 - INFO - [SP广告] data-index=4 SP排名:15 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:41:33,299 - INFO - [SP广告] data-index=5 SP排名:16 - Summer Party Decorations, Beach Party De
+2026-04-18 13:41:33,303 - INFO - [自然] data-index=6 自然排名:49 - LEEZZIZZ 30Pcs Punch Balloons, Thickened
+2026-04-18 13:41:33,309 - INFO - [自然] data-index=7 自然排名:50 - xo, Fetti Pool Party Paper Plates, 3 Des
+2026-04-18 13:41:33,315 - INFO - [自然] data-index=8 自然排名:51 - JOYIN 4-Pack 20" Beach Balls - Large Rai
+2026-04-18 13:41:33,325 - INFO - [自然] data-index=12 自然排名:52 - Hawaiian Luau Party Decorations(161 Pcs)
+2026-04-18 13:41:33,330 - INFO - [自然] data-index=13 自然排名:53 - JUXIAO 5 Pack Upgrated XL Water Pool Flo
+2026-04-18 13:41:33,335 - INFO - [自然] data-index=14 自然排名:54 - iShyan Inflatable Drink Holder, 15 Pack 
+2026-04-18 13:41:33,340 - INFO - [SP广告] data-index=15 SP排名:17 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:41:33,345 - INFO - [SP广告] data-index=16 SP排名:18 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:41:33,349 - INFO - [SP广告] data-index=17 SP排名:19 - 169 PCS Luau Party Decorations, Hawaiian
+2026-04-18 13:41:33,356 - INFO - [SP广告] data-index=18 SP排名:20 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:41:33,361 - INFO - [自然] data-index=19 自然排名:55 - Beach Party Decorations Kit - Beach Them
+2026-04-18 13:41:33,366 - INFO - [自然] data-index=20 自然排名:56 - Luditek Sound Activated Party Lights wit
+2026-04-18 13:41:33,373 - INFO - [自然] data-index=24 自然排名:57 - Fruitful Jewelry Beach Ball Gift Bags, 1
+2026-04-18 13:41:33,380 - INFO - [自然] data-index=25 自然排名:58 - Riakrum 3 Pcs Summer Beach Tablecloths P
+2026-04-18 13:41:33,384 - INFO - [SP广告] data-index=26 SP排名:21 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:41:33,389 - INFO - [SP广告] data-index=27 SP排名:22 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:41:33,393 - INFO - [SP广告] data-index=28 SP排名:23 - Pool Toys Games Set,Pool Basketball Hoop
+2026-04-18 13:41:33,396 - INFO - [SP广告] data-index=29 SP排名:24 - Beach Ball Paper Lanterns 10 Pcs - 8" Co
+2026-04-18 13:41:33,400 - INFO - [自然] data-index=30 自然排名:59 - Katchon, Xtralarge Wavy Blue Foil Fringe
+2026-04-18 13:41:33,405 - INFO - [自然] data-index=31 自然排名:60 - JOYIN 120 Counts Hawaiian Leis Bulk, Col
+2026-04-18 13:41:33,409 - INFO - [自然] data-index=32 自然排名:61 - 28 Pack 12 Inch Rainbow Beach Balls Bulk
+2026-04-18 13:41:33,413 - INFO - [自然] data-index=33 自然排名:62 - Under the Sea Party Decorations 98Pcs, O
+2026-04-18 13:41:33,418 - INFO - [自然] data-index=34 自然排名:63 - Beach Party Supplies Serve 24, Summer Be
+2026-04-18 13:41:33,422 - INFO - [自然] data-index=35 自然排名:64 - xo, Fetti Pool Party Napkins - 3-ply, 24
+2026-04-18 13:41:33,428 - INFO - [自然] data-index=36 自然排名:65 - 2 Pack Fish Net Decorations for Party, N
+2026-04-18 13:41:33,432 - INFO - [自然] data-index=37 自然排名:66 - 108 Pack Palm Leaves Artificial Tropical
+2026-04-18 13:41:33,438 - INFO - [自然] data-index=38 自然排名:67 - Voiiake Pool Floats Toys Games Set, Infl
+2026-04-18 13:41:33,442 - INFO - [自然] data-index=39 自然排名:68 - Summer Pool Party Decorations, Tropical 
+2026-04-18 13:41:33,446 - INFO - [自然] data-index=40 自然排名:69 - YUJUN 16 Pieces Big Diving Pool Toys, Be
+2026-04-18 13:41:33,449 - INFO - [自然] data-index=41 自然排名:70 - Solar Rechargeable Floating Pool Lights(
+2026-04-18 13:41:33,453 - INFO - [自然] data-index=42 自然排名:71 - Flamingo Hawaiian Party Decorations, Lua
+2026-04-18 13:41:33,458 - INFO - [自然] data-index=43 自然排名:72 - 150PCS Glow in the Dark Party Supplies f
+2026-04-18 13:41:33,461 - INFO - [自然] data-index=44 自然排名:73 - Reallnaive 2 Pack Summer Pool Party Tabl
+2026-04-18 13:41:33,466 - INFO - [自然] data-index=45 自然排名:74 - 140PCS Summer Pool Party Decorations Set
+2026-04-18 13:41:33,471 - INFO - [自然] data-index=46 自然排名:75 - Kepeel 200Pcs Summer Pool Beach Party Ta
+2026-04-18 13:41:33,475 - INFO - [自然] data-index=47 自然排名:76 - 3 Pieces Ocean Tablecloth - Under The Se
+2026-04-18 13:41:33,479 - INFO - [自然] data-index=48 自然排名:77 - Party Goodie Bag Stuffer Fillers for Kid
+2026-04-18 13:41:33,483 - INFO - [自然] data-index=49 自然排名:78 - Reallnaive Pool Party Favors Jelly Baske
+2026-04-18 13:41:33,485 - INFO - [自然] data-index=50 自然排名:79 - FLAMDYNO Pool Toys - 4/8 Pack Light Up B
+2026-04-18 13:41:33,491 - INFO - [自然] data-index=51 自然排名:80 - 168pcs Pool Party Supplies Pool Party Pl
+2026-04-18 13:41:33,493 - INFO - [自然] data-index=52 自然排名:81 - JOYIN Inflatable Pool Float Set Volleyba
+2026-04-18 13:41:33,500 - INFO - [自然] data-index=53 自然排名:82 - Civaner 10 Pcs Inflatable Glitter Beach 
+2026-04-18 13:41:33,503 - INFO - [自然] data-index=54 自然排名:83 - Diving Gem Pool Toy 10PCS DISHIO Big Col
+2026-04-18 13:41:33,506 - INFO - [自然] data-index=55 自然排名:84 - 52" Thickened Inflatable Seashell Pool F
+2026-04-18 13:41:33,512 - INFO - [自然] data-index=56 自然排名:85 - 4E's Novelty 48 Packs Tropical Party Cup
+2026-04-18 13:41:33,517 - INFO - [自然] data-index=57 自然排名:86 - Camlinbo 15 Pcs Inflatable Flamingo Pool
+2026-04-18 13:41:33,521 - INFO - [自然] data-index=58 自然排名:87 - 140PCS Summer Pool Beach Party Decoratio
+2026-04-18 13:41:33,525 - INFO - [自然] data-index=59 自然排名:88 - Transparent Bubble Garlands Mermaid Part
+2026-04-18 13:41:33,529 - INFO - [自然] data-index=60 自然排名:89 - Renbuzhu 15Pcs Beach Party Decorations P
+2026-04-18 13:41:33,534 - INFO - [自然] data-index=61 自然排名:90 - 24Pcs Drinking Straws, Pool Party Decora
+2026-04-18 13:41:33,538 - INFO - [自然] data-index=62 自然排名:91 - 2 Pack Inflatable Palm Trees with Exclus
+2026-04-18 13:41:33,541 - INFO - [自然] data-index=63 自然排名:92 - 96Pcs Pool Party Plates and Napkins Neon
+2026-04-18 13:41:33,546 - INFO - [自然] data-index=64 自然排名:93 - AILEHO Kids Sunglasses Bulk Party Favors
+2026-04-18 13:41:33,550 - INFO - [自然] data-index=65 自然排名:94 - Inflatable Pool Games Volleyball Net Poo
+2026-04-18 13:41:33,555 - INFO - [自然] data-index=66 自然排名:95 - Inflatable Flamingo Cooler 130+ Cans Lar
+2026-04-18 13:41:33,560 - INFO - [自然] data-index=67 自然排名:96 - JOYIN 100 Pcs 8" Glow sticks Bulk Party 
+2026-04-18 13:41:33,573 - INFO - [SB广告] data-index=72 SB排名:2 - N/A
+2026-04-18 13:41:43,585 - INFO - 正在访问第 3 页: https://www.amazon.com/s?k=pool+party+decorations&page=3
+2026-04-18 13:41:48,854 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:41:49,113 - INFO - 第 3 页找到 73 个带data-index的元素
+2026-04-18 13:41:49,118 - INFO - [SP广告] data-index=2 SP排名:25 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:41:49,124 - INFO - [SP广告] data-index=3 SP排名:26 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:41:49,128 - INFO - [SP广告] data-index=4 SP排名:27 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:41:49,134 - INFO - [SP广告] data-index=5 SP排名:28 - Summer Party Decorations, Beach Party De
+2026-04-18 13:41:49,140 - INFO - [自然] data-index=6 自然排名:97 - 96 Pcs Iridescent Ocean Waves Party Plat
+2026-04-18 13:41:49,146 - INFO - [自然] data-index=7 自然排名:98 - Vellibring 12" Summer Inflatable Beach B
+2026-04-18 13:41:49,150 - INFO - [自然] data-index=8 自然排名:99 - 2 Pack Giant Inflatable Pink Palm Trees 
+2026-04-18 13:41:49,160 - INFO - [自然] data-index=12 自然排名:100 - JOYIN Toy 60 Counts Hawaiian Leis Bulk, 
+2026-04-18 13:41:49,164 - INFO - [自然] data-index=13 自然排名:101 - 72" Inflatable Palm Tree Cooler, 200+ Dr
+2026-04-18 13:41:49,169 - INFO - [自然] data-index=14 自然排名:102 - JOYIN 12 Pcs Hawaiian Luau Party Sunglas
+2026-04-18 13:41:49,171 - INFO - [SP广告] data-index=15 SP排名:29 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:41:49,176 - INFO - [SP广告] data-index=16 SP排名:30 - 169 PCS Luau Party Decorations, Hawaiian
+2026-04-18 13:41:49,179 - INFO - [SP广告] data-index=17 SP排名:31 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:41:49,183 - INFO - [SP广告] data-index=18 SP排名:32 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:41:49,186 - INFO - [自然] data-index=19 自然排名:103 - JOYIN 10 Pack Small Yard Flamingos Ornam
+2026-04-18 13:41:49,191 - INFO - [自然] data-index=20 自然排名:104 - 50pcs Hawaiian Leis Decorations, Hawaiia
+2026-04-18 13:41:49,199 - INFO - [自然] data-index=23 自然排名:105 - 108Pcs Pool Party Favors and Beach Toys 
+2026-04-18 13:41:49,204 - INFO - [自然] data-index=24 自然排名:106 - 16Pcs Summer Party Decorations Paper Lan
+2026-04-18 13:41:49,206 - INFO - [SP广告] data-index=25 SP排名:33 - Beach Ball Paper Lanterns 10 Pcs - 8" Co
+2026-04-18 13:41:49,210 - INFO - [SP广告] data-index=26 SP排名:34 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:41:49,213 - INFO - [SP广告] data-index=27 SP排名:35 - Fovths 2 Packs Luau Grass Table Skirt Fr
+2026-04-18 13:41:49,216 - INFO - [SP广告] data-index=28 SP排名:36 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:41:49,222 - INFO - [自然] data-index=29 自然排名:107 - Party Favors Kids Sunglasses Bulk - 16 P
+2026-04-18 13:41:49,227 - INFO - [自然] data-index=30 自然排名:108 - Luau Party Decorations, 36PCS Hawaiian T
+2026-04-18 13:41:49,230 - INFO - [自然] data-index=31 自然排名:109 - JOYIN 43" Inflatable Cactus Cooler with 
+2026-04-18 13:41:49,234 - INFO - [自然] data-index=32 自然排名:110 - JOYIN 36 Packs Plastic Margarita Glasses
+2026-04-18 13:41:49,238 - INFO - [自然] data-index=33 自然排名:111 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:41:49,243 - INFO - [自然] data-index=34 自然排名:112 - GOGOSO Ball Pits Balls for Toddlers Pack
+2026-04-18 13:41:49,248 - INFO - [自然] data-index=35 自然排名:113 - Graduation Inflatable Pool Party Decorat
+2026-04-18 13:41:49,253 - INFO - [自然] data-index=36 自然排名:114 - JOYIN 60" Inflatable Palm Tree Cooler, B
+2026-04-18 13:41:49,259 - INFO - [自然] data-index=37 自然排名:115 - MGparty 24pcs Diving Gem Pool Toys Color
+2026-04-18 13:41:49,263 - INFO - [自然] data-index=38 自然排名:116 - JOYIN 3 Pack Large Pink Flamingo Yard De
+2026-04-18 13:41:49,269 - INFO - [自然] data-index=39 自然排名:117 - JCFIRE Summer Pool Beach Party Favors Ki
+2026-04-18 13:41:49,272 - INFO - [自然] data-index=40 自然排名:118 - 12/20/24 Pairs Heart Sunglasses for Wome
+2026-04-18 13:41:49,276 - INFO - [自然] data-index=41 自然排名:119 - JOYIN 2-Pack 20" Beach Balls - Pool Toys
+2026-04-18 13:41:49,280 - INFO - [自然] data-index=42 自然排名:120 - JOYIN 12 Packs 16" Inflatable Beach Ball
+2026-04-18 13:41:49,284 - INFO - [自然] data-index=43 自然排名:121 - Pool Party Decorations Pool Party Plates
+2026-04-18 13:41:49,289 - INFO - [自然] data-index=44 自然排名:122 - xo, Fetti Summer Pool Party Temporary Ta
+2026-04-18 13:41:49,292 - INFO - [自然] data-index=45 自然排名:123 - 12 Pack Summer Can Cooler Sleeve Insulat
+2026-04-18 13:41:49,296 - INFO - [自然] data-index=46 自然排名:124 - SCIONE 28 Pack Mini Beach Balls Bulk, 5-
+2026-04-18 13:41:49,300 - INFO - [自然] data-index=47 自然排名:125 - Jellyfish Decor, 10 Pcs Jellyfish Lanter
+2026-04-18 13:41:49,304 - INFO - [自然] data-index=48 自然排名:126 - Outus 30 Pieces Hawaiian Luau Birthday P
+2026-04-18 13:41:49,307 - INFO - [自然] data-index=49 自然排名:127 - Fun Express Limbo Game for Kids and Adul
+2026-04-18 13:41:49,312 - INFO - [自然] data-index=50 自然排名:128 - Lilymicky 100 Pack 12 oz Plastic Cups, N
+2026-04-18 13:41:49,316 - INFO - [自然] data-index=51 自然排名:129 - Landical 24 Pcs Aloha Hawaiian Friendshi
+2026-04-18 13:41:49,321 - INFO - [自然] data-index=52 自然排名:130 - Decor365 White Finger Starfish Sea Shell
+2026-04-18 13:41:49,324 - INFO - [自然] data-index=53 自然排名:131 - 4 Pack Beach Plastic Tablecloth Party De
+2026-04-18 13:41:49,328 - INFO - [自然] data-index=54 自然排名:132 - 24PCS Hawaiian Party Decorations, Hawaii
+2026-04-18 13:41:49,333 - INFO - [自然] data-index=55 自然排名:133 - JOYIN Giant Boat Float with Cooler - Inf
+2026-04-18 13:41:49,337 - INFO - [自然] data-index=56 自然排名:134 - 50 Counts Hawaiian Leis Bulk Decorations
+2026-04-18 13:41:49,346 - INFO - [自然] data-index=57 自然排名:135 - Zcaukya Inflatable Palm Tree Cooler, 60"
+2026-04-18 13:41:49,352 - INFO - [自然] data-index=58 自然排名:136 - 250pcs Multicolor Pennant Flags,LOOBJOYG
+2026-04-18 13:41:49,357 - INFO - [自然] data-index=59 自然排名:137 - 24-inch Giant Beach Ball - (pack Of 3) B
+2026-04-18 13:41:49,361 - INFO - [自然] data-index=60 自然排名:138 - xo, Fetti Pink + Green Pool Party Plasti
+2026-04-18 13:41:49,364 - INFO - [自然] data-index=61 自然排名:139 - 25pcs Hawaiian Leis Bulk,Colorful Lei Tr
+2026-04-18 13:41:49,370 - INFO - [自然] data-index=62 自然排名:140 - xo, Fetti Last Splash Banner - Blue + Wh
+2026-04-18 13:41:49,375 - INFO - [自然] data-index=63 自然排名:141 - American Flag Inflatable Cooler, Pool Pa
+2026-04-18 13:41:49,382 - INFO - [自然] data-index=64 自然排名:142 - ASTARON Black Sunglasses Bulk, 6/12/24/4
+2026-04-18 13:41:49,387 - INFO - [自然] data-index=65 自然排名:143 - Matcheck 24/48 Mixed Style Rimless Sungl
+2026-04-18 13:41:49,391 - INFO - [自然] data-index=66 自然排名:144 - Goodie Bags Stuffers for Kids Party, 32 
+2026-04-18 13:41:49,400 - INFO - [SB广告] data-index=71 SB排名:3 - N/A
+2026-04-18 13:41:59,459 - INFO - 正在访问第 4 页: https://www.amazon.com/s?k=pool+party+decorations&page=4
+2026-04-18 13:42:05,316 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:42:05,577 - INFO - 第 4 页找到 73 个带data-index的元素
+2026-04-18 13:42:05,582 - INFO - [SP广告] data-index=2 SP排名:37 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:42:05,587 - INFO - [SP广告] data-index=3 SP排名:38 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:42:05,592 - INFO - [SP广告] data-index=4 SP排名:39 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:42:05,596 - INFO - [SP广告] data-index=5 SP排名:40 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:42:05,602 - INFO - [自然] data-index=6 自然排名:145 - SCIONE 28 Pack Mini Beach Balls Bulk, 5-
+2026-04-18 13:42:05,608 - INFO - [自然] data-index=7 自然排名:146 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:42:05,613 - INFO - [自然] data-index=8 自然排名:147 - ADLKGG 10" Jellyfish Paper Lanterns Lamp
+2026-04-18 13:42:05,621 - INFO - [自然] data-index=12 自然排名:148 - 250pcs Multicolor Pennant Flags,LOOBJOYG
+2026-04-18 13:42:05,626 - INFO - [自然] data-index=13 自然排名:149 - 50pcs Hawaiian Leis Decorations, Hawaiia
+2026-04-18 13:42:05,631 - INFO - [自然] data-index=14 自然排名:150 - JOYIN 12 Packs 16" Inflatable Beach Ball
+2026-04-18 13:42:05,636 - INFO - [SP广告] data-index=15 SP排名:41 - Chunful 3 Pcs Splish Splash Birthday Par
+2026-04-18 13:42:05,640 - INFO - [SP广告] data-index=16 SP排名:42 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:42:05,643 - INFO - [SP广告] data-index=17 SP排名:43 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:42:05,646 - INFO - [SP广告] data-index=18 SP排名:44 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:42:05,651 - INFO - [自然] data-index=19 自然排名:151 - Luau Party Decorations, 36PCS Hawaiian T
+2026-04-18 13:42:05,660 - INFO - [自然] data-index=20 自然排名:152 - Bedwina Inflatable Baseball (Pack of 12)
+2026-04-18 13:42:05,666 - INFO - [自然] data-index=23 自然排名:153 - xo, Fetti Summer Pool Party Temporary Ta
+2026-04-18 13:42:05,674 - INFO - [自然] data-index=24 自然排名:154 - JOYIN 2-Pack 20" Beach Balls - Pool Toys
+2026-04-18 13:42:05,678 - INFO - [SP广告] data-index=25 SP排名:45 - [2025 New Version Patented] 4Pcs Pool Fl
+2026-04-18 13:42:05,682 - INFO - [SP广告] data-index=26 SP排名:46 - 169 PCS Luau Party Decorations, Hawaiian
+2026-04-18 13:42:05,685 - INFO - [SP广告] data-index=27 SP排名:47 - Pool Toys Games Set,Pool Basketball Hoop
+2026-04-18 13:42:05,689 - INFO - [SP广告] data-index=28 SP排名:48 - 8 Pcs Inflatable Pool Float 28 Inches Cl
+2026-04-18 13:42:05,694 - INFO - [自然] data-index=29 自然排名:155 - xo, Fetti Pool Party Cupcake Toppers and
+2026-04-18 13:42:05,703 - INFO - [自然] data-index=30 自然排名:156 - Decor365 White Finger Starfish Sea Shell
+2026-04-18 13:42:05,711 - INFO - [自然] data-index=31 自然排名:157 - xo, Fetti Last Splash Banner - Blue + Wh
+2026-04-18 13:42:05,717 - INFO - [自然] data-index=32 自然排名:158 - 4 Pack Beach Plastic Tablecloth Party De
+2026-04-18 13:42:05,725 - INFO - [自然] data-index=33 自然排名:159 - 24PCS Hawaiian Party Decorations, Hawaii
+2026-04-18 13:42:05,730 - INFO - [自然] data-index=34 自然排名:160 - American Flag Inflatable Cooler, Pool Pa
+2026-04-18 13:42:05,734 - INFO - [自然] data-index=35 自然排名:161 - Triumpeek Inflatable Cactus Cooler, 55" 
+2026-04-18 13:42:05,741 - INFO - [自然] data-index=36 自然排名:162 - 24-inch Giant Beach Ball - (pack Of 3) B
+2026-04-18 13:42:05,750 - INFO - [自然] data-index=37 自然排名:163 - Zcaukya Inflatable Palm Tree Cooler, 60"
+2026-04-18 13:42:05,754 - INFO - [自然] data-index=38 自然排名:164 - Pool Party Decorations Pool Party Plates
+2026-04-18 13:42:05,758 - INFO - [自然] data-index=39 自然排名:165 - TicTac Shot Pool Toys Games Set- Tic-Tac
+2026-04-18 13:42:05,763 - INFO - [自然] data-index=40 自然排名:166 - Outus 30 Pieces Hawaiian Luau Birthday P
+2026-04-18 13:42:05,767 - INFO - [自然] data-index=41 自然排名:167 - Goodie Bags Stuffers for Kids Party, 32 
+2026-04-18 13:42:05,772 - INFO - [自然] data-index=42 自然排名:168 - Honoson 12 Pcs Summer Splish Splash Part
+2026-04-18 13:42:05,776 - INFO - [自然] data-index=43 自然排名:169 - xo, Fetti Pink + Green Pool Party Plasti
+2026-04-18 13:42:05,780 - INFO - [自然] data-index=44 自然排名:170 - 4E's Novelty Inflatable Limbo Game for K
+2026-04-18 13:42:05,784 - INFO - [自然] data-index=45 自然排名:171 - Intex Inflatable 36" Giant Tire Tubes fo
+2026-04-18 13:42:05,790 - INFO - [自然] data-index=46 自然排名:172 - ASTARON Black Sunglasses Bulk, 6/12/24/4
+2026-04-18 13:42:05,794 - INFO - [自然] data-index=47 自然排名:173 - Matcheck 24/48 Mixed Style Rimless Sungl
+2026-04-18 13:42:05,799 - INFO - [自然] data-index=48 自然排名:174 - American Flag Pool Toys Games Set, Infla
+2026-04-18 13:42:05,804 - INFO - [自然] data-index=49 自然排名:175 - 25pcs Hawaiian Leis Bulk,Colorful Lei Tr
+2026-04-18 13:42:05,810 - INFO - [自然] data-index=50 自然排名:176 - PartyWoo Teal Balloons 140pcs Different 
+2026-04-18 13:42:05,814 - INFO - [自然] data-index=51 自然排名:177 - 50 Counts Hawaiian Leis Bulk Decorations
+2026-04-18 13:42:05,818 - INFO - [自然] data-index=52 自然排名:178 - Inflatable Starfish Balloons 5-Pack 24+i
+2026-04-18 13:42:05,822 - INFO - [自然] data-index=53 自然排名:179 - Pink 10 Pcs 16 Inch 2026 Graduation Beac
+2026-04-18 13:42:05,827 - INFO - [自然] data-index=54 自然排名:180 - 6 Pack 20 Inch Patriotic Inflatable Beac
+2026-04-18 13:42:05,831 - INFO - [自然] data-index=55 自然排名:181 - Reallnaive Pool Party Favors Jelly Baske
+2026-04-18 13:42:05,836 - INFO - [自然] data-index=56 自然排名:182 - Mocsicka Pool Party Backdrop 7x5ft Summe
+2026-04-18 13:42:05,843 - INFO - [自然] data-index=57 自然排名:183 - 6 Pcs 12 Inch Inflatable Glitter Beach B
+2026-04-18 13:42:05,848 - INFO - [自然] data-index=58 自然排名:184 - ShinyRelief 4 Pcs Inflatable Daisy Decor
+2026-04-18 13:42:05,853 - INFO - [自然] data-index=59 自然排名:185 - [ 10''+8'' ] 12 Pack Watermelon Beach Ba
+2026-04-18 13:42:05,857 - INFO - [自然] data-index=60 自然排名:186 - 3-Tier Cupcake Stand for Beach Party Dec
+2026-04-18 13:42:05,862 - INFO - [自然] data-index=61 自然排名:187 - Rhode Island Novelty 36 Inch Inflatable 
+2026-04-18 13:42:05,866 - INFO - [自然] data-index=62 自然排名:188 - JOYIN 30”T.rex Dinosaur Inflatable, Tyra
+2026-04-18 13:42:05,869 - INFO - [自然] data-index=63 自然排名:189 - 80PCS Summer Beach Paper Plates,40pcs 9 
+2026-04-18 13:42:05,877 - INFO - [自然] data-index=64 自然排名:190 - xo, Fetti Italian Summer Paper Plates - 
+2026-04-18 13:42:05,883 - INFO - [自然] data-index=65 自然排名:191 - Civaner 10 Pcs Inflatable Glitter Beach 
+2026-04-18 13:42:05,888 - INFO - [自然] data-index=66 自然排名:192 - Summer Tropical Balloon Arch Garland Kit
+2026-04-18 13:42:05,898 - INFO - [SB广告] data-index=71 SB排名:4 - N/A
+2026-04-18 13:42:17,093 - INFO - 正在访问第 5 页: https://www.amazon.com/s?k=pool+party+decorations&page=5
+2026-04-18 13:42:21,220 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:42:21,516 - INFO - 第 5 页找到 72 个带data-index的元素
+2026-04-18 13:42:21,520 - INFO - [SP广告] data-index=2 SP排名:49 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:42:21,524 - INFO - [SP广告] data-index=3 SP排名:50 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:42:21,530 - INFO - [SP广告] data-index=4 SP排名:51 - xo, Fetti Pool Party Paper Plates, 3 Des
+2026-04-18 13:42:21,536 - INFO - [SP广告] data-index=5 SP排名:52 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:42:21,544 - INFO - [自然] data-index=6 自然排名:193 - American Flag Pool Toys Games Set, Infla
+2026-04-18 13:42:21,548 - INFO - [自然] data-index=7 自然排名:194 - JOYIN 30”T.rex Dinosaur Inflatable, Tyra
+2026-04-18 13:42:21,553 - INFO - [自然] data-index=8 自然排名:195 - Wesiti 12 Pcs Summer Table Decor Wooden 
+2026-04-18 13:42:21,562 - INFO - [自然] data-index=12 自然排名:196 - 4E's Novelty Inflatable Limbo Game for K
+2026-04-18 13:42:21,568 - INFO - [自然] data-index=13 自然排名:197 - Inflatable Starfish Balloons 5-Pack 24+i
+2026-04-18 13:42:21,572 - INFO - [自然] data-index=14 自然排名:198 - Pink 10 Pcs 16 Inch 2026 Graduation Beac
+2026-04-18 13:42:21,576 - INFO - [SP广告] data-index=15 SP排名:53 - Pool Party Splish Splash Banner, Summer 
+2026-04-18 13:42:21,580 - INFO - [SP广告] data-index=16 SP排名:54 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:42:21,584 - INFO - [SP广告] data-index=17 SP排名:55 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:42:21,588 - INFO - [SP广告] data-index=18 SP排名:56 - [2025 New Version Patented] 4Pcs Pool Fl
+2026-04-18 13:42:21,592 - INFO - [自然] data-index=19 自然排名:199 - Intex Inflatable 36" Giant Tire Tubes fo
+2026-04-18 13:42:21,596 - INFO - [自然] data-index=20 自然排名:200 - 6 Pcs 12 Inch Inflatable Glitter Beach B
+2026-04-18 13:42:21,603 - INFO - [自然] data-index=24 自然排名:201 - xo, Fetti Italian Summer Paper Plates - 
+2026-04-18 13:42:21,608 - INFO - [自然] data-index=25 自然排名:202 - Bencailor Shark Party Decorations Summer
+2026-04-18 13:42:21,612 - INFO - [SP广告] data-index=26 SP排名:57 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:42:21,616 - INFO - [SP广告] data-index=27 SP排名:58 - 169 PCS Luau Party Decorations, Hawaiian
+2026-04-18 13:42:21,619 - INFO - [SP广告] data-index=28 SP排名:59 - 8 Pcs Inflatable Pool Float 28 Inches Cl
+2026-04-18 13:42:21,623 - INFO - [SP广告] data-index=29 SP排名:60 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:42:21,629 - INFO - [自然] data-index=30 自然排名:203 - Civaner 10 Pcs Inflatable Glitter Beach 
+2026-04-18 13:42:21,633 - INFO - [自然] data-index=31 自然排名:204 - SCIONE Beach Balls Bulk 24 Pack - 9" Inf
+2026-04-18 13:42:21,637 - INFO - [自然] data-index=32 自然排名:205 - [ 10''+8'' ] 12 Pack Watermelon Beach Ba
+2026-04-18 13:42:21,643 - INFO - [自然] data-index=33 自然排名:206 - JellyArch 4 Pcs Inflatable Surf Board In
+2026-04-18 13:42:21,648 - INFO - [自然] data-index=34 自然排名:207 - Hallswl Iridescent Ocean Wave Tablecloth
+2026-04-18 13:42:21,655 - INFO - [自然] data-index=35 自然排名:208 - 4E's Novelty 22 Inch Large Happy Birthda
+2026-04-18 13:42:21,663 - INFO - [自然] data-index=36 自然排名:209 - Triumpeek Inflatable Llama Pool Float, 5
+2026-04-18 13:42:21,671 - INFO - [自然] data-index=37 自然排名:210 - Ceenna 8-Pack Inflatable Beach Balls and
+2026-04-18 13:42:21,678 - INFO - [自然] data-index=38 自然排名:211 - 3-Tier Cupcake Stand for Beach Party Dec
+2026-04-18 13:42:21,685 - INFO - [自然] data-index=39 自然排名:212 - Hawaiian Luau Party Decorations,144Pcs T
+2026-04-18 13:42:21,689 - INFO - [自然] data-index=40 自然排名:213 - ILEISURELY 3PCS Inflatble Shark Pool Toy
+2026-04-18 13:42:21,695 - INFO - [自然] data-index=41 自然排名:214 - xo, Fetti Pool Party Paper Coloring Tabl
+2026-04-18 13:42:21,698 - INFO - [自然] data-index=42 自然排名:215 - Mocsicka Pool Party Backdrop 7x5ft Summe
+2026-04-18 13:42:21,704 - INFO - [自然] data-index=43 自然排名:216 - 4E's Novelty 3D Beach Balls - 4 Pack 13"
+2026-04-18 13:42:21,709 - INFO - [自然] data-index=44 自然排名:217 - Rhode Island Novelty 36 Inch Inflatable 
+2026-04-18 13:42:21,714 - INFO - [自然] data-index=45 自然排名:218 - Under The Sea Party Decorations,Jellyfis
+2026-04-18 13:42:21,718 - INFO - [自然] data-index=46 自然排名:219 - ShinyRelief 4 Pcs Inflatable Daisy Decor
+2026-04-18 13:42:21,724 - INFO - [自然] data-index=47 自然排名:220 - GiftExpress 40" Beach Balls 2 Pack - Pol
+2026-04-18 13:42:21,728 - INFO - [自然] data-index=48 自然排名:221 - Fun Express Mini Beach Balls Bulk Set 50
+2026-04-18 13:42:21,734 - INFO - [自然] data-index=49 自然排名:222 - Hawaiian Flamingo Aloha Birthday Party D
+2026-04-18 13:42:21,742 - INFO - [自然] data-index=50 自然排名:223 - Summer Tropical Balloon Arch Garland Kit
+2026-04-18 13:42:21,749 - INFO - [自然] data-index=51 自然排名:224 - 60pcs Luau Photo Booth Props - Hawaiian/
+2026-04-18 13:42:21,755 - INFO - [自然] data-index=52 自然排名:225 - Fun Express Under The Sea Party Decorati
+2026-04-18 13:42:21,759 - INFO - [自然] data-index=53 自然排名:226 - Summer Beach Tablecloths, Beach Themed P
+2026-04-18 13:42:21,765 - INFO - [自然] data-index=54 自然排名:227 - Fun Express Mini Inflatable Fish Pool To
+2026-04-18 13:42:21,769 - INFO - [自然] data-index=55 自然排名:228 - Pool Hair Don't Care Hat, Funny Adjustab
+2026-04-18 13:42:21,773 - INFO - [自然] data-index=56 自然排名:229 - MiniInflat 24 Pcs Inflatable Pastel Beac
+2026-04-18 13:42:21,778 - INFO - [自然] data-index=57 自然排名:230 - 80PCS Summer Beach Paper Plates,40pcs 9 
+2026-04-18 13:42:21,785 - INFO - [自然] data-index=58 自然排名:231 - xo, Fetti I Got a Text Banner - Blue Iri
+2026-04-18 13:42:21,793 - INFO - [自然] data-index=59 自然排名:232 - xo, Fetti Pink and Green Striped Cabana 
+2026-04-18 13:42:21,804 - INFO - [自然] data-index=60 自然排名:233 - ArtCreativity 3D Fish Beach Balls for Ki
+2026-04-18 13:42:21,812 - INFO - [自然] data-index=61 自然排名:234 - Sinmoe 12 Pieces Large gaint Inflatable 
+2026-04-18 13:42:21,820 - INFO - [自然] data-index=62 自然排名:235 - MiniInflat 12 Pcs Pastel Inflatable Beac
+2026-04-18 13:42:21,827 - INFO - [自然] data-index=63 自然排名:236 - Sinmoe 8 Pieces Inflatable White Black B
+2026-04-18 13:42:21,833 - INFO - [自然] data-index=64 自然排名:237 - SLOOSH Inflatable Llama Pool Float 43.5”
+2026-04-18 13:42:21,839 - INFO - [自然] data-index=65 自然排名:238 - Jet Creations DI-PTE Dinosaur Pteranodon
+2026-04-18 13:42:21,843 - INFO - [自然] data-index=66 自然排名:239 - Fun Express Inflatable Pink Flamingo Poo
+2026-04-18 13:42:21,847 - INFO - [自然] data-index=67 自然排名:240 - Whaline 5Pcs Inflatable Disco Beach Ball
+2026-04-18 13:42:21,857 - INFO - [SB广告] data-index=72 SB排名:5 - N/A
+2026-04-18 13:42:33,533 - INFO - 正在访问第 6 页: https://www.amazon.com/s?k=pool+party+decorations&page=6
+2026-04-18 13:42:40,506 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:42:40,828 - INFO - 第 6 页找到 74 个带data-index的元素
+2026-04-18 13:42:40,831 - INFO - [SP广告] data-index=2 SP排名:61 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:42:40,836 - INFO - [SP广告] data-index=3 SP排名:62 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:42:40,839 - INFO - [SP广告] data-index=4 SP排名:63 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:42:40,842 - INFO - [SP广告] data-index=5 SP排名:64 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:42:40,848 - INFO - [自然] data-index=6 自然排名:241 - Whaline 5Pcs Inflatable Disco Beach Ball
+2026-04-18 13:42:40,852 - INFO - [自然] data-index=7 自然排名:242 - Fun Express Inflatable Pink Flamingo Poo
+2026-04-18 13:42:40,855 - INFO - [自然] data-index=8 自然排名:243 - Oudain 12 Pcs Sring Tropical Luau Tablec
+2026-04-18 13:42:40,866 - INFO - [自然] data-index=12 自然排名:244 - Zhanmai 6 Pieces Inflatable Clear Beach 
+2026-04-18 13:42:40,871 - INFO - [自然] data-index=13 自然排名:245 - xo, Fetti Pink Tropical Vacation Plastic
+2026-04-18 13:42:40,877 - INFO - [自然] data-index=14 自然排名:246 - xo, Fetti Pink Tropical Vacation Tablecl
+2026-04-18 13:42:40,884 - INFO - [SP广告] data-index=15 SP排名:65 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:42:40,894 - INFO - [SP广告] data-index=16 SP排名:66 - Pool Party Splish Splash Banner, Summer 
+2026-04-18 13:42:40,902 - INFO - [SP广告] data-index=17 SP排名:67 - 4 Pack JOVITEC Lei Hawaiian Flowers Garl
+2026-04-18 13:42:40,906 - INFO - [SP广告] data-index=18 SP排名:68 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:42:40,911 - INFO - [自然] data-index=19 自然排名:247 - Mermaid Party Beach Balls - 12 Balls - G
+2026-04-18 13:42:40,917 - INFO - [自然] data-index=20 自然排名:248 - Fun Express Rubber Ducks Beach Balls Set
+2026-04-18 13:42:40,925 - INFO - [自然] data-index=25 自然排名:249 - FillTouch 12 Set Fishing Bobbers Cups wi
+2026-04-18 13:42:40,931 - INFO - [自然] data-index=26 自然排名:250 - PartyWoo Dark Teal Balloons 50pcs 12 Inc
+2026-04-18 13:42:40,936 - INFO - [SP广告] data-index=27 SP排名:69 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:42:40,939 - INFO - [SP广告] data-index=28 SP排名:70 - [2025 New Version Patented] 4Pcs Pool Fl
+2026-04-18 13:42:40,946 - INFO - [SP广告] data-index=29 SP排名:71 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:42:40,948 - INFO - [SP广告] data-index=30 SP排名:72 - Blueweenly 6 Pcs Inflatable Bodyboards f
+2026-04-18 13:42:40,954 - INFO - [自然] data-index=31 自然排名:251 - Paxcoo 50pc Umbrella Straws for Cocktail
+2026-04-18 13:42:40,958 - INFO - [自然] data-index=32 自然排名:252 - JCFIRE Summer Pool Beach Party Favors Ki
+2026-04-18 13:42:40,962 - INFO - [自然] data-index=33 自然排名:253 - Whaline 12Pcs Graduation Inflatable Beac
+2026-04-18 13:42:40,966 - INFO - [自然] data-index=34 自然排名:254 - 33pcs Summer Pool Party Hanging Swirls, 
+2026-04-18 13:42:40,969 - INFO - [自然] data-index=35 自然排名:255 - Beach Theme Party Supplies, Summer Pool 
+2026-04-18 13:42:40,974 - INFO - [自然] data-index=36 自然排名:256 - Whaline 3Pcs Inflatable Beach Ball Round
+2026-04-18 13:42:40,977 - INFO - [自然] data-index=37 自然排名:257 - DMIGHT Pool Party Favors, 85 PCS Beach P
+2026-04-18 13:42:40,985 - INFO - [自然] data-index=38 自然排名:258 - Ocean Themed Party Balloons Arch Kit, Tu
+2026-04-18 13:42:40,989 - INFO - [自然] data-index=39 自然排名:259 - AIBIIN 3 Pack Pool Party Birthday Decora
+2026-04-18 13:42:40,995 - INFO - [自然] data-index=40 自然排名:260 - 3 Pack Teal Aqua Blue Wave Foil Curtains
+2026-04-18 13:42:41,000 - INFO - [自然] data-index=41 自然排名:261 - 4FT Inflatable Shark with Beach Ball for
+2026-04-18 13:42:41,006 - INFO - [自然] data-index=42 自然排名:262 - Blosssound Beach Ball Piñata Summer Pool
+2026-04-18 13:42:41,011 - INFO - [自然] data-index=43 自然排名:263 - Nuxovilar Summer Pool Backdrop Polyester
+2026-04-18 13:42:41,015 - INFO - [自然] data-index=44 自然排名:264 - Peryiter 3 Pcs Summer Colorful Flip Flop
+2026-04-18 13:42:41,020 - INFO - [自然] data-index=45 自然排名:265 - 175Pcs Hawaiian Luau Party Decorations A
+2026-04-18 13:42:41,026 - INFO - [自然] data-index=46 自然排名:266 - Hallswl 3Pcs Ocean Waves Tablecloth, Oce
+2026-04-18 13:42:41,037 - INFO - [自然] data-index=47 自然排名:267 - Ocean Balloons,12 Inch Teal Blue Pearl B
+2026-04-18 13:42:41,042 - INFO - [自然] data-index=48 自然排名:268 - LINHAXM 4 Pack Iridescent Ocean Tableclo
+2026-04-18 13:42:41,045 - INFO - [自然] data-index=49 自然排名:269 - xo, Fetti Flamingo + Palm Tree Sparkle C
+2026-04-18 13:42:41,051 - INFO - [自然] data-index=50 自然排名:270 - Fun Express Mini Ladybug Beach Balls Bul
+2026-04-18 13:42:41,055 - INFO - [自然] data-index=51 自然排名:271 - uoyoi Pool Party Favors,24Pcs Summer Bub
+2026-04-18 13:42:41,059 - INFO - [自然] data-index=52 自然排名:272 - Giant Inflatable Palm Trees - 2 Pack - 6
+2026-04-18 13:42:41,063 - INFO - [自然] data-index=53 自然排名:273 - 6 Pieces Pastel Beach Balls Bulk- 17 Inc
+2026-04-18 13:42:41,068 - INFO - [自然] data-index=54 自然排名:274 - Kepeel 96 Pcs Summer Pool Beach Party Pa
+2026-04-18 13:42:41,071 - INFO - [自然] data-index=55 自然排名:275 - Newwiee 118 x 20 inch Pool Party Decorat
+2026-04-18 13:42:41,077 - INFO - [自然] data-index=56 自然排名:276 - 141 Pcs Rainbow Neon Balloon Arch Kit, H
+2026-04-18 13:42:41,082 - INFO - [自然] data-index=57 自然排名:277 - Coopay 12/24/36 Pack 16" Large Inflatabl
+2026-04-18 13:42:41,086 - INFO - [自然] data-index=58 自然排名:278 - SLOOSH 60" Inflatable Gummy Bear Pool Fl
+2026-04-18 13:42:41,094 - INFO - [自然] data-index=59 自然排名:279 - 3 Pack Ocean Waves Plastic Tablecloth, 5
+2026-04-18 13:42:41,099 - INFO - [自然] data-index=60 自然排名:280 - 2 Pack 47.24 Inches Donut Pool Floats La
+2026-04-18 13:42:41,104 - INFO - [自然] data-index=61 自然排名:281 - Swimming Pool Cake Decoration Beach Cake
+2026-04-18 13:42:41,107 - INFO - [自然] data-index=62 自然排名:282 - Aignis 24pcs Flameless Floating Candles 
+2026-04-18 13:42:41,113 - INFO - [自然] data-index=63 自然排名:283 - 80PCS Hawaiian Luau Leis Party Photo Boo
+2026-04-18 13:42:41,118 - INFO - [自然] data-index=64 自然排名:284 - Shappy 24 Pieces Summer Pool Party Draws
+2026-04-18 13:42:41,124 - INFO - [自然] data-index=65 自然排名:285 - MEHOFOND Tropical Splish Splash Birthday
+2026-04-18 13:42:41,127 - INFO - [自然] data-index=66 自然排名:286 - Inflatable Pool Games Volleyball Net Poo
+2026-04-18 13:42:41,132 - INFO - [自然] data-index=67 自然排名:287 - Pool Party Adult Party Game, Waterproof 
+2026-04-18 13:42:41,136 - INFO - [自然] data-index=68 自然排名:288 - Whaline 3Pcs 16'' Mermaid Inflatable Bea
+2026-04-18 13:42:41,147 - INFO - [SB广告] data-index=73 SB排名:6 - N/A
+2026-04-18 13:42:51,504 - INFO - 正在访问第 7 页: https://www.amazon.com/s?k=pool+party+decorations&page=7
+2026-04-18 13:42:57,274 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:42:57,447 - INFO - 第 7 页找到 43 个带data-index的元素
+2026-04-18 13:42:57,452 - INFO - [SP广告] data-index=2 SP排名:73 - Pool Party Decorations, 5x3Ft Blue Happy
+2026-04-18 13:42:57,456 - INFO - [SP广告] data-index=3 SP排名:74 - Life is Better by The Pool Lumbar Throw 
+2026-04-18 13:42:57,459 - INFO - [SP广告] data-index=4 SP排名:75 - Pool Party Decorations Backdrop, Pink Ha
+2026-04-18 13:42:57,464 - INFO - [SP广告] data-index=5 SP排名:76 - 4 Pack JOVITEC Lei Hawaiian Flowers Garl
+2026-04-18 13:42:57,468 - INFO - [自然] data-index=6 自然排名:289 - Coopay 12/24/36 Pack 16" Large Inflatabl
+2026-04-18 13:42:57,472 - INFO - [自然] data-index=7 自然排名:290 - SLOOSH 60" Inflatable Gummy Bear Pool Fl
+2026-04-18 13:42:57,480 - INFO - [自然] data-index=8 自然排名:291 - 3 Pack Ocean Waves Plastic Tablecloth, 5
+2026-04-18 13:42:57,490 - INFO - [自然] data-index=12 自然排名:292 - 2 Pack 47.24 Inches Donut Pool Floats La
+2026-04-18 13:42:57,497 - INFO - [自然] data-index=13 自然排名:293 - Swimming Pool Cake Decoration Beach Cake
+2026-04-18 13:42:57,506 - INFO - [自然] data-index=14 自然排名:294 - Aignis 24pcs Flameless Floating Candles 
+2026-04-18 13:42:57,511 - INFO - [SP广告] data-index=15 SP排名:77 - Xynic pool party decorations, 207 PCS Po
+2026-04-18 13:42:57,516 - INFO - [SP广告] data-index=16 SP排名:78 - 4 PCS Summer Beach Luau Hawaiian Cupcake
+2026-04-18 13:42:57,521 - INFO - [SP广告] data-index=17 SP排名:79 - [2025 New Version Patented] 4Pcs Pool Fl
+2026-04-18 13:42:57,525 - INFO - [SP广告] data-index=18 SP排名:80 - 24 pcs Summer Beach Place Cards and Name
+2026-04-18 13:42:57,534 - INFO - [自然] data-index=19 自然排名:295 - 80PCS Hawaiian Luau Leis Party Photo Boo
+2026-04-18 13:42:57,541 - INFO - [自然] data-index=20 自然排名:296 - Shappy 24 Pieces Summer Pool Party Draws
+2026-04-18 13:42:57,550 - INFO - [自然] data-index=25 自然排名:297 - MEHOFOND Tropical Splish Splash Birthday
+2026-04-18 13:42:57,559 - INFO - [自然] data-index=26 自然排名:298 - Inflatable Pool Games Volleyball Net Poo
+2026-04-18 13:42:57,566 - INFO - [SP广告] data-index=27 SP排名:81 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:42:57,569 - INFO - [SP广告] data-index=28 SP排名:82 - KOOY 8.7FT Long Summer Inflatables Aloha
+2026-04-18 13:42:57,576 - INFO - [SP广告] data-index=29 SP排名:83 - 169 PCS Luau Party Decorations, Hawaiian
+2026-04-18 13:42:57,587 - INFO - [SP广告] data-index=30 SP排名:84 - Eyourlife 5 FT Hello Summer Surfboard In
+2026-04-18 13:42:57,593 - INFO - [自然] data-index=31 自然排名:299 - Pool Party Adult Party Game, Waterproof 
+2026-04-18 13:42:57,599 - INFO - [自然] data-index=32 自然排名:300 - Whaline 3Pcs 16'' Mermaid Inflatable Bea
+2026-04-18 13:42:57,606 - INFO - [自然] data-index=33 自然排名:301 - 12Pcs Summer Tropical Party Decorations 
+2026-04-18 13:42:57,613 - INFO - [自然] data-index=34 自然排名:302 - 8 Pack Inflatable Luau Party Decorations
+2026-04-18 13:42:57,621 - INFO - [自然] data-index=35 自然排名:303 - 96Pcs Goodbye School Hello Pool Plates a
+2026-04-18 13:42:57,628 - INFO - [自然] data-index=36 自然排名:304 - Meooeck 16 Pcs Light up Beach Balls Glow
+2026-04-18 13:42:57,638 - INFO - [自然] data-index=37 自然排名:305 - Patelai 144 Pieces Summer Temporary Tatt
+2026-04-18 13:42:57,651 - INFO - [自然] data-index=38 自然排名:306 - Beach Party Supplies, 142Pcs Ocean Waves
+2026-04-18 13:42:57,667 - INFO - [SB广告] data-index=43 SB排名:7 - N/A
+2026-04-18 13:42:57,668 - INFO - 爬取完成，共获取 466 个元素
+2026-04-18 13:42:57,668 - INFO -   - 自然商品: 306 个
+2026-04-18 13:42:57,668 - INFO -   - SP广告: 84 个
+2026-04-18 13:42:57,668 - INFO -   - SB广告: 7 个
+2026-04-18 13:42:57,669 - INFO -   - SB视频: 0 个
+2026-04-18 13:42:57,736 - INFO - 数据已保存到: ./amazon_data/pool+party+decorations_20260418_134257.json
+2026-04-18 13:43:52,128 - INFO - 使用浏览器指纹: chrome100
+2026-04-18 13:43:52,131 - INFO - 正在初始化亚马逊美国会话...
+2026-04-18 13:43:56,414 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:43:59,469 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:44:02,731 - WARNING - 会话初始化状态码: 202
+2026-04-18 13:44:02,902 - WARNING - ⚠️ ZIP可能未生效
+2026-04-18 13:44:02,902 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-18 13:44:02,902 - INFO - 正在获取总页数: https://www.amazon.com/s?k=summer+decorations
+2026-04-18 13:44:08,289 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:44:08,634 - INFO - 检测到总页数: 7
+2026-04-18 13:44:08,634 - INFO - 自动检测到总页数: 7
+2026-04-18 13:44:08,634 - INFO - 开始爬取关键词: summer+decorations, 页数: 7
+2026-04-18 13:44:08,634 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=summer+decorations&page=1
+2026-04-18 13:44:13,344 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:44:13,712 - INFO - 第 1 页找到 76 个带data-index的元素
+2026-04-18 13:44:13,716 - INFO - [SP广告] data-index=2 SP排名:1 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:44:13,722 - INFO - [SP广告] data-index=3 SP排名:2 - Summer Party Decorations, Hello Summer B
+2026-04-18 13:44:13,726 - INFO - [SP广告] data-index=4 SP排名:3 - Luau Party Decorations, 36PCS Hawaiian T
+2026-04-18 13:44:13,730 - INFO - [SP广告] data-index=5 SP排名:4 - SCIONE Beach Balls Bulk 24 Pack - 9" Inf
+2026-04-18 13:44:13,737 - INFO - [自然] data-index=6 自然排名:1 - 12Pcs Summer Party Decorations Honeycomb
+2026-04-18 13:44:13,741 - INFO - [自然] data-index=7 自然排名:2 - Summer Party Decorations - 61 Pcs Beach 
+2026-04-18 13:44:13,746 - INFO - [自然] data-index=8 自然排名:3 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:44:13,757 - INFO - [自然] data-index=15 自然排名:4 - ‎Renbuzhu 15PCS Pool Party Decorations B
+2026-04-18 13:44:13,762 - INFO - [自然] data-index=16 自然排名:5 - Joyin Toy 36 Counts Hawaiian Leis Bulk, 
+2026-04-18 13:44:13,770 - INFO - [自然] data-index=17 自然排名:6 - Uieke 3 Pack Artificial Sunflower Garlan
+2026-04-18 13:44:13,773 - INFO - [SP广告] data-index=18 SP排名:5 - Summer Party Decorations, Beach Party De
+2026-04-18 13:44:13,778 - INFO - [SP广告] data-index=19 SP排名:6 - Summer Party Decorations, NO-DIY Beach P
+2026-04-18 13:44:13,781 - INFO - [SP广告] data-index=20 SP排名:7 - Summer Table Runner Tropical Palm Runner
+2026-04-18 13:44:13,786 - INFO - [SP广告] data-index=21 SP排名:8 - Hawaiian Luau Hanging Decorations, Luau 
+2026-04-18 13:44:13,791 - INFO - [自然] data-index=22 自然排名:7 - Summer Pool Beach Hanging Swirls Banner 
+2026-04-18 13:44:13,795 - INFO - [自然] data-index=23 自然排名:8 - JOYIN 12-Pack 12“ Beach Balls - Bulk Cla
+2026-04-18 13:44:13,800 - INFO - [自然] data-index=24 自然排名:9 - MISS FANTASY Summer Party Banners, Multi
+2026-04-18 13:44:13,804 - INFO - [自然] data-index=25 自然排名:10 - Summer Party Decorations, Beach Party De
+2026-04-18 13:44:13,808 - INFO - [SP广告] data-index=26 SP排名:9 - Fovths Luau Grass Table Skirt Natural 9 
+2026-04-18 13:44:13,812 - INFO - [SP广告] data-index=27 SP排名:10 - Summer Party Decorations, Summer Decorat
+2026-04-18 13:44:13,816 - INFO - [SP广告] data-index=28 SP排名:11 - 2 Pack Luau Decorations, 3.28 FT x 7.05 
+2026-04-18 13:44:13,819 - INFO - [SP广告] data-index=29 SP排名:12 - Fovths 2 Packs Luau Grass Table Skirt Fr
+2026-04-18 13:44:13,823 - INFO - [自然] data-index=30 自然排名:11 - Geelin 5 Pcs Sunflower Wooden Table Sign
+2026-04-18 13:44:13,828 - INFO - [自然] data-index=31 自然排名:12 - OPSEAM Butterfly Wall Decor 24/48 PCS, 3
+2026-04-18 13:44:13,831 - INFO - [自然] data-index=33 自然排名:13 - JOYIN 60" Inflatable Palm Tree Cooler, B
+2026-04-18 13:44:13,834 - INFO - [自然] data-index=34 自然排名:14 - OBXT 10" Blue Hanging Jellyfish Paper La
+2026-04-18 13:44:13,839 - INFO - [自然] data-index=35 自然排名:15 - Chunful 30 Pieces Summer Tree Ornaments 
+2026-04-18 13:44:13,844 - INFO - [自然] data-index=36 自然排名:16 - PartySticks Glow Sticks Party Supplies 1
+2026-04-18 13:44:13,851 - INFO - [自然] data-index=37 自然排名:17 - ASMAD Solar Lights Outdoor(4 Pack,32 LED
+2026-04-18 13:44:13,854 - INFO - [自然] data-index=38 自然排名:18 - Jetec Summer Slippers Hanging Sign Shape
+2026-04-18 13:44:13,859 - INFO - [自然] data-index=39 自然排名:19 - Yuntau 4 Pcs Summer Wooden Tabletop Deco
+2026-04-18 13:44:13,864 - INFO - [自然] data-index=40 自然排名:20 - Cinnvoice 6 Pcs Summer Table Decorations
+2026-04-18 13:44:13,867 - INFO - [自然] data-index=41 自然排名:21 - Barydat 6 Pcs Summer Wooden Table Decor 
+2026-04-18 13:44:13,872 - INFO - [自然] data-index=43 自然排名:22 - 48Pcs Hello Summer Cut-Outs Summer Flowe
+2026-04-18 13:44:13,876 - INFO - [自然] data-index=44 自然排名:23 - JOYIN Inflatable Swim Tube Raft (3 pack)
+2026-04-18 13:44:13,880 - INFO - [自然] data-index=45 自然排名:24 - Beach Party Decorations Kit - Beach Them
+2026-04-18 13:44:13,885 - INFO - [自然] data-index=46 自然排名:25 - 4 Pcs Sunflower Table Decorations Sunflo
+2026-04-18 13:44:13,889 - INFO - [自然] data-index=47 自然排名:26 - LEEZZIZZ 30Pcs Punch Balloons, Thickened
+2026-04-18 13:44:13,893 - INFO - [自然] data-index=48 自然排名:27 - 33pcs Spring Hanging Decorations for Hom
+2026-04-18 13:44:13,896 - INFO - [自然] data-index=49 自然排名:28 - Cheerland Flower Banner Wildflower Garla
+2026-04-18 13:44:13,901 - INFO - [自然] data-index=50 自然排名:29 - 4th of July Decorations Wooden Table Sig
+2026-04-18 13:44:13,907 - INFO - [自然] data-index=51 自然排名:30 - AVOIN colorlife Hello Sunshine Floral Sw
+2026-04-18 13:44:13,911 - INFO - [自然] data-index=52 自然排名:31 - Maitys 3 Pcs Spring Table Decor Summer S
+2026-04-18 13:44:13,913 - INFO - [自然] data-index=53 自然排名:32 - Summer Party Decoration Hello Summer Ban
+2026-04-18 13:44:13,919 - INFO - [自然] data-index=54 自然排名:33 - 60Pcs Tropical Party Decorations Supplie
+2026-04-18 13:44:13,922 - INFO - [自然] data-index=55 自然排名:34 - Summer Party Decorations Porch Sign, 71"
+2026-04-18 13:44:13,926 - INFO - [自然] data-index=56 自然排名:35 - Summer Party Decorations Set, Pre-Strung
+2026-04-18 13:44:13,930 - INFO - [自然] data-index=57 自然排名:36 - AmyHomie Artificial Sunflowers for Outdo
+2026-04-18 13:44:13,934 - INFO - [自然] data-index=58 自然排名:37 - Beach Party Supplies Serve 24, Summer Be
+2026-04-18 13:44:13,938 - INFO - [自然] data-index=59 自然排名:38 - Summer Beach Party Decorations - Pre-Str
+2026-04-18 13:44:13,942 - INFO - [自然] data-index=60 自然排名:39 - Yuntau 4 Pcs Sunflower Decorations Sunfl
+2026-04-18 13:44:13,947 - INFO - [自然] data-index=61 自然排名:40 - ALINK 50 Umbrella Parasol Drinking Straw
+2026-04-18 13:44:13,951 - INFO - [自然] data-index=63 自然排名:41 - COCOBOO Sunflower Artificial Flowers Pot
+2026-04-18 13:44:13,955 - INFO - [自然] data-index=64 自然排名:42 - Vellibring 12" Summer Inflatable Beach B
+2026-04-18 13:44:13,957 - INFO - [自然] data-index=65 自然排名:43 - COCHIE Metal Hello Summer Sign, Summer D
+2026-04-18 13:44:13,962 - INFO - [自然] data-index=66 自然排名:44 - Freyalife Hawaiian Leis Decorations(24pc
+2026-04-18 13:44:13,965 - INFO - [自然] data-index=67 自然排名:45 - Smile 4 Pcs Summer Indoor Wooden Decor, 
+2026-04-18 13:44:13,970 - INFO - [自然] data-index=68 自然排名:46 - Kigley 7 Pieces Hello Summer Table Decor
+2026-04-18 13:44:13,974 - INFO - [自然] data-index=69 自然排名:47 - Yuntau 6pcs Spring Tulips Wood Signs Rus
+2026-04-18 13:44:13,978 - INFO - [自然] data-index=70 自然排名:48 - JOYIN Set of 6 Small Pink Flamingo Yard 
+2026-04-18 13:44:13,987 - INFO - [SB广告] data-index=75 SB排名:1 - N/A
+2026-04-18 13:44:22,245 - INFO - 正在访问第 2 页: https://www.amazon.com/s?k=summer+decorations&page=2
+2026-04-18 13:44:29,323 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:44:29,634 - INFO - 第 2 页找到 75 个带data-index的元素
+2026-04-18 13:44:29,639 - INFO - [SP广告] data-index=2 SP排名:13 - Summer Party Decorations - 61 Pcs Beach 
+2026-04-18 13:44:29,646 - INFO - [SP广告] data-index=3 SP排名:14 - Gatherfun Tropical Luau Party Supplies K
+2026-04-18 13:44:29,649 - INFO - [SP广告] data-index=4 SP排名:15 - Artoid Mode Coconut Tree Flowers Starfis
+2026-04-18 13:44:29,654 - INFO - [SP广告] data-index=5 SP排名:16 - Summer Table Runner Tropical Palm Runner
+2026-04-18 13:44:29,658 - INFO - [自然] data-index=6 自然排名:49 - JOYIN 4-Pack 20" Beach Balls - Large Rai
+2026-04-18 13:44:29,664 - INFO - [自然] data-index=7 自然排名:50 - FairySandy 2 Pieces Summer Gnomes Beach 
+2026-04-18 13:44:29,669 - INFO - [自然] data-index=8 自然排名:51 - 7x5ft Summer Hawaiian Beach Photography 
+2026-04-18 13:44:29,677 - INFO - [自然] data-index=12 自然排名:52 - Summer Party Decorations Hello Summer Ba
+2026-04-18 13:44:29,682 - INFO - [自然] data-index=13 自然排名:53 - 9 Sheets Summer Window Clings for Glass 
+2026-04-18 13:44:29,686 - INFO - [自然] data-index=14 自然排名:54 - JOYIN 28” Inflatable Palm Tree Cooler, L
+2026-04-18 13:44:29,690 - INFO - [SP广告] data-index=15 SP排名:17 - Weysat 12 Pcs Cartoon Hawaiian Animation
+2026-04-18 13:44:29,693 - INFO - [SP广告] data-index=16 SP排名:18 - 9 Pieces Summer Honeycomb Centerpieces, 
+2026-04-18 13:44:29,697 - INFO - [SP广告] data-index=17 SP排名:19 - Summer Party Decorations, NO-DIY Beach P
+2026-04-18 13:44:29,700 - INFO - [SP广告] data-index=18 SP排名:20 - Hawaiian Luau Hanging Decorations, Luau 
+2026-04-18 13:44:29,704 - INFO - [自然] data-index=19 自然排名:55 - EBOOT 15 Pieces Assorted Colored Flower 
+2026-04-18 13:44:29,709 - INFO - [自然] data-index=20 自然排名:56 - AOBKIAT Wedding Party Decorations, 5 Rol
+2026-04-18 13:44:29,714 - INFO - [自然] data-index=23 自然排名:57 - Ozepao 58 Pcs Summer Cutouts Beach Hawai
+2026-04-18 13:44:29,718 - INFO - [自然] data-index=24 自然排名:58 - FOXMIS Miniature Frog Garden Statue Mom 
+2026-04-18 13:44:29,722 - INFO - [SP广告] data-index=25 SP排名:21 - YUNXUAN Flamingo Party Supplies, Hawaiia
+2026-04-18 13:44:29,725 - INFO - [SP广告] data-index=26 SP排名:22 - Syhood 6 ft Spring Tulip Inflatable Outd
+2026-04-18 13:44:29,728 - INFO - [SP广告] data-index=27 SP排名:23 - SCIONE Beach Balls Bulk 24 Pack - 9" Inf
+2026-04-18 13:44:29,732 - INFO - [SP广告] data-index=28 SP排名:24 - Beach Ball Paper Lanterns 10 Pcs - 8" Co
+2026-04-18 13:44:29,740 - INFO - [自然] data-index=29 自然排名:59 - 36Pcs Summer Tree Ornaments, Beach Woode
+2026-04-18 13:44:29,745 - INFO - [自然] data-index=30 自然排名:60 - Luau Party Decorations, 36PCS Hawaiian T
+2026-04-18 13:44:29,748 - INFO - [自然] data-index=31 自然排名:61 - 40 Pcs Spring Flower Butterfly Ornaments
+2026-04-18 13:44:29,753 - INFO - [自然] data-index=32 自然排名:62 - Couah 30 LED 16Ft Summer Beach Hawaiian 
+2026-04-18 13:44:29,757 - INFO - [自然] data-index=33 自然排名:63 - SUNBEAUTY Colorful Fiesta Paper Fans Par
+2026-04-18 13:44:29,762 - INFO - [自然] data-index=34 自然排名:64 - Decor365 White Finger Starfish Sea Shell
+2026-04-18 13:44:29,767 - INFO - [自然] data-index=35 自然排名:65 - Lineshading 4 Pcs Summer Table Decoratio
+2026-04-18 13:44:29,773 - INFO - [自然] data-index=36 自然排名:66 - Bencailor 4 Pcs Sunflower Kitchen Towels
+2026-04-18 13:44:29,776 - INFO - [自然] data-index=37 自然排名:67 - Roowest 5 Pcs Hello Spring Interchangeab
+2026-04-18 13:44:29,781 - INFO - [自然] data-index=38 自然排名:68 - Yuntau 26 Pcs Summer Tiered Tray Decor S
+2026-04-18 13:44:29,786 - INFO - [自然] data-index=39 自然排名:69 - Yellow Sunflower Gnome Figurines - Indoo
+2026-04-18 13:44:29,789 - INFO - [自然] data-index=40 自然排名:70 - Summer Decorations For Home Hello Summer
+2026-04-18 13:44:29,794 - INFO - [自然] data-index=41 自然排名:71 - VioletEverGarden 12 Pack Spring Decorati
+2026-04-18 13:44:29,798 - INFO - [自然] data-index=42 自然排名:72 - Riceshoot 12 Pcs Summer Ornaments for Tr
+2026-04-18 13:44:29,802 - INFO - [自然] data-index=43 自然排名:73 - Laelfe Artificial Lemons Branches, 8 Hea
+2026-04-18 13:44:29,806 - INFO - [自然] data-index=44 自然排名:74 - 48 Pieces Spring Sun Flowers Butterfly H
+2026-04-18 13:44:29,812 - INFO - [自然] data-index=45 自然排名:75 - 50pcs Hawaiian Leis Decorations, Hawaiia
+2026-04-18 13:44:29,815 - INFO - [自然] data-index=46 自然排名:76 - 3 Pcs Hello Sweet Summer Table Block Sig
+2026-04-18 13:44:29,818 - INFO - [自然] data-index=47 自然排名:77 - 3 Pack Artificial Potted Sunflower Flowe
+2026-04-18 13:44:29,823 - INFO - [自然] data-index=48 自然排名:78 - Chunful 36 Pieces Summer Tree Ornaments 
+2026-04-18 13:44:29,826 - INFO - [自然] data-index=49 自然排名:79 - 30 Pcs Flowers Butterfly Hanging Swirl D
+2026-04-18 13:44:29,833 - INFO - [自然] data-index=50 自然排名:80 - AVOIN colorlife Myosotis Poppy Memorial 
+2026-04-18 13:44:29,837 - INFO - [自然] data-index=51 自然排名:81 - MiniInflat Hello Sweet Summer Metal Sign
+2026-04-18 13:44:29,844 - INFO - [自然] data-index=52 自然排名:82 - 4 Pack Patriotic Artificial Berry Stem P
+2026-04-18 13:44:29,849 - INFO - [自然] data-index=53 自然排名:83 - 36 Pcs Summer Wood Hanging Ornaments Sum
+2026-04-18 13:44:29,854 - INFO - [自然] data-index=54 自然排名:84 - Bememo 6 Pcs Hello Summer Table Decorati
+2026-04-18 13:44:29,858 - INFO - [自然] data-index=55 自然排名:85 - Yousoontic 3pcs Daisy Decor Wood Flowers
+2026-04-18 13:44:29,862 - INFO - [自然] data-index=56 自然排名:86 - Outus 30 Pieces Hawaiian Luau Birthday P
+2026-04-18 13:44:29,866 - INFO - [自然] data-index=57 自然排名:87 - 96 PCS Hello Summer Beach Pool Hawaiian 
+2026-04-18 13:44:29,870 - INFO - [自然] data-index=58 自然排名:88 - Camlinbo 15 Pcs Inflatable Flamingo Pool
+2026-04-18 13:44:29,874 - INFO - [自然] data-index=59 自然排名:89 - Huray Rayho Sunflower Metal Truck with A
+2026-04-18 13:44:29,878 - INFO - [自然] data-index=60 自然排名:90 - 96Pcs Summer Cutouts Bulletin Board Deco
+2026-04-18 13:44:29,884 - INFO - [自然] data-index=61 自然排名:91 - AVOIN colorlife Spring Summer Bee Sunflo
+2026-04-18 13:44:29,887 - INFO - [自然] data-index=62 自然排名:92 - Summer Wooden Table Sign 4th of July Rev
+2026-04-18 13:44:29,892 - INFO - [自然] data-index=63 自然排名:93 - Maitys 36 Pcs Spring Flower Ornaments fo
+2026-04-18 13:44:29,895 - INFO - [自然] data-index=64 自然排名:94 - Blulu 4 Pcs Sunflower Table Decorations 
+2026-04-18 13:44:29,899 - INFO - [自然] data-index=65 自然排名:95 - Spiareal Bee Welcome Yellow Hanging Fron
+2026-04-18 13:44:29,904 - INFO - [自然] data-index=66 自然排名:96 - 3Pcs Spring Butterfly Decorations for Ho
+2026-04-18 13:44:29,914 - INFO - [SB广告] data-index=71 SB排名:2 - N/A
+2026-04-18 13:44:39,037 - INFO - 正在访问第 3 页: https://www.amazon.com/s?k=summer+decorations&page=3
+2026-04-18 13:44:44,386 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:44:44,722 - INFO - 第 3 页找到 76 个带data-index的元素
+2026-04-18 13:44:44,730 - INFO - [SP广告] data-index=2 SP排名:25 - Gatherfun Tropical Luau Party Supplies K
+2026-04-18 13:44:44,736 - INFO - [SP广告] data-index=3 SP排名:26 - Summer Party Decorations - 61 Pcs Beach 
+2026-04-18 13:44:44,740 - INFO - [SP广告] data-index=4 SP排名:27 - 9 Pieces Summer Honeycomb Centerpieces, 
+2026-04-18 13:44:44,743 - INFO - [SP广告] data-index=5 SP排名:28 - YUNXUAN Flamingo Party Supplies, Hawaiia
+2026-04-18 13:44:44,748 - INFO - [自然] data-index=6 自然排名:97 - 3Pcs Spring Butterfly Table Decorations 
+2026-04-18 13:44:44,752 - INFO - [自然] data-index=7 自然排名:98 - JOYIN 43" Inflatable Cactus Cooler with 
+2026-04-18 13:44:44,759 - INFO - [自然] data-index=8 自然排名:99 - AVOIN colorlife Spring Summer Bee Sunflo
+2026-04-18 13:44:44,769 - INFO - [自然] data-index=12 自然排名:100 - Hajoyful Grass Skirt Hawaiian Luau Hula 
+2026-04-18 13:44:44,798 - INFO - [自然] data-index=13 自然排名:101 - AVOIN colorlife Spring Summer Bee Sunflo
+2026-04-18 13:44:44,815 - INFO - [自然] data-index=14 自然排名:102 - Artoid Mode Yellow Hello Sunshine Summer
+2026-04-18 13:44:44,821 - INFO - [SP广告] data-index=15 SP排名:29 - Chunful 36 Pcs Hibiscus Flowers Fans Bul
+2026-04-18 13:44:44,827 - INFO - [SP广告] data-index=16 SP排名:30 - Summer Table Runner Tropical Palm Runner
+2026-04-18 13:44:44,830 - INFO - [SP广告] data-index=17 SP排名:31 - Summer Party Decorations, NO-DIY Beach P
+2026-04-18 13:44:44,835 - INFO - [SP广告] data-index=18 SP排名:32 - Hawaiian Luau Hanging Decorations, Luau 
+2026-04-18 13:44:44,840 - INFO - [自然] data-index=19 自然排名:103 - Outus 16 Pcs Summer Tree Ornaments Ball 
+2026-04-18 13:44:44,845 - INFO - [自然] data-index=20 自然排名:104 - Whaline 9 Sheets Hello Summer Window Cli
+2026-04-18 13:44:44,855 - INFO - [自然] data-index=24 自然排名:105 - Joanlody Blue Cheesecloth Table Runner S
+2026-04-18 13:44:44,859 - INFO - [自然] data-index=25 自然排名:106 - 25pcs Hawaiian Leis Bulk,Colorful Lei Tr
+2026-04-18 13:44:44,862 - INFO - [SP广告] data-index=26 SP排名:33 - CAVLA Hello Summer Banner and Beach Patt
+2026-04-18 13:44:44,865 - INFO - [SP广告] data-index=27 SP排名:34 - Artoid Mode Coconut Tree Flowers Starfis
+2026-04-18 13:44:44,869 - INFO - [SP广告] data-index=28 SP排名:35 - SCIONE Beach Balls Bulk 24 Pack - 9" Inf
+2026-04-18 13:44:44,872 - INFO - [SP广告] data-index=29 SP排名:36 - SUNBEAUTY 9PCS Paper Flower Party Decora
+2026-04-18 13:44:44,876 - INFO - [自然] data-index=30 自然排名:107 - Rustic 4th of July Decorations Wood Tabl
+2026-04-18 13:44:44,889 - INFO - [自然] data-index=31 自然排名:108 - Maitys 5 Pcs Sunflower Table Decor Summe
+2026-04-18 13:44:44,907 - INFO - [自然] data-index=32 自然排名:109 - Jetec 6 Pcs Summer Wooden Centerpieces f
+2026-04-18 13:44:44,914 - INFO - [自然] data-index=33 自然排名:110 - Summer Decor Wreaths for Front Door Hell
+2026-04-18 13:44:44,922 - INFO - [自然] data-index=34 自然排名:111 - Summer Ornaments for Tree Wood Both-Side
+2026-04-18 13:44:44,929 - INFO - [自然] data-index=35 自然排名:112 - Jetec 12 Pcs Sunflower Tiered Tray Decor
+2026-04-18 13:44:44,939 - INFO - [自然] data-index=36 自然排名:113 - Cinnvoice Hello Summer Table Sign Flip F
+2026-04-18 13:44:44,947 - INFO - [自然] data-index=37 自然排名:114 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:44:44,952 - INFO - [自然] data-index=38 自然排名:115 - Lineshading 4 Pcs Summer Table Decoratio
+2026-04-18 13:44:44,957 - INFO - [自然] data-index=39 自然排名:116 - JCFIRE Summer Pool Beach Party Favors Ki
+2026-04-18 13:44:44,970 - INFO - [自然] data-index=40 自然排名:117 - ASTRYAS 38Pcs Artificial Flowers Colorfu
+2026-04-18 13:44:44,978 - INFO - [自然] data-index=41 自然排名:118 - Summer Decorations Watermelon Gnomes, On
+2026-04-18 13:44:44,984 - INFO - [自然] data-index=42 自然排名:119 - 8.5Ft Summer Beach Themed Lights, 10L LE
+2026-04-18 13:44:44,991 - INFO - [自然] data-index=43 自然排名:120 - Glenmal 2 Pcs Hello Summer Slippers Hang
+2026-04-18 13:44:44,996 - INFO - [自然] data-index=44 自然排名:121 - AVOIN colorlife Sunflower Spring Summer 
+2026-04-18 13:44:45,001 - INFO - [自然] data-index=45 自然排名:122 - Inflatable Pink Flamingo Party Decoratio
+2026-04-18 13:44:45,005 - INFO - [自然] data-index=46 自然排名:123 - 6Pcs Hawaii Luau Party Glasses Hawaiian 
+2026-04-18 13:44:45,009 - INFO - [自然] data-index=47 自然排名:124 - DAZONGE Summer Decor - 6 PCS Rustic Summ
+2026-04-18 13:44:45,013 - INFO - [自然] data-index=48 自然排名:125 - Hello Summer Sign, 6 Inch Yellow Wooden 
+2026-04-18 13:44:45,018 - INFO - [自然] data-index=49 自然排名:126 - 3 Pcs Summer Tiered Tray Decorations Set
+2026-04-18 13:44:45,026 - INFO - [自然] data-index=50 自然排名:127 - Artoid Mode Hydrangea Butterfly Summer T
+2026-04-18 13:44:45,033 - INFO - [自然] data-index=51 自然排名:128 - Artoid Mode Flowers Butterfly Spring Tab
+2026-04-18 13:44:45,038 - INFO - [自然] data-index=52 自然排名:129 - MEETYAMOR Summer Decor, Wood Metal Hello
+2026-04-18 13:44:45,042 - INFO - [自然] data-index=53 自然排名:130 - Outus 16 Pcs Summer Tree Ornaments Ball 
+2026-04-18 13:44:45,049 - INFO - [自然] data-index=54 自然排名:131 - AVOIN colorlife Hello Sunshine Classic G
+2026-04-18 13:44:45,056 - INFO - [自然] data-index=55 自然排名:132 - Artoid Mode Yellow Flowers Bee Hello Sun
+2026-04-18 13:44:45,061 - INFO - [自然] data-index=56 自然排名:133 - Artoid Mode Popsicles Summer Placemats S
+2026-04-18 13:44:45,067 - INFO - [自然] data-index=57 自然排名:134 - Artoid Mode Blue Lemon Iris Summer Table
+2026-04-18 13:44:45,071 - INFO - [自然] data-index=58 自然排名:135 - Atonofun 60 Counts Leis for Luau Party, 
+2026-04-18 13:44:45,076 - INFO - [自然] data-index=59 自然排名:136 - Whaline 48Pcs Ice Pops Cutouts Colorful 
+2026-04-18 13:44:45,080 - INFO - [自然] data-index=60 自然排名:137 - xo, Fetti Pool Party Napkins - 3-ply, 24
+2026-04-18 13:44:45,086 - INFO - [自然] data-index=61 自然排名:138 - 100pcs Luau Party Decorations, Silk Hawa
+2026-04-18 13:44:45,092 - INFO - [自然] data-index=62 自然排名:139 - Artoid Mode Lemon Blue and White Porcela
+2026-04-18 13:44:45,096 - INFO - [自然] data-index=63 自然排名:140 - FreshDear 12 Counts Hawaiian Leis Bulk,l
+2026-04-18 13:44:45,100 - INFO - [自然] data-index=64 自然排名:141 - Artoid Mode Beige Soft Chain Embroidery 
+2026-04-18 13:44:45,105 - INFO - [自然] data-index=65 自然排名:142 - 30,60pcs Summer Random Shoe Charms for G
+2026-04-18 13:44:45,109 - INFO - [自然] data-index=66 自然排名:143 - xo, Fetti Hot Dog Banner | Cookout Party
+2026-04-18 13:44:45,112 - INFO - [自然] data-index=67 自然排名:144 - Artoid Mode Ice Cream Watermelon Happy S
+2026-04-18 13:44:45,121 - INFO - [SB广告] data-index=72 SB排名:3 - N/A
+2026-04-18 13:44:56,070 - INFO - 正在访问第 4 页: https://www.amazon.com/s?k=summer+decorations&page=4
+2026-04-18 13:45:01,703 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:45:02,201 - INFO - 第 4 页找到 76 个带data-index的元素
+2026-04-18 13:45:02,210 - INFO - [SP广告] data-index=2 SP排名:37 - Summer Table Runner Tropical Palm Runner
+2026-04-18 13:45:02,216 - INFO - [SP广告] data-index=3 SP排名:38 - Artoid Mode Coconut Tree Flowers Starfis
+2026-04-18 13:45:02,222 - INFO - [SP广告] data-index=4 SP排名:39 - Summer Party Decorations - 61 Pcs Beach 
+2026-04-18 13:45:02,227 - INFO - [SP广告] data-index=5 SP排名:40 - Hawaiian Luau Hanging Decorations, Luau 
+2026-04-18 13:45:02,237 - INFO - [自然] data-index=6 自然排名:145 - Artoid Mode Hydrangea Butterfly Summer T
+2026-04-18 13:45:02,246 - INFO - [自然] data-index=7 自然排名:146 - Artoid Mode Lavender Tulip Summer Table 
+2026-04-18 13:45:02,253 - INFO - [自然] data-index=8 自然排名:147 - AVOIN colorlife Summer Beach Flip-flop G
+2026-04-18 13:45:02,267 - INFO - [自然] data-index=12 自然排名:148 - Artoid Mode Lemon Blue and White Porcela
+2026-04-18 13:45:02,274 - INFO - [自然] data-index=13 自然排名:149 - Artoid Mode Blue Lemon Iris Summer Table
+2026-04-18 13:45:02,280 - INFO - [自然] data-index=14 自然排名:150 - Summer Bulletin Board Classroom Decorati
+2026-04-18 13:45:02,283 - INFO - [SP广告] data-index=15 SP排名:41 - 9 Pieces Summer Honeycomb Centerpieces, 
+2026-04-18 13:45:02,288 - INFO - [SP广告] data-index=16 SP排名:42 - Summer Party Decorations, NO-DIY Beach P
+2026-04-18 13:45:02,292 - INFO - [SP广告] data-index=17 SP排名:43 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:45:02,297 - INFO - [SP广告] data-index=18 SP排名:44 - Gatherfun Tropical Luau Party Supplies K
+2026-04-18 13:45:02,301 - INFO - [自然] data-index=19 自然排名:151 - 30 Pcs Beach Wood Hanging Tree Ornaments
+2026-04-18 13:45:02,304 - INFO - [自然] data-index=20 自然排名:152 - Artoid Mode Ice Cream Watermelon Happy S
+2026-04-18 13:45:02,312 - INFO - [自然] data-index=24 自然排名:153 - Summer Bulletin Board Decorations Set, S
+2026-04-18 13:45:02,315 - INFO - [自然] data-index=25 自然排名:154 - ASTRYAS 38Pcs Artificial Flowers Colorfu
+2026-04-18 13:45:02,318 - INFO - [SP广告] data-index=26 SP排名:45 - CAVLA Hello Summer Banner and Beach Patt
+2026-04-18 13:45:02,322 - INFO - [SP广告] data-index=27 SP排名:46 - Smile 4 Pcs Wooden Decor Summer Indoor D
+2026-04-18 13:45:02,325 - INFO - [SP广告] data-index=28 SP排名:47 - YUNXUAN Flamingo Party Supplies, Hawaiia
+2026-04-18 13:45:02,330 - INFO - [SP广告] data-index=29 SP排名:48 - 9 Sheets Summer Window Clings for Glass 
+2026-04-18 13:45:02,335 - INFO - [自然] data-index=30 自然排名:155 - Artoid Mode Flowers Butterfly Spring Tab
+2026-04-18 13:45:02,342 - INFO - [自然] data-index=31 自然排名:156 - Artoid Mode Wildflower Floral Spring Kit
+2026-04-18 13:45:02,346 - INFO - [自然] data-index=32 自然排名:157 - Tatuo 4 Pcs Surfboard Decor Hawaiian Woo
+2026-04-18 13:45:02,351 - INFO - [自然] data-index=33 自然排名:158 - 100pcs Luau Party Decorations, Silk Hawa
+2026-04-18 13:45:02,355 - INFO - [自然] data-index=34 自然排名:159 - 3 Pcs Summer Tiered Tray Decorations Set
+2026-04-18 13:45:02,361 - INFO - [自然] data-index=35 自然排名:160 - AVOIN colorlife Summer Polka Dot Bee Wel
+2026-04-18 13:45:02,366 - INFO - [自然] data-index=36 自然排名:161 - Artoid Mode Beige Soft Chain Embroidery 
+2026-04-18 13:45:02,371 - INFO - [自然] data-index=37 自然排名:162 - Whaline 9 Sheets Hello Summer Window Cli
+2026-04-18 13:45:02,375 - INFO - [自然] data-index=38 自然排名:163 - 25pcs Hawaiian Leis Bulk,Colorful Lei Tr
+2026-04-18 13:45:02,379 - INFO - [自然] data-index=39 自然排名:164 - xo, Fetti Summer Party Streamers - 5 Cre
+2026-04-18 13:45:02,383 - INFO - [自然] data-index=40 自然排名:165 - JCFIRE Summer Pool Beach Party Favors Ki
+2026-04-18 13:45:02,387 - INFO - [自然] data-index=41 自然排名:166 - Outus 16 Pcs Summer Tree Ornaments Ball 
+2026-04-18 13:45:02,393 - INFO - [自然] data-index=42 自然排名:167 - Artoid Mode Lemon Flower Summer Kitchen 
+2026-04-18 13:45:02,397 - INFO - [自然] data-index=43 自然排名:168 - AVOIN colorlife Summer Beach Flip Flops 
+2026-04-18 13:45:02,401 - INFO - [自然] data-index=44 自然排名:169 - Bee Wooden Wreaths Front Door Welcome Si
+2026-04-18 13:45:02,407 - INFO - [自然] data-index=45 自然排名:170 - Artoid Mode Vase Bloom Tulip Lavender Su
+2026-04-18 13:45:02,414 - INFO - [自然] data-index=46 自然排名:171 - Artoid Mode Hello Sunshine Sunflower Euc
+2026-04-18 13:45:02,421 - INFO - [自然] data-index=47 自然排名:172 - Artoid Mode Blue Stripe Popsicles Fruit 
+2026-04-18 13:45:02,426 - INFO - [自然] data-index=48 自然排名:173 - Whaline 12Pcs Summer Ice Cream Hanging H
+2026-04-18 13:45:02,430 - INFO - [自然] data-index=49 自然排名:174 - Inflatable Pink Flamingo Party Decoratio
+2026-04-18 13:45:02,438 - INFO - [自然] data-index=50 自然排名:175 - AVOIN colorlife Summer Bee Happy Garden 
+2026-04-18 13:45:02,443 - INFO - [自然] data-index=51 自然排名:176 - Artoid Mode Ice Cream Watermelon Happy S
+2026-04-18 13:45:02,451 - INFO - [自然] data-index=52 自然排名:177 - Artoid Mode Lavender Tulip Spring Placem
+2026-04-18 13:45:02,457 - INFO - [自然] data-index=53 自然排名:178 - Artoid Mode Popsicles Summer Placemats S
+2026-04-18 13:45:02,465 - INFO - [自然] data-index=54 自然排名:179 - Artoid Mode Buffalo Plaid Sunflower Suns
+2026-04-18 13:45:02,473 - INFO - [自然] data-index=55 自然排名:180 - Artoid Mode Yellow Daisy Hello Sunshine 
+2026-04-18 13:45:02,480 - INFO - [自然] data-index=56 自然排名:181 - AVOIN colorlife You are My Sunshine Summ
+2026-04-18 13:45:02,487 - INFO - [自然] data-index=57 自然排名:182 - 8.5Ft Summer Beach Themed Lights, 10L LE
+2026-04-18 13:45:02,493 - INFO - [自然] data-index=58 自然排名:183 - Artoid Mode America Stars Tree Patriotic
+2026-04-18 13:45:02,497 - INFO - [自然] data-index=59 自然排名:184 - Whaline 48Pcs Ice Pops Cutouts Colorful 
+2026-04-18 13:45:02,504 - INFO - [自然] data-index=60 自然排名:185 - Artoid Mode Floral Butterfly Summer Plac
+2026-04-18 13:45:02,510 - INFO - [自然] data-index=61 自然排名:186 - Artoid Mode Yellow Stripes Vase Lemon Su
+2026-04-18 13:45:02,517 - INFO - [自然] data-index=62 自然排名:187 - AVOIN colorlife Hello Summer Floral Cat 
+2026-04-18 13:45:02,522 - INFO - [自然] data-index=63 自然排名:188 - xo, Fetti Pool Party Napkins - 3-ply, 24
+2026-04-18 13:45:02,530 - INFO - [自然] data-index=64 自然排名:189 - Artoid Mode Conch Starfish Hello Summer 
+2026-04-18 13:45:02,533 - INFO - [自然] data-index=65 自然排名:190 - xo, Fetti Hot Dog Banner | Cookout Party
+2026-04-18 13:45:02,536 - INFO - [自然] data-index=66 自然排名:191 - Artoid Mode Starfish Coral Shell Pearl 2
+2026-04-18 13:45:02,540 - INFO - [自然] data-index=67 自然排名:192 - AVOIN colorlife Summer Flip Flops Garden
+2026-04-18 13:45:02,551 - INFO - [SB广告] data-index=72 SB排名:4 - N/A
+2026-04-18 13:45:10,619 - INFO - 正在访问第 5 页: https://www.amazon.com/s?k=summer+decorations&page=5
+2026-04-18 13:45:16,289 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:45:16,618 - INFO - 第 5 页找到 61 个带data-index的元素
+2026-04-18 13:45:16,623 - INFO - [自然] data-index=2 自然排名:193 - Whaline 12Pcs Summer Ice Cream Hanging H
+2026-04-18 13:45:16,630 - INFO - [自然] data-index=3 自然排名:194 - AVOIN colorlife Summer Polka Dot Bee Wel
+2026-04-18 13:45:16,636 - INFO - [自然] data-index=4 自然排名:195 - 3 Pcs Summer Tiered Tray Decorations Set
+2026-04-18 13:45:16,646 - INFO - [自然] data-index=7 自然排名:196 - Artoid Mode Blue Lemon Iris Summer Table
+2026-04-18 13:45:16,650 - INFO - [自然] data-index=8 自然排名:197 - Mocsicka Hello Summer Banner Summer Hawa
+2026-04-18 13:45:16,653 - INFO - [自然] data-index=9 自然排名:198 - Whaline 48Pcs Ice Pops Cutouts Colorful 
+2026-04-18 13:45:16,659 - INFO - [自然] data-index=10 自然排名:199 - Inflatable Pink Flamingo Party Decoratio
+2026-04-18 13:45:16,663 - INFO - [自然] data-index=11 自然排名:200 - xo, Fetti Hot Dog Banner | Cookout Party
+2026-04-18 13:45:16,666 - INFO - [自然] data-index=12 自然排名:201 - Artoid Mode Beige Soft Chain Embroidery 
+2026-04-18 13:45:16,673 - INFO - [自然] data-index=15 自然排名:202 - Artoid Mode Lemon Flower Summer Kitchen 
+2026-04-18 13:45:16,679 - INFO - [自然] data-index=16 自然排名:203 - 8.5Ft Summer Beach Themed Lights, 10L LE
+2026-04-18 13:45:16,683 - INFO - [自然] data-index=17 自然排名:204 - Teling 74 Pcs Flip Flop Summer Bulletin 
+2026-04-18 13:45:16,688 - INFO - [自然] data-index=18 自然排名:205 - xo, Fetti Pool Party Paper Plates, 3 Des
+2026-04-18 13:45:16,692 - INFO - [自然] data-index=19 自然排名:206 - Bee Wooden Wreaths Front Door Welcome Si
+2026-04-18 13:45:16,699 - INFO - [自然] data-index=20 自然排名:207 - Artoid Mode Yellow Hello Sunshine Sunflo
+2026-04-18 13:45:16,706 - INFO - [自然] data-index=21 自然排名:208 - Artoid Mode Vase Bloom Tulip Lavender Su
+2026-04-18 13:45:16,711 - INFO - [自然] data-index=22 自然排名:209 - xo, Fetti Pink + Green Pool Party Plasti
+2026-04-18 13:45:16,718 - INFO - [自然] data-index=23 自然排名:210 - AVOIN colorlife Summer Bee Happy Garden 
+2026-04-18 13:45:16,724 - INFO - [自然] data-index=24 自然排名:211 - Artoid Mode Lavender Tulip Spring Placem
+2026-04-18 13:45:16,730 - INFO - [自然] data-index=25 自然排名:212 - AVOIN colorlife Hello Summer Floral Cat 
+2026-04-18 13:45:16,738 - INFO - [自然] data-index=26 自然排名:213 - Artoid Mode Hello Sunshine Sunflower Euc
+2026-04-18 13:45:16,742 - INFO - [自然] data-index=27 自然排名:214 - AVOIN colorlife Summer Beach Flip Flops 
+2026-04-18 13:45:16,749 - INFO - [自然] data-index=28 自然排名:215 - Artoid Mode Floral Butterfly Summer Plac
+2026-04-18 13:45:16,755 - INFO - [自然] data-index=29 自然排名:216 - Artoid Mode Ice Cream Watermelon Happy S
+2026-04-18 13:45:16,760 - INFO - [自然] data-index=30 自然排名:217 - Artoid Mode Blue Stripe Popsicles Fruit 
+2026-04-18 13:45:16,765 - INFO - [自然] data-index=31 自然排名:218 - Artoid Mode Lemon Leaves 210 GSM Summer 
+2026-04-18 13:45:16,769 - INFO - [自然] data-index=32 自然排名:219 - xo, Fetti Pool Party Birthday Banner | K
+2026-04-18 13:45:16,776 - INFO - [自然] data-index=33 自然排名:220 - Artoid Mode Buffalo Plaid Sunflower Suns
+2026-04-18 13:45:16,782 - INFO - [自然] data-index=34 自然排名:221 - AVOIN colorlife You are My Sunshine Summ
+2026-04-18 13:45:16,790 - INFO - [自然] data-index=35 自然排名:222 - Artoid Mode America Stars Tree Patriotic
+2026-04-18 13:45:16,794 - INFO - [自然] data-index=36 自然排名:223 - AVOIN colorlife Hello Summer Popsicles H
+2026-04-18 13:45:16,800 - INFO - [自然] data-index=37 自然排名:224 - Artoid Mode Popsicles Summer Placemats S
+2026-04-18 13:45:16,804 - INFO - [自然] data-index=38 自然排名:225 - AVOIN colorlife Summer Tropical Palm Tre
+2026-04-18 13:45:16,813 - INFO - [自然] data-index=39 自然排名:226 - Artoid Mode Yellow Daisy Hello Sunshine 
+2026-04-18 13:45:16,819 - INFO - [自然] data-index=40 自然排名:227 - Artoid Mode Sweet Seashell Snail Starfis
+2026-04-18 13:45:16,823 - INFO - [自然] data-index=41 自然排名:228 - Artoid Mode Starfish Coral Shell Pearl 2
+2026-04-18 13:45:16,828 - INFO - [自然] data-index=42 自然排名:229 - AVOIN colorlife Summer Flip Flops Garden
+2026-04-18 13:45:16,832 - INFO - [自然] data-index=43 自然排名:230 - Artoid Mode Ice Cream Bow Summer Table R
+2026-04-18 13:45:16,835 - INFO - [自然] data-index=44 自然排名:231 - AVOIN colorlife Hello Summer Garden Flag
+2026-04-18 13:45:16,842 - INFO - [自然] data-index=45 自然排名:232 - Artoid Mode Bee Sunflower Table Runner B
+2026-04-18 13:45:16,849 - INFO - [自然] data-index=46 自然排名:233 - Artoid Mode Yellow Stripes Vase Lemon Su
+2026-04-18 13:45:16,855 - INFO - [自然] data-index=47 自然排名:234 - Artoid Mode Watercolor Hydrangea Table R
+2026-04-18 13:45:16,862 - INFO - [自然] data-index=48 自然排名:235 - Artoid Mode Conch Starfish Hello Summer 
+2026-04-18 13:45:16,865 - INFO - [自然] data-index=49 自然排名:236 - Artoid Mode Coconut Tree Flowers Starfis
+2026-04-18 13:45:16,870 - INFO - [自然] data-index=50 自然排名:237 - Artoid Mode Starfish Coconut Tree Flower
+2026-04-18 13:45:16,877 - INFO - [自然] data-index=51 自然排名:238 - Artoid Mode Flowers Bow Bees Hello Summe
+2026-04-18 13:45:16,882 - INFO - [自然] data-index=52 自然排名:239 - Artoid Mode Pink Lemon Flower Floral Sum
+2026-04-18 13:45:16,883 - INFO - [自然] data-index=53 自然排名:240 - Artoid Mode Holiday Pool Swim Ring Water
+2026-04-18 13:45:16,892 - INFO - [SB广告] data-index=58 SB排名:5 - N/A
+2026-04-18 13:45:25,578 - INFO - 正在访问第 6 页: https://www.amazon.com/s?k=summer+decorations&page=6
+2026-04-18 13:45:30,352 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:45:30,595 - INFO - 第 6 页找到 63 个带data-index的元素
+2026-04-18 13:45:30,601 - INFO - [自然] data-index=2 自然排名:241 - Artoid Mode Coconut Tree Flowers Starfis
+2026-04-18 13:45:30,605 - INFO - [自然] data-index=3 自然排名:242 - Artoid Mode Sunflower Lemon 210 GSM Hell
+2026-04-18 13:45:30,610 - INFO - [自然] data-index=4 自然排名:243 - Artoid Mode Pink Lemon Flower Floral Sum
+2026-04-18 13:45:30,615 - INFO - [自然] data-index=8 自然排名:244 - Artoid Mode Holiday Pool Swim Ring Water
+2026-04-18 13:45:30,623 - INFO - [自然] data-index=9 自然排名:245 - Artoid Mode Lemon Tree Flower Bee Summer
+2026-04-18 13:45:30,629 - INFO - [自然] data-index=10 自然排名:246 - Artoid Mode Flip-Flops Seaside Beach Sum
+2026-04-18 13:45:30,635 - INFO - [自然] data-index=11 自然排名:247 - Artoid Mode Buffalo Plaid Sunflower Tabl
+2026-04-18 13:45:30,642 - INFO - [自然] data-index=12 自然排名:248 - Artoid Mode Checkered Conch Shells Starf
+2026-04-18 13:45:30,646 - INFO - [自然] data-index=13 自然排名:249 - Sunflower Decor Summer Decorations for H
+2026-04-18 13:45:30,652 - INFO - [自然] data-index=16 自然排名:250 - Spring Summer Wreath for Front Door,Farm
+2026-04-18 13:45:30,655 - INFO - [自然] data-index=17 自然排名:251 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:45:30,661 - INFO - [自然] data-index=18 自然排名:252 - Large Summer Window Clings - 4 Sheets 63
+2026-04-18 13:45:30,663 - INFO - [自然] data-index=19 自然排名:253 - CHARLENT Glitter Hibiscus Temporary Tatt
+2026-04-18 13:45:30,668 - INFO - [自然] data-index=20 自然排名:254 - Summer Party Decorations Hello Summer Ba
+2026-04-18 13:45:30,673 - INFO - [自然] data-index=21 自然排名:255 - Artoid Mode Brown Poppy Flowers Floral B
+2026-04-18 13:45:30,677 - INFO - [自然] data-index=22 自然排名:256 - JCFIRE Summer Pool Beach Party Favors Ki
+2026-04-18 13:45:30,682 - INFO - [自然] data-index=23 自然排名:257 - 10 x 8 Inch Wood Summer Tree Topper with
+2026-04-18 13:45:30,685 - INFO - [自然] data-index=24 自然排名:258 - Roowest Hello Summer Metal Sign Rustic S
+2026-04-18 13:45:30,689 - INFO - [自然] data-index=25 自然排名:259 - Hsei 22 Pcs Summer Tiered Tray Decor Set
+2026-04-18 13:45:30,692 - INFO - [自然] data-index=26 自然排名:260 - Hello Summer Table Runner Popsicles Gree
+2026-04-18 13:45:30,696 - INFO - [自然] data-index=27 自然排名:261 - Qunclay 6 Pieces Summer Office Decoratio
+2026-04-18 13:45:30,702 - INFO - [自然] data-index=28 自然排名:262 - Renbuzhu 15Pcs Summer Party Decorations 
+2026-04-18 13:45:30,705 - INFO - [自然] data-index=29 自然排名:263 - Summer Birthday Party Decorations - Beac
+2026-04-18 13:45:30,709 - INFO - [自然] data-index=30 自然排名:264 - 3 Pcs Sunflower Decor For Tables, Farmho
+2026-04-18 13:45:30,713 - INFO - [自然] data-index=31 自然排名:265 - Metal Butterfly Wall Decor - 9.6" Outdoo
+2026-04-18 13:45:30,717 - INFO - [自然] data-index=32 自然排名:266 - Spring Decor, Wooden Box Signs for Home 
+2026-04-18 13:45:30,720 - INFO - [自然] data-index=33 自然排名:267 - Summer Tiered Tray Decor, Farmhouse Wate
+2026-04-18 13:45:30,725 - INFO - [自然] data-index=34 自然排名:268 - Yousoontic 3 Pcs Summer Table Block Sign
+2026-04-18 13:45:30,728 - INFO - [自然] data-index=35 自然排名:269 - PIGETALE 2 Pack 3.2x6.5 Feet Wavy Blue B
+2026-04-18 13:45:30,732 - INFO - [自然] data-index=36 自然排名:270 - 4 Pcs Sunflower Decor Faux Book Stack Bl
+2026-04-18 13:45:30,735 - INFO - [自然] data-index=37 自然排名:271 - Hello Summer Door Sign Decor Ice Cream B
+2026-04-18 13:45:30,740 - INFO - [自然] data-index=38 自然排名:272 - Bucherry 19 Pcs Summer Lemon Tiered Tray
+2026-04-18 13:45:30,745 - INFO - [自然] data-index=39 自然排名:273 - Traplace 9 Sheets Summer Window Clings, 
+2026-04-18 13:45:30,749 - INFO - [自然] data-index=40 自然排名:274 - 12Pcs School's out for Summer Party Hone
+2026-04-18 13:45:30,753 - INFO - [自然] data-index=41 自然排名:275 - OurWarm Vintage White Truck Decor with S
+2026-04-18 13:45:30,757 - INFO - [自然] data-index=42 自然排名:276 - SCIONE 28 Pack Mini Beach Balls Bulk, 5-
+2026-04-18 13:45:30,762 - INFO - [自然] data-index=43 自然排名:277 - AIBIIN Hello Summer Porch Sign Decoratio
+2026-04-18 13:45:30,766 - INFO - [自然] data-index=44 自然排名:278 - Simplepolymer Hello Sweet Summer Metal S
+2026-04-18 13:45:30,771 - INFO - [自然] data-index=45 自然排名:279 - Summer 4th of July Decorations, 4 Pcs Re
+2026-04-18 13:45:30,775 - INFO - [自然] data-index=46 自然排名:280 - Summer Beach Tablecloths, Beach Themed P
+2026-04-18 13:45:30,779 - INFO - [自然] data-index=47 自然排名:281 - Felt Colorful Daisy Banner - Spring Birt
+2026-04-18 13:45:30,784 - INFO - [自然] data-index=48 自然排名:282 - Wooden Butterflies Spring Decorations fo
+2026-04-18 13:45:30,788 - INFO - [自然] data-index=49 自然排名:283 - AVOIN colorlife Summer Lemon Garden Flag
+2026-04-18 13:45:30,794 - INFO - [自然] data-index=50 自然排名:284 - WDS WONDROUS Ice Cream Cone 2Pcs, Summer
+2026-04-18 13:45:30,800 - INFO - [自然] data-index=51 自然排名:285 - 36 Pcs Summer Cutouts Swim Ring Cutouts 
+2026-04-18 13:45:30,805 - INFO - [自然] data-index=52 自然排名:286 - Britimes 4 Pcs Bee Wooden Tiered Tray De
+2026-04-18 13:45:30,811 - INFO - [自然] data-index=53 自然排名:287 - Farmhouse Kitchen Sign Decor, Sweet Lemo
+2026-04-18 13:45:30,815 - INFO - [自然] data-index=54 自然排名:288 - Hushee 20 Pcs Spring Flower Tiered Tray 
+2026-04-18 13:45:30,825 - INFO - [SB广告] data-index=59 SB排名:6 - N/A
+2026-04-18 13:45:38,636 - INFO - 正在访问第 7 页: https://www.amazon.com/s?k=summer+decorations&page=7
+2026-04-18 13:45:45,820 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-18 13:45:46,123 - INFO - 第 7 页找到 45 个带data-index的元素
+2026-04-18 13:45:46,131 - INFO - [SP广告] data-index=2 SP排名:49 - Summer Table Runner Tropical Palm Runner
+2026-04-18 13:45:46,136 - INFO - [SP广告] data-index=3 SP排名:50 - Gatherfun Tropical Luau Party Supplies K
+2026-04-18 13:45:46,140 - INFO - [SP广告] data-index=4 SP排名:51 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa
+2026-04-18 13:45:46,143 - INFO - [SP广告] data-index=5 SP排名:52 - 9 Pieces Summer Honeycomb Centerpieces, 
+2026-04-18 13:45:46,147 - INFO - [自然] data-index=6 自然排名:289 - WDS WONDROUS Ice Cream Cone 2Pcs, Summer
+2026-04-18 13:45:46,152 - INFO - [自然] data-index=7 自然排名:290 - 36 Pcs Summer Cutouts Swim Ring Cutouts 
+2026-04-18 13:45:46,156 - INFO - [自然] data-index=8 自然排名:291 - Britimes 4 Pcs Bee Wooden Tiered Tray De
+2026-04-18 13:45:46,166 - INFO - [自然] data-index=12 自然排名:292 - Farmhouse Kitchen Sign Decor, Sweet Lemo
+2026-04-18 13:45:46,171 - INFO - [自然] data-index=13 自然排名:293 - Hushee 20 Pcs Spring Flower Tiered Tray 
+2026-04-18 13:45:46,177 - INFO - [自然] data-index=14 自然排名:294 - CHDITB Hello Summer Decoration for Home,
+2026-04-18 13:45:46,181 - INFO - [SP广告] data-index=15 SP排名:53 - Bulk Luau Party Hats - 12 Assorted Funny
+2026-04-18 13:45:46,184 - INFO - [SP广告] data-index=16 SP排名:54 - Hawaiian Luau Hanging Decorations, Luau 
+2026-04-18 13:45:46,187 - INFO - [SP广告] data-index=17 SP排名:55 - Artoid Mode Coconut Tree Flowers Starfis
+2026-04-18 13:45:46,190 - INFO - [SP广告] data-index=18 SP排名:56 - Summer Party Decorations, NO-DIY Beach P
+2026-04-18 13:45:46,194 - INFO - [自然] data-index=19 自然排名:295 - Summer Decor Wooden Box Sign,Summer Room
+2026-04-18 13:45:46,202 - INFO - [自然] data-index=20 自然排名:296 - Artoid Mode Sea Shell Starfish Summer Ta
+2026-04-18 13:45:46,207 - INFO - [自然] data-index=23 自然排名:297 - [ 10''+8'' ] 12 Pack Watermelon Beach Ba
+2026-04-18 13:45:46,212 - INFO - [自然] data-index=24 自然排名:298 - JellyArch 4 Pcs Inflatable Surf Board In
+2026-04-18 13:45:46,215 - INFO - [SP广告] data-index=25 SP排名:57 - Smile 4 Pcs Wooden Decor Summer Indoor D
+2026-04-18 13:45:46,219 - INFO - [SP广告] data-index=26 SP排名:58 - 9 Sheets Summer Window Clings for Glass 
+2026-04-18 13:45:46,222 - INFO - [SP广告] data-index=27 SP排名:59 - PAPER JAZZ Tropical Toucan Hibiscus Part
+2026-04-18 13:45:46,226 - INFO - [SP广告] data-index=28 SP排名:60 - Hoteam 24 Counts Blue Hawaiian Leis Neck
+2026-04-18 13:45:46,230 - INFO - [自然] data-index=29 自然排名:299 - Blulu 4 Pcs Tiki Surfboard Wall Decor Su
+2026-04-18 13:45:46,233 - INFO - [自然] data-index=30 自然排名:300 - Artoid Mode Checkered Conch Shells Starf
+2026-04-18 13:45:46,238 - INFO - [自然] data-index=31 自然排名:301 - Yalikop 11 Pieces Summer Tiered Tray Dec
+2026-04-18 13:45:46,242 - INFO - [自然] data-index=32 自然排名:302 - HESTYA 42 Pieces Colorful Pennant Banner
+2026-04-18 13:45:46,246 - INFO - [自然] data-index=33 自然排名:303 - Summer Decorations Wooden Tiered Tray De
+2026-04-18 13:45:46,252 - INFO - [自然] data-index=34 自然排名:304 - Mkono Mason Jar Lights Centerpiece Table
+2026-04-18 13:45:46,257 - INFO - [自然] data-index=35 自然排名:305 - Bee Tiered Tray Decor Set, 6 Pcs Bumble 
+2026-04-18 13:45:46,264 - INFO - [自然] data-index=36 自然排名:306 - Artificial Faux Flowers Plants for Outdo
+2026-04-18 13:45:46,278 - INFO - [SB广告] data-index=41 SB排名:7 - N/A
+2026-04-18 13:45:46,279 - INFO - 爬取完成，共获取 441 个元素
+2026-04-18 13:45:46,279 - INFO -   - 自然商品: 306 个
+2026-04-18 13:45:46,279 - INFO -   - SP广告: 60 个
+2026-04-18 13:45:46,280 - INFO -   - SB广告: 7 个
+2026-04-18 13:45:46,280 - INFO -   - SB视频: 0 个
+2026-04-18 13:45:46,304 - INFO - 数据已保存到: ./amazon_data/summer+decorations_20260418_134546.json
