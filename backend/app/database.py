@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://admin:123456@localhost:5432/amazon_scraper")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://admin:123456@localhost:5200/amazon_scraper")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

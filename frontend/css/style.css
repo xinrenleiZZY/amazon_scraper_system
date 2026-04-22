@@ -46,3 +46,14 @@
 .status-completed { background-color: #198754; color: #fff; }
 .status-failed { background-color: #dc3545; color: #fff; }
 .status-pending { background-color: #6c757d; color: #fff; }
+
+/* 旋转动画 */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}

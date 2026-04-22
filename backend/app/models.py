@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Boolean, Numeric, TIMESTAMP, JSON, Date
+from sqlalchemy import Column, Integer, String, Text, Boolean, Numeric, TIMESTAMP, JSON, Date, ForeignKey
 from sqlalchemy.sql import func
 from app.database import Base
 
@@ -42,8 +42,26 @@ class ScrapingTask(Base):
     pages = Column(Integer)
     total_items = Column(Integer, default=0)
     status = Column(String(20), default="pending")
+    # progress = Column(Integer, default=0)  # 添加这个字段
     started_at = Column(TIMESTAMP)
     completed_at = Column(TIMESTAMP)
     source_file = Column(String(500))
     error_message = Column(Text)
+    created_at = Column(TIMESTAMP, server_default=func.now())
+
+#YU 421
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(100), nullable=False)
+    created_at = Column(TIMESTAMP, server_default=func.now())
+
+#YU 421
+class UserKeyword(Base):
+    __tablename__ = "user_keywords"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    keyword = Column(String(200), nullable=False)
     created_at = Column(TIMESTAMP, server_default=func.now())

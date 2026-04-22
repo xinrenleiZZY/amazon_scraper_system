@@ -26,7 +26,7 @@ window.onUserChange = function() {
     searchData(1); // #YU 421 不强制选第一个，"全部关键词"触发多关键词查询
 };
 
-// 加载关键词列表
+// #zy 加载关键词列表
 async function loadKeywords() {
     try {
         const res = await apiFetch('/keywords');
@@ -38,7 +38,7 @@ async function loadKeywords() {
         console.error('加载关键词失败:', error);
     }
 }
-// 加载ASIN列表（用于筛选）
+// #zy 加载ASIN列表（用于筛选）
 async function loadAsinOptions() {
     try {
         const result = await apiFetch('/results?limit=500');
@@ -51,19 +51,19 @@ async function loadAsinOptions() {
     }
 }
 
-// 搜索数据
+// #zy 搜索数据
 window.searchData = async function(page = 1) {
     currentPage = page;
     const userId = document.getElementById('filterUser').value; // #YU 421
     const keyword = document.getElementById('filterKeyword').value;
-
+    
     const asin = document.getElementById('filterAsin').value;
     const adType = document.getElementById('filterAdType').value;
     const date = document.getElementById('filterDate').value;
-
+    
     const params = new URLSearchParams({ page: currentPage, limit: 20 });
     if (keyword) params.append('keyword', keyword);
-
+    
     // #YU 421 选了人员但没选具体关键词，查该人所有关键词
     if (userId && !keyword) {
         const user = usersData.find(u => u.id == userId);
@@ -124,7 +124,7 @@ window.searchData = async function(page = 1) {
     }
 };
 
-// 渲染分页
+// #zy 渲染分页
 function renderPagination() {
     const pagination = document.getElementById('pagination');
     let html = '';
@@ -158,19 +158,18 @@ window.jumpToPage = function() {
     if (val >= 1 && val <= totalPages) searchData(val);
 };
 
-
-// 重置筛选
+// #zy 重置筛选
 window.resetFilters = function() {
     document.getElementById('filterUser').value = ''; // #YU 421
     document.getElementById('filterKeyword').value = '';
-    loadKeywords(); // #YU 421
+    loadKeywords(); // #YU 421 重置关键词列表
     document.getElementById('filterAsin').value = '';
     document.getElementById('filterAdType').value = '';
     document.getElementById('filterDate').value = '';
     searchData(1);
 };
 
-// 导出数据
+// #zy 导出数据
 window.exportData = function() {
     const keyword = document.getElementById('filterKeyword').value;
     
@@ -191,7 +190,6 @@ window.exportData = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadUsers(); // #YU 421
     loadKeywords();
     loadAsinOptions();
     searchData(1);

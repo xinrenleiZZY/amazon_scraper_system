@@ -2,8 +2,10 @@ let currentTaskPage = 1;
 let totalTaskPages = 1;
 let currentStatus = '';
 let currentKeyword = '';
+let tasksRefreshInterval = null;  // 任务列表刷新定时器 ZY0422-xia
+let runningTasksInterval = null;   // 运行中任务刷新定时器 ZY0422-xia
 
-// 获取运行中的任务
+// 获取运行中的任务ZY0422-xia
 async function loadRunningTasks() {
     try {
         const response = await fetch('/api/tasks?status=running&limit=50');
@@ -41,6 +43,65 @@ async function loadRunningTasks() {
     } catch (error) {
         console.error('加载运行中任务失败:', error);
     }
+}
+// 添加动画样式ZY0422-xia
+function addTaskStyles() {
+    if (document.getElementById('task-animation-style')) return;
+    
+    const style = document.createElement('style');
+    style.id = 'task-animation-style';
+    style.textContent = `
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .animate-pulse {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .status-running {
+            background-color: #ffc107;
+            color: #000;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .status-completed {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .status-failed {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .status-pending {
+            background-color: #6c757d;
+            color: #fff;
+        }
+        table tbody tr.table-warning {
+            background-color: #fff3cd !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// HTML 转义ZY0422-xia
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 // 查看任务详情（增加商品列表）
@@ -98,9 +159,26 @@ async function viewTaskDetail(taskId) {
         alert('加载详情失败: ' + error.message);
     }
 }
-
-// 加载任务列表
+function renderTaskPagination() {
+    const pagination = document.getElementById('taskPagination');
+    if (!pagination) return;
+    
+    if (totalTaskPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+    }
+    
+    let html = '';
+    for (let i = 1; i <= totalTaskPages; i++) {
+        html += `<li class="page-item ${i === currentTaskPage ? 'active' : ''}">
+                    <a class="page-link" href="#" onclick="loadTasks(${i}); return false;">${i}</a>
+                </li>`;
+    }
+    pagination.innerHTML = html;
+}
+// 加载任务列表 zy0422
 async function loadTasks(page = 1) {
+    console.log('loadTasks 被调用, page:', page);  // 添加日志
     currentTaskPage = page;
     const params = new URLSearchParams({ 
         page: currentTaskPage, 
@@ -109,22 +187,60 @@ async function loadTasks(page = 1) {
         keyword: currentKeyword
     });
     
+    // 显示加载状态
+    const tbody = document.getElementById('tasksTableBody');
+    if (tbody) {
+        tbody.innerHTML = '<tr><td colspan="9" class="text-center"><div class="spinner-border spinner-border-sm me-2"></div>加载中...</td></tr>';
+    }
+    
     try {
+        console.log('请求URL:', `/tasks?${params}`);  // 打印请求URL
         const result = await apiFetch(`/tasks?${params}`);
-        const tbody = document.getElementById('tasksTableBody');
+        console.log('API返回数据:', result);  // 打印返回数据
         
-        if (result.data && result.data.length > 0) {
-            tbody.innerHTML = result.data.map(task => {
+        if (!tbody) {
+            console.error('找不到 tasksTableBody 元素');
+            return;
+        }
+        
+        // 适配不同的返回数据格式
+        let tasks = [];
+        let totalPages = 1;
+        
+        if (result.data && Array.isArray(result.data)) {
+            // 格式: { data: [...], total_pages: 5 }
+            tasks = result.data;
+            totalPages = result.total_pages || result.totalPages || 1;
+        } else if (Array.isArray(result)) {
+            // 格式: 直接返回数组
+            tasks = result;
+            totalPages = 1;
+        } else if (result.code === 0 && result.data) {
+            // 格式: { code: 0, data: { list: [...], total: 100 } }
+            tasks = result.data.list || result.data.data || [];
+            totalPages = result.data.total_pages || result.data.totalPages || 1;
+        } else {
+            console.warn('未知的数据格式:', result);
+            tasks = [];
+        }
+        
+        console.log('解析后的任务数量:', tasks.length);  // 打印任务数量
+        
+        if (tasks.length > 0) {
+            tbody.innerHTML = tasks.map(task => {
                 const duration = task.completed_at ? 
                     Math.round((new Date(task.completed_at) - new Date(task.started_at)) / 1000) : '-';
+                const rowClass = task.status === 'running' ? 'table-warning' : '';
+                // 使用 escapeHtml 防止XSS攻击
+                const keyword = escapeHtml(task.keyword || '');
                 return `
-                    <tr>
+                    <tr class="${rowClass}">
                         <td>${task.id}</td>
-                        <td>${task.keyword}</td>
+                        <td><strong>${keyword}</strong></td>
                         <td><span class="status-badge status-${task.status}">${task.status}</span></td>
                         <td>${task.pages || '自动'}</td>
                         <td>${task.total_items || 0}</td>
-                        <td>${new Date(task.started_at).toLocaleString()}</td>
+                        <td>${task.started_at ? new Date(task.started_at).toLocaleString() : '-'}</td>
                         <td>${task.completed_at ? new Date(task.completed_at).toLocaleString() : '-'}</td>
                         <td>${duration !== '-' ? duration + '秒' : '-'}</td>
                         <td>
@@ -135,53 +251,89 @@ async function loadTasks(page = 1) {
                     </tr>
                 `;
             }).join('');
-            totalTaskPages = result.total_pages || 1;
-            renderTaskPagination();
+            totalTaskPages = totalPages;
+            
+            // 检查分页函数是否存在
+            if (typeof renderTaskPagination === 'function') {
+                renderTaskPagination();
+            } else {
+                console.warn('renderTaskPagination 函数未定义');
+            }
         } else {
             tbody.innerHTML = '<tr><td colspan="9" class="text-center">暂无任务</td></tr>';
         }
+        
         // 同时刷新运行中的任务
-        await loadRunningTasks();
+        if (typeof loadRunningTasks === 'function') {
+            await loadRunningTasks();
+        }
+        
+        // 更新API状态为在线
+        const statusEl = document.getElementById('api-status');
+        if (statusEl) {
+            statusEl.className = 'badge bg-success';
+            statusEl.textContent = 'API 在线';
+        }
+        
     } catch (error) {
-        document.getElementById('tasksTableBody').innerHTML = '<tr><td colspan="9" class="text-center text-danger">加载失败</td></tr>';
+        console.error('loadTasks 执行失败:', error);
+        console.error('错误详情:', error.stack);
+        
+        if (tbody) {
+            tbody.innerHTML = `<tr><td colspan="9" class="text-center text-danger">加载失败: ${error.message}</td></tr>`;
+        }
+        
+        // 更新API状态为离线
+        const statusEl = document.getElementById('api-status');
+        if (statusEl) {
+            statusEl.className = 'badge bg-danger';
+            statusEl.textContent = 'API 离线';
+        }
     }
 }
 
-// 渲染分页
-function renderTaskPagination() {
-    const pagination = document.getElementById('taskPagination');
-    let html = '';
+// 启动自动刷新ZY0422-xia
+function startAutoRefresh() {
+    // 清除已有定时器
+    if (tasksRefreshInterval) clearInterval(tasksRefreshInterval);
+    if (runningTasksInterval) clearInterval(runningTasksInterval);
     
-    html += `<li class="page-item ${currentTaskPage === 1 ? 'disabled' : ''}">
-        <a class="page-link" href="#" onclick="loadTasks(${currentTaskPage - 1}); return false;">«</a>
-    </li>`;
+    // 任务列表每10秒刷新一次（保持当前页）
+    tasksRefreshInterval = setInterval(() => {
+        loadTasks(currentTaskPage);
+    }, 10000);
     
-    for (let i = 1; i <= totalTaskPages && i <= 10; i++) {
-        html += `<li class="page-item ${currentTaskPage === i ? 'active' : ''}">
-            <a class="page-link" href="#" onclick="loadTasks(${i}); return false;">${i}</a>
-        </li>`;
-    }
-    
-    html += `<li class="page-item ${currentTaskPage === totalTaskPages ? 'disabled' : ''}">
-        <a class="page-link" href="#" onclick="loadTasks(${currentTaskPage + 1}); return false;">»</a>
-    </li>`;
-    
-    pagination.innerHTML = html;
+    // 运行中任务每3秒刷新一次（更实时）
+    runningTasksInterval = setInterval(() => {
+        loadRunningTasks();
+    }, 3000);
 }
 
-// 刷新任务
+// 停止自动刷新ZY0422-xia
+function stopAutoRefresh() {
+    if (tasksRefreshInterval) {
+        clearInterval(tasksRefreshInterval);
+        tasksRefreshInterval = null;
+    }
+    if (runningTasksInterval) {
+        clearInterval(runningTasksInterval);
+        runningTasksInterval = null;
+    }
+}
+
+// 刷新任务（手动）ZY0422-xia
 window.refreshTasks = function() {
     loadTasks(currentTaskPage);
 };
 
-// 筛选任务
+// 筛选任务ZY0422-xia
 window.filterTasks = function() {
     currentStatus = document.getElementById('taskStatusFilter').value;
     currentKeyword = document.getElementById('taskKeywordFilter').value;
     loadTasks(1);
 };
 
-// 查看任务详情
+// 查看任务详情ZY0422-xia
 window.viewTaskDetail = async function(taskId) {
     try {
         const task = await apiFetch(`/tasks/${taskId}`);
@@ -189,7 +341,7 @@ window.viewTaskDetail = async function(taskId) {
         modalBody.innerHTML = `
             <table class="table">
                 <tr><th style="width:150px">任务ID</th><td>${task.id}</td></tr>
-                <tr><th>关键词</th><td>${task.keyword}</td></tr>
+                <tr><th>关键词</th><td><strong>${escapeHtml(task.keyword)}</strong></td></tr>
                 <tr><th>状态</th><td><span class="status-badge status-${task.status}">${task.status}</span></td></tr>
                 <tr><th>抓取页数</th><td>${task.pages || '自动'}</td></tr>
                 <tr><th>商品数量</th><td>${task.total_items || 0}</td></tr>
@@ -205,29 +357,28 @@ window.viewTaskDetail = async function(taskId) {
     }
 };
 
+
+// 页面可见性变化时优化刷新（页面不可见时停止刷新，节省资源）
+function handleVisibilityChange() {
+    if (document.hidden) {
+        stopAutoRefresh();
+    } else {
+        startAutoRefresh();
+        loadTasks(currentTaskPage);  // 立即刷新
+    }
+}
+
+// 页面初始化
 document.addEventListener('DOMContentLoaded', () => {
+    addTaskStyles();
     loadTasks(1);
-    // 每30秒自动刷新
-    setInterval(() => loadTasks(currentTaskPage), 30000);
+    startAutoRefresh();
+    
+    // 监听页面可见性变化
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 });
 
-// 添加 CSS 动画
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    .spin {
-        display: inline-block;
-        animation: spin 1s linear infinite;
-    }
-`;
-document.head.appendChild(style);
-
-// 每5秒刷新运行中的任务
-setInterval(() => {
-    if (document.getElementById('running-tasks-list')) {
-        loadRunningTasks();
-    }
-}, 5000);
+// 页面关闭时清理
+window.addEventListener('beforeunload', () => {
+    stopAutoRefresh();
+});

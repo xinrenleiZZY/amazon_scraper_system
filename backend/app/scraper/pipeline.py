@@ -63,6 +63,8 @@ class ScrapingPipeline:
         try:
             # 1. 创建任务记录
             task_id = self._create_task_record(keyword, pages)
+            # 3. 爬取数据 - 长时间操作
+            self._update_task(task_id, 'running', 0, None)# zy 422
             
             # 2. 爬取数据
             logger.info(f"开始爬取: {keyword}")
@@ -82,7 +84,7 @@ class ScrapingPipeline:
             
             # 4. 预处理数据（添加字段）
             processed_file = self._preprocess_file(result['file_path'])
-            
+            self._update_task(task_id, 'running', len(raw_items), None) # zy 422
             # 5. 存入数据库
             db_count = self._save_to_database(processed_file)
             
@@ -228,7 +230,14 @@ class ScrapingPipeline:
         return task.id
     
     def _update_task(self, task_id: int, status: str, total_items: int = 0, error: str = None):
-        """更新任务状态"""
+        """更新任务状态
+    
+        Args:
+            task_id: 任务ID
+            status: 任务状态
+            total_items: 总项目数
+            error: 错误信息
+        """
         from app.models import ScrapingTask
         
         task = self.db_session.query(ScrapingTask).filter(ScrapingTask.id == task_id).first()
@@ -389,6 +398,6 @@ async def run_weekly_with_logs(manager=None):
 
 # 测试入口
 if __name__ == "__main__":
-    # result = run_now("beach+towels", pages=1)
-    # print(json.dumps(result, ensure_ascii=False, indent=2))
-    import_processed_data()
+    result = run_now("beach+towels", pages=1)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    # import_processed_data()

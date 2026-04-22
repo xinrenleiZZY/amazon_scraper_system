@@ -33,6 +33,7 @@
                             <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#importModal">
                                 <i class="bi bi-upload"></i> 批量导入
                             </button>
+                            <button class="btn btn-secondary btn-sm ms-2" onclick="downloadTemplate()"><i class="bi bi-download"></i> 下载模版</button><!-- #zy 422 -->
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#keywordModal">
                                 <i class="bi bi-plus"></i> 添加关键词
                             </button>
@@ -146,6 +147,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script> <!-- #zy 422 -->
     <script src="js/common.js"></script>
     <script src="js/sidebar.js"></script> <!-- #YU 421 -->
     <script src="js/keywords_overview.js"></script>

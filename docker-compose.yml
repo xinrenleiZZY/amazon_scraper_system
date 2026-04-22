@@ -27,8 +27,11 @@ services:
       DATABASE_URL: postgresql://admin:123456@postgres:5432/amazon_scraper
       INPUT_FOLDER: /app/app/scraper/amazon_data
       PROCESSED_DATA_DIR: /app/app/scraper/processed_data
+      NAS_SHARE_PATH: /nas
+      DISTRIBUTED_MODE: "true"
     volumes:
       - ./backend:/app
+      - //192.168.40.3/钟正洋/amazon_scraper:/nas  # 0421新增 挂载 NAS
     ports:
       - "8888:8000"
     depends_on:

@@ -693,14 +693,14 @@ class AmazonSearchScraper:
                     product = self.parse_sb_ad(div, data_index, page, sb_rank)
                     if product:
                         all_items.append(product)
-                        logger.info(f"[SB广告] data-index={data_index} SB排名:{sb_rank} - {product.title[:40]}")
+                        logger.info(f"[SB广告] data-index={data_index} SB排名:{sb_rank} - {product.title[:40]} - {product.price_current}")
                         sb_rank += 1
                 
                 elif has_video:
                     product = self.parse_sb_video_ad(div, data_index, page, sb_video_rank)
                     if product:
                         all_items.append(product)
-                        logger.info(f"[SB视频] data-index={data_index} 视频排名:{sb_video_rank} - {product.title[:40]}")
+                        logger.info(f"[SB视频] data-index={data_index} 视频排名:{sb_video_rank} - {product.title[:40]} - {product.price_current}")
                         sb_video_rank += 1
                 
                 elif asin:
@@ -708,13 +708,13 @@ class AmazonSearchScraper:
                         product = self.parse_sp_product(div, data_index, page, ad_rank=sp_rank)
                         if product:
                             all_items.append(product)
-                            logger.info(f"[SP广告] data-index={data_index} SP排名:{sp_rank} - {product.title[:40]}")
+                            logger.info(f"[SP广告] data-index={data_index} SP排名:{sp_rank} - {product.title[:40]} - {product.price_current}")
                             sp_rank += 1
                     else:
                         product = self.parse_sp_product(div, data_index, page, organic_rank=organic_rank)
                         if product:
                             all_items.append(product)
-                            logger.info(f"[自然] data-index={data_index} 自然排名:{organic_rank} - {product.title[:40]}")
+                            logger.info(f"[自然] data-index={data_index} 自然排名:{organic_rank} - {product.title[:40]} - {product.price_current}")
                             organic_rank += 1
                 
                 else:

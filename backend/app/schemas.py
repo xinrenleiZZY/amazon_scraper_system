@@ -33,6 +33,7 @@ class ScrapingTaskOut(BaseModel):
     pages: Optional[int]
     total_items: int
     status: str
+    # progress: Optional[int] = 0  # ❌ 删除这行
     started_at: Optional[datetime]
     completed_at: Optional[datetime]
     source_file: Optional[str]

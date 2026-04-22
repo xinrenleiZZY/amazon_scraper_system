@@ -2,54 +2,42 @@
 from fastapi import APIRouter, BackgroundTasks, Query, WebSocket, WebSocketDisconnect
 from typing import Optional
 import asyncio
-import logging
 
 router = APIRouter()
 
-# 存储 WebSocket 连接
-active_connections = []
-
-class ConnectionManager:
-    def __init__(self):
-        self.active_connections = []
+@router.get("/tasks/running") # ZY 0422
+def get_running_tasks():
+    """获取正在运行的任务"""
+    from app.models import ScrapingTask
+    from app.database import SessionLocal
     
-    async def connect(self, websocket: WebSocket):
-        await websocket.accept()
-        self.active_connections.append(websocket)
-    
-    def disconnect(self, websocket: WebSocket):
-        if websocket in self.active_connections:
-            self.active_connections.remove(websocket)
-    
-    async def send_log(self, message: str):
-        for connection in self.active_connections:
-            try:
-                await connection.send_text(message)
-            except:
-                pass
-
-manager = ConnectionManager()
-
-@router.websocket("/ws/logs")
-async def websocket_logs(websocket: WebSocket):
-    await manager.connect(websocket)
+    db = SessionLocal()
     try:
-        while True:
-            await websocket.receive_text()  # 保持连接
-    except WebSocketDisconnect:
-        manager.disconnect(websocket)
+        # 查找状态为 running 或 pending 的任务
+        running = db.query(ScrapingTask).filter(
+            ScrapingTask.status.in_(['running', 'pending'])
+        ).all()
+        return running
+    finally:
+        db.close()
 
-@router.post("/scrape")
-def start_scraping(
+@router.post("/scrape") # ZY 0422 使用使用 asyncio.to_thread 异步
+async def start_scraping(
     background_tasks: BackgroundTasks,
     keyword: Optional[str] = Query(None),
     pages: Optional[int] = Query(None)
 ):
     """启动爬取任务"""
-    from app.scraper.pipeline import run_now
-    
-    background_tasks.add_task(run_now, keyword, pages)
-    
+    # 使用 asyncio.to_thread 避免阻塞主线程
+    async def run_in_thread():
+        from app.scraper.pipeline import run_now
+        # 在线程池中执行同步代码
+        result = await asyncio.to_thread(run_now, keyword, pages)
+        return result
+        # background_tasks.add_task(run_now, keyword, pages)
+
+    # 创建后台任务
+    task = asyncio.create_task(run_in_thread())
     return {
         "message": "任务已启动",
         "keyword": keyword or "所有关键词",

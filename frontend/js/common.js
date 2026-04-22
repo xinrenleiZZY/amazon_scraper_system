@@ -1,13 +1,9 @@
 // 自动检测：本地直接访问后端，Docker 通过 nginx 代理
 const API_BASE = (location.port === '8000' || location.hostname === 'localhost' && location.port !== '8880')
-    ? 'http://localhost:8001/api'
+    ? 'http://localhost:8000/api'
     : '/api';
 
 const HEALTH_URL = API_BASE.startsWith('http') ? 'http://localhost:8000/health' : '/health';
-// YU测试
-// const API_BASE = 'http://localhost:8001/api';
-// const HEALTH_URL = 'http://localhost:8001/health';
-
 
 async function checkApiStatus() {
     try {
@@ -34,11 +30,12 @@ async function apiFetch(url, options = {}) {
         const headers = isFormData 
             ? { ...options.headers } // #YU 422 FormData 时不添加 Content-Type
             : { 'Content-Type': 'application/json', ...options.headers };
-        
+        // #YU 422 end
+
         const response = await fetch(`${API_BASE}${url}`, {
             ...options,
             headers: headers
-            //  headers: { 'Content-Type': 'application/json', ...options.headers }  // YU 422
+            // headers: { 'Content-Type': 'application/json', ...options.headers }
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return await response.json();

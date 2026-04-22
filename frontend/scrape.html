@@ -15,8 +15,7 @@
             <nav class="col-md-2 d-md-block bg-dark sidebar">
                 <div class="position-sticky pt-3">
                     <h5 class="text-white text-center py-3">汇挚鑫-亚马逊商品排名监控系统</h5>
-                    <ul class="nav flex-column">
-                    </ul>
+                    <ul class="nav flex-column"></ul>
                 </div>
             </nav>
 
@@ -111,66 +110,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/sidebar.js"></script> <!-- #YU 421 -->
+    <script src="js/sidebar.js"></script>
     <script src="js/scrape.js"></script>
-    <script>
-        // WebSocket 连接接收日志
-        let ws = null;
-
-        function connectWebSocket() {
-            ws = new WebSocket('ws://localhost:8888/ws/logs');
-            
-            ws.onopen = function() {
-                console.log('WebSocket 连接已建立');
-                addLog('🟢 已连接到日志服务器', 'info');
-            };
-            
-            ws.onmessage = function(event) {
-                addLog(event.data, 'log');
-            };
-            
-            ws.onerror = function(error) {
-                console.error('WebSocket 错误:', error);
-                addLog('🔴 WebSocket 连接错误', 'error');
-            };
-            
-            ws.onclose = function() {
-                console.log('WebSocket 连接已关闭');
-                // 5秒后重连
-                setTimeout(connectWebSocket, 5000);
-            };
-        }
-
-        function addLog(message, type = 'log') {
-            const container = document.getElementById('log-container');
-            const time = new Date().toLocaleTimeString();
-            const logEntry = document.createElement('div');
-            
-            let color = '#d4d4d4';
-            if (message.includes('✅')) color = '#4ec9b0';
-            if (message.includes('❌')) color = '#f48771';
-            if (message.includes('🚀')) color = '#569cd6';
-            if (message.includes('📅')) color = '#ce9178';
-            
-            logEntry.style.color = color;
-            logEntry.style.fontFamily = 'monospace';
-            logEntry.style.fontSize = '12px';
-            logEntry.style.margin = '2px 0';
-            logEntry.innerHTML = `<span style="color: #858585;">[${time}]</span> ${message}`;
-            
-            container.appendChild(logEntry);
-            container.scrollTop = container.scrollHeight;
-            
-            // 限制日志条数
-            while (container.children.length > 100) {
-                container.removeChild(container.firstChild);
-            }
-        }
-
-        // 页面加载时连接 WebSocket
-        document.addEventListener('DOMContentLoaded', () => {
-            connectWebSocket();
-        });
-        </script>
 </body>
 </html>

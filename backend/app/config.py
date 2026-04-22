@@ -49,7 +49,13 @@ class Settings(BaseSettings):
         case_sensitive = False
         extra = "ignore"  # ← 添加这一行，忽略 .env 中额外的字段
 
-
+    # ========== 任务调度 ==========
+    # NAS 共享目录（分布式爬取用）
+    NAS_SHARE_PATH: str = "//192.168.40.3/钟正洋/amazon_scraper"
+    
+    # 是否启用分布式模式
+    DISTRIBUTED_MODE: bool = False
+    
 settings = Settings()
 
 

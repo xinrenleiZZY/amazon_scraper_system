@@ -1,8 +1,9 @@
 # backend/app/api/keywords.py
 from fastapi import APIRouter, HTTPException, Query, UploadFile, File
 from typing import List
-import json, io
+import json
 from pathlib import Path
+import io
 
 router = APIRouter()
 
@@ -68,9 +69,8 @@ def update_keywords(keywords: List[str]):
     config = load_config()
     config["keywords"] = keywords
     save_config(config)
-
+    
     return {"keywords": keywords}
-
 
 # #YU 421 标签接口
 @router.get("/keywords/{keyword}/tags")
@@ -78,7 +78,7 @@ def get_keyword_tags(keyword: str):
     config = load_config()
     return config.get("keyword_tags", {}).get(keyword, [])
 
-
+# #YU 421 
 @router.put("/keywords/{keyword}/tags")
 def update_keyword_tags(keyword: str, tags: List[str]):
     config = load_config()
