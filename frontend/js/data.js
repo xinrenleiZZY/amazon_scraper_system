@@ -1,5 +1,30 @@
 let currentPage = 1;
 let totalPages = 1;
+let usersData = []; // #YU 421
+
+// #YU 421
+async function loadUsers() {
+    try {
+        usersData = await apiFetch('/users');
+        const select = document.getElementById('filterUser');
+        select.innerHTML = '<option value="">全部人员</option>' +
+            usersData.map(u => `<option value="${u.id}">${u.name}</option>`).join('');
+    } catch (e) {
+        console.error('加载人员失败:', e);
+    }
+}
+
+// #YU 421
+window.onUserChange = function() {
+    const userId = document.getElementById('filterUser').value;
+    const kwSelect = document.getElementById('filterKeyword');
+    if (!userId) { loadKeywords(); return; }
+    const user = usersData.find(u => u.id == userId);
+    const keywords = user ? user.keywords : [];
+    kwSelect.innerHTML = '<option value="">全部关键词</option>' +
+        keywords.map(kw => `<option value="${kw}">${kw}</option>`).join('');
+    searchData(1); // #YU 421 不强制选第一个，"全部关键词"触发多关键词查询
+};
 
 // 加载关键词列表
 async function loadKeywords() {
@@ -29,15 +54,24 @@ async function loadAsinOptions() {
 // 搜索数据
 window.searchData = async function(page = 1) {
     currentPage = page;
+    const userId = document.getElementById('filterUser').value; // #YU 421
     const keyword = document.getElementById('filterKeyword').value;
-    
+
     const asin = document.getElementById('filterAsin').value;
     const adType = document.getElementById('filterAdType').value;
     const date = document.getElementById('filterDate').value;
-    
+
     const params = new URLSearchParams({ page: currentPage, limit: 20 });
     if (keyword) params.append('keyword', keyword);
-    
+
+    // #YU 421 选了人员但没选具体关键词，查该人所有关键词
+    if (userId && !keyword) {
+        const user = usersData.find(u => u.id == userId);
+        if (user?.keywords?.length) {
+            user.keywords.forEach(kw => params.append('keywords', kw));
+        }
+    }
+
     if (asin) params.append('asin', asin);
     if (adType) params.append('ad_type', adType);
     if (date) params.append('date', date);
@@ -114,13 +148,22 @@ function renderPagination() {
     </li>`;
     
     pagination.innerHTML = html;
+    const label = document.getElementById('totalPagesLabel'); // #YU 421
+    if (label) label.textContent = `共 ${totalPages} 页`;
 }
+
+// #YU 421
+window.jumpToPage = function() {
+    const val = parseInt(document.getElementById('jumpPage').value);
+    if (val >= 1 && val <= totalPages) searchData(val);
+};
 
 
 // 重置筛选
 window.resetFilters = function() {
+    document.getElementById('filterUser').value = ''; // #YU 421
     document.getElementById('filterKeyword').value = '';
-    
+    loadKeywords(); // #YU 421
     document.getElementById('filterAsin').value = '';
     document.getElementById('filterAdType').value = '';
     document.getElementById('filterDate').value = '';
@@ -148,6 +191,7 @@ window.exportData = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    loadUsers(); // #YU 421
     loadKeywords();
     loadAsinOptions();
     searchData(1);

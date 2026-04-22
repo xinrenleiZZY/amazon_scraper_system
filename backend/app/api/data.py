@@ -14,10 +14,11 @@ router = APIRouter()
 @router.get("/results")
 def get_results(
     keyword: Optional[str] = Query(None),
+    keywords: Optional[List[str]] = Query(None),  # #YU 421
     asin: Optional[str] = Query(None),
     ad_type: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
-    limit: int = Query(20, ge=1, le=100),
+    limit: int = Query(20, ge=1, le=500),  # #YU 421  le=100 -> 500
     db: Session = Depends(get_db)
 ):
     """查询爬取结果"""
@@ -25,6 +26,8 @@ def get_results(
 
     if keyword:
         query = query.filter(RawSearchResult.keyword == keyword)
+    elif keywords:  # #YU 421
+        query = query.filter(RawSearchResult.keyword.in_(keywords))  # #YU 421
     if asin:
         query = query.filter(RawSearchResult.asin == asin)
     if ad_type:
@@ -70,7 +73,7 @@ def get_tasks(
     status: Optional[str] = Query(None),
     keyword: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
-    limit: int = Query(20, ge=1, le=100),
+    limit: int = Query(20, ge=1, le=500),  # #YU 421  le=100 -> 500
     db: Session = Depends(get_db)
 ):
     """查询任务列表"""

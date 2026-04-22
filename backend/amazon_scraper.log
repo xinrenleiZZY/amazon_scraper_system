@@ -7852,3 +7852,479 @@
 2026-04-21 01:05:35,132 - INFO - [自然] data-index=16 自然排名:62 - Bulk Christmas Peppermint Nougats 2 lb P
 2026-04-21 01:05:35,138 - INFO - [自然] data-index=17 自然排名:63 - HOMEST Christmas Tree Storage Bag, Fits 
 2026-04-21 01:05:35,145 - INFO - [自然] data-index=18 自然排名:64 - A First Book of Christmas Songs: For The
+2026-04-21 06:28:25,926 - INFO - 开始爬取: beach+towels
+2026-04-21 06:28:25,927 - INFO - 使用浏览器指纹: chrome101
+2026-04-21 06:28:25,929 - INFO - 正在初始化亚马逊美国会话...
+2026-04-21 06:28:29,729 - WARNING - 会话初始化状态码: 202
+2026-04-21 06:28:31,177 - WARNING - 会话初始化状态码: 202
+2026-04-21 06:28:34,008 - WARNING - 会话初始化状态码: 202
+2026-04-21 06:28:34,194 - WARNING - ⚠️ ZIP可能未生效
+2026-04-21 06:28:34,194 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-21 06:28:34,205 - INFO - 正在获取总页数: https://www.amazon.com/s?k=beach+towels
+2026-04-21 06:28:38,637 - INFO - 开始爬取: poole
+2026-04-21 06:28:38,638 - INFO - 使用浏览器指纹: chrome101
+2026-04-21 06:28:38,642 - INFO - 正在初始化亚马逊美国会话...
+2026-04-21 06:28:39,985 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:28:41,948 - INFO - 检测到总页数: 7
+2026-04-21 06:28:41,949 - INFO - 自动检测到总页数: 7
+2026-04-21 06:28:41,958 - INFO - 开始爬取关键词: beach+towels, 页数: 7
+2026-04-21 06:28:41,972 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=beach+towels&page=1
+2026-04-21 06:28:42,898 - WARNING - ⚠️ 首页未检测到美元
+2026-04-21 06:28:45,761 - WARNING - ⚠️ 首页未检测到美元
+2026-04-21 06:28:47,230 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:28:47,877 - WARNING - ⚠️ 首页未检测到美元
+2026-04-21 06:28:48,305 - WARNING - ⚠️ ZIP可能未生效
+2026-04-21 06:28:48,333 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-21 06:28:48,397 - INFO - 使用指定页数: 1
+2026-04-21 06:28:48,405 - INFO - 开始爬取关键词: poole, 页数: 1
+2026-04-21 06:28:48,427 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=poole&page=1
+2026-04-21 06:28:49,096 - INFO - 第 1 页找到 74 个带data-index的元素
+2026-04-21 06:28:49,113 - INFO - [SP广告] data-index=2 SP排名:1 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:28:49,128 - INFO - [SP广告] data-index=3 SP排名:2 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:28:49,144 - INFO - [SP广告] data-index=4 SP排名:3 - Amazon Basics 100% Cotton Soft & Absorbe
+2026-04-21 06:28:49,162 - INFO - [SP广告] data-index=5 SP排名:4 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:28:49,193 - INFO - [自然] data-index=6 自然排名:1 - LANE LINEN 6-Pack Oversized Pre-Washed B
+2026-04-21 06:28:49,229 - INFO - [自然] data-index=7 自然排名:2 - Kaufman - Soft Oversized Beach Towels in
+2026-04-21 06:28:49,265 - INFO - [自然] data-index=8 自然排名:3 - LANE LINEN Beach Towel 2 Pack, Oversized
+2026-04-21 06:28:49,316 - INFO - [自然] data-index=12 自然排名:4 - BolBom*S Beach Towels 6 Pack Large 30x60
+2026-04-21 06:28:49,333 - INFO - [自然] data-index=13 自然排名:5 - Kaufman Colored Classic Multi-Color Stri
+2026-04-21 06:28:49,350 - INFO - [自然] data-index=14 自然排名:6 - Clotho Turkish Beach Towel Set of 4 – 10
+2026-04-21 06:28:49,366 - INFO - [SP广告] data-index=15 SP排名:5 - Amazon Basics Soft & Absorbent Beach Tow
+2026-04-21 06:28:49,386 - INFO - [SP广告] data-index=16 SP排名:6 - Widdonen Thin Turkish Beach Towel Lightw
+2026-04-21 06:28:49,401 - INFO - [SP广告] data-index=17 SP排名:7 - YSYJ 12 Pack Turkish Beach Towel Oversiz
+2026-04-21 06:28:49,418 - INFO - [SP广告] data-index=18 SP排名:8 - 6 Packs Oversized 72x40 Inch Stripe Beac
+2026-04-21 06:28:49,439 - INFO - [自然] data-index=19 自然排名:7 - White Classic Cotton Pool Towels Oversiz
+2026-04-21 06:28:49,454 - INFO - [自然] data-index=20 自然排名:8 - Amazon Basics Soft & Absorbent Beach Tow
+2026-04-21 06:28:49,485 - INFO - [自然] data-index=21 自然排名:9 - BAY LAUREL Turkish Beach Towel with Trav
+2026-04-21 06:28:49,505 - INFO - [自然] data-index=22 自然排名:10 - Genovega 6 Packs Oversized Turkish Beach
+2026-04-21 06:28:49,520 - INFO - [SP广告] data-index=23 SP排名:9 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:28:49,527 - INFO - [SP广告] data-index=24 SP排名:10 - Salt Earth Cotton Striped Beach Cabana T
+2026-04-21 06:28:49,543 - INFO - [SP广告] data-index=25 SP排名:11 - Widdonen Lightweight Thin Microfiber Bea
+2026-04-21 06:28:49,548 - INFO - [SP广告] data-index=26 SP排名:12 - LULUHOME Large Oversized Beach Towel - B
+2026-04-21 06:28:49,567 - INFO - [自然] data-index=27 自然排名:11 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:28:49,587 - INFO - [自然] data-index=28 自然排名:12 - Tens Towels Pack of 4 Extra Large Bath T
+2026-04-21 06:28:49,603 - INFO - [自然] data-index=30 自然排名:13 - Ben Kaufman Terry Cabana Striped Towels 
+2026-04-21 06:28:49,628 - INFO - [自然] data-index=31 自然排名:14 - Thin Lightweight Microfiber Beach Towel 
+2026-04-21 06:28:49,645 - INFO - [自然] data-index=32 自然排名:15 - QUBA LINEN 100% Cotton Beach Towels, Cab
+2026-04-21 06:28:49,661 - INFO - [自然] data-index=33 自然排名:16 - Kaufman - Large Beach Towel | 30" x 60" 
+2026-04-21 06:28:49,675 - INFO - [自然] data-index=34 自然排名:17 - Touchat 4 Pack Cabana Stripe 250GSM Poly
+2026-04-21 06:28:49,691 - INFO - [自然] data-index=35 自然排名:18 - Exclusivo Mezcla 4 Pack Beach Towels, La
+2026-04-21 06:28:49,704 - INFO - [自然] data-index=36 自然排名:19 - White Classic Stripe Cabana Beach Towels
+2026-04-21 06:28:49,718 - INFO - [自然] data-index=37 自然排名:20 - Ben Kaufman Joey Velour Colored Classic 
+2026-04-21 06:28:49,731 - INFO - [自然] data-index=38 自然排名:21 - LULUHOME Large Oversized Beach Towel - B
+2026-04-21 06:28:49,747 - INFO - [自然] data-index=40 自然排名:22 - Touchat 4 Pack Beach Towels Oversized 30
+2026-04-21 06:28:49,763 - INFO - [自然] data-index=41 自然排名:23 - Kaufman - Colorful Racing Striped Beach 
+2026-04-21 06:28:49,780 - INFO - [自然] data-index=42 自然排名:24 - Arkwright California Cabana Stripe Beach
+2026-04-21 06:28:49,807 - INFO - [自然] data-index=43 自然排名:25 - Amazon Basics 100% Cotton Soft & Absorbe
+2026-04-21 06:28:49,838 - INFO - [自然] data-index=44 自然排名:26 - COTTON CRAFT Oversized XL Beach Towel 39
+2026-04-21 06:28:49,870 - INFO - [自然] data-index=45 自然排名:27 - 6 Packs Oversized 72x40 Inch Stripe Beac
+2026-04-21 06:28:49,901 - INFO - [自然] data-index=46 自然排名:28 - WEKAPO Beach Blanket Sandproof Waterproo
+2026-04-21 06:28:49,932 - INFO - [自然] data-index=47 自然排名:29 - Chakir Turkish Linens Premium Quality 10
+2026-04-21 06:28:49,964 - INFO - [自然] data-index=48 自然排名:30 - COTTON CRAFT Oversized Beach Towels - 2 
+2026-04-21 06:28:49,985 - INFO - [自然] data-index=49 自然排名:31 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:28:50,003 - INFO - [自然] data-index=50 自然排名:32 - JML Microfiber Beach Towels, Large Bath 
+2026-04-21 06:28:50,019 - INFO - [自然] data-index=51 自然排名:33 - Aegero Turkish Beach Towel, 36"x71" Quic
+2026-04-21 06:28:50,036 - INFO - [自然] data-index=52 自然排名:34 - Casa Copenhagen Cabana Towel 4Pcs Teal,B
+2026-04-21 06:28:50,067 - INFO - [自然] data-index=53 自然排名:35 - GLAMBURG 100% Cotton 2 Pack Oversized Ba
+2026-04-21 06:28:50,083 - INFO - [自然] data-index=54 自然排名:36 - Eunzel 2 Pack Microfiber Beach Towel, Qu
+2026-04-21 06:28:50,108 - INFO - [自然] data-index=55 自然排名:37 - TwoYek Microfiber Sand Free Beach Towel 
+2026-04-21 06:28:50,142 - INFO - [自然] data-index=56 自然排名:38 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:28:50,174 - INFO - [自然] data-index=57 自然排名:39 - Widdonen Turkish Beach Towel Quick Dry A
+2026-04-21 06:28:50,205 - INFO - [自然] data-index=58 自然排名:40 - 4 Packs Oversized Thin Beach Towel Set X
+2026-04-21 06:28:50,237 - INFO - [自然] data-index=60 自然排名:41 - Amazon Basics 100% Cotton Terry Beach To
+2026-04-21 06:28:50,258 - INFO - [自然] data-index=61 自然排名:42 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:28:50,281 - INFO - [自然] data-index=62 自然排名:43 - Market & Place 100% Cotton Velour Cabana
+2026-04-21 06:28:50,293 - INFO - [自然] data-index=63 自然排名:44 - Exclusivo Mezcla 2 Pack Cotton Oversized
+2026-04-21 06:28:50,323 - INFO - [自然] data-index=64 自然排名:45 - American Soft Linen Turkish Cabana Strip
+2026-04-21 06:28:50,340 - INFO - [自然] data-index=65 自然排名:46 - YSYJ Turkish Beach Towel 6 Pack Beach To
+2026-04-21 06:28:50,357 - INFO - [自然] data-index=66 自然排名:47 - Arkwright Las Rayas Striped Beach Towel 
+2026-04-21 06:28:50,391 - INFO - [自然] data-index=67 自然排名:48 - Exclusivo Mezcla 4 Pack Cotton Large 30x
+2026-04-21 06:28:50,436 - INFO - [SB广告] data-index=72 SB排名:1 - N/A
+2026-04-21 06:28:53,885 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:28:54,056 - INFO - 第 1 页找到 20 个带data-index的元素
+2026-04-21 06:28:54,074 - INFO - [自然] data-index=2 自然排名:1 - Poole's: Recipes and Stories from a Mode
+2026-04-21 06:28:54,089 - INFO - [自然] data-index=3 自然排名:2 - Henry Poole Is Here
+2026-04-21 06:28:54,094 - INFO - [自然] data-index=5 自然排名:3 - Henry Poole & Co.: The First Tailor of S
+2026-04-21 06:28:54,110 - INFO - [自然] data-index=6 自然排名:4 - Poole: Lighthouse Security Investigation
+2026-04-21 06:28:54,119 - INFO - [自然] data-index=7 自然排名:5 - Poole of Light: Book One of The Poole Le
+2026-04-21 06:28:54,136 - INFO - [自然] data-index=8 自然排名:6 - Poole's Gold
+2026-04-21 06:28:54,142 - INFO - [自然] data-index=9 自然排名:7 - The Brock & Poole Mystery Series Complet
+2026-04-21 06:28:54,154 - INFO - [自然] data-index=10 自然排名:8 - Poole of Honour: Book Two of The Poole L
+2026-04-21 06:28:54,168 - INFO - [自然] data-index=11 自然排名:9 - Poole Incarnate
+2026-04-21 06:28:54,253 - INFO - [自然] data-index=12 自然排名:10 - Poole Pitt [Explicit]
+2026-04-21 06:28:54,272 - INFO - [自然] data-index=13 自然排名:11 - A Deadly Invitation (Electra Poole Myste
+2026-04-21 06:28:54,304 - INFO - [自然] data-index=14 自然排名:12 - The Complete Book of Questions: 1001 Con
+2026-04-21 06:28:54,318 - INFO - [自然] data-index=15 自然排名:13 - Out of the Crash
+2026-04-21 06:28:54,343 - INFO - [自然] data-index=16 自然排名:14 - Funko Pop Collectible Toy Figure - Jorda
+2026-04-21 06:28:54,351 - INFO - [自然] data-index=17 自然排名:15 - His Family
+2026-04-21 06:28:54,366 - INFO - [自然] data-index=18 自然排名:16 - American Ultra
+2026-04-21 06:28:54,368 - INFO - 爬取完成，共获取 20 个元素
+2026-04-21 06:28:54,369 - INFO -   - 自然商品: 16 个
+2026-04-21 06:28:54,370 - INFO -   - SP广告: 0 个
+2026-04-21 06:28:54,372 - INFO -   - SB广告: 0 个
+2026-04-21 06:28:54,372 - INFO -   - SB视频: 0 个
+2026-04-21 06:28:54,439 - INFO - 数据已保存到: /app/app/scraper/amazon_data/poole_20260421_062854.json
+2026-04-21 06:28:54,484 - INFO - 存入数据库 16 条记录
+2026-04-21 06:28:54,495 - INFO - ✅ 流程完成: poole, 爬取 20 条, 入库 16 条
+2026-04-21 06:29:01,910 - INFO - 正在访问第 2 页: https://www.amazon.com/s?k=beach+towels&page=2
+2026-04-21 06:29:08,906 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:29:10,259 - INFO - 第 2 页找到 75 个带data-index的元素
+2026-04-21 06:29:10,278 - INFO - [SP广告] data-index=2 SP排名:13 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:29:10,305 - INFO - [SP广告] data-index=3 SP排名:14 - Widdonen Thin Turkish Beach Towel Lightw
+2026-04-21 06:29:10,321 - INFO - [SP广告] data-index=4 SP排名:15 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:29:10,338 - INFO - [SP广告] data-index=5 SP排名:16 - 6 Packs Oversized 72x40 Inch Stripe Beac
+2026-04-21 06:29:10,355 - INFO - [自然] data-index=6 自然排名:49 - Exclusivo Mezcla Quick Dry Beach Towel, 
+2026-04-21 06:29:10,374 - INFO - [自然] data-index=7 自然排名:50 - WIWIGO Beach Blanket Waterproof Sandproo
+2026-04-21 06:29:10,393 - INFO - [自然] data-index=8 自然排名:51 - LANE LINEN Beach Towels 4 Pack - 520 GSM
+2026-04-21 06:29:10,416 - INFO - [自然] data-index=12 自然排名:52 - 12 Pcs Oversized Microfiber Beach Towels
+2026-04-21 06:29:10,432 - INFO - [自然] data-index=13 自然排名:53 - Set of 6 Turkish Beach Towel, Cotton Bea
+2026-04-21 06:29:10,438 - INFO - [自然] data-index=14 自然排名:54 - Kaufman - Colorful Hibiscus Beach Towels
+2026-04-21 06:29:10,444 - INFO - [SP广告] data-index=15 SP排名:17 - Refinery No. 1 Turkish Beach Towel, Over
+2026-04-21 06:29:10,455 - INFO - [SP广告] data-index=16 SP排名:18 - Sea Turtle Beach Towel Oversized 36" x 7
+2026-04-21 06:29:10,460 - INFO - [SP广告] data-index=17 SP排名:19 - YSYJ 12 Pack Turkish Beach Towel Oversiz
+2026-04-21 06:29:10,474 - INFO - [SP广告] data-index=18 SP排名:20 - Kaufman Colored Classic Multi-Color Stri
+2026-04-21 06:29:10,495 - INFO - [自然] data-index=19 自然排名:55 - COTTON CRAFT Oversized Beach Towel - 2 P
+2026-04-21 06:29:10,505 - INFO - [自然] data-index=20 自然排名:56 - Laguna Beach Textile Co. Striped Cabana 
+2026-04-21 06:29:10,521 - INFO - [自然] data-index=23 自然排名:57 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:29:10,531 - INFO - [自然] data-index=24 自然排名:58 - Gold CASE LYCIA Turkish Beach Towel Set 
+2026-04-21 06:29:10,544 - INFO - [SP广告] data-index=25 SP排名:21 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:29:10,550 - INFO - [SP广告] data-index=26 SP排名:22 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:29:10,565 - INFO - [SP广告] data-index=27 SP排名:23 - White Classic Cotton Pool Towels Oversiz
+2026-04-21 06:29:10,570 - INFO - [SP广告] data-index=28 SP排名:24 - ECCOSOPHY Microfiber Beach Towel – Quick
+2026-04-21 06:29:10,591 - INFO - [自然] data-index=29 自然排名:59 - 6 Packs Oversized Terry Beach Towel Set 
+2026-04-21 06:29:10,601 - INFO - [自然] data-index=30 自然排名:60 - Lightweight Turkish Beach Towel - 100% B
+2026-04-21 06:29:10,616 - INFO - [自然] data-index=31 自然排名:61 - Eliamo Turkish Beach Towel Set of 6 Beac
+2026-04-21 06:29:10,635 - INFO - [自然] data-index=32 自然排名:62 - Sand Cloud Turkish Beach Towel - Sand Pr
+2026-04-21 06:29:10,652 - INFO - [自然] data-index=33 自然排名:63 - Bornbay Cotton Oversized Beach Towel - E
+2026-04-21 06:29:10,668 - INFO - [自然] data-index=34 自然排名:64 - Jacquotha Black and Ivory Striped Bath T
+2026-04-21 06:29:10,685 - INFO - [自然] data-index=35 自然排名:65 - HAVLULAND 6-Packs Turkish Beach Towel Ov
+2026-04-21 06:29:10,702 - INFO - [自然] data-index=36 自然排名:66 - Rainleaf Microfiber Towel Perfect Travel
+2026-04-21 06:29:10,733 - INFO - [自然] data-index=37 自然排名:67 - 2 Packs Oversized Beach Towel Set Extra 
+2026-04-21 06:29:10,742 - INFO - [自然] data-index=38 自然排名:68 - Preboun 12 Pcs Striped Beach Towels Bulk
+2026-04-21 06:29:10,765 - INFO - [自然] data-index=39 自然排名:69 - Casa Copenhagen Cabana Towel 4Pcs Green,
+2026-04-21 06:29:10,807 - INFO - [自然] data-index=40 自然排名:70 - WETCAT Turkish Beach Towel Oversized (38
+2026-04-21 06:29:10,811 - INFO - [自然] data-index=41 自然排名:71 - Vikumond Thin Turkish Beach Towel Lightw
+2026-04-21 06:29:10,827 - INFO - [自然] data-index=42 自然排名:72 - Belizzi Home Peshtemal Turkish Towel Che
+2026-04-21 06:29:10,846 - INFO - [自然] data-index=43 自然排名:73 - 4 Pack Microfiber Lightweight Beach Towe
+2026-04-21 06:29:10,861 - INFO - [自然] data-index=44 自然排名:74 - Loon & Lake Luxury Beach Towels Set of 2
+2026-04-21 06:29:10,893 - INFO - [自然] data-index=45 自然排名:75 - Genovega 6 Packs Oversized Stripe Turkis
+2026-04-21 06:29:10,914 - INFO - [自然] data-index=46 自然排名:76 - Yongoes 4 Pack Microfiber Lightweight Th
+2026-04-21 06:29:10,925 - INFO - [自然] data-index=47 自然排名:77 - BYDOLL Beach Blanket Waterproof Sandproo
+2026-04-21 06:29:10,962 - INFO - [自然] data-index=48 自然排名:78 - Amazon Basics 2-Piece Quick-Dry Oversize
+2026-04-21 06:29:10,979 - INFO - [自然] data-index=49 自然排名:79 - Oliven 4 Piece Brown Cabana Stripe Large
+2026-04-21 06:29:11,008 - INFO - [自然] data-index=50 自然排名:80 - Salt Earth 100% Cotton Sateen Turkish Be
+2026-04-21 06:29:11,024 - INFO - [自然] data-index=51 自然排名:81 - ZUPERIA 7-Pack Bath Towels - 30" x 54" -
+2026-04-21 06:29:11,037 - INFO - [自然] data-index=52 自然排名:82 - Calvin Klein - Beach Towels, 2-Piece Sof
+2026-04-21 06:29:11,054 - INFO - [自然] data-index=53 自然排名:83 - CLOWOOD Plush Oversized Beach Towel - Co
+2026-04-21 06:29:11,075 - INFO - [自然] data-index=54 自然排名:84 - American Soft Linen 35x70 Jumbo Large Ba
+2026-04-21 06:29:11,102 - INFO - [自然] data-index=55 自然排名:85 - GLAMBURG Peshtemal Turkish Towel Cotton 
+2026-04-21 06:29:11,114 - INFO - [自然] data-index=56 自然排名:86 - Kitsch Plush Microfiber Hair Towel Wrap 
+2026-04-21 06:29:11,122 - INFO - [自然] data-index=57 自然排名:87 - Loon & Lake Sand Resistant Beach Towels 
+2026-04-21 06:29:11,136 - INFO - [自然] data-index=58 自然排名:88 - 6 Pack Microfiber Beach Towel Oversized 
+2026-04-21 06:29:11,151 - INFO - [自然] data-index=59 自然排名:89 - Mixweer 12 Pack Turkish Beach Towels Bul
+2026-04-21 06:29:11,167 - INFO - [自然] data-index=60 自然排名:90 - WILFA Extra Large Beach Towel - Oversize
+2026-04-21 06:29:11,185 - INFO - [自然] data-index=61 自然排名:91 - Sand Cloud Extra Large Turkish Beach Tow
+2026-04-21 06:29:11,215 - INFO - [自然] data-index=62 自然排名:92 - Gold CASE Turkish Beach Towel Set of 5 –
+2026-04-21 06:29:11,232 - INFO - [自然] data-index=63 自然排名:93 - 4 Pack Turkish Striped Beach Towels Bulk
+2026-04-21 06:29:11,254 - INFO - [自然] data-index=64 自然排名:94 - Beach Towel 2 Pack,Sand Free Beach Towel
+2026-04-21 06:29:11,285 - INFO - [自然] data-index=65 自然排名:95 - Lacoste Heritage 100% Supima Cotton Bath
+2026-04-21 06:29:11,299 - INFO - [自然] data-index=66 自然排名:96 - Genovega Oversized Turkish Beach Towel 7
+2026-04-21 06:29:11,342 - INFO - [SB广告] data-index=71 SB排名:2 - N/A
+2026-04-21 06:29:21,061 - INFO - 正在访问第 3 页: https://www.amazon.com/s?k=beach+towels&page=3
+2026-04-21 06:29:25,869 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:29:27,311 - INFO - 第 3 页找到 73 个带data-index的元素
+2026-04-21 06:29:27,329 - INFO - [SP广告] data-index=2 SP排名:25 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:29:27,346 - INFO - [SP广告] data-index=3 SP排名:26 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:29:27,360 - INFO - [SP广告] data-index=4 SP排名:27 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:29:27,375 - INFO - [SP广告] data-index=5 SP排名:28 - Widdonen Thin Turkish Beach Towel Lightw
+2026-04-21 06:29:27,405 - INFO - [自然] data-index=6 自然排名:97 - Amazon Basics 100% Cotton Beach Towel, S
+2026-04-21 06:29:27,412 - INFO - [自然] data-index=7 自然排名:98 - 2 Pack Oversized Microfiber Beach Towel 
+2026-04-21 06:29:27,425 - INFO - [自然] data-index=8 自然排名:99 - 2 Pack Microfiber Oversized Lightweight 
+2026-04-21 06:29:27,467 - INFO - [自然] data-index=12 自然排名:100 - Casa Platino Beach Towels Oversized Set 
+2026-04-21 06:29:27,474 - INFO - [自然] data-index=13 自然排名:101 - Softerry - Extra Soft Beach Towel 30 x 6
+2026-04-21 06:29:27,486 - INFO - [自然] data-index=14 自然排名:102 - SOFE H&L | Playa Velour Large Beach Towe
+2026-04-21 06:29:27,500 - INFO - [SP广告] data-index=15 SP排名:29 - Sea Turtle Beach Towel Oversized 36" x 7
+2026-04-21 06:29:27,507 - INFO - [SP广告] data-index=16 SP排名:30 - Redbaker 16 Packs 72 x 36 Inches Oversiz
+2026-04-21 06:29:27,520 - INFO - [SP广告] data-index=17 SP排名:31 - Refinery No. 1 Turkish Beach Towel, Over
+2026-04-21 06:29:27,534 - INFO - [SP广告] data-index=18 SP排名:32 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:29:27,550 - INFO - [自然] data-index=19 自然排名:103 - YIFONTIN 2 Pieces Beach Towels Velvet Te
+2026-04-21 06:29:27,565 - INFO - [自然] data-index=20 自然排名:104 - 4 Pack Microfiber Beach Towels, 71" x 32
+2026-04-21 06:29:27,580 - INFO - [自然] data-index=23 自然排名:105 - Jacquotha Pink Checkered Beach Towel Ove
+2026-04-21 06:29:27,585 - INFO - [自然] data-index=24 自然排名:106 - Gold Case Hera Turkish Beach Towels Set 
+2026-04-21 06:29:27,591 - INFO - [SP广告] data-index=25 SP排名:33 - 6 Pack Microfiber Beach Towel Oversized 
+2026-04-21 06:29:27,602 - INFO - [SP广告] data-index=26 SP排名:34 - YSYJ 12 Pack Turkish Beach Towel Oversiz
+2026-04-21 06:29:27,608 - INFO - [SP广告] data-index=27 SP排名:35 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:29:27,621 - INFO - [SP广告] data-index=28 SP排名:36 - Jonathan Adler Oversized Velour Printed 
+2026-04-21 06:29:27,643 - INFO - [自然] data-index=29 自然排名:107 - Genovega 2 Packs Oversized Turkish Beach
+2026-04-21 06:29:27,659 - INFO - [自然] data-index=30 自然排名:108 - Beach Towel Microfiber Beach Towels Sand
+2026-04-21 06:29:27,670 - INFO - [自然] data-index=31 自然排名:109 - Salt Earth Cotton Beach Towel (Pack of 6
+2026-04-21 06:29:27,690 - INFO - [自然] data-index=32 自然排名:110 - Widdonen Giant Turkish Beach Towel Blank
+2026-04-21 06:29:27,708 - INFO - [自然] data-index=33 自然排名:111 - Sand Cloud Turkish Beach Towel - Sand Pr
+2026-04-21 06:29:27,717 - INFO - [自然] data-index=34 自然排名:112 - Bonsai Tree Mermaid Beach Towel, Mermaid
+2026-04-21 06:29:27,730 - INFO - [自然] data-index=35 自然排名:113 - Towel Bands (6-Pack), Beach Pool & Cruis
+2026-04-21 06:29:27,734 - INFO - [自然] data-index=36 自然排名:114 - 4 Pack Microfiber Beach Towel Fast Dryin
+2026-04-21 06:29:27,748 - INFO - [自然] data-index=37 自然排名:115 - Cute Sea Turtle Beach Towel for Men/Adul
+2026-04-21 06:29:27,754 - INFO - [自然] data-index=38 自然排名:116 - Great Bay Home 100% Cotton Beach Towels 
+2026-04-21 06:29:27,763 - INFO - [自然] data-index=39 自然排名:117 - Softerry American Flag Beach Towel 30 x 
+2026-04-21 06:29:27,772 - INFO - [自然] data-index=40 自然排名:118 - FuWeave 10 Pack Microfiber Beach Towel 2
+2026-04-21 06:29:27,778 - INFO - [自然] data-index=41 自然排名:119 - 2 Pack Lightweight Thin Beach Towel Over
+2026-04-21 06:29:27,796 - INFO - [自然] data-index=42 自然排名:120 - 2 Pack Oversized Microfiber Pool Towel, 
+2026-04-21 06:29:27,802 - INFO - [自然] data-index=43 自然排名:121 - Oversized Turkish Beach Towel Blanket XX
+2026-04-21 06:29:27,817 - INFO - [自然] data-index=44 自然排名:122 - COMFAR Cute Shark Microfiber Beach Towel
+2026-04-21 06:29:27,836 - INFO - [自然] data-index=45 自然排名:123 - Beach Towels Set 2 Pack Oversized Microf
+2026-04-21 06:29:27,847 - INFO - [自然] data-index=46 自然排名:124 - CLOUDSCAPE Beach Towels 6 Pack - 39"x71"
+2026-04-21 06:29:27,869 - INFO - [自然] data-index=47 自然排名:125 - Cotton Paradise, Cabana Stripe Beach Tow
+2026-04-21 06:29:27,887 - INFO - [自然] data-index=48 自然排名:126 - Northwest NFL Unisex-Adult Beach Towel
+2026-04-21 06:29:27,916 - INFO - [自然] data-index=49 自然排名:127 - COTTON CRAFT Oversized Extra Wide XL Bea
+2026-04-21 06:29:27,929 - INFO - [自然] data-index=50 自然排名:128 - Nomadix Original Towel - Perfect for Bea
+2026-04-21 06:29:27,945 - INFO - [自然] data-index=51 自然排名:129 - Northwest Pokémon Beach Towel – Pikachu 
+2026-04-21 06:29:27,961 - INFO - [自然] data-index=52 自然排名:130 - LANE LINEN 100% Cotton Beach Towel Set o
+2026-04-21 06:29:27,986 - INFO - [自然] data-index=53 自然排名:131 - MaopaoBeauty 2 Pack Oversized Bath Towel
+2026-04-21 06:29:28,004 - INFO - [自然] data-index=54 自然排名:132 - EBOOT 10 Pack Oversized Beach Towel Set 
+2026-04-21 06:29:28,023 - INFO - [自然] data-index=55 自然排名:133 - Widdonen Thin Turkish Beach Towel Lightw
+2026-04-21 06:29:28,032 - INFO - [自然] data-index=56 自然排名:134 - Whale Flotilla 4 Pack Large Quick Dry Be
+2026-04-21 06:29:28,056 - INFO - [自然] data-index=57 自然排名:135 - 2 Pack Microfiber Lightweight Beach Towe
+2026-04-21 06:29:28,070 - INFO - [自然] data-index=58 自然排名:136 - Redbaker 16 Packs 31 x 63 Inches Oversiz
+2026-04-21 06:29:28,084 - INFO - [自然] data-index=59 自然排名:137 - 6 Pack Beach Towel Oversized, 71 * 36’’ 
+2026-04-21 06:29:28,098 - INFO - [自然] data-index=60 自然排名:138 - EBOOT 10 Pack Oversized Beach Towel Set 
+2026-04-21 06:29:28,103 - INFO - [自然] data-index=61 自然排名:139 - Casa Copenhagen Malibu Towel 4Pcs Orange
+2026-04-21 06:29:28,107 - INFO - [自然] data-index=62 自然排名:140 - Berkshire Beach Towel — 100% Cotton Pool
+2026-04-21 06:29:28,121 - INFO - [自然] data-index=63 自然排名:141 - cabanana Large Beach Towel Oversized - C
+2026-04-21 06:29:28,126 - INFO - [自然] data-index=64 自然排名:142 - Disney Stitch Beach Towel, Winking Sweet
+2026-04-21 06:29:28,139 - INFO - [自然] data-index=65 自然排名:143 - Kassatex Fine Linens Women's Cabana Stri
+2026-04-21 06:29:28,155 - INFO - [自然] data-index=66 自然排名:144 - MISSION Tuko Microfiber Beach Towels 4 P
+2026-04-21 06:29:28,177 - INFO - [SB广告] data-index=71 SB排名:3 - N/A
+2026-04-21 06:29:38,197 - INFO - 正在访问第 4 页: https://www.amazon.com/s?k=beach+towels&page=4
+2026-04-21 06:29:44,744 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:29:45,921 - INFO - 第 4 页找到 77 个带data-index的元素
+2026-04-21 06:29:45,932 - INFO - [SP广告] data-index=2 SP排名:37 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:29:45,949 - INFO - [SP广告] data-index=3 SP排名:38 - Widdonen Thin Turkish Beach Towel Lightw
+2026-04-21 06:29:45,957 - INFO - [SP广告] data-index=4 SP排名:39 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:29:45,972 - INFO - [SP广告] data-index=5 SP排名:40 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:29:45,996 - INFO - [自然] data-index=6 自然排名:145 - FuWeave 6 Pack Microfiber Oversize Turki
+2026-04-21 06:29:46,018 - INFO - [自然] data-index=7 自然排名:146 - Cotton Paradise 100% Cotton 40x80 Oversi
+2026-04-21 06:29:46,022 - INFO - [自然] data-index=8 自然排名:147 - xo, Fetti Bride Fringe Beach Towel - 100
+2026-04-21 06:29:46,056 - INFO - [自然] data-index=12 自然排名:148 - cabanana Large Beach Towel Oversized - C
+2026-04-21 06:29:46,063 - INFO - [自然] data-index=13 自然排名:149 - Lilly Pulitzer Oversized Pool/Beach Towe
+2026-04-21 06:29:46,079 - INFO - [自然] data-index=14 自然排名:150 - HOMEXCEL Bath Towel Set Pack of 4, 30 x 
+2026-04-21 06:29:46,085 - INFO - [SP广告] data-index=15 SP排名:41 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:29:46,091 - INFO - [SP广告] data-index=16 SP排名:42 - Sea Turtle Beach Towel Oversized 36" x 7
+2026-04-21 06:29:46,102 - INFO - [SP广告] data-index=17 SP排名:43 - Redbaker 16 Packs 72 x 36 Inches Oversiz
+2026-04-21 06:29:46,108 - INFO - [SP广告] data-index=18 SP排名:44 - Refinery No. 1 Turkish Beach Towel, Over
+2026-04-21 06:29:46,128 - INFO - [自然] data-index=19 自然排名:151 - PARK & OZ Turkish Beach Towels 2 Pack – 
+2026-04-21 06:29:46,134 - INFO - [自然] data-index=20 自然排名:152 - Northwest NFL Philadelphia Eagles 2025 S
+2026-04-21 06:29:46,152 - INFO - [自然] data-index=24 自然排名:153 - Get Trend Kpop Demon Hunters Bath Towels
+2026-04-21 06:29:46,156 - INFO - [自然] data-index=25 自然排名:154 - Vikumond Oversized Turkish Beach Towel B
+2026-04-21 06:29:46,171 - INFO - [SP广告] data-index=26 SP排名:45 - Kaufman Colored Classic Multi-Color Stri
+2026-04-21 06:29:46,177 - INFO - [SP广告] data-index=27 SP排名:46 - Salt Earth Cotton Striped Beach Cabana T
+2026-04-21 06:29:46,193 - INFO - [SP广告] data-index=28 SP排名:47 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:29:46,207 - INFO - [SP广告] data-index=29 SP排名:48 - ECCOSOPHY Microfiber Beach Towel – Quick
+2026-04-21 06:29:46,214 - INFO - [自然] data-index=30 自然排名:155 - Peryiter 6 Pcs Oversized Beach Towels Se
+2026-04-21 06:29:46,232 - INFO - [自然] data-index=31 自然排名:156 - Dock & Bay Beach Towel - Quick Dry, Sand
+2026-04-21 06:29:46,240 - INFO - [自然] data-index=32 自然排名:157 - ZUPERIA White Bath Towels Bulk 12 Pack (
+2026-04-21 06:29:46,267 - INFO - [自然] data-index=33 自然排名:158 - DEMMEX Organic Diamond Turkish Bath & Be
+2026-04-21 06:29:46,277 - INFO - [自然] data-index=34 自然排名:159 - Florida Map Beach Towel 30 x 60 inch 100
+2026-04-21 06:29:46,295 - INFO - [自然] data-index=35 自然排名:160 - Sand Cloud Turkish Beach Towel - Sand Fr
+2026-04-21 06:29:46,322 - INFO - [自然] data-index=36 自然排名:161 - ATANI Turkish Beach Towel (71x39 Inches)
+2026-04-21 06:29:46,337 - INFO - [自然] data-index=37 自然排名:162 - ECCOSOPHY Microfiber Beach Towel - Sand 
+2026-04-21 06:29:46,343 - INFO - [自然] data-index=38 自然排名:163 - Elite Trend Microfiber Beach Towel - Ext
+2026-04-21 06:29:46,358 - INFO - [自然] data-index=39 自然排名:164 - Beach Collection American Flag Soft Towe
+2026-04-21 06:29:46,372 - INFO - [自然] data-index=40 自然排名:165 - Lacoste 100% Cotton Large Beach Towel, U
+2026-04-21 06:29:46,397 - INFO - [自然] data-index=41 自然排名:166 - HOMEXCEL Bath Towels Pack of 2, (27 x 54
+2026-04-21 06:29:46,417 - INFO - [自然] data-index=42 自然排名:167 - Superior Cotton Cabana Striped Beach Tow
+2026-04-21 06:29:46,431 - INFO - [自然] data-index=43 自然排名:168 - OCOOPA Microfiber Beach Towel Sand Free,
+2026-04-21 06:29:46,445 - INFO - [自然] data-index=44 自然排名:169 - Northwest Hello Kitty Microfiber Beach T
+2026-04-21 06:29:46,461 - INFO - [自然] data-index=45 自然排名:170 - Lilly Pulitzer Oversized Pool/Beach Towe
+2026-04-21 06:29:46,476 - INFO - [自然] data-index=46 自然排名:171 - Disney Stitch Beach Towel, Beach Love an
+2026-04-21 06:29:46,493 - INFO - [自然] data-index=47 自然排名:172 - Sand Cloud Turkish Beach Towel - Sand Fr
+2026-04-21 06:29:46,522 - INFO - [自然] data-index=48 自然排名:173 - Pendleton Oversized Jacquard Spa Towels,
+2026-04-21 06:29:46,541 - INFO - [自然] data-index=49 自然排名:174 - Sand Cloud Turkish Bath Towels Bundle fo
+2026-04-21 06:29:46,552 - INFO - [自然] data-index=50 自然排名:175 - Sand Cloud Beach Towel - Sand Free - 100
+2026-04-21 06:29:46,562 - INFO - [自然] data-index=51 自然排名:176 - Artoid Mode Flip-Flops Seaside Beach Sum
+2026-04-21 06:29:46,576 - INFO - [自然] data-index=52 自然排名:177 - 6 Pack Turkish Beach Towel Set - 39”x71”
+2026-04-21 06:29:46,590 - INFO - [自然] data-index=53 自然排名:178 - Disney Store Official Moana Kids Bath To
+2026-04-21 06:29:46,599 - INFO - [自然] data-index=54 自然排名:179 - Nomadix Original Towel - Perfect for Bea
+2026-04-21 06:29:46,614 - INFO - [自然] data-index=55 自然排名:180 - Artoid Mode Stripe Coral Starfish Seahor
+2026-04-21 06:29:46,623 - INFO - [自然] data-index=56 自然排名:181 - Northwest NFL Dallas Cowboys Unisex-Adul
+2026-04-21 06:29:46,638 - INFO - [自然] data-index=57 自然排名:182 - Lilly Pulitzer Oversized Pool/Beach Towe
+2026-04-21 06:29:46,645 - INFO - [自然] data-index=58 自然排名:183 - Northwest NFL Unisex-Adult Beach Towel
+2026-04-21 06:29:46,652 - INFO - [自然] data-index=59 自然排名:184 - Burt's Bees Baby Hooded Woven Terry Towe
+2026-04-21 06:29:46,665 - INFO - [自然] data-index=60 自然排名:185 - Tommy Bahama Beach Towels
+2026-04-21 06:29:46,671 - INFO - [自然] data-index=61 自然排名:186 - Disney Stitch Beach Towel, Tropical Patt
+2026-04-21 06:29:46,678 - INFO - [自然] data-index=62 自然排名:187 - Cacala Pestemal Turkish Beach Towel High
+2026-04-21 06:29:46,693 - INFO - [自然] data-index=63 自然排名:188 - Disney Stitch Beach Towel Kids Toddlers 
+2026-04-21 06:29:46,709 - INFO - [自然] data-index=64 自然排名:189 - Pokemon Beach Towel for Kids Pikachu Gen
+2026-04-21 06:29:46,714 - INFO - [自然] data-index=65 自然排名:190 - Hello Kitty Beach Towel Set - Bundle wit
+2026-04-21 06:29:46,728 - INFO - [自然] data-index=66 自然排名:191 - Superior 100% Cotton Luxury Beach Towels
+2026-04-21 06:29:46,748 - INFO - [自然] data-index=67 自然排名:192 - Sand Cloud Turkish Beach Towel - 100% Or
+2026-04-21 06:29:46,785 - INFO - [SB广告] data-index=72 SB排名:4 - N/A
+2026-04-21 06:29:55,814 - INFO - 正在访问第 5 页: https://www.amazon.com/s?k=beach+towels&page=5
+2026-04-21 06:30:00,221 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:30:01,154 - INFO - 第 5 页找到 75 个带data-index的元素
+2026-04-21 06:30:01,183 - INFO - [SP广告] data-index=2 SP排名:49 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:30:01,189 - INFO - [SP广告] data-index=3 SP排名:50 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:30:01,205 - INFO - [SP广告] data-index=4 SP排名:51 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:30:01,221 - INFO - [SP广告] data-index=5 SP排名:52 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:30:01,226 - INFO - [自然] data-index=6 自然排名:193 - Northwest NFL Buffalo Bills Unisex-Adult
+2026-04-21 06:30:01,235 - INFO - [自然] data-index=7 自然排名:194 - Joiedomi Kids Beach Towels with Hood for
+2026-04-21 06:30:01,253 - INFO - [自然] data-index=8 自然排名:195 - Minecraft Beach Towel for Kids Teens 2 C
+2026-04-21 06:30:01,274 - INFO - [自然] data-index=12 自然排名:196 - Spiderman Hooded Towel 100% Cotton Dress
+2026-04-21 06:30:01,289 - INFO - [自然] data-index=13 自然排名:197 - Marvel Spidey And His Amazing Friends Ba
+2026-04-21 06:30:01,305 - INFO - [自然] data-index=14 自然排名:198 - Artoid Mode Sweet Seashell Snail Starfis
+2026-04-21 06:30:01,318 - INFO - [SP广告] data-index=15 SP排名:53 - Sea Turtle Beach Towel Oversized 36" x 7
+2026-04-21 06:30:01,323 - INFO - [SP广告] data-index=16 SP排名:54 - Redbaker 16 Packs 72 x 36 Inches Oversiz
+2026-04-21 06:30:01,330 - INFO - [SP广告] data-index=17 SP排名:55 - Kaufman Colored Classic Multi-Color Stri
+2026-04-21 06:30:01,343 - INFO - [SP广告] data-index=18 SP排名:56 - Refinery No. 1 Turkish Beach Towel, Over
+2026-04-21 06:30:01,357 - INFO - [自然] data-index=19 自然排名:199 - Northwest NFL New York Giants
+2026-04-21 06:30:01,362 - INFO - [自然] data-index=20 自然排名:200 - Disney Floral Stitch Beach Towel,Cotton 
+2026-04-21 06:30:01,369 - INFO - [自然] data-index=23 自然排名:201 - Northwest NFL Kansas City Chiefs
+2026-04-21 06:30:01,383 - INFO - [自然] data-index=24 自然排名:202 - Lilly Pulitzer Oversized Pool/Beach Towe
+2026-04-21 06:30:01,398 - INFO - [SP广告] data-index=25 SP排名:57 - ECCOSOPHY Microfiber Beach Towel – Quick
+2026-04-21 06:30:01,402 - INFO - [SP广告] data-index=26 SP排名:58 - Jonathan Adler Oversized Velour Printed 
+2026-04-21 06:30:01,407 - INFO - [SP广告] data-index=27 SP排名:59 - Salt Earth Cotton Striped Beach Cabana T
+2026-04-21 06:30:01,423 - INFO - [SP广告] data-index=28 SP排名:60 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:30:01,434 - INFO - [自然] data-index=29 自然排名:203 - Artoid Mode Starfish Seahorses Coral Sum
+2026-04-21 06:30:01,439 - INFO - [自然] data-index=30 自然排名:204 - Disney Pixar Toy Story Bath Towels with 
+2026-04-21 06:30:01,454 - INFO - [自然] data-index=31 自然排名:205 - Artoid Mode Seashell Coral Starfish Summ
+2026-04-21 06:30:01,460 - INFO - [自然] data-index=32 自然排名:206 - Oversized Beach Towel Microfiber Large B
+2026-04-21 06:30:01,475 - INFO - [自然] data-index=33 自然排名:207 - Northwest NBA Unisex-Adult Beach Towel
+2026-04-21 06:30:01,489 - INFO - [自然] data-index=34 自然排名:208 - Spiderman Beach Towel Set - Bundle of a 
+2026-04-21 06:30:01,493 - INFO - [自然] data-index=35 自然排名:209 - Nickelodeon Spongebob Beach Towel Set - 
+2026-04-21 06:30:01,497 - INFO - [自然] data-index=36 自然排名:210 - Minecraft Decorations Set Minecraft Beac
+2026-04-21 06:30:01,514 - INFO - [自然] data-index=37 自然排名:211 - Sand Cloud Turkish Beach Towel - Disney 
+2026-04-21 06:30:01,530 - INFO - [自然] data-index=38 自然排名:212 - Sand Cloud Turkish Beach Towel - Star Wa
+2026-04-21 06:30:01,547 - INFO - [自然] data-index=39 自然排名:213 - Wildkin Kids Beach Towel – 100% Cotton, 
+2026-04-21 06:30:01,552 - INFO - [自然] data-index=40 自然排名:214 - Sand Cloud x Harry Potter, Turkish Beach
+2026-04-21 06:30:01,565 - INFO - [自然] data-index=41 自然排名:215 - Get Trend Monster Jam Bath Towels with H
+2026-04-21 06:30:01,574 - INFO - [自然] data-index=42 自然排名:216 - Disney Stitch Bath Towel with Hood for K
+2026-04-21 06:30:01,589 - INFO - [自然] data-index=43 自然排名:217 - Northwest NCAA Unisex-Adult Beach Towel
+2026-04-21 06:30:01,606 - INFO - [自然] data-index=44 自然排名:218 - Bluey Beach Towel with 2 Clips Kids Todd
+2026-04-21 06:30:01,621 - INFO - [自然] data-index=45 自然排名:219 - Sand Cloud Turkish Beach Towel - 100% Or
+2026-04-21 06:30:01,625 - INFO - [自然] data-index=46 自然排名:220 - MLB Los Angeles Dodgers A1878015 Fiber B
+2026-04-21 06:30:01,640 - INFO - [自然] data-index=47 自然排名:221 - Disney Frozen Bath Towels with Hood for 
+2026-04-21 06:30:01,644 - INFO - [自然] data-index=48 自然排名:222 - Paw Patrol Beach Towel for Kids Toddlers
+2026-04-21 06:30:01,650 - INFO - [自然] data-index=49 自然排名:223 - Sand Cloud x Looney Tunes, Turkish Beach
+2026-04-21 06:30:01,678 - INFO - [自然] data-index=50 自然排名:224 - Superior Oversized Cotton Beach Towel fo
+2026-04-21 06:30:01,693 - INFO - [自然] data-index=51 自然排名:225 - Disney Cars Hooded Towel 100% Cotton Kid
+2026-04-21 06:30:01,702 - INFO - [自然] data-index=52 自然排名:226 - The Northwest Company 1MLB/72006/0022/RE
+2026-04-21 06:30:01,712 - INFO - [自然] data-index=53 自然排名:227 - Jay Franco Marvel Spidey & His Amazing F
+2026-04-21 06:30:01,726 - INFO - [自然] data-index=54 自然排名:228 - Disney Mickey Mouse Hooded Towel 100% Co
+2026-04-21 06:30:01,732 - INFO - [自然] data-index=55 自然排名:229 - Spiderman Beach Towel Set - Bundle with 
+2026-04-21 06:30:01,744 - INFO - [自然] data-index=56 自然排名:230 - Disney Stitch Beach Towel Set - Bundle w
+2026-04-21 06:30:01,757 - INFO - [自然] data-index=57 自然排名:231 - Bluey Hooded Towel Boys Girls Poncho 100
+2026-04-21 06:30:01,768 - INFO - [自然] data-index=58 自然排名:232 - Bluey Hooded Towel Boys Girls Poncho 100
+2026-04-21 06:30:01,775 - INFO - [自然] data-index=59 自然排名:233 - Disney Kids Princess Hooded Towel 100% C
+2026-04-21 06:30:01,790 - INFO - [自然] data-index=60 自然排名:234 - Sand Cloud x Harry Potter, Large Turkish
+2026-04-21 06:30:01,805 - INFO - [自然] data-index=61 自然排名:235 - Disney Mickey Mouse Beach Towel Set - Bu
+2026-04-21 06:30:01,815 - INFO - [自然] data-index=62 自然排名:236 - Disney Mickey Mouse Beach Towel Set - Bu
+2026-04-21 06:30:01,826 - INFO - [自然] data-index=63 自然排名:237 - Disney Moana Hooded Towel 100% Cotton Gi
+2026-04-21 06:30:01,839 - INFO - [自然] data-index=64 自然排名:238 - Jay Franco Bluey Kids Beach Towel, Celeb
+2026-04-21 06:30:01,846 - INFO - [自然] data-index=65 自然排名:239 - MLB Philadelphia Phillies Beach Towel, T
+2026-04-21 06:30:01,856 - INFO - [自然] data-index=66 自然排名:240 - MLB New York Mets MLB New York Mets Fibe
+2026-04-21 06:30:01,883 - INFO - [SB广告] data-index=71 SB排名:5 - N/A
+2026-04-21 06:30:12,826 - INFO - 正在访问第 6 页: https://www.amazon.com/s?k=beach+towels&page=6
+2026-04-21 06:30:17,923 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:30:19,275 - INFO - 第 6 页找到 76 个带data-index的元素
+2026-04-21 06:30:19,298 - INFO - [SP广告] data-index=2 SP排名:61 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:30:19,321 - INFO - [SP广告] data-index=3 SP排名:62 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:30:19,326 - INFO - [SP广告] data-index=4 SP排名:63 - Sea Turtle Beach Towel Oversized 36" x 7
+2026-04-21 06:30:19,339 - INFO - [SP广告] data-index=5 SP排名:64 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:30:19,365 - INFO - [自然] data-index=6 自然排名:241 - Sand Cloud x Hello Kitty, Turkish Beach 
+2026-04-21 06:30:19,402 - INFO - [自然] data-index=7 自然排名:242 - Teenage Mutant Ninja Turtles Bath Towel 
+2026-04-21 06:30:19,416 - INFO - [自然] data-index=8 自然排名:243 - Disney Minnie Mouse Towel Set for Kids -
+2026-04-21 06:30:19,448 - INFO - [自然] data-index=12 自然排名:244 - WinCraft MLB New York Mets New York Mets
+2026-04-21 06:30:19,462 - INFO - [自然] data-index=13 自然排名:245 - Disney Minnie Mouse Hooded Towel 100% Co
+2026-04-21 06:30:19,467 - INFO - [自然] data-index=14 自然排名:246 - トイストーリー Toy Story Bath Pool Beach Towel 
+2026-04-21 06:30:19,481 - INFO - [SP广告] data-index=15 SP排名:65 - Redbaker 16 Packs 72 x 36 Inches Oversiz
+2026-04-21 06:30:19,496 - INFO - [SP广告] data-index=16 SP排名:66 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:30:19,511 - INFO - [SP广告] data-index=17 SP排名:67 - Kaufman Colored Classic Multi-Color Stri
+2026-04-21 06:30:19,529 - INFO - [SP广告] data-index=18 SP排名:68 - Salt Earth Cotton Striped Beach Cabana T
+2026-04-21 06:30:19,537 - INFO - [自然] data-index=19 自然排名:247 - Jay Franco Minecraft Underwater Fun Beac
+2026-04-21 06:30:19,552 - INFO - [自然] data-index=20 自然排名:248 - Disney Boys Poncho Mickey Mouse Blue One
+2026-04-21 06:30:19,559 - INFO - [自然] data-index=23 自然排名:249 - Get Trend Paw Patrol Beach Towels for Ki
+2026-04-21 06:30:19,573 - INFO - [自然] data-index=24 自然排名:250 - Disney Minnie Mouse Towel Set for Kids -
+2026-04-21 06:30:19,580 - INFO - [SP广告] data-index=25 SP排名:69 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:30:19,587 - INFO - [SP广告] data-index=26 SP排名:70 - Jonathan Adler Oversized Velour Printed 
+2026-04-21 06:30:19,598 - INFO - [SP广告] data-index=27 SP排名:71 - ECCOSOPHY Microfiber Beach Towel – Quick
+2026-04-21 06:30:19,613 - INFO - [SP广告] data-index=28 SP排名:72 - Refinery No. 1 Turkish Beach Towel, Over
+2026-04-21 06:30:19,619 - INFO - [自然] data-index=29 自然排名:251 - Get Trend Sesame Street Bath Towels with
+2026-04-21 06:30:19,635 - INFO - [自然] data-index=30 自然排名:252 - Redbaker 16 Packs 59 x 28 inches Oversiz
+2026-04-21 06:30:19,641 - INFO - [自然] data-index=31 自然排名:253 - Dakine Jacquard Beach Towel
+2026-04-21 06:30:19,646 - INFO - [自然] data-index=32 自然排名:254 - Disney Toy Story Beach Towel Set - Bundl
+2026-04-21 06:30:19,661 - INFO - [自然] data-index=33 自然排名:255 - COTTON CRAFT Pool Lounge Chair Cover - 2
+2026-04-21 06:30:19,667 - INFO - [自然] data-index=34 自然排名:256 - Northwest The Company The Company NFL Ne
+2026-04-21 06:30:19,685 - INFO - [自然] data-index=35 自然排名:257 - REDKISS 6-Piece Bath Towel Set - 2 Washc
+2026-04-21 06:30:19,702 - INFO - [自然] data-index=36 自然排名:258 - Sand Cloud Turkish Bath Towels for Bathr
+2026-04-21 06:30:19,717 - INFO - [自然] data-index=37 自然排名:259 - Disney Winnie the Pooh Beach Towel Set -
+2026-04-21 06:30:19,724 - INFO - [自然] data-index=38 自然排名:260 - MLB Philadelphia Phillies Fiber Beach To
+2026-04-21 06:30:19,744 - INFO - [自然] data-index=39 自然排名:261 - PARK & OZ Turkish Beach Towels 4 Pack – 
+2026-04-21 06:30:19,752 - INFO - [自然] data-index=40 自然排名:262 - EBOOT 7 Pieces 100% Cotton Pool Beach To
+2026-04-21 06:30:19,768 - INFO - [自然] data-index=41 自然排名:263 - Hello Kitty Beach Towel with Hood for Gi
+2026-04-21 06:30:19,782 - INFO - [自然] data-index=42 自然排名:264 - NORTHWEST Licensed MLB Easy Roll Up Comf
+2026-04-21 06:30:19,798 - INFO - [自然] data-index=43 自然排名:265 - Ossano Turkish Beach Towel Striped & Sma
+2026-04-21 06:30:19,813 - INFO - [自然] data-index=44 自然排名:266 - Get Trend Super Mario Bath Towels with H
+2026-04-21 06:30:19,820 - INFO - [自然] data-index=45 自然排名:267 - Star Wars Baby Yoda Beach Towel Set - Bu
+2026-04-21 06:30:19,825 - INFO - [自然] data-index=46 自然排名:268 - Peryiter 6 Pcs Last Toast on The Coast B
+2026-04-21 06:30:19,840 - INFO - [自然] data-index=47 自然排名:269 - Minecraft Beach Towel Kids Teenagers Qui
+2026-04-21 06:30:19,859 - INFO - [自然] data-index=48 自然排名:270 - Minecraft Towelling Poncho Kids Teens Ho
+2026-04-21 06:30:19,873 - INFO - [自然] data-index=49 自然排名:271 - Disney Nightmare Before Christmas Beach 
+2026-04-21 06:30:19,877 - INFO - [自然] data-index=50 自然排名:272 - Puomue Microfiber Lightweight Beach Towe
+2026-04-21 06:30:19,894 - INFO - [自然] data-index=51 自然排名:273 - Wincraft MLB Baltimore Orioles A1876915 
+2026-04-21 06:30:19,909 - INFO - [自然] data-index=52 自然排名:274 - NCAA Notre Dame Fighting Irish NCAA Notr
+2026-04-21 06:30:19,918 - INFO - [自然] data-index=53 自然排名:275 - Pokemon Beach Towel Set - Bundle with 27
+2026-04-21 06:30:19,939 - INFO - [自然] data-index=54 自然排名:276 - Disney The Little Mermaid Towel Set for 
+2026-04-21 06:30:19,965 - INFO - [自然] data-index=55 自然排名:277 - Franco Super Mario "Official Nintendo" K
+2026-04-21 06:30:19,996 - INFO - [自然] data-index=56 自然排名:278 - Beach Towel Set-4 Pack 30"x60" Sand Free
+2026-04-21 06:30:20,016 - INFO - [自然] data-index=57 自然排名:279 - MONOBLANKS Striped Hooded Towels for Kid
+2026-04-21 06:30:20,061 - INFO - [自然] data-index=58 自然排名:280 - ORIGINAL KIDS Hooded Bath Towel Wrap - 1
+2026-04-21 06:30:20,073 - INFO - [自然] data-index=59 自然排名:281 - MLB New York Yankees MLB New York Yankee
+2026-04-21 06:30:20,090 - INFO - [自然] data-index=60 自然排名:282 - Wildkin Kids Hooded Beach Towel – 100% C
+2026-04-21 06:30:20,107 - INFO - [自然] data-index=61 自然排名:283 - Native Fab Turkish Cotton Beach Towels S
+2026-04-21 06:30:20,112 - INFO - [自然] data-index=62 自然排名:284 - MLB New York Mets Fiber Beach Towel, 30 
+2026-04-21 06:30:20,125 - INFO - [自然] data-index=63 自然排名:285 - 4Monster 4-Pack Quick Dry Microfiber Tra
+2026-04-21 06:30:20,139 - INFO - [自然] data-index=64 自然排名:286 - Sand Cloud x Hello Kitty, Turkish Beach 
+2026-04-21 06:30:20,156 - INFO - [自然] data-index=65 自然排名:287 - 4 Pack Cotton Turkish Beach Towel Lightw
+2026-04-21 06:30:20,164 - INFO - [自然] data-index=66 自然排名:288 - Kids Hooded Beach Towel 100% Cotton, Lar
+2026-04-21 06:30:20,196 - INFO - [SB广告] data-index=71 SB排名:6 - N/A
+2026-04-21 06:30:30,747 - INFO - 正在访问第 7 页: https://www.amazon.com/s?k=beach+towels&page=7
+2026-04-21 06:30:36,464 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-21 06:30:37,358 - INFO - 第 7 页找到 45 个带data-index的元素
+2026-04-21 06:30:37,368 - INFO - [SP广告] data-index=2 SP排名:73 - Genovega 2 Packs Oversized Beach Towel S
+2026-04-21 06:30:37,383 - INFO - [SP广告] data-index=3 SP排名:74 - White Classic Beach Towels Oversized Cab
+2026-04-21 06:30:37,397 - INFO - [SP广告] data-index=4 SP排名:75 - Sea Turtle Beach Towel Oversized 36" x 7
+2026-04-21 06:30:37,403 - INFO - [SP广告] data-index=5 SP排名:76 - Nova Blue Turtle Beach Towel – Tropical 
+2026-04-21 06:30:37,410 - INFO - [自然] data-index=6 自然排名:289 - Get Trend Barbie Bath Towels with Hood f
+2026-04-21 06:30:37,427 - INFO - [自然] data-index=7 自然排名:290 - Northwest Pokemon Beach Towel Generation
+2026-04-21 06:30:37,435 - INFO - [自然] data-index=8 自然排名:291 - Superior Laguna Cotton Beach Towel, Bath
+2026-04-21 06:30:37,466 - INFO - [自然] data-index=12 自然排名:292 - Tingjoo 24 Pcs Kids Microfiber Beach Tow
+2026-04-21 06:30:37,472 - INFO - [自然] data-index=13 自然排名:293 - Northwest NFL Buffalo Bills Beach
+2026-04-21 06:30:37,492 - INFO - [自然] data-index=14 自然排名:294 - Oversized Cotton Turkish Beach Towels 72
+2026-04-21 06:30:37,506 - INFO - [SP广告] data-index=15 SP排名:77 - Redbaker 16 Packs 72 x 36 Inches Oversiz
+2026-04-21 06:30:37,519 - INFO - [SP广告] data-index=16 SP排名:78 - Cotton Turkish Beach Towel with Towels O
+2026-04-21 06:30:37,524 - INFO - [SP广告] data-index=17 SP排名:79 - Clotho Turkish Beach Towel Set of 4 – 10
+2026-04-21 06:30:37,529 - INFO - [SP广告] data-index=18 SP排名:80 - Kaufman Colored Classic Multi-Color Stri
+2026-04-21 06:30:37,542 - INFO - [自然] data-index=19 自然排名:295 - Disney Stitch Beach Towel Set - Bundle w
+2026-04-21 06:30:37,552 - INFO - [自然] data-index=20 自然排名:296 - Patelai 4 Pcs Girls Trip Beach Towels Gi
+2026-04-21 06:30:37,577 - INFO - [自然] data-index=23 自然排名:297 - GEOMETRY Micro-Loop Beach Towel – Spring
+2026-04-21 06:30:37,595 - INFO - [自然] data-index=24 自然排名:298 - Heavy Weight Jumbo Size Dobby Hem Velour
+2026-04-21 06:30:37,611 - INFO - [SP广告] data-index=25 SP排名:81 - 4 Packs Oversized Stripe Beach Towel Thi
+2026-04-21 06:30:37,624 - INFO - [SP广告] data-index=26 SP排名:82 - Salt Earth Cotton Striped Beach Cabana T
+2026-04-21 06:30:37,639 - INFO - [SP广告] data-index=27 SP排名:83 - Jonathan Adler Oversized Velour Printed 
+2026-04-21 06:30:37,653 - INFO - [SP广告] data-index=28 SP排名:84 - Refinery No. 1 Turkish Beach Towel, Over
+2026-04-21 06:30:37,663 - INFO - [自然] data-index=29 自然排名:299 - Northwest NFL Baltimore Ravens Unisex-Ad
+2026-04-21 06:30:37,669 - INFO - [自然] data-index=30 自然排名:300 - Northwest NFL Unisex Beach Towel
+2026-04-21 06:30:37,684 - INFO - [自然] data-index=31 自然排名:301 - Bluey Beach Towel Hooded Kids Absorbent 
+2026-04-21 06:30:37,698 - INFO - [自然] data-index=32 自然排名:302 - Disney Sassy Hearts Minnie Mouse Beach T
+2026-04-21 06:30:37,715 - INFO - [自然] data-index=33 自然排名:303 - Dock & Bay Beach Towel - Quick Dry, Sand
+2026-04-21 06:30:37,732 - INFO - [自然] data-index=34 自然排名:304 - Romantic Angels Microfiber Beach Towels 
+2026-04-21 06:30:37,746 - INFO - [自然] data-index=35 自然排名:305 - Hello Kitty Beach Towel Set - Bundle wit
+2026-04-21 06:30:37,762 - INFO - [自然] data-index=36 自然排名:306 - Sand Cloud Turkish Beach Towel - Sand Fr
+2026-04-21 06:30:37,795 - INFO - [SB广告] data-index=41 SB排名:7 - N/A
+2026-04-21 06:30:37,816 - INFO - 爬取完成，共获取 462 个元素
+2026-04-21 06:30:37,824 - INFO -   - 自然商品: 306 个
+2026-04-21 06:30:37,828 - INFO -   - SP广告: 84 个
+2026-04-21 06:30:37,844 - INFO -   - SB广告: 7 个
+2026-04-21 06:30:37,846 - INFO -   - SB视频: 0 个
+2026-04-21 06:30:38,054 - INFO - 数据已保存到: /app/app/scraper/amazon_data/beach+towels_20260421_063037.json
+2026-04-21 06:30:38,526 - INFO - 存入数据库 397 条记录
+2026-04-21 06:30:38,532 - INFO - ✅ 流程完成: beach+towels, 爬取 462 条, 入库 397 条

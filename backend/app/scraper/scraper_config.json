@@ -1,10 +1,16 @@
 {
     "keywords": [
-        "pool+party+decorations",
-        "summer+decorations",
         "beach+towels",
+        "key4",
+        "key5",
+        "Christmas",
+        "key1",
         "poole",
-        "Christmas"
+        "YUtest3",
+        "key2",
+        "summer+decorations",
+        "key3",
+        "pool+party+decorations"
     ],
     "pages": null,
     "postal_code": "90060",
@@ -12,5 +18,18 @@
         3,
         6
     ],
-    "output_dir": "./amazon_data"
+    "output_dir": "./amazon_data",
+    "keyword_tags": {
+        "pool+party+decorations": [
+            "test1",
+            "test3"
+        ],
+        "summer+decorations": [
+            "1",
+            "2"
+        ],
+        "Christmas": [
+            "test4"
+        ]
+    }
 }

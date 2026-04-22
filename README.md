@@ -240,6 +240,10 @@ docker-compose up -d
 # 4. 查看服务状态
 docker-compose ps
 ```
+<!-- YU -->
+docker: docker-compose up -d
+前端：python -m http.server 3000
+后端：uvicorn app.main:app --reload --port 8000
 
 ### 本地开发
 
