@@ -8,6 +8,7 @@ services:
       POSTGRES_DB: amazon_scraper
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 123456
+      TZ: Asia/Shanghai
     ports:
       - "5200:5432"
     volumes:
@@ -29,6 +30,7 @@ services:
       PROCESSED_DATA_DIR: /app/app/scraper/processed_data
       NAS_SHARE_PATH: /nas
       DISTRIBUTED_MODE: "true"
+      TZ: Asia/Shanghai
     volumes:
       - ./backend:/app
       - //192.168.40.3/钟正洋/amazon_scraper:/nas  # 0421新增 挂载 NAS

@@ -1,8 +1,11 @@
 # backend/app/api/data.py
 from fastapi import APIRouter, Depends, Query, HTTPException
+from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 from typing import Optional, List
 from datetime import datetime
+import csv
+import io
 
 from app.database import get_db
 from app import crud, schemas
@@ -169,4 +172,41 @@ def get_asins(keyword: Optional[str] = Query(None), db: Session = Depends(get_db
         query = query.filter(RawSearchResult.keyword == keyword)
     asins = [row[0] for row in query.distinct().order_by(RawSearchResult.asin).all()]
     return asins
+
+
+@router.get("/results/export")
+def export_results(
+    keyword: Optional[str] = Query(None),
+    asin: Optional[str] = Query(None),
+    ad_type: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    """导出查询结果为 CSV"""
+    query = db.query(RawSearchResult)
+    if keyword:
+        query = query.filter(RawSearchResult.keyword == keyword)
+    if asin:
+        query = query.filter(RawSearchResult.asin == asin)
+    if ad_type:
+        query = query.filter(RawSearchResult.ad_type == ad_type)
+    items = query.order_by(RawSearchResult.scraped_at.desc()).all()
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow(['date','keyword','asin','title','price_current','rating_stars','rating_count','ad_type','ad_rank','organic_rank','page','scraped_at'])
+    for item in items:
+        writer.writerow([
+            item.scraped_at.strftime('%Y-%m-%d') if item.scraped_at else '',
+            item.keyword, item.asin, item.title,
+            item.price_current, item.rating_stars, item.rating_count,
+            item.ad_type, item.ad_rank, item.organic_rank, item.page,
+            item.scraped_at.isoformat() if item.scraped_at else ''
+        ])
+
+    output.seek(0)
+    return StreamingResponse(
+        iter(['\ufeff' + output.getvalue()]),
+        media_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename="results.csv"'}
+    )
 

@@ -177,16 +177,18 @@ window.exportData = function() {
     const adType = document.getElementById('filterAdType').value;
     const date = document.getElementById('filterDate').value;
     
-    let url = '/results/export';
+    let url = `${API_BASE}/results/export`;
     const params = new URLSearchParams();
     if (keyword) params.append('keyword', keyword);
-    
     if (asin) params.append('asin', asin);
     if (adType) params.append('ad_type', adType);
     if (date) params.append('date', date);
     if (params.toString()) url += '?' + params.toString();
-    
-    window.open(url);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'results.csv';
+    a.click();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
