@@ -1,31 +1,12 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:15
-    container_name: amazon_postgres
-    environment:
-      POSTGRES_DB: amazon_scraper
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 123456
-      TZ: Asia/Shanghai
-    ports:
-      - "5200:5432"
-    volumes:
-      - ./postgres_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U admin"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   backend:
     image: python:3.11-slim
     container_name: amazon_backend
     working_dir: /app
     environment:
-      DATABASE_URL: postgresql://admin:123456@postgres:5432/amazon_scraper
+      DATABASE_URL: postgresql://admin:123456@host.docker.internal:5200/amazon_scraper
       INPUT_FOLDER: /app/app/scraper/amazon_data
       PROCESSED_DATA_DIR: /app/app/scraper/processed_data
       NAS_SHARE_PATH: /nas
@@ -35,7 +16,7 @@ services:
       - ./backend:/app
       - //192.168.40.3/钟正洋/amazon_scraper:/nas  # 0421新增 挂载 NAS
     ports:
-      - "8888:8000"
+      - "8889:8000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -53,7 +34,7 @@ services:
       - ./frontend:/usr/share/nginx/html
       - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "8880:80"
+      - "8881:80"
     depends_on:
       - backend
     restart: on-failure

@@ -1,11 +1,11 @@
-.sidebar {
+/* .sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 100;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-}
+} */
 
 .sidebar .nav-link {
     font-weight: 500;
@@ -17,11 +17,6 @@
 .sidebar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-}
-
-.sidebar .nav-link.active {
-    color: white;
-    background-color: #0d6efd;
 }
 
 .card-stats {
@@ -56,4 +51,505 @@
 .spin {
     display: inline-block;
     animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   全局美化样式
+   ============================================ */
+
+/* ---------- 鼠标指针动画 ---------- */
+* {
+    cursor: default;
+}
+
+a, button, .btn, .page-btn, .nav-link, 
+[onclick], [role="button"], input[type="submit"],
+select, input, textarea {
+    cursor: pointer;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 全局选中文字颜色 */
+::selection {
+    background: #3b82f6;
+    color: #fff;
+}
+
+/* 页面背景渐变 */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    min-height: 100vh;
+}
+
+/* 卡片悬浮动画 */
+.card, .data-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover, .data-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮点击波纹效果 */
+.btn, .page-btn, button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.btn:active, .page-btn:active, button:active {
+    transform: scale(0.96);
+}
+
+/* 按钮涟漪效果 */
+.btn:after, .page-btn:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn:active:after, .page-btn:active:after {
+    width: 200%;
+    height: 200%;
+}
+
+/* 输入框聚焦效果 */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+    transition: all 0.2s;
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e5e7eb;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 渐变按钮 */
+.btn-gradient-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    color: white;
+}
+
+.btn-gradient-primary:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-1px);
+}
+
+.btn-gradient-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border: none;
+    color: white;
+}
+
+/* 状态指示点 */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.status-dot-running {
+    background: #f59e0b;
+    box-shadow: 0 0 6px #f59e0b;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.status-dot-completed {
+    background: #10b981;
+}
+
+.status-dot-failed {
+    background: #ef4444;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* 卡片入场动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .data-card {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+/* 通知提示美化 */
+.toast-custom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 280px;
+    background: #1f2937;
+    color: white;
+    border-radius: 12px;
+    padding: 12px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* ============================================
+   左侧导航栏美化样式
+   ============================================ */
+
+/* 侧边栏整体背景 */
+.sidebar {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    max-width: 300px;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+} */
+
+/* Logo 区域美化 */
+.sidebar .position-sticky h5 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 16px;
+}
+
+/* 导航菜单容器 */
+.sidebar .nav {
+    padding: 0 12px;
+}
+
+/* 导航项 */
+.sidebar .nav-item {
+    margin-bottom: 4px;
+}
+
+/* 导航链接 */
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 导航图标 */
+.sidebar .nav-link i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* 导航文字 */
+.sidebar .nav-link {
+    position: relative;
+}
+
+/* 悬停效果 */
+.sidebar .nav-link:hover {
+    background: rgba(96, 165, 250, 0.15);
+    color: #f1f5f9;
+    transform: translateX(4px);
+}
+
+.sidebar .nav-link:hover i {
+    color: #60a5fa;
+    transform: scale(1.1);
+}
+
+/* 激活状态 */
+.sidebar .nav-link.active {
+    background: linear-gradient(143deg, #1a00ed, #c50a68);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.sidebar .nav-link.active i {
+    color: white;
+}
+
+/* 激活状态左侧指示条 */
+.sidebar .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: white;
+    border-radius: 0 3px 3px 0;
+}
+
+/* 添加微光效果 */
+.sidebar .nav-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.sidebar .nav-link:hover::after {
+    left: 100%;
+}
+
+/* 分割线效果（可选，在特定位置添加分割线） */
+.sidebar .nav-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 12px 16px;
+}
+
+/* 底部版本信息 */
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #475569;
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 0 16px;
+}
+
+/* 响应式：小屏幕时隐藏文字只显示图标 */
+@media (max-width: 768px) {
+    .sidebar .nav-link span {
+        display: none;
+    }
+    .sidebar .nav-link i {
+        margin: 0 auto;
+    }
+    .sidebar .nav-link {
+        justify-content: center;
+        padding: 10px 0px;
+    }
+}
+
+/* 动画：导航项入场动画 */
+.sidebar .nav-item {
+    animation: slideInFromLeft 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+.sidebar .nav-item:nth-child(1) { animation-delay: 0.02s; }
+.sidebar .nav-item:nth-child(2) { animation-delay: 0.04s; }
+.sidebar .nav-item:nth-child(3) { animation-delay: 0.06s; }
+.sidebar .nav-item:nth-child(4) { animation-delay: 0.08s; }
+.sidebar .nav-item:nth-child(5) { animation-delay: 0.10s; }
+.sidebar .nav-item:nth-child(6) { animation-delay: 0.12s; }
+.sidebar .nav-item:nth-child(7) { animation-delay: 0.14s; }
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 侧边栏折叠按钮（可选） */
+.sidebar-toggle {
+    position: absolute;
+    right: -12px;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.1);
+    background: #2563eb;
+}
+/* 侧边栏折叠样式 */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed .nav-link span {
+    display: none;
+}
+
+.sidebar.collapsed .nav-link i {
+    margin: 0 auto;
+}
+
+.sidebar.collapsed .nav-link {
+    justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-footer {
+    font-size: 8px;
+}
+
+.sidebar.collapsed .sidebar-footer i {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.sidebar.collapsed .sidebar-footer span {
+    display: none;
+}
+
+/* ========== 全局鼠标效果 ========== */
+
+/* 整体页面鼠标样式 */
+* {
+    cursor: default;
+}
+
+/* 可点击元素鼠标样式 */
+a, button, .btn, .page-btn, .nav-link, 
+[onclick], [role="button"], 
+input[type="submit"], input[type="button"],
+select, input:not([type="text"]):not([type="number"]):not([type="date"]),
+label, .table-erp tbody tr {
+    cursor: pointer;
+}
+
+/* 文本输入框保持文本光标 */
+input[type="text"], input[type="number"], input[type="date"], 
+textarea, .form-control {
+    cursor: text;
+}
+
+/* 按钮点击波纹效果 */
+.btn, .page-btn, .nav-link {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.btn:active, .page-btn:active, .nav-link:active {
+    transform: scale(0.97);
+}
+
+/* 按钮悬停效果 */
+.btn:hover, .page-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* 卡片悬停 */
+.card:hover, .data-card:hover {
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+/* 表格行悬停 */
+.table-erp tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table-erp tbody tr:hover {
+    background: #eff6ff !important;
+    transform: scale(1.01);
+}
+
+/* 输入框聚焦效果 */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+    transition: all 0.2s;
+}
+
+/* 链接悬停 */
+a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
 }

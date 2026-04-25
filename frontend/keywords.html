@@ -44,10 +44,19 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-                                    <tr><th>#</th><th>关键词</th><th>标签</th><th>负责人</th><th>操作</th></tr> <!-- #YU 421 -->
+                                    <tr>
+                                        <th>#</th>
+                                        <th>关键词</th>
+                                        <th>标签</th>
+                                        <th>节日</th>
+                                        <th>大/小节日</th>
+                                        <th>热卖期</th>
+                                        <th>负责人</th>
+                                        <th>操作</th>
+                                    </tr>
                                 </thead>
                                 <tbody id="keywordsTableBody">
-                                    <tr><td colspan="5" class="text-center">加载中...</td></tr><!-- #zy 422 -->
+                                    <tr><td colspan="8" class="text-center">加载中...</td></tr><!-- #zy 422 -->
                                 </tbody>
                             </table>
                         </div>
@@ -65,7 +74,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-muted small">Excel 格式：第一行为表头，第一列关键词，第二列人员姓名</p>
+                    <p class="text-muted small">
+                        Excel 格式：第一行为表头<br>
+                        列顺序：关键词 | 负责人 | 标签 | 节日 | 大/小节日 | 热卖期<br>
+                        （负责人、标签、节日、大/小节日、热卖期均为选填，支持多个用逗号分隔）
+                    </p>
                     <input type="file" class="form-control" id="importUserFile" accept=".xlsx,.xls">
                     <div id="importUserResult" class="mt-2"></div>
                 </div>
@@ -117,6 +130,25 @@
                             <input type="text" class="form-control" id="editNewTag" placeholder="添加标签">
                             <button class="btn btn-outline-primary" onclick="addEditTag()">添加</button>
                         </div>
+                    </div>
+                    <!-- 新增：节日 -->
+                    <div class="mb-2">
+                        <label class="form-label">节日</label>
+                        <input type="text" class="form-control" id="editFestival" placeholder="例如：春节、中秋节、圣诞节">
+                    </div>
+                    <!-- 新增：大/小节日 -->
+                    <div class="mb-2">
+                        <label class="form-label">大/小节日</label>
+                        <select class="form-select" id="editFestivalType">
+                            <option value="">请选择</option>
+                            <option value="大节日">大节日</option>
+                            <option value="小节日">小节日</option>
+                        </select>
+                    </div>
+                    <!-- 新增：热卖期 -->
+                    <div class="mb-2">
+                        <label class="form-label">热卖期</label>
+                        <input type="text" class="form-control" id="editHotSeason" placeholder="例如：高峰期、预热期、7-8月、Q4旺季等">
                     </div>
                 </div>
                 <div class="modal-footer">

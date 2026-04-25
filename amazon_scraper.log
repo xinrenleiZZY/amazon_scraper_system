@@ -306,3 +306,210 @@
 2026-04-21 10:07:19,015 - ERROR - 流程失败 beach+towels: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "amazon_scraper" does not exist
 
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-24 15:05:40,035 - INFO - 使用浏览器指纹: chrome107
+2026-04-24 15:05:40,040 - INFO - 正在初始化亚马逊美国会话...
+2026-04-24 15:05:44,665 - WARNING - ⚠️ 首页未检测到美元
+2026-04-24 15:05:50,425 - WARNING - ⚠️ 首页未检测到美元
+2026-04-24 15:05:55,798 - WARNING - ⚠️ 首页未检测到美元
+2026-04-24 15:05:57,052 - WARNING - ⚠️ ZIP可能未生效
+2026-04-24 15:05:57,053 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-24 15:05:57,053 - INFO - 使用指定页数: 2
+2026-04-24 15:05:57,053 - INFO - 开始爬取关键词: pool+party+decorations, 页数: 2
+2026-04-24 15:05:57,053 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=pool+party+decorations&page=1
+2026-04-24 15:06:02,568 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-24 15:06:02,771 - INFO - 第 1 页找到 63 个带data-index的元素
+2026-04-24 15:06:02,781 - INFO - [自然] data-index=2 自然排名:1 - Pool Birthday Party Supplies,Summer Beac - CNY 143.36
+2026-04-24 15:06:02,789 - INFO - [自然] data-index=3 自然排名:2 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa - CNY 64.82
+2026-04-24 15:06:02,794 - INFO - [自然] data-index=4 自然排名:3 - Flutesan 16 Pcs Summer Beach Decorations - CNY 109.21
+2026-04-24 15:06:02,799 - INFO - [自然] data-index=8 自然排名:4 - 33Pcs Pool Party Photo Booth Props with  - CNY 61.40
+2026-04-24 15:06:02,804 - INFO - [自然] data-index=9 自然排名:5 - JOYIN 60" Inflatable Palm Tree Cooler, B - CNY 136.53
+2026-04-24 15:06:02,808 - INFO - [自然] data-index=10 自然排名:6 - JOYIN 12-Pack 12“ Beach Balls - Bulk Cla - CNY 68.23
+2026-04-24 15:06:02,812 - INFO - [自然] data-index=11 自然排名:7 - Threan 24 Pcs Teacher Appreciation Gift  - CNY 471.20
+2026-04-24 15:06:02,816 - INFO - [自然] data-index=12 自然排名:8 - Pool Party Decorations Wood Table Center - CNY 68.23
+2026-04-24 15:06:02,821 - INFO - [自然] data-index=13 自然排名:9 - Ziliny 36 Pcs Summer Pool Beach Party Su - CNY 116.04
+2026-04-24 15:06:02,828 - INFO - [自然] data-index=16 自然排名:10 - Vinsot 32 Pack Beach Pool Party Eyeglass - CNY 88.72
+2026-04-24 15:06:02,833 - INFO - [自然] data-index=17 自然排名:11 - MEHOFOND Splish Splash Birthday Party Su - CNY 143.36
+2026-04-24 15:06:02,837 - INFO - [自然] data-index=18 自然排名:12 - JOYIN 28” Inflatable Palm Tree Cooler, L - CNY 122.87
+2026-04-24 15:06:02,842 - INFO - [自然] data-index=19 自然排名:13 - 3 Pcs Iridescent Waves Tablecloths - Dis - CNY 61.40
+2026-04-24 15:06:02,848 - INFO - [自然] data-index=20 自然排名:14 - Xynic pool party decorations, 207 PCS Po - CNY 136.53
+2026-04-24 15:06:02,852 - INFO - [自然] data-index=21 自然排名:15 - Inflatable Palm Tree Beach Balls Flaming - CNY 177.51
+2026-04-24 15:06:02,857 - INFO - [自然] data-index=23 自然排名:16 - 142 Pieces Pool Birthday Party Supplies  - CNY 136.53
+2026-04-24 15:06:02,861 - INFO - [自然] data-index=24 自然排名:17 - Swimming Pool Party Banner for Summer Pa - CNY 88.72
+2026-04-24 15:06:02,866 - INFO - [自然] data-index=25 自然排名:18 - JOYIN Inflatable Swim Tube Raft (3 pack) - CNY 116.04
+2026-04-24 15:06:02,870 - INFO - [自然] data-index=26 自然排名:19 - Pool Party Decorations Wooden Table Cent - CNY 81.89
+2026-04-24 15:06:02,877 - INFO - [自然] data-index=27 自然排名:20 - Pool Party Favors and Beach Party Favors - CNY 184.27
+2026-04-24 15:06:02,884 - INFO - [自然] data-index=28 自然排名:21 - 134Pcs Tropical Summer Beach Pool Party  - CNY 109.21
+2026-04-24 15:06:02,888 - INFO - [自然] data-index=29 自然排名:22 - 117Pcs Summer Pool Themed Happy Birthday - CNY 157.02
+2026-04-24 15:06:02,892 - INFO - [自然] data-index=30 自然排名:23 - ‎Renbuzhu 15PCS Pool Party Decorations B - CNY 116.04
+2026-04-24 15:06:02,897 - INFO - [自然] data-index=31 自然排名:24 - ALINK 50 Umbrella Parasol Drinking Straw - CNY 47.74
+2026-04-24 15:06:02,900 - INFO - [自然] data-index=32 自然排名:25 - 12Pcs Reusable Water Balloons, Pool Beac - CNY 191.17
+2026-04-24 15:06:02,906 - INFO - [自然] data-index=33 自然排名:26 - JOYIN Set of 6 Small Pink Flamingo Yard  - CNY 109.21
+2026-04-24 15:06:02,912 - INFO - [自然] data-index=34 自然排名:27 - Joyin Toy 36 Counts Hawaiian Leis Bulk,  - CNY 81.89
+2026-04-24 15:06:02,919 - INFO - [自然] data-index=35 自然排名:28 - PartySticks Glow Sticks Party Supplies 1 - CNY 54.57
+2026-04-24 15:06:02,923 - INFO - [自然] data-index=36 自然排名:29 - JOYIN 2-Pack Flamingo Unicorn Pool Float - CNY 157.02
+2026-04-24 15:06:02,928 - INFO - [自然] data-index=37 自然排名:30 - SNLN 129Pcs Pool Party Decorations Birth - CNY 116.04
+2026-04-24 15:06:02,932 - INFO - [自然] data-index=38 自然排名:31 - Summer Banner Pool Party Decorations, Po - CNY 68.23
+2026-04-24 15:06:02,935 - INFO - [自然] data-index=39 自然排名:32 - Yexiya 12 Pieces Beach Honeycomb Centerp - CNY 52.18
+2026-04-24 15:06:02,941 - INFO - [自然] data-index=40 自然排名:33 - Pool Party Decoration, 99pcs Pool Party  - CNY 102.38
+2026-04-24 15:06:02,945 - INFO - [自然] data-index=41 自然排名:34 - Xynic 213pcs Pool Party Decorations, Pap - CNY 122.87
+2026-04-24 15:06:02,950 - INFO - [自然] data-index=42 自然排名:35 - xo, Fetti Pool Party Temporary Tattoos - - CNY 54.57
+2026-04-24 15:06:02,955 - INFO - [自然] data-index=43 自然排名:36 - Riakrum 3 Pcs Summer Beach Tablecloths P - CNY 61.40
+2026-04-24 15:06:02,962 - INFO - [自然] data-index=44 自然排名:37 - 59Pcs Splish Splash Birthday Decorations - CNY 109.21
+2026-04-24 15:06:02,969 - INFO - [自然] data-index=45 自然排名:38 - JellyArch 4 Pcs Inflatable Surf Board 36 - CNY 198.00
+2026-04-24 15:06:02,973 - INFO - [自然] data-index=46 自然排名:39 - Decor365 Under the Sea Party Decorations - CNY 81.82
+2026-04-24 15:06:02,977 - INFO - [自然] data-index=47 自然排名:40 - 120PCS Summer Pool Party Supplies Swimmi - CNY 122.87
+2026-04-24 15:06:02,981 - INFO - [自然] data-index=48 自然排名:41 - Aliceset 20 Pcs Pool Party Clear Favor B - CNY 143.36
+2026-04-24 15:06:02,986 - INFO - [自然] data-index=49 自然排名:42 - Freyalife Hawaiian Leis Decorations,Leis - CNY 40.57
+2026-04-24 15:06:02,990 - INFO - [自然] data-index=50 自然排名:43 - Tingjoo 3 Pcs Pool Party Arch Backdrop S - CNY 273.13
+2026-04-24 15:06:02,994 - INFO - [自然] data-index=51 自然排名:44 - OBXT 10" Blue Hanging Jellyfish Paper La - CNY 114.68
+2026-04-24 15:06:02,999 - INFO - [自然] data-index=53 自然排名:45 - Fovths Luau Grass Table Skirt Natural 9  - CNY 57.99
+2026-04-24 15:06:03,003 - INFO - [自然] data-index=54 自然排名:46 - JUXIAO 5 Pack Upgrated XL Water Pool Flo - CNY 129.70
+2026-04-24 15:06:03,008 - INFO - [自然] data-index=55 自然排名:47 - JOYIN 4-Pack 20" Beach Balls - Large Rai - CNY 61.40
+2026-04-24 15:06:03,012 - INFO - [自然] data-index=56 自然排名:48 - xo, Fetti Pool Party Napkins - 3-ply, 24 - CNY 88.72
+2026-04-24 15:06:03,023 - INFO - [SB广告] data-index=61 SB排名:1 - 品牌:N/A, 内嵌商品数:0
+2026-04-24 15:06:03,023 - INFO - [SB广告] data-index=61 SB排名:1 - N/A - None
+2026-04-24 15:06:13,849 - INFO - 正在访问第 2 页: https://www.amazon.com/s?k=pool+party+decorations&page=2
+2026-04-24 15:06:17,242 - INFO - 开始爬取: beach+towels
+2026-04-24 15:06:17,242 - INFO - 使用浏览器指纹: safari15_5
+2026-04-24 15:06:17,245 - INFO - 正在初始化亚马逊美国会话...
+2026-04-24 15:06:19,789 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-24 15:06:20,111 - INFO - 第 2 页找到 76 个带data-index的元素
+2026-04-24 15:06:20,120 - INFO - [SP广告] data-index=2 SP排名:1 - Pool Party Birthday Decorations, Happy B - CNY 68.23
+2026-04-24 15:06:20,128 - INFO - [SP广告] data-index=3 SP排名:2 - Chunful 3 Pcs Splish Splash Birthday Par - CNY 211.66
+2026-04-24 15:06:20,131 - INFO - [SP广告] data-index=4 SP排名:3 - 24Pcs Drinking Straws, Pool Party Decora - CNY 115.29
+2026-04-24 15:06:20,137 - INFO - [SP广告] data-index=5 SP排名:4 - Flamingo Hawaiian Party Decorations, Lua - CNY 95.55
+2026-04-24 15:06:20,141 - INFO - [自然] data-index=6 自然排名:49 - YUNXUAN Flamingo Party Supplies, Hawaiia - CNY 116.04
+2026-04-24 15:06:20,147 - INFO - [自然] data-index=7 自然排名:50 - Pool Toys Games Set,Pool Basketball Hoop - CNY 150.19
+2026-04-24 15:06:20,152 - INFO - [自然] data-index=8 自然排名:51 - Katchon, Xtralarge Wavy Blue Foil Fringe - CNY 88.72
+2026-04-24 15:06:20,164 - INFO - [自然] data-index=12 自然排名:52 - iShyan Inflatable Drink Holder, 15 Pack  - CNY 81.89
+2026-04-24 15:06:20,171 - INFO - [自然] data-index=13 自然排名:53 - Ring Pop Lollipops - Bulk Candy Individu - None
+2026-04-24 15:06:20,176 - INFO - [自然] data-index=14 自然排名:54 - 2 Pack Party Decorations Blue Streamers  - None
+2026-04-24 15:06:20,179 - INFO - [SP广告] data-index=15 SP排名:5 - Atonofun Pool Party Supplies, Pool Plate - CNY 109.21
+2026-04-24 15:06:20,182 - INFO - [SP广告] data-index=16 SP排名:6 - 122 pcs Beach Party Favors Tropical Swim - CNY 136.53
+2026-04-24 15:06:20,185 - INFO - [SP广告] data-index=17 SP排名:7 - 50pcs Pool Party Thank You Tags, Splish  - CNY 68.23
+2026-04-24 15:06:20,190 - INFO - [SP广告] data-index=18 SP排名:8 - Swimming Pool Party Banner for Summer Pa - CNY 88.72
+2026-04-24 15:06:20,194 - INFO - [自然] data-index=19 自然排名:55 - Hawaiian Luau Party Decorations(161 Pcs) - CNY 136.19
+2026-04-24 15:06:20,200 - INFO - [自然] data-index=20 自然排名:56 - LEEZZIZZ 30Pcs Punch Balloons, Thickened - CNY 60.65
+2026-04-24 15:06:20,206 - INFO - [自然] data-index=23 自然排名:57 - 140PCS Summer Pool Party Decorations Set - CNY 122.87
+2026-04-24 15:06:20,210 - INFO - [自然] data-index=24 自然排名:58 - Pool Party Decorations,142pcs Pool Party - CNY 122.87
+2026-04-24 15:06:20,213 - INFO - [SP广告] data-index=25 SP排名:9 - 15Pcs Paper Lanterns Party Decorations,  - CNY 102.38
+2026-04-24 15:06:20,219 - INFO - [SP广告] data-index=26 SP排名:10 - Pool Party Decorations Backdrop, Pink Ha - CNY 68.23
+2026-04-24 15:06:20,223 - INFO - [SP广告] data-index=27 SP排名:11 - 10 Pack 20" Beach Balls - Large Rainbow  - CNY 136.53
+2026-04-24 15:06:20,227 - INFO - [SP广告] data-index=28 SP排名:12 - Pool Party Decorations Wood Table Center - CNY 68.23
+2026-04-24 15:06:20,232 - INFO - [自然] data-index=29 自然排名:59 - 108 Pack Palm Leaves Artificial Tropical - CNY 109.08
+2026-04-24 15:06:20,238 - INFO - [自然] data-index=30 自然排名:60 - Beach Party Decorations Kit - Beach Them - CNY 68.16
+2026-04-24 15:06:20,243 - INFO - [自然] data-index=31 自然排名:61 - xo, Fetti Pool Party Paper Plates, 3 Des - CNY 95.55
+2026-04-24 15:06:20,250 - INFO - [自然] data-index=32 自然排名:62 - Lilymicky 100 Pack 12 oz Plastic Cups, N - CNY 135.92
+2026-04-24 15:06:20,255 - INFO - [自然] data-index=33 自然排名:63 - Atonofun 80 PCS Leis for Luau Party Deco - CNY 150.19
+2026-04-24 15:06:20,259 - INFO - [自然] data-index=34 自然排名:64 - 28 Pack 12 Inch Rainbow Beach Balls Bulk - CNY 143.36
+2026-04-24 15:06:20,263 - INFO - [自然] data-index=35 自然排名:65 - 150PCS Glow in the Dark Party Supplies f - CNY 177.51
+2026-04-24 15:06:20,267 - INFO - [自然] data-index=36 自然排名:66 - JOYIN 120 Counts Hawaiian Leis Bulk, Col - CNY 225.32
+2026-04-24 15:06:20,271 - INFO - [自然] data-index=37 自然排名:67 - Solar Rechargeable Floating Pool Lights( - CNY 136.53
+2026-04-24 15:06:20,275 - INFO - [自然] data-index=38 自然排名:68 - Luditek Sound Activated Party Lights wit - CNY 68.23
+2026-04-24 15:06:20,280 - INFO - [自然] data-index=39 自然排名:69 - 2 Pack Fish Net Decorations for Party, N - CNY 68.23
+2026-04-24 15:06:20,288 - INFO - [自然] data-index=40 自然排名:70 - SLOOSH 2-in-1 Fun Pool Toys Set for Kids - CNY 204.83
+2026-04-24 15:06:20,295 - INFO - [自然] data-index=41 自然排名:71 - Summer Pool Party Decorations, Tropical  - CNY 108.46
+2026-04-24 15:06:20,302 - INFO - [自然] data-index=42 自然排名:72 - Voiiake Pool Floats Toys Games Set, Infl - CNY 88.72
+2026-04-24 15:06:20,309 - INFO - [自然] data-index=43 自然排名:73 - Large Inflatable Luau Tiki Pool Games Vo - CNY 127.11
+2026-04-24 15:06:20,318 - INFO - [自然] data-index=44 自然排名:74 - Party Goodie Bag Stuffer Fillers for Kid - CNY 60.65
+2026-04-24 15:06:20,323 - INFO - [自然] data-index=45 自然排名:75 - Pool Party Favors - 132PCS Summer Beach  - CNY 163.85
+2026-04-24 15:06:20,327 - INFO - [自然] data-index=46 自然排名:76 - Sosation 1 Pcs Inflatable Flamingo Drink - CNY 198.00
+2026-04-24 15:06:20,333 - INFO - [自然] data-index=47 自然排名:77 - Flamingo Hawaiian Party Decorations, Lua - CNY 95.55
+2026-04-24 15:06:20,340 - INFO - [自然] data-index=48 自然排名:78 - xo, Fetti Pool Party Birthday Banner | K - CNY 81.89
+2026-04-24 15:06:20,343 - INFO - [自然] data-index=49 自然排名:79 - Reallnaive Pool Party Favors Jelly Baske - CNY 437.05
+2026-04-24 15:06:20,348 - INFO - [自然] data-index=50 自然排名:80 - HAPIKAY Solar Floating Pool Lights - Pac - CNY 207.56
+2026-04-24 15:06:20,353 - INFO - [自然] data-index=51 自然排名:81 - Beach Party Supplies Serve 24, Summer Be - CNY 143.36
+2026-04-24 15:06:20,356 - INFO - [自然] data-index=52 自然排名:82 - Summer Pool Beach Hanging Swirls Banner  - CNY 68.23
+2026-04-24 15:06:20,361 - INFO - [自然] data-index=53 自然排名:83 - Vellibring 12" Summer Inflatable Beach B - CNY 98.28
+2026-04-24 15:06:20,363 - INFO - [自然] data-index=54 自然排名:84 - 9FT Summer Inflatable Beach Arch Ball, G - None
+2026-04-24 15:06:20,368 - INFO - [自然] data-index=55 自然排名:85 - 24Pcs Drinking Straws, Pool Party Decora - CNY 115.29
+2026-04-24 15:06:20,371 - INFO - [自然] data-index=56 自然排名:86 - Reallnaive 2 Pack Summer Pool Party Tabl - CNY 98.28
+2026-04-24 15:06:20,376 - INFO - [自然] data-index=57 自然排名:87 - Giant Inflatable Palm Trees - 2 Pack - 6 - CNY 191.17
+2026-04-24 15:06:20,380 - INFO - [自然] data-index=58 自然排名:88 - Kepeel 200Pcs Summer Pool Beach Party Ta - CNY 184.34
+2026-04-24 15:06:20,385 - INFO - [自然] data-index=59 自然排名:89 - JCFIRE Summer Pool Beach Party Favors Ki - CNY 40.91
+2026-04-24 15:06:20,389 - INFO - [自然] data-index=60 自然排名:90 - 140PCS Summer Pool Beach Party Decoratio - CNY 122.87
+2026-04-24 15:06:20,393 - INFO - [自然] data-index=61 自然排名:91 - Renbuzhu 15Pcs Beach Party Decorations P - CNY 109.21
+2026-04-24 15:06:20,397 - INFO - [自然] data-index=62 自然排名:92 - JOYIN 100 Pcs 8" Glow sticks Bulk Party  - CNY 43.64
+2026-04-24 15:06:20,402 - INFO - [自然] data-index=63 自然排名:93 - Bedwina Beach Balls in Bulk - (Pack of 1 - CNY 95.55
+2026-04-24 15:06:20,407 - INFO - [自然] data-index=64 自然排名:94 - Inflatable Flamingo Cooler 130+ Cans Lar - CNY 109.21
+2026-04-24 15:06:20,411 - INFO - [自然] data-index=65 自然排名:95 - Tropical Luau Party Decorations Set Hawa - CNY 136.46
+2026-04-24 15:06:20,417 - INFO - [自然] data-index=66 自然排名:96 - JOYIN Inflatable Pool Float Set Volleyba - CNY 204.76
+2026-04-24 15:06:20,429 - INFO - [SB广告] data-index=71 SB排名:2 - 品牌:N/A, 内嵌商品数:0
+2026-04-24 15:06:20,429 - INFO - [SB广告] data-index=71 SB排名:2 - N/A - None
+2026-04-24 15:06:20,430 - INFO - 爬取完成，共获取 130 个元素
+2026-04-24 15:06:20,430 - INFO -   - 自然商品: 96 个
+2026-04-24 15:06:20,430 - INFO -   - SP广告: 12 个
+2026-04-24 15:06:20,430 - INFO -   - SB广告: 2 个
+2026-04-24 15:06:20,430 - INFO -   - SB视频: 0 个
+2026-04-24 15:06:20,455 - INFO - 数据已保存到: ./amazon_data/pool+party+decorations_20260424_150620.json
+2026-04-24 15:10:28,775 - INFO - 开始爬取: pool+party+decorations
+2026-04-24 15:10:28,775 - INFO - 使用浏览器指纹: safari15_5
+2026-04-24 15:10:28,777 - INFO - 正在初始化亚马逊美国会话...
+2026-04-24 15:10:34,910 - WARNING - 会话初始化状态码: 202
+2026-04-24 15:10:38,194 - WARNING - 会话初始化状态码: 202
+2026-04-24 15:10:40,764 - WARNING - 会话初始化状态码: 202
+2026-04-24 15:10:41,186 - WARNING - ⚠️ ZIP可能未生效
+2026-04-24 15:10:41,187 - INFO - 初始化请求器，默认邮编: 90060
+2026-04-24 15:10:41,187 - INFO - 使用指定页数: 1
+2026-04-24 15:10:41,187 - INFO - 开始爬取关键词: pool+party+decorations, 页数: 1
+2026-04-24 15:10:41,187 - INFO - 正在访问第 1 页: https://www.amazon.com/s?k=pool+party+decorations&page=1
+2026-04-24 15:10:48,093 - INFO - ✅ 检测到美元价格，成功获取美国站数据
+2026-04-24 15:10:48,296 - INFO - 第 1 页找到 61 个带data-index的元素
+2026-04-24 15:10:48,302 - INFO - [自然] data-index=2 自然排名:1 - Pool Birthday Party Supplies,Summer Beac - CNY 143.36
+2026-04-24 15:10:48,305 - INFO - [自然] data-index=3 自然排名:2 - JOYIN 60" Inflatable Palm Tree Cooler, B - CNY 136.53
+2026-04-24 15:10:48,311 - INFO - [自然] data-index=4 自然排名:3 - Flutesan 16 Pcs Summer Beach Decorations - CNY 109.21
+2026-04-24 15:10:48,324 - INFO - [自然] data-index=8 自然排名:4 - Arrowom 24pcs Hawaiian Leis Bulk Luau Pa - CNY 64.82
+2026-04-24 15:10:48,331 - INFO - [自然] data-index=9 自然排名:5 - JOYIN 28” Inflatable Palm Tree Cooler, L - CNY 122.87
+2026-04-24 15:10:48,337 - INFO - [自然] data-index=10 自然排名:6 - 3 Pcs Iridescent Waves Tablecloths - Dis - CNY 61.40
+2026-04-24 15:10:48,342 - INFO - [自然] data-index=11 自然排名:7 - Simgoing 12 Pack Inflatable Pool Floats  - CNY 273.13
+2026-04-24 15:10:48,346 - INFO - [自然] data-index=12 自然排名:8 - Ziliny 36 Pcs Summer Pool Beach Party Su - CNY 116.04
+2026-04-24 15:10:48,356 - INFO - [自然] data-index=17 自然排名:9 - JOYIN 12-Pack 12“ Beach Balls - Bulk Cla - CNY 68.23
+2026-04-24 15:10:48,361 - INFO - [自然] data-index=18 自然排名:10 - Vinsot 32 Pack Beach Pool Party Eyeglass - CNY 88.72
+2026-04-24 15:10:48,365 - INFO - [自然] data-index=19 自然排名:11 - JOYIN Inflatable Swim Tube Raft (3 pack) - CNY 116.04
+2026-04-24 15:10:48,370 - INFO - [自然] data-index=20 自然排名:12 - 142 Pieces Pool Birthday Party Supplies  - CNY 136.53
+2026-04-24 15:10:48,374 - INFO - [自然] data-index=21 自然排名:13 - MEHOFOND Splish Splash Birthday Party Su - CNY 143.36
+2026-04-24 15:10:48,378 - INFO - [自然] data-index=22 自然排名:14 - 33Pcs Pool Party Photo Booth Props with  - CNY 61.40
+2026-04-24 15:10:48,384 - INFO - [自然] data-index=24 自然排名:15 - Pool Party Favors and Beach Party Favors - CNY 184.27
+2026-04-24 15:10:48,389 - INFO - [自然] data-index=25 自然排名:16 - Xynic pool party decorations, 207 PCS Po - CNY 136.53
+2026-04-24 15:10:48,394 - INFO - [自然] data-index=26 自然排名:17 - JOYIN Set of 6 Small Pink Flamingo Yard  - CNY 109.21
+2026-04-24 15:10:48,399 - INFO - [自然] data-index=27 自然排名:18 - Inflatable Palm Tree Beach Balls Flaming - CNY 177.51
+2026-04-24 15:10:48,403 - INFO - [自然] data-index=28 自然排名:19 - ALINK 50 Umbrella Parasol Drinking Straw - CNY 47.74
+2026-04-24 15:10:48,407 - INFO - [自然] data-index=29 自然排名:20 - JOYIN 2-Pack Flamingo Unicorn Pool Float - CNY 157.02
+2026-04-24 15:10:48,413 - INFO - [自然] data-index=30 自然排名:21 - PartySticks Glow Sticks Party Supplies 1 - CNY 54.57
+2026-04-24 15:10:48,417 - INFO - [自然] data-index=31 自然排名:22 - 12Pcs Reusable Water Balloons, Pool Beac - CNY 191.17
+2026-04-24 15:10:48,422 - INFO - [自然] data-index=32 自然排名:23 - Joyin Toy 36 Counts Hawaiian Leis Bulk,  - CNY 81.89
+2026-04-24 15:10:48,426 - INFO - [自然] data-index=34 自然排名:24 - Swimming Pool Party Banner for Summer Pa - CNY 88.72
+2026-04-24 15:10:48,432 - INFO - [自然] data-index=35 自然排名:25 - 117Pcs Summer Pool Themed Happy Birthday - CNY 157.02
+2026-04-24 15:10:48,436 - INFO - [自然] data-index=36 自然排名:26 - 134Pcs Tropical Summer Beach Pool Party  - CNY 109.21
+2026-04-24 15:10:48,441 - INFO - [自然] data-index=37 自然排名:27 - ‎Renbuzhu 15PCS Pool Party Decorations B - CNY 116.04
+2026-04-24 15:10:48,446 - INFO - [自然] data-index=38 自然排名:28 - JOYIN 4-Pack 20" Beach Balls - Large Rai - CNY 61.40
+2026-04-24 15:10:48,449 - INFO - [自然] data-index=39 自然排名:29 - Pool Party Decorations Backdrop, Pink Ha - CNY 68.23
+2026-04-24 15:10:48,454 - INFO - [自然] data-index=40 自然排名:30 - JellyArch 4 Pcs Inflatable Surf Board 36 - CNY 198.00
+2026-04-24 15:10:48,458 - INFO - [自然] data-index=41 自然排名:31 - Aliceset 20 Pcs Pool Party Clear Favor B - CNY 143.36
+2026-04-24 15:10:48,464 - INFO - [自然] data-index=42 自然排名:32 - Summer Banner Pool Party Decorations, Po - CNY 68.23
+2026-04-24 15:10:48,467 - INFO - [自然] data-index=43 自然排名:33 - xo, Fetti Pool Party Temporary Tattoos - - CNY 54.57
+2026-04-24 15:10:48,471 - INFO - [自然] data-index=44 自然排名:34 - Ring Pop Lollipops - Bulk Candy Individu - None
+2026-04-24 15:10:48,477 - INFO - [自然] data-index=45 自然排名:35 - JUXIAO 5 Pack Upgrated XL Water Pool Flo - CNY 129.70
+2026-04-24 15:10:48,483 - INFO - [自然] data-index=46 自然排名:36 - Decor365 Under the Sea Party Decorations - CNY 81.82
+2026-04-24 15:10:48,487 - INFO - [自然] data-index=47 自然排名:37 - LEEZZIZZ 30Pcs Punch Balloons, Thickened - CNY 60.65
+2026-04-24 15:10:48,494 - INFO - [自然] data-index=48 自然排名:38 - Fovths Luau Grass Table Skirt Natural 9  - CNY 57.99
+2026-04-24 15:10:48,499 - INFO - [自然] data-index=49 自然排名:39 - Luditek Sound Activated Party Lights wit - CNY 68.23
+2026-04-24 15:10:48,504 - INFO - [自然] data-index=50 自然排名:40 - Freyalife Hawaiian Leis Decorations,Leis - CNY 40.57
+2026-04-24 15:10:48,509 - INFO - [自然] data-index=51 自然排名:41 - 120PCS Summer Pool Party Supplies Swimmi - CNY 122.87
+2026-04-24 15:10:48,513 - INFO - [自然] data-index=52 自然排名:42 - OBXT 10" Blue Hanging Jellyfish Paper La - CNY 114.68
+2026-04-24 15:10:48,521 - INFO - [自然] data-index=54 自然排名:43 - Katchon, Xtralarge Wavy Blue Foil Fringe - CNY 88.72
+2026-04-24 15:10:48,525 - INFO - [自然] data-index=55 自然排名:44 - Yexiya 12 Pieces Beach Honeycomb Centerp - CNY 52.18
+2026-04-24 15:10:48,531 - INFO - [自然] data-index=56 自然排名:45 - Tingjoo 3 Pcs Pool Party Arch Backdrop S - CNY 273.13
+2026-04-24 15:10:48,537 - INFO - [自然] data-index=57 自然排名:46 - 150PCS Glow in the Dark Party Supplies f - CNY 177.51
+2026-04-24 15:10:48,543 - INFO - [自然] data-index=58 自然排名:47 - YUNXUAN Flamingo Party Supplies, Hawaiia - CNY 116.04
+2026-04-24 15:10:48,550 - INFO - [自然] data-index=59 自然排名:48 - Pool Party Decorations Wooden Table Cent - CNY 81.89
+2026-04-24 15:10:48,567 - INFO - [SB广告] data-index=62 SB排名:1 - 品牌:N/A, 内嵌商品数:0
+2026-04-24 15:10:48,567 - INFO - [SB广告] data-index=62 SB排名:1 - N/A - None
+2026-04-24 15:10:48,567 - INFO - 爬取完成，共获取 61 个元素
+2026-04-24 15:10:48,568 - INFO -   - 自然商品: 48 个
+2026-04-24 15:10:48,568 - INFO -   - SP广告: 0 个
+2026-04-24 15:10:48,568 - INFO -   - SB广告: 1 个
+2026-04-24 15:10:48,568 - INFO -   - SB视频: 0 个
+2026-04-24 15:10:48,583 - INFO - 数据已保存到: e:\ZY2026\运营-准生产级爬虫\amazon_scraper_system\backend\app\scraper\amazon_data/pool+party+decorations_20260424_151048.json
+2026-04-24 15:10:48,621 - INFO - 存入数据库 49 条记录
+2026-04-24 15:10:48,626 - INFO - ✅ 流程完成: pool+party+decorations, 爬取 61 条, 入库 49 条

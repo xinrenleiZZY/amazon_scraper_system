@@ -1,7 +1,11 @@
 # backend/app/api/scraping.py
-from fastapi import APIRouter, BackgroundTasks, Query, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, BackgroundTasks, Query, WebSocket, WebSocketDisconnect, Depends, HTTPException,Header
+from sqlalchemy.orm import Session
+from app.database import get_db
 from typing import Optional
 import asyncio
+from datetime import datetime
+
 
 router = APIRouter()
 
@@ -61,3 +65,33 @@ def trigger_weekly(background_tasks: BackgroundTasks):
     
     background_tasks.add_task(run_weekly)
     return {"message": "每周任务已启动"}
+
+
+# 在文件末尾添加
+@router.post("/tasks/{task_id}/stop")
+def stop_task(
+    task_id: int, 
+    password: str = Header(..., alias="X-Password"),
+    db: Session = Depends(get_db)
+):
+    """终止正在运行的任务（需要密码验证）"""
+    from app.models import ScrapingTask
+    
+    # 密码验证
+    if password != "He123456":
+        raise HTTPException(status_code=403, detail="密码错误，无权终止任务")
+    
+    task = db.query(ScrapingTask).filter(ScrapingTask.id == task_id).first()
+    if not task:
+        raise HTTPException(status_code=404, detail="任务不存在")
+    
+    if task.status not in ['running', 'pending']:
+        raise HTTPException(status_code=400, detail="只能终止运行中或等待中的任务")
+    
+    # 更新任务状态为失败
+    task.status = 'failed'
+    task.error_message = '用户手动终止'
+    task.completed_at = datetime.now()
+    db.commit()
+    
+    return {"message": "任务已终止", "task_id": task_id}

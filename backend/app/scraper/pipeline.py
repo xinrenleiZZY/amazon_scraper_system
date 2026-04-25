@@ -398,6 +398,6 @@ async def run_weekly_with_logs(manager=None):
 
 # 测试入口
 if __name__ == "__main__":
-    result = run_now("beach+towels", pages=1)
+    result = run_now("pool+party+decorations", pages=1)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     # import_processed_data()

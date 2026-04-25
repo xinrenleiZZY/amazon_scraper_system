@@ -541,77 +541,326 @@ class AmazonSearchScraper:
         """解析SB品牌广告"""
         try:
             title = "N/A"
+            # 方法1: 从 data-elementid="sb-headline" 获取
             title_el = item.select_one('[data-elementid="sb-headline"] span, ._c2Itd_headline_3CcZ9')
             if title_el:
                 title = title_el.text.strip()
-            
+            # 方法2: 从 data-properties 中获取 headline
+            if (title == "N/A" or title == "") and item.has_attr('data-properties'):
+                try:
+                    import json
+                    props = json.loads(item.get('data-properties'))
+                    title = props.get('headline', title)
+                except:
+                    pass
+            # 方法3: 从链接文本获取
+            if title == "N/A":
+                link_title = item.select_one('a[data-elementid="sb-headline"]')
+                if link_title:
+                    title = link_title.text.strip()
             url = None
-            link_el = item.select_one('._c2Itd_link_pJ4S_, a[href*="stores/page"]')
+            link_el = item.select_one('a[href*="stores/page"], ._c2Itd_link_pJ4S_')
             if link_el and link_el.get('href'):
                 href = link_el.get('href')
                 url = f"https://www.amazon.com{href}" if href.startswith('/') else href
             
             brand_logo = None
-            logo_el = item.select_one('._c2Itd_logo_1BwG8 img')
+            logo_el = item.select_one('._c2Itd_logo_2VIw3 img, ._c2Itd_logo_1BwG8 img, ._c2Itd_image_3UiYm')
             if logo_el:
                 brand_logo = logo_el.get('src')
             
+             # ========== 4. 提取内嵌商品 ==========
             inner_products = []
             ad_items = item.select('[data-asin][data-asin!=""]')
             for inner_idx, ad_item in enumerate(ad_items, start=1):
-                inner_title_el = ad_item.select_one('.a-size-base-plus, .a-truncate-full')
-                inner_title = inner_title_el.text.strip() if inner_title_el else "N/A"
-                inner_price_el = ad_item.select_one('.a-price .a-offscreen')
-                inner_price = inner_price_el.text.strip() if inner_price_el else None
+                asin = ad_item.get('data-asin')
+                if not asin:
+                    continue
+                # 商品标题 - 多种选择器
+                
+                inner_title = "N/A"
+                title_elem = ad_item.select_one(
+                    '.a-size-base-plus, .a-truncate-full, .a-size-medium, '
+                    'span.a-truncate-full, ._c2Itd_truncate_2HCiY span, '
+                    'a[data-type="productTitle"] span'
+                )
+                if title_elem:
+                    inner_title = title_elem.text.strip()
+
+                # 商品价格
+                inner_price = None
+                price_el = ad_item.select_one('.a-price .a-offscreen')
+                if price_el:
+                    inner_price = price_el.text.strip()
+                else:
+                    price_whole = ad_item.select_one('.a-price-whole')
+                    price_fraction = ad_item.select_one('.a-price-fraction')
+                    if price_whole and price_fraction:
+                        inner_price = f"${price_whole.text.strip()}.{price_fraction.text.strip()}"
+                
+                # 商品原价（划线价）
+                list_price = None
+                list_price_el = ad_item.select_one('.a-text-strike')
+                if list_price_el:
+                    list_price = list_price_el.text.strip()
+                
+                # 折扣百分比
+                discount = None
+                discount_el = ad_item.select_one('._c2Itd_discountText_2gdxP')
+                if discount_el:
+                    discount = discount_el.text.strip()
+                
+                # 评分
+                rating = None
+                rating_el = ad_item.select_one('.a-icon-star-mini')
+                if rating_el:
+                    rating_text = rating_el.get_text(strip=True)
+                    import re
+                    match = re.search(r'(\d+\.?\d*)', rating_text)
+                    if match:
+                        rating = float(match.group(1))
+                
+                # 评论数
+                review_count = None
+                review_el = ad_item.select_one('[data-rt]')
+                if review_el:
+                    review_text = review_el.text.strip()
+                    match = re.search(r'\(?(\d+)\)?', review_text)
+                    if match:
+                        review_count = int(match.group(1))
+                
+                # 商品图片
+                image_url = None
+                img_el = ad_item.select_one('img')
+                if img_el:
+                    image_url = img_el.get('src')
+                
+                # 促销/限时优惠标识
+                has_deal = bool(ad_item.select_one('._c2Itd_dealBadge_KEp1h, ._c2Itd_apexContainer_1nn0g'))
+                deal_text = None
+                if has_deal:
+                    deal_el = ad_item.select_one('._c2Itd_labelContainer_3cijI span, ._c2Itd_apexContainer_1nn0g span')
+                    if deal_el:
+                        deal_text = deal_el.text.strip()
                 
                 inner_products.append({
                     'position': inner_idx,
-                    'asin': ad_item.get('data-asin'),
+                    'asin': asin,
                     'title': inner_title,
                     'price': inner_price,
+                    'list_price': list_price,
+                    'discount': discount,
+                    'rating_stars': rating,
+                    'rating_count': review_count,
+                    'image': image_url,
+                    'has_deal': has_deal,
+                    'deal_text': deal_text
                 })
             
+            # 备用方法：如果上面没找到，尝试 carousel 中的商品
+            if not inner_products:
+                carousel_items = item.select('._c2Itd_item_3Z9mf, ._c2Itd_item_2t3sY, [data-sbtc-carousel-item="true"]')
+                for carousel_item in carousel_items:
+                    asin_elem = carousel_item.select_one('[data-asin][data-asin!=""]')
+                    asin = asin_elem.get('data-asin') if asin_elem else None
+                    
+                    title_elem = carousel_item.select_one('.a-size-base-plus, .a-truncate-full')
+                    product_title = title_elem.text.strip() if title_elem else "N/A"
+                    
+                    if asin:
+                        inner_products.append({
+                            'position': len(inner_products) + 1,
+                            'asin': asin,
+                            'title': product_title,
+                            'price': None
+                        })
+            
+            # ========== 5. 提取品牌标语/额外信息 ==========
+            brand_tagline = None
+            tagline_el = item.select_one('._c2Itd_ctaSponsoredContainer_3LWVa span.a-size-mini.a-color-secondary')
+            if tagline_el:
+                tagline_text = tagline_el.text.strip()
+                if tagline_text and tagline_text != "|" and tagline_text != "Sponsored":
+                    brand_tagline = tagline_text
+            
+            logger.info(f"[SB广告] data-index={data_index} SB排名:{ad_rank} - 品牌:{title[:40]}, 内嵌商品数:{len(inner_products)}")
+            
             return ProductInfo(
-                data_index=data_index, page=page, ad_type="SB",
-                ad_rank=ad_rank, title=title, url=url or "N/A",
-                brand_name=title, image_small=brand_logo,
-                inner_products=inner_products
+                data_index=data_index,
+                page=page,
+                ad_type="SB",
+                ad_rank=ad_rank,
+                title=title,
+                url=url or "N/A",
+                brand_name=title,
+                image_small=brand_logo,
+                inner_products=inner_products,
+                inner_products_count=len(inner_products)
             )
+            
         except Exception as e:
             logger.error(f"解析SB广告失败: {e}")
             return None
     
     def parse_sb_video_ad(self, item, data_index, page, ad_rank):
-        """解析SB视频广告"""
+        """解析SB视频广告 - 支持多种结构"""
         try:
-            title = "N/A"
-            title_el = item.select_one('[data-elementid="sb-headline"], ._c2Itd_headline_3CcZ9')
-            if title_el:
-                title = title_el.text.strip()
+            inner_products = []
             
+            # ========== 1. 提取广告标题 ==========
+            title = "N/A"
+            
+            # 方法1: 从 data-properties JSON 中提取 headline
+            if item.has_attr('data-properties'):
+                try:
+                    import json
+                    props = json.loads(item.get('data-properties'))
+                    title = props.get('headline', title)
+                except:
+                    pass
+            
+            # 方法2: 从 HTML 选择器获取
+            if title == "N/A":
+                title_el = item.select_one('.sbv-headline span, [data-elementid="sb-headline"] span')
+                if title_el:
+                    title = title_el.text.strip()
+            
+            # ========== 2. 提取商品链接 ==========
             url = None
-            link_el = item.select_one('._c2Itd_link_pJ4S_')
+            link_el = item.select_one('a[href*="/dp/"], a[href*="amazon.com/dp/"]')
             if link_el and link_el.get('href'):
                 href = link_el.get('href')
-                url = f"https://www.amazon.com{href}" if href.startswith('/') else href
+                # 处理长链接，提取真实 ASIN
+                if 'https://aax-us-east-retail-direct.amazon.com' in href and '/dp/' in href:
+                    parts = href.split('/dp/')
+                    if len(parts) > 1:
+                        asin_part = parts[1].split('?')[0].split('/')[0]
+                        url = f"https://www.amazon.com/dp/{asin_part}"
+                elif href.startswith('/'):
+                    url = f"https://www.amazon.com{href}"
+                else:
+                    url = href
             
-            inner_products = []
-            ad_items = item.select('[data-asin][data-asin!=""]')
+            # ========== 3. 提取品牌 Logo ==========
+            brand_logo = None
+            logo_el = item.select_one('._c2Itd_brandLogoContainer_2BXRc img, ._c2Itd_logoContainer_3ZEjK img')
+            if logo_el:
+                brand_logo = logo_el.get('src')
+            
+            # ========== 4. 提取内嵌商品 ==========
+            
+            # 方法A: 查找所有带 data-asin 的 div（最直接的方式）
+            ad_items = item.select('div[data-asin][data-asin!=""]')
+            
             for inner_idx, ad_item in enumerate(ad_items, start=1):
-                inner_title_el = ad_item.select_one('.a-size-base-plus, .a-truncate-full')
-                inner_title = inner_title_el.text.strip() if inner_title_el else "N/A"
+                asin = ad_item.get('data-asin')
+                if not asin:
+                    continue
+                
+                # 提取标题
+                inner_title = "N/A"
+                title_elem = ad_item.select_one('h2 span, .a-size-medium, .a-size-base-plus, .a-size-base, a[data-type="productTitle"]')
+                if title_elem:
+                    inner_title = title_elem.text.strip()
+                
+                # 提取价格
+                inner_price = None
+                price_elem = ad_item.select_one('.a-price .a-offscreen')
+                if price_elem:
+                    inner_price = price_elem.text.strip()
+                else:
+                    price_whole = ad_item.select_one('.a-price-whole')
+                    price_fraction = ad_item.select_one('.a-price-fraction')
+                    if price_whole and price_fraction:
+                        inner_price = f"${price_whole.text.strip()}.{price_fraction.text.strip()}"
+                
+                # 提取评分
+                rating = None
+                rating_elem = ad_item.select_one('.a-icon-star-mini')
+                if rating_elem:
+                    rating_text = rating_elem.get_text(strip=True)
+                    import re
+                    match = re.search(r'(\d+\.?\d*)', rating_text)
+                    if match:
+                        rating = float(match.group(1))
+                
+                # 提取评论数
+                review_count = None
+                review_elem = ad_item.select_one('[data-type="productReviews"] .a-size-small, .a-size-small.a-color-tertiary')
+                if review_elem and review_elem.text.strip().isdigit():
+                    review_count = int(review_elem.text.strip())
                 
                 inner_products.append({
                     'position': inner_idx,
-                    'asin': ad_item.get('data-asin'),
+                    'asin': asin,
                     'title': inner_title,
+                    'price': inner_price,
+                    'rating_stars': rating,
+                    'rating_count': review_count
                 })
             
+            # 方法B: 如果方法A没找到，尝试查找 .desktop-video-product-view 容器
+            if not inner_products:
+                product_containers = item.select('.desktop-video-product-view, .sbv-product')
+                for product_container in product_containers:
+                    asin_elem = product_container.select_one('[data-asin][data-asin!=""]')
+                    asin = asin_elem.get('data-asin') if asin_elem else None
+                    
+                    title_elem = product_container.select_one('h2 span, .a-size-medium')
+                    inner_title = title_elem.text.strip() if title_elem else "N/A"
+                    
+                    if asin:
+                        inner_products.append({
+                            'position': len(inner_products) + 1,
+                            'asin': asin,
+                            'title': inner_title,
+                            'price': None
+                        })
+            
+            # 方法C: 查找 ._c2Itd_productTitle_1vCSB 类（亚马逊新样式）
+            if not inner_products:
+                title_links = item.select('._c2Itd_productTitle_1vCSB')
+                for title_link in title_links:
+                    # 向上查找包含 data-asin 的容器
+                    parent = title_link.parent
+                    while parent and parent != item:
+                        if parent.has_attr('data-asin') and parent.get('data-asin'):
+                            asin = parent.get('data-asin')
+                            inner_title = title_link.text.strip()
+                            inner_products.append({
+                                'position': len(inner_products) + 1,
+                                'asin': asin,
+                                'title': inner_title,
+                                'price': None
+                            })
+                            break
+                        parent = parent.parent
+             # ========== 5. 如果外层没有 asin 和 title，使用第一个内嵌商品的信息 ==========
+            main_asin = None
+            main_title = title  # 优先使用广告标题
+            
+            # 如果广告标题是 N/A 或空，且有内嵌商品，使用第一个内嵌商品的标题
+            if (main_title == "N/A" or not main_title) and inner_products:
+                main_title = inner_products[0].get('title', 'N/A')
+                main_asin = inner_products[0].get('asin', None)
+                logger.info(f"[SB视频] 使用第一个内嵌商品作为主商品 - ASIN:{main_asin}, 标题:{main_title[:40]}")
+            
+            logger.info(f"[SB视频] data-index={data_index} 排名:{ad_rank} - 标题:{title[:40]}, 内嵌商品数:{len(inner_products)}")
+            
             return ProductInfo(
-                data_index=data_index, page=page, ad_type="SB_Video",
-                ad_rank=ad_rank, title=title, url=url or "N/A",
-                inner_products=inner_products
+                data_index=data_index,
+                page=page,
+                ad_type="SB_Video",
+                ad_rank=ad_rank,
+                title=main_title,
+                asin=main_asin,
+                url=url or "N/A",
+                brand_name=title if title != "N/A" else main_title,
+                image_small=brand_logo,
+                inner_products=inner_products,
+                inner_products_count=len(inner_products)
             )
+            
         except Exception as e:
             logger.error(f"解析SB视频广告失败: {e}")
             return None

@@ -20,6 +20,8 @@ def get_results(
     keywords: Optional[List[str]] = Query(None),  # #YU 421
     asin: Optional[str] = Query(None),
     ad_type: Optional[str] = Query(None),
+    date_from: Optional[str] = Query(None, description="开始日期 YYYY-MM-DD"),
+    date_to: Optional[str] = Query(None, description="结束日期 YYYY-MM-DD"), # 添加日期参数 YYYY-MM-DD 0423zy
     page: int = Query(1, ge=1),
     limit: int = Query(20, ge=1, le=500),  # #YU 421  le=100 -> 500
     db: Session = Depends(get_db)
@@ -35,6 +37,17 @@ def get_results(
         query = query.filter(RawSearchResult.asin == asin)
     if ad_type:
         query = query.filter(RawSearchResult.ad_type == ad_type)
+    
+    query = query.order_by(RawSearchResult.scraped_at.desc())
+
+    # ========== 添加日期筛选 0423zy ==========
+    # ========== 日期范围筛选 ==========
+    if date_from:
+        from_date = datetime.strptime(date_from, '%Y-%m-%d').date()
+        query = query.filter(RawSearchResult.date >= from_date)
+    if date_to:
+        to_date = datetime.strptime(date_to, '%Y-%m-%d').date()
+        query = query.filter(RawSearchResult.date <= to_date)
     
     query = query.order_by(RawSearchResult.scraped_at.desc())
     
@@ -76,7 +89,7 @@ def get_tasks(
     status: Optional[str] = Query(None),
     keyword: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
-    limit: int = Query(20, ge=1, le=500),  # #YU 421  le=100 -> 500
+    limit: int = Query(50, ge=1, le=500),  # #YU 421  le=100 -> 500
     db: Session = Depends(get_db)
 ):
     """查询任务列表"""
