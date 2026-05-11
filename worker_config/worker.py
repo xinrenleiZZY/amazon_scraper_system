@@ -76,7 +76,7 @@ def run_scraper(keyword: str, pages: int = None) -> Path:
         cmd.extend(["--proxy", PROXY_URL])
     
     logger.info(f"执行命令: {' '.join(cmd)}")
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=3600)  # 设置60分钟超时
     
     if result.returncode != 0:
         logger.error(f"爬取失败: {result.stderr}")

@@ -91,5 +91,31 @@ CREATE TRIGGER update_raw_search_results_updated_at
     FOR EACH ROW 
     EXECUTE FUNCTION update_updated_at_column();
 
+-- 人员表
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 人员-关键词关联表
+CREATE TABLE IF NOT EXISTS user_keywords (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    keyword VARCHAR(200) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 关键词属性表
+CREATE TABLE IF NOT EXISTS keyword_attributes (
+    keyword VARCHAR(255) PRIMARY KEY,
+    tags JSONB DEFAULT '[]'::jsonb,
+    festival VARCHAR(100) DEFAULT '',
+    festival_type VARCHAR(20) DEFAULT '',
+    hot_season VARCHAR(50) DEFAULT '',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- 查看初始化结果
 SELECT '✅ 数据库初始化完成' as status;

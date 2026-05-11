@@ -221,10 +221,6 @@ window.triggerWeekly = async function() {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadKeywords();
-});
-
 // 启动轮询
 function startPolling() {
     if (logPollingInterval) clearInterval(logPollingInterval);
@@ -245,10 +241,374 @@ function stopPolling() {
     stopLogPolling(); // zyzy0422
 }
 
-// 页面加载
+
+// ========== 定时任务管理 0428 ==========
+
+// 加载定时任务列表
+async function loadScheduleJobs() {
+    try {
+        const jobs = await apiFetch('/schedule/jobs');
+        const container = document.getElementById('scheduleJobsList');
+        
+        if (!jobs.length) {
+            container.innerHTML = '<div class="text-center text-muted py-3">暂无定时任务，点击上方按钮添加</div>';
+            return;
+        }
+        
+        container.innerHTML = jobs.map(job => `
+            <div class="card mb-2 job-card">
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h6 class="mb-1">
+                                ${job.enabled ? '<i class="bi bi-play-circle text-success"></i>' : '<i class="bi bi-pause-circle text-secondary"></i>'}
+                                ${escapeHtml(job.name)}
+                                <span class="badge ${job.enabled ? 'bg-success' : 'bg-secondary'} ms-2">${job.enabled ? '启用' : '禁用'}</span>
+                            </h6>
+                            <div class="small text-muted mb-2">
+                                <code class="cron-badge">${escapeHtml(job.cron)}</code>
+                                <span class="mx-2">|</span>
+                                <i class="bi bi-tag"></i> 
+                                ${job.keywords && job.keywords.length > 0 
+                                    ? (job.keywords.includes('__ALL__') || job.keywords.length === 0
+                                        ? '<span class="badge bg-primary">所有关键词</span>'
+                                        : job.keywords.map(k => `<span class="badge bg-secondary me-1">${escapeHtml(k)}</span>`).join(''))
+                                    : '<span class="badge bg-primary">所有关键词</span>'}
+                            </div>
+                            ${job.description ? `<div class="small text-muted"><i class="bi bi-file-text"></i> ${escapeHtml(job.description)}</div>` : ''}
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="viewJobRunHistory('${job.id}','${escapeHtml(job.name)}')" title="运行记录">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary" onclick="editScheduleJob('${job.id}')" title="编辑">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteScheduleJob('${job.id}')" title="删除">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('加载定时任务失败:', error);
+        document.getElementById('scheduleJobsList').innerHTML = '<div class="text-center text-danger py-3">加载失败</div>';
+    }
+}
+
+// 显示添加任务模态框
+function showAddScheduleModal() {
+    document.getElementById('scheduleJobModalTitle').textContent = '添加定时任务';
+    document.getElementById('editJobId').value = '';
+    document.getElementById('jobName').value = '';
+    document.getElementById('jobCron').value = '';
+    document.getElementById('jobPages').value = '';
+    document.getElementById('jobEnabled').checked = true;
+    document.getElementById('jobDescription').value = '';
+    jobKwPickerSelected.clear();
+    document.getElementById('jobKeywordCount').textContent = '所有关键词';
+    new bootstrap.Modal(document.getElementById('scheduleJobModal')).show();
+}
+
+// 编辑定时任务
+window.editScheduleJob = async function(jobId) {
+    try {
+        const jobs = await apiFetch('/schedule/jobs');
+        const job = jobs.find(j => j.id === jobId);
+        if (!job) return;
+
+        document.getElementById('scheduleJobModalTitle').textContent = '编辑定时任务';
+        document.getElementById('editJobId').value = job.id;
+        document.getElementById('jobName').value = job.name;
+        document.getElementById('jobCron').value = job.cron;
+        document.getElementById('jobPages').value = job.pages || '';
+        document.getElementById('jobEnabled').checked = job.enabled;
+        document.getElementById('jobDescription').value = job.description || '';
+
+        jobKwPickerSelected.clear();
+        if (job.keywords && job.keywords.length > 0 && !job.keywords.includes('__ALL__')) {
+            job.keywords.forEach(k => jobKwPickerSelected.add(k));
+        }
+        document.getElementById('jobKeywordCount').textContent =
+            jobKwPickerSelected.size ? `已选 ${jobKwPickerSelected.size} 个关键词` : '所有关键词';
+
+        new bootstrap.Modal(document.getElementById('scheduleJobModal')).show();
+    } catch (error) {
+        alert('加载失败: ' + error.message);
+    }
+};
+
+// 定时任务关键词弹窗
+let jobKwPickerSelected = new Set();
+
+window.toggleJobKwPanel = function() {
+    const panel = document.getElementById('jobKwInlinePanel');
+    const hidden = panel.style.display === 'none';
+    if (hidden) renderJobKwPickerList(document.getElementById('jobKwPickerSearch').value || '');
+    panel.style.display = hidden ? '' : 'none';
+};
+
+function renderJobKwPickerList(filter) {
+    const list = document.getElementById('jobKwPickerList');
+    const filtered = allCustomKeywords.filter(kw => kw.toLowerCase().includes(filter.toLowerCase()));
+    list.innerHTML = `<div class="d-flex flex-wrap gap-2 p-2">${
+        filtered.map(kw => {
+            const sel = jobKwPickerSelected.has(kw);
+            return `<span class="badge rounded-pill px-3 py-2" style="cursor:pointer;font-size:13px;font-weight:normal;
+                background:${sel ? '#0d6efd' : '#e9ecef'};color:${sel ? '#fff' : '#495057'};border:1px solid ${sel ? '#0d6efd' : '#ced4da'}"
+                onclick="jobKwPickerToggle(this,'${escapeHtml(kw)}')">${escapeHtml(kw)}</span>`;
+        }).join('')
+    }</div>`;
+    document.getElementById('jobKwPickerSelectedCount').textContent = jobKwPickerSelected.size;
+}
+
+window.jobKwPickerFilter = function(val) { renderJobKwPickerList(val); };
+
+window.jobKwPickerToggle = function(el, kw) {
+    if (jobKwPickerSelected.has(kw)) {
+        jobKwPickerSelected.delete(kw);
+        el.style.background = '#e9ecef'; el.style.color = '#495057'; el.style.borderColor = '#ced4da';
+    } else {
+        jobKwPickerSelected.add(kw);
+        el.style.background = '#0d6efd'; el.style.color = '#fff'; el.style.borderColor = '#0d6efd';
+    }
+    document.getElementById('jobKwPickerSelectedCount').textContent = jobKwPickerSelected.size;
+};
+
+window.jobKwPickerSelectAll = function() {
+    const filter = document.getElementById('jobKwPickerSearch').value || '';
+    allCustomKeywords.filter(kw => kw.toLowerCase().includes(filter.toLowerCase())).forEach(kw => jobKwPickerSelected.add(kw));
+    renderJobKwPickerList(filter);
+};
+
+window.jobKwPickerClearAll = function() {
+    jobKwPickerSelected.clear();
+    renderJobKwPickerList(document.getElementById('jobKwPickerSearch').value || '');
+};
+
+window.confirmJobKwPicker = function() {
+    document.getElementById('jobKeywordCount').textContent =
+        jobKwPickerSelected.size ? `已选 ${jobKwPickerSelected.size} 个关键词` : '所有关键词';
+    document.getElementById('jobKwInlinePanel').style.display = 'none';
+};
+
+// 加载关键词到选择框（保留兼容）
+async function loadKeywordsForSelect() {
+    if (!allCustomKeywords.length) {
+        const res = await apiFetch('/keywords');
+        allCustomKeywords = Array.isArray(res) ? res : (res.keywords || []);
+    }
+}
+
+// 保存定时任务
+window.saveScheduleJob = async function() {
+    const jobId = document.getElementById('editJobId').value;
+    const name = document.getElementById('jobName').value.trim();
+    const cron = document.getElementById('jobCron').value.trim();
+    const pages = document.getElementById('jobPages').value;
+    const enabled = document.getElementById('jobEnabled').checked;
+    const description = document.getElementById('jobDescription').value;
+    const selectedKeywords = jobKwPickerSelected.size ? [...jobKwPickerSelected] : ['__ALL__'];
+
+    if (!name) { alert('请输入任务名称'); return; }
+    if (!cron) { alert('请输入Cron表达式'); return; }
+
+    const jobData = { name, cron, keywords: selectedKeywords, pages: pages ? parseInt(pages) : null, enabled, description };
+
+    try {
+        if (jobId) {
+            await apiFetch(`/schedule/jobs/${jobId}`, { method: 'PUT', body: JSON.stringify(jobData) });
+        } else {
+            await apiFetch('/schedule/jobs', { method: 'POST', body: JSON.stringify(jobData) });
+        }
+        bootstrap.Modal.getInstance(document.getElementById('scheduleJobModal')).hide();
+        loadScheduleJobs();
+        addLog('📅 定时任务已更新，将在下次执行时生效', 'info');
+    } catch (error) {
+        alert('保存失败: ' + error.message);
+    }
+};
+
+// 删除定时任务
+window.deleteScheduleJob = async function(jobId) {
+    if (!confirm('确定删除该定时任务吗？')) return;
+    try {
+        await apiFetch(`/schedule/jobs/${jobId}`, { method: 'DELETE' });
+        loadScheduleJobs();
+        addLog('📅 定时任务已删除', 'info');
+    } catch (error) {
+        alert('删除失败: ' + error.message);
+    }
+};
+
+window.viewJobRunHistory = async function(jobId, jobName) {
+    document.getElementById('jobRunHistoryName').textContent = jobName;
+    const content = document.getElementById('jobRunHistoryContent');
+    content.innerHTML = '<div class="text-center text-muted p-3">加载中...</div>';
+    new bootstrap.Modal(document.getElementById('jobRunHistoryModal')).show();
+    try {
+        const runs = await apiFetch(`/schedule/jobs/${jobId}/runs`);
+        if (!runs.length) {
+            content.innerHTML = '<div class="text-center text-muted p-3">暂无运行记录</div>';
+            return;
+        }
+        content.innerHTML = runs.map(r => {
+            const t = new Date(r.time).toLocaleString('zh-CN');
+            const ok = r.status === 'success';
+            return `<div class="d-flex align-items-center px-3 py-2 border-bottom">
+                <i class="bi ${ok ? 'bi-check-circle text-success' : 'bi-x-circle text-danger'} me-2"></i>
+                <span class="small">${t}</span>
+                ${r.note ? `<span class="small text-muted ms-2">${escapeHtml(r.note)}</span>` : ''}
+            </div>`;
+        }).join('');
+    } catch (e) {
+        content.innerHTML = '<div class="text-center text-danger p-3">加载失败</div>';
+    }
+};
+
+// 在页面初始化时加载定时任务 0428
+// 修改原有的 DOMContentLoaded 事件，添加 loadScheduleJobs 0428
+
+
+
+// 自定义爬取
+let customUsersData = [];
+let allCustomKeywords = [];
+let selectedCustomKeywords = new Set();
+
+async function loadCustomPanel() {
+    const res = await apiFetch('/keywords');
+    allCustomKeywords = Array.isArray(res) ? res : (res.keywords || []);
+
+    const usersRes = await apiFetch('/users');
+    customUsersData = Array.isArray(usersRes) ? usersRes : (usersRes.users || []);
+    const ownerSelect = document.getElementById('customOwner');
+    ownerSelect.innerHTML = '<option value="">-- 选择负责人 --</option>' +
+        customUsersData.map(u => `<option value="${u.id}">${escapeHtml(u.name)}</option>`).join('');
+}
+
+document.querySelectorAll('input[name="customMode"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+        const isKeyword = radio.value === 'keyword';
+        document.getElementById('customKeywordPanel').style.display = isKeyword ? '' : 'none';
+        document.getElementById('customOwnerPanel').style.display = isKeyword ? 'none' : '';
+    });
+});
+
+// 关键词选择器 modal
+window.openKeywordPickerModal = function() {
+    renderKwPickerList(document.getElementById('kwPickerSearch').value || '');
+    new bootstrap.Modal(document.getElementById('keywordPickerModal')).show();
+};
+
+function renderKwPickerList(filter) {
+    const list = document.getElementById('kwPickerList');
+    const filtered = allCustomKeywords.filter(kw => kw.toLowerCase().includes(filter.toLowerCase()));
+    list.innerHTML = `<div class="d-flex flex-wrap gap-2 p-2">${
+        filtered.map(kw => {
+            const sel = selectedCustomKeywords.has(kw);
+            return `<span class="badge rounded-pill px-3 py-2" style="cursor:pointer;font-size:13px;font-weight:normal;
+                background:${sel ? '#0d6efd' : '#e9ecef'};color:${sel ? '#fff' : '#495057'};border:1px solid ${sel ? '#0d6efd' : '#ced4da'}"
+                onclick="kwPickerToggleTag(this,'${escapeHtml(kw)}')">${escapeHtml(kw)}</span>`;
+        }).join('')
+    }</div>`;
+    document.getElementById('kwPickerSelectedCount').textContent = selectedCustomKeywords.size;
+}
+
+window.kwPickerFilter = function(val) { renderKwPickerList(val); };
+
+window.kwPickerToggleTag = function(el, kw) {
+    if (selectedCustomKeywords.has(kw)) {
+        selectedCustomKeywords.delete(kw);
+        el.style.background = '#e9ecef'; el.style.color = '#495057'; el.style.borderColor = '#ced4da';
+    } else {
+        selectedCustomKeywords.add(kw);
+        el.style.background = '#0d6efd'; el.style.color = '#fff'; el.style.borderColor = '#0d6efd';
+    }
+    document.getElementById('kwPickerSelectedCount').textContent = selectedCustomKeywords.size;
+};
+
+window.kwPickerSelectAll = function() {
+    const filter = document.getElementById('kwPickerSearch').value || '';
+    allCustomKeywords.filter(kw => kw.toLowerCase().includes(filter.toLowerCase()))
+        .forEach(kw => selectedCustomKeywords.add(kw));
+    renderKwPickerList(filter);
+};
+
+window.kwPickerClearAll = function() {
+    selectedCustomKeywords.clear();
+    renderKwPickerList(document.getElementById('kwPickerSearch').value || '');
+};
+
+window.confirmKeywordPicker = function() {
+    const count = selectedCustomKeywords.size;
+    const eyeBtn = document.getElementById('customKeywordEyeBtn');
+    document.getElementById('customKeywordCount').textContent = count ? `已选 ${count} 个关键词` : '未选择';
+    eyeBtn.style.display = count ? '' : 'none';
+    bootstrap.Modal.getInstance(document.getElementById('keywordPickerModal')).hide();
+};
+
+// 负责人关键词查看 modal
+window.onCustomOwnerChange = function() {
+    const userId = document.getElementById('customOwner').value;
+    const user = customUsersData.find(u => String(u.id) === String(userId));
+    const preview = document.getElementById('customOwnerKwPreview');
+    if (user && user.keywords && user.keywords.length) {
+        preview.innerHTML = `共 <strong>${user.keywords.length}</strong> 个关键词
+            <button type="button" class="btn btn-sm btn-outline-secondary py-0 px-1" onclick="openOwnerKwDetail()" title="查看关键词"><i class="bi bi-eye"></i></button>`;
+    } else {
+        preview.innerHTML = userId ? '该负责人暂无关键词' : '';
+    }
+};
+
+window.openOwnerKwDetail = function() {
+    const userId = document.getElementById('customOwner').value;
+    const user = customUsersData.find(u => String(u.id) === String(userId));
+    if (!user) return;
+    document.getElementById('ownerKwDetailContent').innerHTML =
+        user.keywords.map(kw => `<span class="badge bg-secondary me-1 mb-1">${escapeHtml(kw)}</span>`).join('');
+    new bootstrap.Modal(document.getElementById('ownerKwDetailModal')).show();
+};
+
+window.startCustomScrape = async function() {
+    const mode = document.querySelector('input[name="customMode"]:checked').value;
+    const pages = document.getElementById('customPages').value;
+    const statusDiv = document.getElementById('scrapeStatus');
+
+    let keywords = [];
+    if (mode === 'keyword') {
+        keywords = [...selectedCustomKeywords];
+        if (!keywords.length) { alert('请至少选择一个关键词'); return; }
+    } else {
+        const userId = document.getElementById('customOwner').value;
+        if (!userId) { alert('请选择负责人'); return; }
+        const user = customUsersData.find(u => String(u.id) === String(userId));
+        keywords = user && user.keywords ? user.keywords : [];
+        if (!keywords.length) { alert('该负责人暂无关键词'); return; }
+    }
+
+    statusDiv.innerHTML = '<div class="alert alert-info"><i class="bi bi-hourglass-split"></i> 自定义任务已提交...</div>';
+    try {
+        for (const kw of keywords) {
+            const params = new URLSearchParams({ keyword: kw });
+            if (pages) params.append('pages', pages);
+            await apiFetch(`/scrape?${params}`, { method: 'POST' });
+        }
+        statusDiv.innerHTML = `<div class="alert alert-success"><i class="bi bi-check-circle"></i> 已提交 ${keywords.length} 个关键词爬取任务</div>`;
+        addLog(`🚀 自定义爬取已提交：${keywords.join(', ')}`, 'info');
+    } catch (error) {
+        statusDiv.innerHTML = `<div class="alert alert-danger"><i class="bi bi-exclamation-circle"></i> 提交失败: ${error.message}</div>`;
+    }
+};
+
+// 页面加载 文件底部：0428更新
 document.addEventListener('DOMContentLoaded', () => {
     loadKeywords();
+    loadCustomPanel();
     startPolling();
+    loadScheduleJobs().catch(err => console.error('加载定时任务失败:', err));
 });
 
 // 页面关闭时清理

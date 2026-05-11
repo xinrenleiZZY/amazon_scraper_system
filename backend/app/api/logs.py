@@ -3,10 +3,11 @@ from fastapi import APIRouter
 from pathlib import Path
 
 router = APIRouter()
-LOG_PATH = Path(__file__).parent.parent / "scraper" / "amazon_scraper.log"
+LOG_PATH = Path(__file__).parent.parent.parent / "amazon_scraper.log"
+# backend/app/scraper/amazon_scraper.log
 
 @router.get("/logs")
-def get_logs(lines: int = 100):
+def get_logs(lines: int = 500):
     """获取最近的日志"""
     if not LOG_PATH.exists():
         return {"logs": [], "message": "日志文件不存在"}

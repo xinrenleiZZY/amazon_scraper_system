@@ -205,7 +205,7 @@ class SimpleRequestExecutor:
                         logger.info("✅ 检测到美元价格，成功获取美国站数据")
                         return response
                     else:
-                        logger.info("无法判断货币类型，继续处理")
+                        logger.info("无法判断货币类型，继续处理：当前类型")
                         return response
                         
                 elif response.status_code == 503:

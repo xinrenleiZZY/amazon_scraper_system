@@ -47,7 +47,14 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-
+td.tehua:nth-child(1), th.tehua:nth-child(1) { width: 50px; }
+td.tehua:nth-child(2), th.tehua:nth-child(2) { max-width: 240px;min-width: 120px;  word-break: break-all !important; white-space: normal !important; }
+td.tehua:nth-child(3), th.tehua:nth-child(3) { width: 120px; }
+td.tehua:nth-child(4), th.tehua:nth-child(4) { max-width: 200px;min-width: 100px;word-break: break-all !important; white-space: normal !important; }
+td.tehua:nth-child(5), th.tehua:nth-child(5) { width: 100px; }
+td.tehua:nth-child(6), th.tehua:nth-child(6) { width: 200px; }
+td.tehua:nth-child(7), th.tehua:nth-child(7) { width: 190px; }
+td.tehua:nth-child(8), th.tehua:nth-child(8) { min-width: 180px; white-space: nowrap; }
 .spin {
     display: inline-block;
     animation: spin 1s linear infinite;

@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, Text, Boolean, Numeric, TIMESTAMP, JSON, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, Boolean, Numeric, TIMESTAMP, JSON, Date, ForeignKey, DateTime
 from sqlalchemy.sql import func
 from app.database import Base
+from sqlalchemy.orm import relationship
+from datetime import datetime
 
 
 class RawSearchResult(Base):
@@ -65,3 +67,19 @@ class UserKeyword(Base):
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     keyword = Column(String(200), nullable=False)
     created_at = Column(TIMESTAMP, server_default=func.now())
+
+
+# ========== 新增：关键词属性表 ==========
+class KeywordAttribute(Base):
+    """关键词属性表 - 存储标签、节日、热卖期等信息"""
+    __tablename__ = "keyword_attributes"
+    
+    keyword = Column(String(255), primary_key=True, index=True)
+    tags = Column(JSON, default=list)  # JSON 数组：["夏季", "泳池派对"]
+    festival = Column(String(100), default="")  # 节日：圣诞节、黑五等
+    festival_type = Column(String(20), default="")  # 大节日/小节日
+    hot_season = Column(String(50), default="")  # 高峰期/预热期等
+    
+    # 时间戳
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)

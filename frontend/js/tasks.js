@@ -1,7 +1,9 @@
 let currentTaskPage = 1;
 let totalTaskPages = 1;
+let totalTaskCount = 0;
 let currentStatus = '';
 let currentKeyword = '';
+let currentPageSize = 15;  // 默认每页15条
 let tasksRefreshInterval = null;
 let runningTasksInterval = null;
 
@@ -189,15 +191,14 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// 查看商品详情的小窗口（使用全局变量）
 // 查看商品详情的小窗口
 function showProductsDetail() {
     const products = window.currentProducts || [];
     const taskId = window.currentTaskId;
     const keyword = window.currentKeyword || '';
     
-    console.log('showProductsDetail 被调用, 商品数量:', products.length);
-    
+    const totalItems = window.currentTaskTotalItems || products.length;
+
     if (products.length === 0) {
         showToast('暂无商品数据', 'error');
         return;
@@ -216,6 +217,10 @@ function showProductsDetail() {
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body" style="max-height: 500px; overflow-y: auto;">
+                        <div class="alert alert-info small mb-2">
+                            <i class="bi bi-info-circle"></i> 
+                            当前任务共 ${totalItems} 条商品，此处显示 ${products.length} 条（最多显示500条）
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-sm table-striped">
                                 <thead class="table-dark">
@@ -248,7 +253,7 @@ function showProductsDetail() {
                                         </tr>
                                     `).join('')}
                                 </tbody>
-                            
+                            </table>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -269,7 +274,6 @@ function showProductsDetail() {
     
     document.body.insertAdjacentHTML('beforeend', modalHtml);
     
-    // 绑定导出按钮
     const exportBtn = document.getElementById('exportProductsBtn');
     if (exportBtn) {
         exportBtn.onclick = function() {
@@ -290,17 +294,19 @@ window.exportTaskProducts = function(taskId, keyword) {
 window.viewTaskDetail = async function(taskId) {
     try {
         const task = await apiFetch(`/tasks/${taskId}`);
-        
-        const productsRes = await fetch(`/api/results?task_id=${taskId}&limit=200`);
+        // 获取该任务的实际商品数量
+        const taskTotalItems = task.total_items || 0;
+        // 获取商品数据 - 使用实际数量或最大限制
+        const fetchLimit = Math.min(taskTotalItems, 500); // 最多500条
+        const productsRes = await fetch(`/api/results?task_id=${taskId}&limit=${fetchLimit}`);
+
         const productsData = await productsRes.json();
         const products = productsData.data || [];
         
-        // 将 products 存储为全局变量，方便调用
         window.currentProducts = products;
         window.currentTaskId = task.id;
         window.currentKeyword = task.keyword;
-        
-        console.log('商品数据已加载，共', products.length, '条'); // 调试日志
+        window.currentTaskTotalItems = taskTotalItems;
         
         const organicCount = products.filter(p => p.ad_type === 'Organic').length;
         const spCount = products.filter(p => p.ad_type === 'SP').length;
@@ -314,7 +320,7 @@ window.viewTaskDetail = async function(taskId) {
             <div class="mb-3">
                 <h6><i class="bi bi-info-circle"></i> 任务信息</h6>
                 <table class="table table-sm table-bordered">
-                    <tr><th style="width:140px">任务ID</th><td>${task.id}</span></td></span>
+                    <tr><th style="width:140px">任务ID</th><td>${task.id}</span></td></tr>
                     <tr>
                         <th>关键词</th>
                         <td>
@@ -323,9 +329,9 @@ window.viewTaskDetail = async function(taskId) {
                                 <i class="bi bi-eye"></i> 查看全部商品 (${products.length}条)
                             </button>
                          </span>
-                     </span>
-                    <tr><th>状态</th><td><span class="status-badge status-${task.status}">${task.status}</span> ${canStop ? '<span class="badge bg-danger ms-2">⚠️ 可终止</span>' : ''}</span></td>
-                    <tr><th>抓取页数</th><td>${task.pages || '自动'}</span></td>
+                     </tr>
+                    <tr><th>状态</th><td><span class="status-badge status-${task.status}">${task.status}</span> ${canStop ? '<span class="badge bg-danger ms-2">⚠️ 可终止</span>' : ''}</span> </tr>
+                    <tr><th>抓取页数</th><td>${task.pages || '自动'}</span> </tr>
                     <tr>
                         <th>商品数量</th>
                         <td>
@@ -334,12 +340,12 @@ window.viewTaskDetail = async function(taskId) {
                                 (有机:${organicCount} | SP:${spCount} | SB:${sbCount} | 视频:${sbVideoCount})
                             </span>
                          </span>
-                     </span>
-                    <tr><th>开始时间</th><td>${new Date(task.started_at).toLocaleString()}</span></td>
-                    <tr><th>完成时间</th><td>${task.completed_at ? new Date(task.completed_at).toLocaleString() : '-'}</span></td>
-                    <tr><th>运行时长</th><td>${task.completed_at ? Math.round((new Date(task.completed_at) - new Date(task.started_at)) / 1000) + '秒' : '运行中...'}</span></td>
-                    <tr><th>错误信息</th><td class="text-danger">${task.error_message || '-'}</span></td>
-                
+                     </tr>
+                    <tr><th>开始时间</th><td>${new Date(task.started_at).toLocaleString()}</span> </tr>
+                    <tr><th>完成时间</th><td>${task.completed_at ? new Date(task.completed_at).toLocaleString() : '-'}</span> </tr>
+                    <tr><th>运行时长</th><td>${task.completed_at ? Math.round((new Date(task.completed_at) - new Date(task.started_at)) / 1000) + '秒' : '运行中...'}</span> </tr>
+                    <tr><th>错误信息</th><td class="text-danger">${task.error_message || '-'}</span> </tr>
+                </table>
             </div>
             ${canStop ? `
             <div class="alert alert-warning">
@@ -366,44 +372,37 @@ window.viewTaskDetail = async function(taskId) {
                                     <td title="${p.title || ''}" style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                         ${(p.title || '-').substring(0, 40)}${(p.title || '').length > 40 ? '...' : ''}
                                      </span>
-                                    <td><span class="price-current">${p.price_current || '-'}</span></td>
+                                    <td><span class="price-current">${p.price_current || '-'}</span><td>
                                     <td><span class="badge ${p.ad_type === 'Organic' ? 'bg-success' : 'bg-primary'}">${p.ad_type || 'Organic'}</span></td>
                                     <td>${p.ad_rank || p.organic_rank || '-'}</td>
                                 </tr>
                             `).join('')}
                             ${products.length === 0 ? '<tr><td colspan="5" class="text-center">暂无商品数据</span></td>' : ''}
                         </tbody>
-                    
+                    </table>
                 </div>
                 ${products.length > 20 ? `<div class="text-center mt-2"><button class="btn btn-sm btn-outline-primary" id="viewMoreProductsBtn">查看全部 ${products.length} 条商品 <i class="bi bi-arrow-right"></i></button></div>` : ''}
             </div>
         `;
         
-        // 使用事件监听器绑定按钮（更可靠）
         const modalElement = document.getElementById('taskDetailModal');
         const modal = new bootstrap.Modal(modalElement);
         
-        // 等待 DOM 渲染完成后绑定事件
         setTimeout(() => {
-            // 绑定"查看全部商品"按钮（关键词旁边的）
             const viewAllBtn = document.getElementById('viewAllProductsBtn');
             if (viewAllBtn) {
                 viewAllBtn.onclick = function() {
-                    console.log('点击了查看全部商品按钮');
                     showProductsDetail();
                 };
             }
             
-            // 绑定"查看更多"按钮（底部的）
             const viewMoreBtn = document.getElementById('viewMoreProductsBtn');
             if (viewMoreBtn) {
                 viewMoreBtn.onclick = function() {
-                    console.log('点击了查看更多按钮');
                     showProductsDetail();
                 };
             }
             
-            // 绑定终止任务按钮
             const stopBtn = document.getElementById('stopTaskBtn');
             if (stopBtn) {
                 stopBtn.onclick = function() {
@@ -459,7 +458,15 @@ function showToast(message, type = 'info') {
 
 function renderTaskPagination() {
     const pagination = document.getElementById('taskPagination');
+    const totalCountSpan = document.getElementById('taskTotalCount');
+    
     if (!pagination) return;
+    
+    if (totalCountSpan && totalTaskCount > 0) {
+        const start = (currentTaskPage - 1) * currentPageSize + 1;
+        const end = Math.min(currentTaskPage * currentPageSize, totalTaskCount);
+        totalCountSpan.innerHTML = `共 ${totalTaskCount} 条，显示 ${start}-${end}`;
+    }
     
     if (totalTaskPages <= 1) {
         pagination.innerHTML = '';
@@ -467,11 +474,28 @@ function renderTaskPagination() {
     }
     
     let html = '';
-    for (let i = 1; i <= totalTaskPages; i++) {
-        html += `<li class="page-item ${i === currentTaskPage ? 'active' : ''}">
-                    <a class="page-link" href="#" onclick="loadTasks(${i}); return false;">${i}</a>
-                </li>`;
+    
+    // 上一页
+    html += `<li class="page-item ${currentTaskPage === 1 ? 'disabled' : ''}">
+        <a class="page-link" href="#" onclick="loadTasks(${currentTaskPage - 1}); return false;">«</a>
+    </li>`;
+    
+    // 页码
+    let startPage = Math.max(1, currentTaskPage - 2);
+    let endPage = Math.min(totalTaskPages, startPage + 4);
+    startPage = Math.max(1, endPage - 4);
+    
+    for (let i = startPage; i <= endPage; i++) {
+        html += `<li class="page-item ${currentTaskPage === i ? 'active' : ''}">
+            <a class="page-link" href="#" onclick="loadTasks(${i}); return false;">${i}</a>
+        </li>`;
     }
+    
+    // 下一页
+    html += `<li class="page-item ${currentTaskPage === totalTaskPages ? 'disabled' : ''}">
+        <a class="page-link" href="#" onclick="loadTasks(${currentTaskPage + 1}); return false;">»</a>
+    </li>`;
+    
     pagination.innerHTML = html;
 }
 
@@ -480,14 +504,14 @@ async function loadTasks(page = 1) {
     currentTaskPage = page;
     const params = new URLSearchParams({ 
         page: currentTaskPage, 
-        limit: 20,
+        limit: currentPageSize,
         status: currentStatus,
         keyword: currentKeyword
     });
     
     const tbody = document.getElementById('tasksTableBody');
     if (tbody) {
-        tbody.innerHTML = '<tr><td colspan="9" class="text-center"><div class="spinner-border spinner-border-sm me-2"></div>加载中...</span></tr>';
+        tbody.innerHTML = '<tr><td colspan="9" class="text-center"><div class="spinner-border spinner-border-sm me-2"></div>加载中...</td></tr>';
     }
     
     try {
@@ -504,11 +528,14 @@ async function loadTasks(page = 1) {
         if (result.data && Array.isArray(result.data)) {
             tasks = result.data;
             totalPages = result.total_pages || result.totalPages || 1;
+            totalTaskCount = result.total || 0;
         } else if (Array.isArray(result)) {
             tasks = result;
             totalPages = 1;
+            totalTaskCount = tasks.length;
         } else {
             tasks = [];
+            totalTaskCount = 0;
         }
         
         if (tasks.length > 0) {
@@ -519,14 +546,14 @@ async function loadTasks(page = 1) {
                 const keyword = escapeHtml(task.keyword || '');
                 return `
                     <tr class="${rowClass}">
-                        <td>${task.id}</span></td>
-                        <td><strong>${keyword}</strong></span></td>
-                        <td><span class="status-badge status-${task.status}">${task.status}</span></span></td>
-                        <td>${task.pages || '自动'}</span></td>
-                        <td>${task.total_items || 0}</span></td>
-                        <td>${task.started_at ? new Date(task.started_at).toLocaleString() : '-'}</span></td>
-                        <td>${task.completed_at ? new Date(task.completed_at).toLocaleString() : '-'}</span></td>
-                        <td>${duration !== '-' ? duration + '秒' : '-'}</span></td>
+                        <td>${task.id}</td>
+                        <td><strong>${keyword}</strong></td>
+                        <td><span class="status-badge status-${task.status}">${task.status}</span></td>
+                        <td>${task.pages || '自动'}</td>
+                        <td>${task.total_items || 0}</td>
+                        <td>${task.started_at ? new Date(task.started_at).toLocaleString() : '-'}</td>
+                        <td>${task.completed_at ? new Date(task.completed_at).toLocaleString() : '-'}</td>
+                        <td>${duration !== '-' ? duration + '秒' : '-'}</td>
                         <td>
                             <button class="btn btn-sm btn-info" onclick="viewTaskDetail(${task.id})">
                                 <i class="bi bi-eye"></i>
@@ -536,14 +563,15 @@ async function loadTasks(page = 1) {
                                 <i class="bi bi-stop-circle"></i>
                             </button>
                             ` : ''}
-                         </span>
+                         </td>
                     </tr>
                 `;
             }).join('');
             totalTaskPages = totalPages;
             renderTaskPagination();
         } else {
-            tbody.innerHTML = '<tr><td colspan="9" class="text-center">暂无任务</span></tr>';
+            tbody.innerHTML = '<tr><td colspan="9" class="text-center">暂无任务</td></tr>';
+            renderTaskPagination();
         }
         
         await loadRunningTasks();
@@ -558,7 +586,7 @@ async function loadTasks(page = 1) {
         console.error('loadTasks 执行失败:', error);
         
         if (tbody) {
-            tbody.innerHTML = `<td><td colspan="9" class="text-center text-danger">加载失败: ${error.message}</span></tr>`;
+            tbody.innerHTML = `<tr><td colspan="9" class="text-center text-danger">加载失败: ${error.message}</td></tr>`;
         }
         
         const statusEl = document.getElementById('api-status');
@@ -566,6 +594,16 @@ async function loadTasks(page = 1) {
             statusEl.className = 'badge bg-danger';
             statusEl.textContent = 'API 离线';
         }
+    }
+}
+
+// 切换每页显示数量
+function changePageSize() {
+    const select = document.getElementById('taskPageSize');
+    if (select) {
+        currentPageSize = parseInt(select.value);
+        currentTaskPage = 1;  // 重置到第一页
+        loadTasks(1);
     }
 }
 
@@ -604,6 +642,7 @@ window.refreshTasks = function() {
 window.filterTasks = function() {
     currentStatus = document.getElementById('taskStatusFilter').value;
     currentKeyword = document.getElementById('taskKeywordFilter').value;
+    currentTaskPage = 1;
     loadTasks(1);
 };
 
@@ -620,6 +659,13 @@ function handleVisibilityChange() {
 // 页面初始化
 document.addEventListener('DOMContentLoaded', () => {
     addTaskStyles();
+    
+    // 绑定分页大小变化事件
+    const pageSizeSelect = document.getElementById('taskPageSize');
+    if (pageSizeSelect) {
+        pageSizeSelect.addEventListener('change', changePageSize);
+    }
+    
     loadTasks(1);
     startAutoRefresh();
     document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -629,3 +675,121 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('beforeunload', () => {
     stopAutoRefresh();
 });
+
+// ========== 终止全部任务 ==========
+
+// 显示终止全部任务的密码输入框
+function showStopAllModal() {
+    const modalHtml = `
+        <div class="modal fade" id="stopAllTasksModal" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title"><i class="bi bi-shield-lock"></i> 批量终止验证</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted"><i class="bi bi-exclamation-triangle text-warning"></i> 
+                            此操作将终止所有正在运行的任务</p>
+                        <div class="mb-3">
+                            <label class="form-label">请输入操作密码</label>
+                            <input type="password" class="form-control" id="stopAllPassword" placeholder="密码">
+                        </div>
+                        <div id="stopAllError" class="text-danger small d-none"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-danger" onclick="confirmStopAllTasks()">
+                            <i class="bi bi-stop-circle"></i> 确认终止全部
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const existingModal = document.getElementById('stopAllTasksModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    const modal = new bootstrap.Modal(document.getElementById('stopAllTasksModal'));
+    modal.show();
+    document.getElementById('stopAllPassword').focus();
+}
+
+// 确认终止全部任务
+window.confirmStopAllTasks = async function() {
+    const password = document.getElementById('stopAllPassword').value;
+    const errorDiv = document.getElementById('stopAllError');
+    
+    if (!password) {
+        errorDiv.textContent = '请输入密码';
+        errorDiv.classList.remove('d-none');
+        return;
+    }
+    
+    try {
+        const response = await fetch('/api/tasks/stop-all', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Password': password
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || '终止失败');
+        }
+        
+        const result = await response.json();
+        bootstrap.Modal.getInstance(document.getElementById('stopAllTasksModal')).hide();
+        showToast(`✅ ${result.message}`, 'success');
+        
+        // 刷新任务列表
+        loadTasks(currentTaskPage);
+        loadRunningTasks();
+        
+    } catch (error) {
+        errorDiv.textContent = error.message;
+        errorDiv.classList.remove('d-none');
+    }
+};
+
+// 修改单个终止函数，使用密码头
+window.confirmStopTask = async function(taskId) {
+    const password = document.getElementById('stopTaskPassword').value;
+    const errorDiv = document.getElementById('stopTaskError');
+    
+    if (!password) {
+        errorDiv.textContent = '请输入密码';
+        errorDiv.classList.remove('d-none');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`/api/tasks/${taskId}/stop`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Password': password
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || '终止失败');
+        }
+        
+        bootstrap.Modal.getInstance(document.getElementById('stopTaskPasswordModal')).hide();
+        showToast('✅ 任务已终止', 'success');
+        loadTasks(currentTaskPage);
+        loadRunningTasks();
+        
+    } catch (error) {
+        errorDiv.textContent = error.message;
+        errorDiv.classList.remove('d-none');
+    }
+};

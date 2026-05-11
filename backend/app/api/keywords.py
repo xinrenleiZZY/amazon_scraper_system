@@ -1,19 +1,23 @@
-from fastapi import APIRouter, HTTPException, Query, UploadFile, File, Request
+from fastapi import APIRouter, HTTPException, Query, UploadFile, File, Request, Body, Depends
 from typing import List
 import json
 from pathlib import Path
 import io
 import logging
+from sqlalchemy.orm import Session
+from app.database import get_db, SessionLocal
+from app.models import KeywordAttribute, User, UserKeyword
+
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
-# 配置文件路径
+# 配置文件路径（保留用于读取 keywords 列表）
 CONFIG_PATH = Path(__file__).parent.parent / "scraper" / "scraper_config.json"
 
 
 def load_config():
-    """加载配置文件"""
+    """加载配置文件（仅用于获取关键词列表）"""
     if CONFIG_PATH.exists():
         with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -21,20 +25,22 @@ def load_config():
 
 
 def save_config(config):
-    """保存配置文件"""
+    """保存配置文件（仅用于保存关键词列表）"""
     with open(CONFIG_PATH, 'w', encoding='utf-8') as f:
         json.dump(config, f, indent=4, ensure_ascii=False)
 
 
+# ========== 关键词 CRUD（保持原有路径参数格式，但改为数据库操作） ==========
+
 @router.get("/keywords")
 def get_keywords():
-    """获取关键词列表"""
+    """获取关键词列表（从 JSON 文件读取）"""
     config = load_config()
     return config.get("keywords", [])
 
 
 @router.post("/keywords")
-def add_keyword(keyword: str = Query(..., description="要添加的关键词")):
+def add_keyword(keyword: str = Query(...), db: Session = Depends(get_db)):
     """添加关键词"""
     config = load_config()
     keywords = config.get("keywords", [])
@@ -43,12 +49,18 @@ def add_keyword(keyword: str = Query(..., description="要添加的关键词")):
         keywords.append(keyword)
         config["keywords"] = keywords
         save_config(config)
+        
+        # 同时在数据库创建空记录
+        existing = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+        if not existing:
+            db.add(KeywordAttribute(keyword=keyword))
+            db.commit()
     
     return {"keywords": keywords}
 
 
 @router.delete("/keywords")
-def delete_keyword(keyword: str = Query(..., description="要删除的关键词")):
+def delete_keyword(keyword: str = Query(...), db: Session = Depends(get_db)):
     """删除关键词"""
     config = load_config()
     keywords = config.get("keywords", [])
@@ -60,131 +72,196 @@ def delete_keyword(keyword: str = Query(..., description="要删除的关键词"
     config["keywords"] = keywords
     save_config(config)
     
+    # 从数据库删除
+    db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).delete()
+    db.commit()
+    
     return {"keywords": keywords}
 
 
 @router.put("/keywords")
-def update_keywords(keywords: List[str]):
+def update_keywords(keywords: List[str], db: Session = Depends(get_db)):
     """批量更新关键词"""
     config = load_config()
     config["keywords"] = keywords
     save_config(config)
     
+    # 为新增的关键词创建数据库记录
+    for kw in keywords:
+        existing = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == kw).first()
+        if not existing:
+            db.add(KeywordAttribute(keyword=kw))
+    db.commit()
+    
     return {"keywords": keywords}
 
 
-# ========== 标签接口 ==========
-@router.get("/keywords/tags")
-def get_keyword_tags(keyword: str = Query(..., description="关键词")):
-    config = load_config()
-    return config.get("keyword_tags", {}).get(keyword, [])
+# ========== 标签接口（数据库版本） ==========
+
+@router.get("/keywords/{keyword}/tags")
+def get_keyword_tags(keyword: str, db: Session = Depends(get_db)):
+    """获取关键词的标签"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.tags if attrs else []
 
 
-@router.put("/keywords/tags")
-def update_keyword_tags(keyword: str = Query(..., description="关键词"), tags: List[str] = None):
-    if tags is None:
-        tags = []
-    config = load_config()
-    if "keyword_tags" not in config:
-        config["keyword_tags"] = {}
-    config["keyword_tags"][keyword] = tags
-    save_config(config)
+@router.put("/keywords/{keyword}/tags")
+def update_keyword_tags(keyword: str, tags: List[str] = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的标签"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.tags = tags
+    db.commit()
     return tags
 
 
-# ========== 节日接口 ==========
-@router.get("/keywords/festival")
-def get_keyword_festival(keyword: str = Query(..., description="关键词")):
-    config = load_config()
-    return config.get("keyword_festivals", {}).get(keyword, "")
+# ========== 节日接口（数据库版本） ==========
+
+@router.get("/keywords/{keyword}/festival")
+def get_keyword_festival(keyword: str, db: Session = Depends(get_db)):
+    """获取关键词的节日"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.festival if attrs else ""
 
 
-@router.put("/keywords/festival")
-async def update_keyword_festival(keyword: str = Query(..., description="关键词"), request: Request = None):
-    """更新节日 - 支持从 body 读取数据"""
-    config = load_config()
-    if "keyword_festivals" not in config:
-        config["keyword_festivals"] = {}
-    
-    # 从 body 读取数据
-    festival = ""
-    try:
-        body = await request.json()
-        if isinstance(body, str):
-            festival = body
-        elif isinstance(body, dict):
-            festival = body.get("festival", "") or body.get("value", "") or ""
-    except:
-        festival = ""
-    
-    config["keyword_festivals"][keyword] = festival
-    save_config(config)
+@router.put("/keywords/{keyword}/festival")
+def update_keyword_festival(keyword: str, festival: str = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的节日"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.festival = festival
+    db.commit()
     return festival
 
 
-# ========== 大/小节日接口 ==========
-@router.get("/keywords/festival-type")
-def get_keyword_festival_type(keyword: str = Query(..., description="关键词")):
-    config = load_config()
-    return config.get("keyword_festival_types", {}).get(keyword, "")
+# ========== 大/小节日接口（数据库版本） ==========
+
+@router.get("/keywords/{keyword}/festival-type")
+def get_keyword_festival_type(keyword: str, db: Session = Depends(get_db)):
+    """获取关键词的大/小节日"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.festival_type if attrs else ""
 
 
-@router.put("/keywords/festival-type")
-async def update_keyword_festival_type(keyword: str = Query(..., description="关键词"), request: Request = None):
-    """更新大/小节日 - 支持从 body 读取数据"""
-    config = load_config()
-    if "keyword_festival_types" not in config:
-        config["keyword_festival_types"] = {}
-    
-    # 从 body 读取数据
-    festival_type = ""
-    try:
-        body = await request.json()
-        if isinstance(body, str):
-            festival_type = body
-        elif isinstance(body, dict):
-            festival_type = body.get("festival_type", "") or body.get("value", "") or ""
-    except:
-        festival_type = ""
-    
-    config["keyword_festival_types"][keyword] = festival_type
-    save_config(config)
+@router.put("/keywords/{keyword}/festival-type")
+def update_keyword_festival_type(keyword: str, festival_type: str = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的大/小节日"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.festival_type = festival_type
+    db.commit()
     return festival_type
 
 
-# ========== 热卖期接口 ==========
-@router.get("/keywords/hot-season")
-def get_keyword_hot_season(keyword: str = Query(..., description="关键词")):
-    config = load_config()
-    return config.get("keyword_hot_seasons", {}).get(keyword, "")
+# ========== 热卖期接口（数据库版本） ==========
+
+@router.get("/keywords/{keyword}/hot-season")
+def get_keyword_hot_season(keyword: str, db: Session = Depends(get_db)):
+    """获取关键词的热卖期"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.hot_season if attrs else ""
 
 
-@router.put("/keywords/hot-season")
-async def update_keyword_hot_season(keyword: str = Query(..., description="关键词"), request: Request = None):
-    """更新热卖期 - 支持从 body 读取数据"""
-    config = load_config()
-    if "keyword_hot_seasons" not in config:
-        config["keyword_hot_seasons"] = {}
-    
-    # 从 body 读取数据
-    hot_season = ""
-    try:
-        body = await request.json()
-        if isinstance(body, str):
-            hot_season = body
-        elif isinstance(body, dict):
-            hot_season = body.get("hot_season", "") or body.get("value", "") or ""
-    except:
-        hot_season = ""
-    
-    config["keyword_hot_seasons"][keyword] = hot_season
-    save_config(config)
+@router.put("/keywords/{keyword}/hot-season")
+def update_keyword_hot_season(keyword: str, hot_season: str = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的热卖期"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.hot_season = hot_season
+    db.commit()
     return hot_season
 
 
-# ========== 批量导入接口 ==========
+# ========== 查询参数版本（兼容前端） ==========
+
+@router.get("/keywords/tags")
+def get_keyword_tags_query(keyword: str = Query(...), db: Session = Depends(get_db)):
+    """获取关键词的标签（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.tags if attrs else []
+
+
+@router.put("/keywords/tags")
+def update_keyword_tags_query(keyword: str = Query(...), tags: List[str] = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的标签（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.tags = tags
+    db.commit()
+    return tags
+
+
+@router.get("/keywords/festival")
+def get_keyword_festival_query(keyword: str = Query(...), db: Session = Depends(get_db)):
+    """获取关键词的节日（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.festival if attrs else ""
+
+
+@router.put("/keywords/festival")
+def update_keyword_festival_query(keyword: str = Query(...), festival: str = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的节日（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.festival = festival
+    db.commit()
+    return festival
+
+
+@router.get("/keywords/festival-type")
+def get_keyword_festival_type_query(keyword: str = Query(...), db: Session = Depends(get_db)):
+    """获取关键词的大/小节日（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.festival_type if attrs else ""
+
+
+@router.put("/keywords/festival-type")
+def update_keyword_festival_type_query(keyword: str = Query(...), festival_type: str = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的大/小节日（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.festival_type = festival_type
+    db.commit()
+    return festival_type
+
+
+@router.get("/keywords/hot-season")
+def get_keyword_hot_season_query(keyword: str = Query(...), db: Session = Depends(get_db)):
+    """获取关键词的热卖期（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    return attrs.hot_season if attrs else ""
+
+
+@router.put("/keywords/hot-season")
+def update_keyword_hot_season_query(keyword: str = Query(...), hot_season: str = Body(...), db: Session = Depends(get_db)):
+    """更新关键词的热卖期（查询参数版本）"""
+    attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+    if not attrs:
+        attrs = KeywordAttribute(keyword=keyword)
+        db.add(attrs)
+    attrs.hot_season = hot_season
+    db.commit()
+    return hot_season
+
+
+# ========== 批量导入接口（需要适配数据库） ==========
+
 @router.post("/keywords/import-with-user")
-async def import_keywords_with_user(file: UploadFile = File(...)):
+async def import_keywords_with_user(file: UploadFile = File(...), db: Session = Depends(get_db)):
     try:
         import openpyxl
         from app.database import SessionLocal
@@ -201,25 +278,12 @@ async def import_keywords_with_user(file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"解析失败: {e}")
 
-    db = SessionLocal()
     try:
         config = load_config()
         existing_kws = set(config.get("keywords", []))
         added_kws = 0
         added_relations = 0
-        added_tags_count = 0
-        added_festivals_count = 0
-        added_festival_types_count = 0
-        added_hot_seasons_count = 0
-        
-        if "keyword_tags" not in config:
-            config["keyword_tags"] = {}
-        if "keyword_festivals" not in config:
-            config["keyword_festivals"] = {}
-        if "keyword_festival_types" not in config:
-            config["keyword_festival_types"] = {}
-        if "keyword_hot_seasons" not in config:
-            config["keyword_hot_seasons"] = {}
+        added_attrs = 0
 
         for row in rows:
             keyword = str(row[0]).strip() if row[0] else ""
@@ -232,28 +296,33 @@ async def import_keywords_with_user(file: UploadFile = File(...)):
             if not keyword:
                 continue
             
+            # 添加到 JSON 配置文件
             if keyword not in existing_kws:
                 existing_kws.add(keyword)
                 added_kws += 1
             
+            # 添加到数据库属性表
+            attrs = db.query(KeywordAttribute).filter(KeywordAttribute.keyword == keyword).first()
+            if not attrs:
+                attrs = KeywordAttribute(keyword=keyword)
+                db.add(attrs)
+                added_attrs += 1
+            
             if tags_str:
                 tags = [t.strip() for t in tags_str.split(',') if t.strip()]
                 if tags:
-                    config["keyword_tags"][keyword] = tags
-                    added_tags_count += len(tags)
+                    attrs.tags = tags
             
             if festival:
-                config["keyword_festivals"][keyword] = festival
-                added_festivals_count += 1
+                attrs.festival = festival
             
             if festival_type and festival_type in ['大节日', '小节日']:
-                config["keyword_festival_types"][keyword] = festival_type
-                added_festival_types_count += 1
+                attrs.festival_type = festival_type
             
             if hot_season:
-                config["keyword_hot_seasons"][keyword] = hot_season
-                added_hot_seasons_count += 1
+                attrs.hot_season = hot_season
             
+            # 处理人员关联
             if user_name:
                 users = [u.strip() for u in user_name.split(',') if u.strip()]
                 for u_name in users:
@@ -270,39 +339,18 @@ async def import_keywords_with_user(file: UploadFile = File(...)):
                         db.add(UserKeyword(user_id=user.id, keyword=keyword))
                         added_relations += 1
         
+        # 更新 JSON 配置文件
         config["keywords"] = list(existing_kws)
         save_config(config)
+        
         db.commit()
+        
         return {
             "imported_keywords": added_kws,
             "imported_relations": added_relations,
-            "imported_tags": added_tags_count,
-            "imported_festivals": added_festivals_count,
-            "imported_festival_types": added_festival_types_count,
-            "imported_hot_seasons": added_hot_seasons_count
+            "imported_attributes": added_attrs
         }
     except Exception as e:
         db.rollback()
         logger.error(f"导入失败: {e}")
         raise HTTPException(status_code=500, detail=f"导入失败: {str(e)}")
-    finally:
-        db.close()
-
-
-@router.post("/keywords/import")
-async def import_keywords(file: UploadFile = File(...)):
-    try:
-        import openpyxl
-        content = await file.read()
-        wb = openpyxl.load_workbook(io.BytesIO(content))
-        ws = wb.active
-        new_kws = [str(row[0].value).strip() for row in ws.iter_rows(min_row=2) if row[0].value]
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"解析失败: {e}")
-
-    config = load_config()
-    existing = config.get("keywords", [])
-    added = [kw for kw in new_kws if kw and kw not in existing]
-    config["keywords"] = existing + added
-    save_config(config)
-    return {"imported": len(added), "total": len(config["keywords"])}

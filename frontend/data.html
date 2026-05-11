@@ -6,254 +6,224 @@
     <title>数据查询 - 汇挚鑫-亚马逊爬虫</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+     <!-- Tom Select CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
-    /* ========== 领星风格表格样式 ========== */
-    .data-card {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        padding: 0;
-        overflow: hidden;
-    }
-    
-    .data-card-header {
-        padding: 16px 20px;
-        border-bottom: 1px solid #e5e7eb;
-        background: #fff;
-    }
-    
-    .data-card-header .title {
-        font-size: 16px;
-        font-weight: 500;
-        color: #333;
-        margin: 0;
-    }
-    
-    .table-erp {
+    /* 保持你原有的样式不变 */
+    .data-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
+    .data-card-header { padding: 16px 20px; border-bottom: 1px solid #e5e7eb; background: #fff; }
+    .data-card-header .title { font-size: 16px; font-weight: 500; color: #333; margin: 0; }
+    .table-erp { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .table-erp thead th { background: #e2e9ef; padding: 12px 14px; text-align: left; color: #374151; border-bottom: 1px solid #e5e7eb; white-space: nowrap; font-size: 13px; }
+    .table-erp tbody td { white-space: nowrap; padding: 12px 14px; border-bottom: 1px solid #f3f4f6; color: #4b5563; vertical-align: middle;  white-space: nowrap; }
+    .table-erp tbody tr:nth-child(even) { background: #fafbfc; }
+    .table-erp tbody tr:hover { background: #eff6ff; cursor: pointer; }
+    .tag { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 400; margin-right: 4px; margin-bottom: 2px; }
+    .tag-blue { background: #dbeafe; color: #1d4ed8; }
+    .tag-green { background: #dcfce7; color: #166534; }
+    .tag-orange { background: #ffedd5; color: #9a3412; }
+    .tag-gray { background: #f3f4f6; color: #4b5563; }
+    .tag-purple { background: #e9d5ff; color: #6b21a5; }
+    .tag-red { background: #fee2e2; color: #b91c1c; }
+    .btn-erp { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; border: none; transition: all 0.2s; }
+    .btn-erp-outline { background: #fff; border: 1px solid #d1d5db; color: #374151; }
+    .btn-erp-outline:hover { background: #f3f4f6; border-color: #9ca3af; }
+    .btn-erp-primary { background: #3b82f6; color: #fff; }
+    .btn-erp-primary:hover { background: #2563eb; }
+    .asin-code { font-family: monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 11px; color: #1f2937; }
+    .rating-star { color: #fbbf24; letter-spacing: 1px; }
+    .price-current { color: #dc2626; font-weight: 500; }
+    .price-list { text-decoration: line-through; color: #9ca3af; font-size: 11px; margin-left: 5px; }
+    .table-responsive-erp { overflow-x: auto; max-width: 100%; }
+    .pagination-erp { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 20px; padding: 16px 20px; border-top: 1px solid #e5e7eb; background: #fff; }
+    .pagination-buttons { display: flex; align-items: center; gap: 8px; }
+    .pagination-erp .page-btn { padding: 6px 12px; border-radius: 6px; border: 1px solid #e5e7eb; background: #fff; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+    .pagination-erp .page-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
+    .pagination-erp .page-btn.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+    .pagination-erp .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .pagination-erp .page-info { color: #6b7280; font-size: 13px; margin: 0 12px; }
+    .pagination-jump { display: flex; align-items: center; gap: 8px; }
+    .pagination-jump input { width: 70px; padding: 4px 8px; border-radius: 6px; border: 1px solid #e5e7eb; text-align: center; }
+    .pagination-jump button { padding: 4px 12px; border-radius: 6px; border: 1px solid #e5e7eb; background: #fff; cursor: pointer; font-size: 12px; }
+    .pagination-jump button:hover { background: #f3f4f6; }
+    .dropdown-menu { max-height: 300px; overflow-y: auto; }
+    /* ASIN 列不换行 */
+    .table-erp tbody td:nth-child(3) {  /* ASIN 是第3列 */white-space: nowrap;}
+    .table-erp tbody td.asin-column {white-space: nowrap;}
+    .card-header {padding-bottom: 15px;}
+    /* Tom Select 样式覆盖 */
+    /* ========== Tom Select 完全对齐 Bootstrap 5 ========== */
+/* ========== Tom Select 完全对齐 Bootstrap 5 ========== */
+/* ========== Tom Select 精确对齐 38px ========== */
+
+    .ts-wrapper {
         width: 100%;
-        border-collapse: collapse;
-        font-size: 13px;
+        min-height: 38px !important;
+        max-height: 38px !important;
+        height: 38px !important;
+        padding: 0;
+        display: block !important;
     }
-    
-    .table-erp thead th {
-        background: #e2e9ef;;
-        padding: 12px 14px;
-        text-align: left;
-        color: #374151;
-        border-bottom: 1px solid #e5e7eb;
-        white-space: nowrap;
-        font-size: 13px;
-    }
-    
-    .table-erp tbody td {
-        padding: 12px 14px;
-        border-bottom: 1px solid #f3f4f6;
-        color: #4b5563;
-        vertical-align: middle;
-    }
-    
-    .table-erp tbody tr:nth-child(even) {
-        background: #fafbfc;
-    }
-    
-    .table-erp tbody tr:hover {
-        background: #eff6ff;
-        cursor: pointer;
-    }
-    
-    /* 标签样式 */
-    .tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 12px;
-        font-weight: 400;
-        margin-right: 4px;
-        margin-bottom: 2px;
-    }
-    
-    .tag-blue {
-        background: #dbeafe;
-        color: #1d4ed8;
-    }
-    
-    .tag-green {
-        background: #dcfce7;
-        color: #166534;
-    }
-    
-    .tag-orange {
-        background: #ffedd5;
-        color: #9a3412;
-    }
-    
-    .tag-gray {
-        background: #f3f4f6;
-        color: #4b5563;
-    }
-    
-    .tag-purple {
-        background: #e9d5ff;
-        color: #6b21a5;
-    }
-    
-    .tag-red {
-        background: #fee2e2;
-        color: #b91c1c;
-    }
-    
-    /* 按钮样式 */
-    .btn-erp {
-        padding: 5px 12px;
-        border-radius: 6px;
-        font-size: 12px;
-        cursor: pointer;
-        border: none;
-        transition: all 0.2s;
-    }
-    
-    .btn-erp-outline {
-        background: #fff;
-        border: 1px solid #d1d5db;
-        color: #374151;
-    }
-    
-    .btn-erp-outline:hover {
-        background: #f3f4f6;
-        border-color: #9ca3af;
-    }
-    
-    .btn-erp-primary {
-        background: #3b82f6;
-        color: #fff;
-    }
-    
-    .btn-erp-primary:hover {
-        background: #2563eb;
-    }
-    
-    .btn-erp-danger {
-        background: #ef4444;
-        color: #fff;
-    }
-    
-    .btn-erp-danger:hover {
-        background: #dc2626;
-    }
-    
-    /* ASIN 样式 */
-    .asin-code {
-        font-family: monospace;
-        background: #f3f4f6;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 11px;
-        color: #1f2937;
-    }
-    
-    /* 评分星星 */
-    .rating-star {
-        color: #fbbf24;
-        letter-spacing: 1px;
-    }
-    
-    /* 价格样式 */
-    .price-current {
-        color: #dc2626;
-        font-weight: 500;
-    }
-    
-    .price-list {
-        text-decoration: line-through;
-        color: #9ca3af;
-        font-size: 11px;
-        margin-left: 5px;
-    }
-    
-    /* 表格容器滚动 */
-    .table-responsive-erp {
-        overflow-x: auto;
-        max-width: 100%;
-    }
-    
-    /* 分页样式 */
-    .pagination-erp {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 8px;
-        margin-top: 20px;
-        padding: 16px 20px;
-        border-top: 1px solid #e5e7eb;
-        background: #fff;
+    /* 核心：精确控制高度 38px */
+    .ts-control {
+        display: block !important;
+        width: 100% !important;
+        padding: 0.375rem 2.25rem 0.375rem 0.75rem !important;
+        font-size: 0.875rem !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: #212529 !important;
+        background-color: #fff !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 0.75rem center !important;
+        background-size: 16px 12px !important;
+        border: 1px solid #ced4da !important;
+        border-radius: 0.375rem !important;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+        
+        /* 关键：固定高度 38px */
+        min-height: 38px !important;
+        max-height: 38px !important;
+        height: 38px !important;
+        
+        /* 溢出隐藏 */
+        overflow: hidden !important;
     }
 
-    .pagination-buttons {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    /* 隐藏 Tom Select 自带箭头 */
+    .ts-wrapper .ts-control::after {
+        display: none !important;
     }
 
-    .pagination-erp .page-btn {
-        padding: 6px 12px;
-        border-radius: 6px;
-        border: 1px solid #e5e7eb;
-        background: #fff;
-        cursor: pointer;
-        font-size: 13px;
-        transition: all 0.2s;
-    }
-    
-    .pagination-erp .page-btn:hover {
-        background: #f3f4f6;
-        border-color: #d1d5db;
-    }
-    
-    .pagination-erp .page-btn.active {
-        background: #3b82f6;
-        color: #fff;
-        border-color: #3b82f6;
-    }
-    
-    .pagination-erp .page-btn:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-    
-    .pagination-erp .page-info {
-        color: #6b7280;
-        font-size: 13px;
-        margin: 0 12px;
-    }
-    /* 右侧跳转区域 */
-    .pagination-jump {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    /* 聚焦效果 */
+    .ts-control:focus-within {
+        border-color: #86b7fe !important;
+        outline: 0 !important;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
     }
 
-    .pagination-jump input {
-        width: 70px;
-        padding: 4px 8px;
-        border-radius: 6px;
-        border: 1px solid #e5e7eb;
-        text-align: center;
+    /* 内容区域 - 水平滚动，不换行 */
+    .ts-control .items {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 4px !important;
+        height: 32px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: thin !important;
     }
 
-    .pagination-jump button {
-        padding: 4px 12px;
-        border-radius: 6px;
-        border: 1px solid #e5e7eb;
-        background: #fff;
-        cursor: pointer;
-        font-size: 12px;
+    /* 隐藏滚动条（可选） */
+    .ts-control .items::-webkit-scrollbar {
+        height: 3px;
     }
 
-    .pagination-jump button:hover {
-        background: #f3f4f6;
+    .ts-control .items::-webkit-scrollbar-track {
+        background: #e9ecef;
+        border-radius: 3px;
+    }
+
+    .ts-control .items::-webkit-scrollbar-thumb {
+        background: #adb5bd;
+        border-radius: 3px;
+    }
+
+    /* 已选标签 */
+    .ts-wrapper.multi .ts-control [data-value] {
+        display: inline-flex !important;
+        flex-shrink: 0 !important;
+        align-items: center !important;
+        background-color: #0d6efd !important;
+        border-radius: 0.25rem !important;
+        padding: 2px 8px !important;
+        font-size: 11px !important;
+        font-weight: 400 !important;
+        line-height: 1.3 !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+    }
+
+    /* 删除按钮 */
+    .ts-wrapper.multi .ts-control [data-value] .remove {
+        border-left: 1px solid rgba(255, 255, 255, 0.3) !important;
+        padding-left: 4px !important;
+        margin-left: 4px !important;
+        line-height: 1 !important;
+    }
+
+    .ts-wrapper.multi .ts-control [data-value] .remove:hover {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-radius: 0 2px 2px 0 !important;
+    }
+
+    /* 输入区域 */
+    .ts-control .input {
+        flex-shrink: 0 !important;
+        min-width: 50px !important;
+    }
+
+    .ts-control .input input {
+        height: 28px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        font-size: 12px !important;
+    }
+
+    /* 占位符 */
+    .ts-control .placeholder {
+        line-height: 32px !important;
+        color: #6c757d !important;
+        font-size: 12px !important;
+        opacity: 1 !important;
+    }
+
+    /* 下拉菜单 */
+    .ts-dropdown {
+        border: 1px solid rgba(0, 0, 0, 0.15) !important;
+        border-radius: 0.375rem !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        margin-top: 2px !important;
+    }
+
+    .ts-dropdown .ts-dropdown-content {
+        max-height: 280px !important;
+        overflow-y: auto !important;
+    }
+
+    .ts-dropdown .option {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.875rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .ts-dropdown .option:hover {
+        background-color: #e9ecef !important;
+    }
+
+    .ts-dropdown .active {
+        background-color: #0d6efd !important;
+        color: #fff !important;
+    }
+
+    /* 禁用状态 */
+    .ts-wrapper.disabled .ts-control {
+        background-color: #e9ecef !important;
+        opacity: 1 !important;
+    }
+
+    /* 有值时的样式调整 */
+    .ts-wrapper.multi.has-items .ts-control {
+        padding: 0 2.25rem 0 0.5rem !important;
     }
 </style>
 <body>
@@ -263,7 +233,7 @@
             <nav class="col-md-2 d-md-block bg-dark sidebar">
                 <div class="position-sticky pt-3">
                     <h5 class="text-white text-center py-3">汇挚鑫-亚马逊商品排名监控系统</h5>
-                    <ul class="nav flex-column"></ul> <!-- #YU 421 -->
+                    <ul class="nav flex-column" id="sidebarNav"></ul>
                 </div>
             </nav>
 
@@ -271,95 +241,111 @@
             <main class="col-md-10 ms-sm-auto px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 style="font-weight: 600; color: #1f2937;">数据查询
-                        <span style="font-size: 14px; font-weight: 400;padding: 2px; color: #6b7280; background: #f3f4f6;  border-radius: 6px;">
-                            开发中 - 04.24 09:00
+                        <span style="font-size: 14px; font-weight: 400;padding: 2px; color: #6b7280; background: #f3f4f6; border-radius: 6px;">
+                            开发中 - 05.07 09:00
                         </span>
                     </h1>
                     <span id="api-status" class="badge bg-success">API 在线</span>
                 </div>
+                
                 <div class="card">
                     <div class="card-header">
+                        <!-- 第一行筛选 -->
                         <div class="row g-3">
-                            <div class="col-md-2"><!-- YU 421-->
+                            <div class="col-md-2">
                                 <select class="form-select" id="filterUser" onchange="onUserChange()">
                                     <option value="">全部人员</option>
                                 </select>
-                            </div><!-- YU 421-->
-                            <div class="col-md-2"style="min-width: 130px;">
-                                <select class="form-select" id="filterKeyword">
+                            </div>
+                            
+                            <div class="col-md-2">
+                                <select class="form-select" id="filterKeyword" multiple placeholder="选择关键词...">
                                     <option value="">全部关键词</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <select class="form-select" id="filterAsin">
+                                <select class="form-select" id="filterAsin" multiple placeholder="搜索ASIN...">
                                     <option value="">全部ASIN</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <select class="form-select" id="filterAdType">
-                                    <option value="">全部类型</option>
+                                <select class="form-select" id="filterAdType" multiple>
+                                    <!-- <option value="">全部类型</option> -->
                                     <option value="Organic">自然商品</option>
                                     <option value="SP">SP广告</option>
                                     <option value="SB">SB广告</option>
                                     <option value="SB_Video">SB视频广告</option>
                                 </select>
                             </div>
-                            <!-- 日期范围筛选 -->
                             <div class="col-md-3">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-text"><i class="bi bi-calendar"></i></span>
-                                    <input type="date" class="form-control" id="filterDateFrom" placeholder="开始日期">
+                                    <input type="date" class="form-control" id="filterDateFrom">
                                     <span class="input-group-text">至</span>
-                                    <input type="date" class="form-control" id="filterDateTo" placeholder="结束日期">
+                                    <input type="date" class="form-control" id="filterDateTo">
                                 </div>
                             </div>
-                            <div class="col-md-1" style="width: 12%;min-width: 130px;">
-                                <button class="btn btn-primary w-100" onclick="searchData()">
-                                    <i class="bi bi-search"></i> 查询
-                                </button>
-                            </div>
-                            <div class="col-md-2" style="width: 12%;min-width: 130px;">
-                                <button class="btn btn-success w-100" onclick="exportData()">
-                                    <i class="bi bi-download"></i> 导出CSV
-                                </button>
-                            </div>
-                            <div class="col-md-1" style="width: 12%;min-width: 130px;">
-                                <button class="btn btn-secondary w-100" onclick="resetFilters()">
-                                    <i class="bi bi-arrow-repeat"></i>
-                                </button>
-                            </div>
-                            <div class="col-md-1" style="width: 12%;min-width: 130px;"> <!--  zy 0423 -->
-                                <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#columnSettingsModal" onclick="loadColumnSettings()">
-                                    <i class="bi bi-gear"></i> 列设置
-                                </button>
-                            </div>
+                            <!-- 第二行筛选 -->
+                            <!-- <div class="row g-3 mt-3"> -->
+                                <div class="col-md-3">
+                                    <select class="form-select" id="filterTags" multiple placeholder="选择标签...">
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-2">
+                                    <select class="form-select" id="filterFestival" multiple placeholder="选择节日...">
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-2">
+                                    <select class="form-select" id="filterFestivalType">
+                                        <option value="">全部</option>
+                                        <option value="大节日">大节日</option>
+                                        <option value="小节日">小节日</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-2">
+                                    <select class="form-select" id="filterHotSeason" multiple placeholder="选择热卖期...">
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary" onclick="searchData(1)">
+                                        <i class="bi bi-search"></i> 查询
+                                    </button>
+                                    <button class="btn btn-success" onclick="exportData()">
+                                        <i class="bi bi-download"></i> 导出
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="resetFilters()">
+                                        <i class="bi bi-arrow-repeat"></i> 重置
+                                    </button>
+                                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#columnSettingsModal" onclick="loadColumnSettings()">
+                                        <i class="bi bi-gear"></i> 列设置
+                                    </button>
+                                </div>
+                            <!-- </div> -->
                         </div>
                     </div>
-                    <div class="card data-card">  <!--  ZY 0423 -->
+                    <div class="kh" style="height: 15px;"></div>
+                    <div class="card data-card">
                         <div class="card-body" style="padding: 0;">
                             <div class="table-responsive-erp">
                                 <table class="table-erp" id="dataTable">
-                                    <thead class="table-erp-header">
-                                        <!-- 动态生成表头 -->
-                                    </thead>
+                                    <thead id="dataTableHead"></thead>
                                     <tbody id="dataTableBody">
                                         <tr><td colspan="20" class="text-center">加载中...</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-                            
-                            <!-- 分页区域 -->
-                            <div class="pagination-erp" id="paginationContainer">
-                                <!-- 动态分页 -->
-                                
-                            </div>
-                            
+                            <div class="pagination-erp" id="paginationContainer"></div>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
+
     <!-- 列设置模态框 -->
     <div class="modal fade" id="columnSettingsModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -369,10 +355,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-muted small">勾选需要显示的字段，拖拽可调整顺序</p>
-                    <div class="row" id="columnSettingsList">
-                        <!-- 动态生成复选框列表 -->
-                    </div>
+                    <p class="text-muted small">勾选需要显示的字段</p>
+                    <div id="columnSettingsList"></div>
                     <hr>
                     <div class="mt-2">
                         <button class="btn btn-sm btn-outline-secondary" onclick="selectAllColumns()">全选</button>
@@ -387,18 +371,11 @@
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/sidebar.js"></script> <!-- #YU 421 -->
+    <script src="js/sidebar.js"></script>
     <script src="js/data.js"></script>
-    <script>
-        // 全局函数，供按钮调用 zy 0423
-        window.loadColumnSettings = loadColumnSettings;
-        window.selectAllColumns = selectAllColumns;
-        window.deselectAllColumns = deselectAllColumns;
-        window.resetToDefaultColumns = resetToDefaultColumns;
-        window.saveColumnSettings = saveColumnSettings;
-    </script>
-    
 </body>
 </html>

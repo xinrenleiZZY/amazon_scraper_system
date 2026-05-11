@@ -199,7 +199,7 @@ class ScrapingPipeline:
                 is_prime=item.get('is_prime', False),
                 image_small=item.get('image_small'),
                 image_large=item.get('image_large'),
-                brand_name=item.get('brand_name'),
+                brand_name=(item.get('brand_name') or '')[:200] or None,
                 inner_products=json.dumps(item.get('inner_products', [])),
                 inner_products_count=item.get('inner_products_count', 0),
                 postal_code=str(item.get('postal_code')) if item.get('postal_code') else None,
@@ -239,7 +239,11 @@ class ScrapingPipeline:
             error: 错误信息
         """
         from app.models import ScrapingTask
-        
+
+        try:
+            self.db_session.rollback()
+        except Exception:
+            pass
         task = self.db_session.query(ScrapingTask).filter(ScrapingTask.id == task_id).first()
         if task:
             task.status = status
@@ -324,7 +328,14 @@ def run_weekly():
         return results
     finally:
         pipeline.close()
-
+        
+def run_batch(pages: int = None) -> List[Dict]:
+    """批量爬取所有关键词（供定时任务调用）"""
+    pipeline = ScrapingPipeline()
+    try:
+        return pipeline.run_batch(pages)
+    finally:
+        pipeline.close()
 
 def import_processed_data(folder: str = None) -> Dict:
     """
@@ -395,6 +406,39 @@ async def run_weekly_with_logs(manager=None):
     if manager:
         await manager.send_log("✅ 每周任务执行完成")
     return result
+
+
+# backend/app/scraper/pipeline.py
+
+# 全局任务停止标志
+_task_stop_flags = {}
+
+
+def stop_task(task_id: int) -> bool:
+    """终止指定任务"""
+    _task_stop_flags[task_id] = True
+    logger.info(f"任务 {task_id} 收到终止信号")
+    return True
+
+
+def stop_all_tasks() -> bool:
+    """终止所有任务"""
+    # 设置所有任务的停止标志（实际会在各任务循环中检查）
+    # 这里只是记录日志，实际的停止需要各任务在爬取过程中检查
+    logger.info("收到终止所有任务信号")
+    return True
+
+
+def is_task_stopped(task_id: int) -> bool:
+    """检查任务是否被标记为终止"""
+    return _task_stop_flags.get(task_id, False)
+
+
+def clear_task_stop_flag(task_id: int):
+    """清除任务的终止标记"""
+    if task_id in _task_stop_flags:
+        del _task_stop_flags[task_id]
+
 
 # 测试入口
 if __name__ == "__main__":
